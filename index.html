@@ -281,6 +281,22 @@ body[data-view="about"] #v-about{display:block}
 .flinks a{text-decoration:none}.flinks a:hover{text-decoration:underline}
 body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-view="terms"] #v-terms,body[data-view="shipping"] #v-shipping{display:block}
 @media (max-width:900px){.stages{grid-template-columns:1fr}.stages .photo{aspect-ratio:4/3}.flinks{grid-template-columns:1fr 1fr}.band-photo .photo{aspect-ratio:4/3}}
+
+.nav nav a[aria-current="page"]{color:var(--cream)}
+.reelnav{display:flex;gap:8px}
+.reelnav button,.iconbtn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:transparent;color:var(--cream);font-size:18px;cursor:pointer}
+.reelnav button:hover{border-color:var(--saffron)}
+.field{padding:14px 18px;border-radius:999px;border:1px solid var(--plum-3);background:var(--plum);color:var(--cream);font:inherit;min-width:0}
+select.field{appearance:none;-webkit-appearance:none;padding-right:40px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 22px) 52%,calc(100% - 16px) 52%;background-size:6px 6px;background-repeat:no-repeat}
+.lot{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.lot .field{flex:1 1 180px}
+#lotmsg{min-height:1.5em;font-size:15px;color:var(--saffron);margin-top:10px}
+.faqsearch{width:100%;padding:14px 18px;border-radius:999px;border:1px solid #cdbba6;background:#fffaf3;color:var(--ink);font:inherit;margin-bottom:14px}
+#faqnone{color:#66525f;padding:14px 0}
+.wait form{flex-direction:row}
+.wait select.field{flex:1 1 100%}
+.totop{position:fixed;right:16px;bottom:16px;z-index:15;background:var(--plum-2);display:none}
+body.scrolled .totop{display:block}
 .cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:900px){
   .menu{display:inline-flex}
@@ -376,8 +392,8 @@ body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-vi
 </div>
 
 <section style="padding:64px 0 24px">
-  <div class="wrap"><div class="head" style="margin-bottom:26px"><p class="eyebrow">Real life</p><h2>For the everyday kind of close.</h2></div></div>
-  <div class="reel" tabindex="0" aria-label="Photo gallery">
+  <div class="wrap"><div style="display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:26px"><div class="head" style="margin:0"><p class="eyebrow">Real life</p><h2>For the everyday kind of close.</h2></div><div class="reelnav"><button type="button" id="reelprev" aria-label="Previous photos">&#8592;</button><button type="button" id="reelnext" aria-label="Next photos">&#8594;</button></div></div></div>
+  <div class="reel" id="reel" tabindex="0" aria-label="Photo gallery">
     <div class="photo"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=700&q=75" alt="Two people holding mugs across a table" loading="lazy" onerror="this.remove()"><span>Mornings</span></div>
     <div class="photo"><img src="https://images.unsplash.com/photo-1556911073-38141963c9e0?auto=format&fit=crop&w=700&q=75" alt="A man and woman cooking together" loading="lazy" onerror="this.remove()"><span>Dinner</span></div>
     <div class="photo"><img src="https://images.unsplash.com/photo-1758522490155-b338da47f09f?auto=format&fit=crop&w=700&q=75" alt="A couple enjoying drinks by the window" loading="lazy" onerror="this.remove()"><span>Evenings</span></div>
@@ -552,6 +568,12 @@ body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-vi
         <li><svg width="24" height="24"><use href="#check"/></svg><span>Look up the report by the lot number on your jar.</span></li>
         <li><svg width="24" height="24"><use href="#check"/></svg><span>Made in the USA in a GMP-certified facility.</span></li>
       </ul>
+      <form class="lot" id="lotform" novalidate>
+        <label for="lot" style="position:absolute;left:-9999px">Lot number</label>
+        <input class="field" id="lot" placeholder="Lot number from your jar" autocomplete="off">
+        <button class="btn" type="submit">Find the report</button>
+      </form>
+      <p id="lotmsg" role="status"></p>
     </div>
     <div class="photo"><img src="https://images.unsplash.com/photo-1763713512979-97f3b63605b5?auto=format&fit=crop&w=1100&q=75" alt="A couple dancing in a kitchen at night" loading="lazy" onerror="this.remove()"></div>
   </div>
@@ -607,7 +629,10 @@ body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-vi
 <section id="questions" class="light faq" style="border-top:1px solid #dccdbb">
   <div class="wrap">
     <div class="head" style="margin:0;align-content:start"><p class="eyebrow">Questions</p><h2>Good to know.</h2></div>
-    <div>
+    <div id="faqlist">
+      <label for="faqq" style="position:absolute;left:-9999px">Search questions</label>
+      <input class="faqsearch" id="faqq" type="search" placeholder="Search questions">
+      <p id="faqnone" hidden>No matching questions. Try a different word.</p>
       <details><summary>How fast does it work?</summary><p>Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use.</p></details>
       <details><summary>What is the difference between the two?</summary><p>For Her pairs saffron with ashwagandha, both studied in women. For Him pairs saffron with fenugreek, which was studied in men, and adds zinc.</p></details>
       <details><summary>Who should not take it?</summary><p>Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions.</p></details>
@@ -629,6 +654,8 @@ body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-vi
     <p class="muted">Join the waitlist for first access and launch pricing.</p>
     <form id="waitform" novalidate>
       <label for="email" style="position:absolute;left:-9999px">Email address</label>
+      <label for="interest" style="position:absolute;left:-9999px">Which product</label>
+      <select class="field" id="interest"><option value="">I am interested in...</option><option value="two">Saffra for Two</option><option value="her">Saffra for her</option><option value="him">Saffra for him</option><option value="unsure">Not sure yet</option></select>
       <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
       <button class="btn" type="submit">Join the waitlist</button>
     </form>
@@ -1022,6 +1049,7 @@ body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-vi
     <p>Photography from Unsplash. © 2027 Saffra</p>
   </div>
 </footer>
+<button class="iconbtn totop" type="button" id="totop" aria-label="Back to top">&#8593;</button>
 
 <script>
 (function(){
@@ -1033,6 +1061,7 @@ body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-vi
   function route(){
     var h=location.hash.slice(1), v=views.indexOf(h)>-1?h:'home';
     document.body.setAttribute('data-view',v); menu(false);
+    document.querySelectorAll('.nav nav a').forEach(function(a){ if(a.getAttribute('href')==='#'+v) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
     if(v!=='home'){window.scrollTo(0,0);}
     else if(h){var el=document.getElementById(h); if(el) el.scrollIntoView();}
   }
@@ -1100,12 +1129,41 @@ body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-vi
     if(f.indexOf('legume')>-1&&hasHim) notes+='<p class="note"><b>Allergy note.</b> For Him contains fenugreek, a legume. It is not suitable for anyone with a peanut, chickpea or other legume allergy.</p>';
     var imgs=jars.map(function(j){return '<img src="img/bottle-'+j+'.webp" alt="Saffra for '+j+' jar" width="840" height="1232">';}).join('');
     qb.innerHTML='<div class="result"><p class="eyebrow" style="color:var(--gold-ink)">Your match</p><h2>'+esc(name)+'</h2><div class="jars">'+imgs+'</div><p style="font-family:var(--display);font-size:30px">'+price+'</p><p class="muted">'+esc(why)+'</p>'+notes+
-      '<p class="muted">Two gummies a day, each. Give it four to eight weeks.<sup>*</sup></p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn dark" href="#waitlist">Join the waitlist</a>'+
+      '<p class="muted">Two gummies a day, each. Give it four to eight weeks.<sup>*</sup></p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn dark" href="#waitlist" data-int="'+(both?'two':A.form)+'">Join the waitlist</a>'+
       (both?'':'<a class="btn ghost" style="color:var(--ink);border-color:#cdbba6" href="#'+A.form+'">See the details</a>')+'<button type="button" class="btn ghost" style="color:var(--ink);border-color:#cdbba6" id="qagain">Start over</button></div></div>';
     document.getElementById('qagain').addEventListener('click',function(){A={};qi=0;draw();});
   }
   back.addEventListener('click',function(){ if(qi>0){qi--; draw();} });
   draw();
+
+
+  /* remembered price mode */
+  try{var pm=localStorage.getItem('saffra-mode'); if(pm==='one'||pm==='sub') setMode(pm);}catch(e){}
+  ['sub','one'].forEach(function(m){document.getElementById('t-'+m).addEventListener('click',function(){try{localStorage.setItem('saffra-mode',m);}catch(e){}});});
+  /* product interest carried to the waitlist */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href="#waitlist"]'); if(!a) return;
+    var v=a.getAttribute('data-int')||(a.closest('.card.her,#v-her')?'her':a.closest('.card.him,#v-him')?'him':a.closest('.two,.cross')?'two':'');
+    if(v) document.getElementById('interest').value=v;
+  });
+  /* reel */
+  var reel=document.getElementById('reel');
+  function nudge(d){reel.scrollBy({left:d*320,behavior:'smooth'});}
+  document.getElementById('reelprev').addEventListener('click',function(){nudge(-1);});
+  document.getElementById('reelnext').addEventListener('click',function(){nudge(1);});
+  reel.addEventListener('keydown',function(e){if(e.key==='ArrowRight')nudge(1);if(e.key==='ArrowLeft')nudge(-1);});
+  /* lot lookup */
+  document.getElementById('lotform').addEventListener('submit',function(e){e.preventDefault();
+    var v=document.getElementById('lot').value.trim(), m=document.getElementById('lotmsg');
+    m.textContent = v ? 'No report yet for lot '+v+'. Reports are posted here when the first batch ships in 2027.' : 'Enter the lot number printed on the bottom of your jar.';});
+  /* faq search */
+  document.getElementById('faqq').addEventListener('input',function(){
+    var q=this.value.trim().toLowerCase(), n=0;
+    document.querySelectorAll('#faqlist details').forEach(function(d){var hit=!q||d.textContent.toLowerCase().indexOf(q)>-1; d.hidden=!hit; if(hit)n++;});
+    document.getElementById('faqnone').hidden=n>0;});
+  /* back to top */
+  window.addEventListener('scroll',function(){document.body.classList.toggle('scrolled',window.scrollY>900);},{passive:true});
+  document.getElementById('totop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 
   var form = document.getElementById('waitform'), msg = document.getElementById('waitmsg');
   form.addEventListener('submit', function(e){
