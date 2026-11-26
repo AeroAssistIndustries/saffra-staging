@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saffra Staging Site</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F0A91E'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Georgia,serif' font-size='46' fill='%232A1429'%3Es%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Daily intimacy gummies for her and for him, made with ingredients at the doses used in human studies.">
+<style>
+@font-face{font-family:"Fraunces";src:url("fonts/fraunces-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Fraunces";font-style:italic;src:url("fonts/fraunces-latin-wght-italic.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"DM Sans";src:url("fonts/dm-sans-latin-wght-normal.woff2") format("woff2");font-weight:100 1000;font-display:swap}
+:root{
+  /* Layout idea: one evening-lit world. Deep plum ground, saffron as the only loud color, photos as warm windows, left-aligned editorial columns. */
+  --plum:#2A1429;
+  --plum-2:#371B36;
+  --plum-3:#52304F;
+  --saffron:#F0A91E;
+  --ember:#D9573B;
+  --cream:#F6EBDD;
+  --muted:#C9B4C2;
+  --ink:#1E1A1D;
+  --gold-ink:#96610a;
+  --display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --r:22px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--plum);color:var(--cream);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:2px solid var(--saffron);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--display);font-weight:380;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-0.015em}
+h1{font-size:clamp(46px,8.4vw,98px)}
+h2{font-size:clamp(32px,4.8vw,54px)}
+h3{font-size:25px;line-height:1.15}
+p{margin:0;max-width:60ch}
+em{font-style:italic;color:var(--saffron)}
+.eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--saffron);font-weight:650}
+.muted{color:var(--muted)}
+sup{font-size:.6em}
+
+.logo{display:inline-flex;align-items:flex-end;text-decoration:none;font-family:var(--display);font-weight:400;font-size:31px;letter-spacing:-0.02em;color:var(--cream);line-height:1}
+.logo svg{width:.5em;height:.95em;margin-left:-.02em;transform:translateY(-.42em)}
+.logo.on-light{color:var(--plum)}
+
+.bar{background:var(--saffron);color:var(--ink);text-align:center;font-size:14px;font-weight:600;padding:8px 16px}
+.bar a{text-underline-offset:3px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(42,20,41,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:13px;padding-bottom:13px}
+.nav nav{display:flex;gap:26px;align-items:center;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--muted);transition:color .15s}
+.nav nav a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--saffron);color:var(--ink);font-weight:700;font-family:var(--body);font-size:16px;padding:14px 24px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s,box-shadow .15s;box-shadow:0 6px 24px rgba(240,169,30,.25)}
+.btn:hover{background:#ffbf3d;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,.22);box-shadow:none}
+.btn.ghost:hover{border-color:var(--saffron);background:transparent}
+.btn.small{padding:10px 18px;font-size:14px}
+.nav nav a.btn{color:var(--ink)}
+
+.hero{position:relative;padding:54px 0 0;background:radial-gradient(760px 520px at 78% 46%,rgba(240,169,30,.24),transparent 62%),radial-gradient(600px 400px at 10% 0%,rgba(217,87,59,.14),transparent 60%),var(--plum)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
+.hero .copy{padding-bottom:64px}
+.hero p.lead{font-size:20px;margin-top:22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero .shot{align-self:end}
+.hero .shot img{width:100%;filter:drop-shadow(0 30px 50px rgba(0,0,0,.45))}
+.stars{display:flex;gap:18px;flex-wrap:wrap;margin-top:34px;font-size:14px;color:var(--muted)}
+.stars span{display:inline-flex;gap:8px;align-items:center}
+.stars i{width:7px;height:7px;border-radius:50%;background:var(--saffron);display:inline-block}
+
+.trust{background:var(--plum-2);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.trust .wrap>div{padding:26px 22px;border-left:1px solid rgba(255,255,255,.08);display:grid;gap:4px}
+.trust .wrap>div:first-child{border-left:0;padding-left:0}
+.trust b{font-family:var(--display);font-weight:400;font-size:21px}
+.trust span{font-size:14px;color:var(--muted)}
+
+section{padding:88px 0}
+.head{display:grid;gap:14px;margin-bottom:40px}
+.light{background:var(--cream);color:var(--ink)}
+.light .muted{color:#66525f}
+.light .eyebrow{color:var(--gold-ink)}
+.light em{color:var(--gold-ink)}
+
+.photo{position:relative;border-radius:var(--r);overflow:hidden;background:linear-gradient(135deg,#6a3a52,#3B1F3A 55%,#b56a2a);min-height:260px}
+.photo img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,20,41,0) 40%,rgba(42,20,41,.55));pointer-events:none}
+
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story .photo{aspect-ratio:4/5}
+.story .txt{display:grid;gap:18px}
+.story blockquote{margin:0;font-family:var(--display);font-size:clamp(26px,3.2vw,38px);line-height:1.15}
+
+.toggle{display:inline-flex;background:var(--plum-2);border:1px solid var(--plum-3);border-radius:999px;padding:4px;gap:4px}
+.toggle button{font:inherit;font-size:14.5px;font-weight:600;border:0;background:transparent;color:var(--muted);padding:9px 18px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--cream);color:var(--ink)}
+.shop-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{border-radius:var(--r);padding:28px;display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;border:1px solid rgba(255,255,255,.09);position:relative;overflow:hidden}
+.card.her{background:radial-gradient(360px 280px at 0% 100%,rgba(240,169,30,.16),transparent 70%),var(--plum-2)}
+.card.him{background:radial-gradient(360px 280px at 0% 100%,rgba(120,116,160,.22),transparent 70%),#211a2c}
+.card .info{display:grid;gap:11px;align-content:start}
+.card h3 i{font-style:italic;color:var(--saffron)}
+.card ul{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:15px}
+.card li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed rgba(255,255,255,.14);padding-bottom:5px}
+.card li b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.amt{font-family:var(--display);font-size:42px;line-height:1;font-variant-numeric:tabular-nums}
+.amt small{font-family:var(--body);font-size:14px;color:var(--muted)}
+.two{margin-top:22px;border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.two .l{display:grid;gap:8px}
+.tag{justify-self:start;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--saffron);color:var(--ink);padding:4px 11px;border-radius:999px}
+.two .r{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+
+.tabs{display:flex;gap:8px;margin-bottom:22px}
+.tabs button{font:inherit;font-weight:600;font-size:15px;border:1px solid #d7c6b3;background:transparent;color:var(--ink);padding:10px 20px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--plum);color:var(--cream);border-color:var(--plum)}
+.formula{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:center}
+.formula table{width:100%;border-collapse:collapse}
+.formula th{text-align:left;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#66525f;font-weight:600;padding:0 12px 10px 0}
+.formula td{padding:16px 12px 16px 0;border-top:1px solid #dccdbb;vertical-align:top;font-size:15.5px}
+.formula td:first-child{font-family:var(--display);font-size:21px;white-space:nowrap}
+.formula td:nth-child(2){font-weight:700;color:var(--gold-ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.formula .pic{background:radial-gradient(circle at 50% 45%,#f0d9b8,#e6d2bb 70%);border-radius:var(--r);padding:22px 30px 6px}
+.tablewrap{overflow-x:auto}
+[hidden]{display:none!important}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.steps div{counter-increment:s;border-top:2px solid var(--saffron);padding-top:18px;display:grid;gap:8px;align-content:start}
+.steps div::before{content:"0" counter(s);font-family:var(--display);font-size:46px;line-height:1;color:var(--saffron)}
+
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.doc{border:1px solid rgba(255,255,255,.1);background:var(--plum-2);border-radius:var(--r);padding:26px;display:grid;gap:8px}
+.avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--plum-3),#7a4a72);display:grid;place-items:center;font-family:var(--display);color:var(--saffron);font-size:24px;margin-bottom:6px}
+
+.std .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.std ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.std li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:15px 0;border-top:1px solid rgba(255,255,255,.1)}
+.std li svg{margin-top:4px}
+.std .photo{aspect-ratio:5/4}
+
+.gallery{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+.gallery .photo{aspect-ratio:auto;min-height:340px}
+.gallery .photo span{position:absolute;left:22px;bottom:20px;z-index:2;font-family:var(--display);font-size:26px}
+
+details{border-top:1px solid #dccdbb;padding:18px 0}
+details:last-of-type{border-bottom:1px solid #dccdbb}
+summary{cursor:pointer;font-family:var(--display);font-size:22px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold-ink);font-family:var(--body)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:#4a3b46}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+
+.wait{background:radial-gradient(700px 360px at 50% 120%,rgba(240,169,30,.3),transparent 70%),var(--plum-2)}
+.wait .wrap{display:grid;gap:22px;justify-items:center;text-align:center}
+.wait p{margin-inline:auto}
+form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:min(520px,100%)}
+input[type=email]{flex:1 1 240px;min-width:0;padding:15px 20px;border-radius:999px;border:1px solid var(--plum-3);background:var(--plum);color:var(--cream);font:inherit}
+input::placeholder{color:#9a8394}
+#waitmsg{min-height:1.5em;font-size:15px;color:var(--saffron)}
+
+footer{padding:44px 0 60px;font-size:13px;color:var(--muted)}
+footer .wrap{display:grid;gap:14px}
+footer p{max-width:92ch}
+.fda{border:1px solid var(--plum-3);padding:13px 16px;border-radius:10px}
+
+
+main{display:none}
+body[data-view="home"] #site,body[data-view="her"] #v-her,body[data-view="him"] #v-him,body[data-view="science"] #v-science,body[data-view="brand"] #brand{display:block}
+.menu{display:none;background:transparent;border:1px solid rgba(255,255,255,.22);border-radius:999px;width:42px;height:42px;cursor:pointer;padding:0;align-items:center;justify-content:center}
+.menu span,.menu span::before,.menu span::after{display:block;width:16px;height:2px;background:var(--cream);border-radius:2px;position:relative;content:""}
+.menu span::before{position:absolute;top:-5px}.menu span::after{position:absolute;top:5px}
+.drawer{display:none;border-top:1px solid rgba(255,255,255,.08);background:var(--plum)}
+.drawer a{display:block;padding:15px 22px;text-decoration:none;font-family:var(--display);font-size:22px;border-bottom:1px solid rgba(255,255,255,.07)}
+body.menu-open .drawer{display:block}
+.card .more{font-size:14px;color:var(--muted);text-underline-offset:3px}
+.card .acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.crumb{font-size:14px;color:var(--muted);margin-bottom:26px}
+.crumb a{text-underline-offset:3px}
+.pdp{padding-top:44px}
+.pdp .top{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
+.pdp .stage{border-radius:var(--r);padding:36px 60px 18px;position:sticky;top:96px}
+.pdp .stage.her{background:radial-gradient(circle at 50% 40%,#f3dfc2,#e2cdb4 75%)}
+.pdp .stage.him{background:radial-gradient(circle at 50% 40%,#4a4664,#211e30 75%)}
+.pdp .buy{display:grid;gap:18px}
+.pdp h1{font-size:clamp(40px,6vw,68px)}
+.pdp h1 i{font-style:italic;color:var(--saffron)}
+.pdp .lead{font-size:19px}
+.pdp .ticks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pdp .ticks li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
+.pdp .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.facts{background:var(--cream);color:var(--ink);border-radius:14px;padding:20px 22px;font-size:14.5px;max-width:460px}
+.facts h3{font-family:var(--body);font-weight:800;font-size:26px;letter-spacing:-.01em;border-bottom:7px solid var(--ink);padding-bottom:6px;margin-bottom:6px}
+.facts .sv{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.facts table{width:100%;border-collapse:collapse;margin-top:6px}
+.facts th{font-size:12px;text-align:left;border-top:4px solid var(--ink);border-bottom:1px solid var(--ink);padding:5px 0}
+.facts th:not(:first-child),.facts td:not(:first-child){text-align:right;white-space:nowrap;padding-left:10px}
+.facts td{border-bottom:1px solid #b9a996;padding:7px 0;font-variant-numeric:tabular-nums}
+.facts .fn{font-size:12px;margin-top:8px;color:#4a3b46}
+.expect{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+.expect div{background:var(--plum-2);border:1px solid rgba(255,255,255,.09);border-radius:var(--r);padding:24px;display:grid;gap:8px;align-content:start}
+.expect b{color:var(--saffron);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+.sci table{width:100%;border-collapse:collapse;min-width:640px}
+.sci th{text-align:left;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 14px 12px 0}
+.sci td{padding:18px 14px 18px 0;border-top:1px solid rgba(255,255,255,.12);vertical-align:top;font-size:15.5px}
+.sci td:first-child{font-family:var(--display);font-size:21px}
+.sci td a{color:var(--saffron);text-underline-offset:3px;white-space:nowrap}
+.honest{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.honest div{border-top:2px solid var(--gold-ink);padding-top:16px;display:grid;gap:8px;align-content:start}
+
+.ings{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ing2{display:grid;gap:14px;align-content:start}
+.ing2 .photo{aspect-ratio:4/3;min-height:0}
+.ing2 small{color:var(--saffron);font-weight:650;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+.cmp{width:100%;border-collapse:collapse;min-width:560px}
+.cmp th,.cmp td{padding:16px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1);font-size:15.5px}
+.cmp thead th{font-family:var(--display);font-weight:400;font-size:21px}
+.cmp th:nth-child(2),.cmp td:nth-child(2){background:rgba(240,169,30,.1);color:var(--cream)}
+.cmp thead th:nth-child(2){border-radius:14px 14px 0 0;color:var(--saffron)}
+.cmp td:nth-child(3){color:var(--muted)}
+.cmp td:first-child{font-weight:600}
+.rit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.rit ol{margin:0;padding:0;list-style:none;counter-reset:r}
+.rit li{counter-increment:r;display:grid;grid-template-columns:54px 1fr;gap:10px;padding:18px 0;border-top:1px solid #dccdbb}
+.rit li::before{content:counter(r);font-family:var(--display);font-size:38px;line-height:1;color:var(--gold-ink)}
+.rit li b{font-family:var(--display);font-weight:400;font-size:21px;display:block}
+.rit .stack{display:grid;gap:22px;position:sticky;top:96px}
+.rit .stack .photo{aspect-ratio:4/3;min-height:0}
+.about-hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.about-hero .photo{aspect-ratio:4/5}
+.vals{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.vals div{border-top:2px solid var(--saffron);padding-top:16px;display:grid;gap:8px;align-content:start}
+.letter{max-width:720px;display:grid;gap:18px}
+.letter p{font-size:19px;max-width:none}
+.letter .sig{font-family:var(--display);font-style:italic;font-size:28px;color:var(--gold-ink)}
+.duo2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+.duo2 .photo{aspect-ratio:1/1;min-height:0}
+body[data-view="about"] #v-about{display:block}
+@media (max-width:900px){.ings,.vals,.duo2,.rit .wrap,.about-hero .wrap{grid-template-columns:1fr}.rit .stack{position:static}.vals{grid-template-columns:1fr 1fr}.about-hero .photo{aspect-ratio:4/3}}
+.cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+@media (max-width:900px){
+  .menu{display:inline-flex}
+  .nav nav a.hide-s,.nav nav #brandlink{display:none}
+  .pdp .top,.expect,.honest{grid-template-columns:1fr}
+  .pdp .stage{position:static;padding:24px 70px 10px}
+}
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.sw{border-radius:16px;padding:14px;min-height:124px;display:flex;flex-direction:column;justify-content:flex-end;font-size:13px;border:1px solid rgba(255,255,255,.12)}
+.sw b{font-size:15px}
+.plate{border-radius:var(--r);padding:52px 24px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.12)}
+.plate .logo{font-size:clamp(48px,11vw,100px)}
+.icon{width:120px;height:120px;border-radius:28px;background:var(--saffron);display:grid;place-items:center;font-family:var(--display);font-size:84px;color:var(--plum);line-height:1;flex:none}
+.spec{font-family:var(--display);font-size:clamp(34px,6vw,62px);line-height:1.05}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+@media (max-width:900px){
+  .hero .wrap,.story .wrap,.std .wrap,.faq .wrap,.formula,.products,.gallery,.grid2{grid-template-columns:1fr}
+  .hero .copy{padding-bottom:8px}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .trust .wrap>div{border-left:0;padding:18px 12px 18px 0;border-top:1px solid rgba(255,255,255,.08)}
+  .trust .wrap>div:nth-child(-n+2){border-top:0}
+  .steps,.docs{grid-template-columns:1fr}
+  .swatches{grid-template-columns:1fr 1fr}
+  .nav nav a.hide-s{display:none}
+  section{padding:60px 0}
+  .formula .pic{max-width:240px;justify-self:center;order:-1}
+  .story .photo{aspect-ratio:4/3}
+}
+@media (max-width:520px){
+  .card{grid-template-columns:104px 1fr;padding:20px;gap:14px}
+  .nav nav{gap:14px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body data-view="home">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="threads" viewBox="0 0 20 38">
+    <path d="M10 38 C10 26 9 16 4 3" fill="none" stroke="#F0A91E" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M10 38 C10 24 10.5 14 10.5 1" fill="none" stroke="#D9573B" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M10 38 C10 26 12 16 17 4" fill="none" stroke="#F0A91E" stroke-width="2.2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="none" stroke="#F0A91E" stroke-width="1.5"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#F0A91E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="bar">Launching 2027. <a href="#waitlist">Join the waitlist</a> for first access and launch pricing.</div>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Saffra home">saffra<svg aria-hidden="true"><use href="#threads"/></svg></a>
+    <nav>
+      <a class="hide-s" href="#shop">Shop</a>
+      <a class="hide-s" href="#her">For her</a>
+      <a class="hide-s" href="#him">For him</a>
+      <a class="hide-s" href="#science">Science</a>
+      <a class="hide-s" href="#about">About</a>
+      <a href="#brand" id="brandlink">Brand kit</a>
+      <a class="btn small" href="#waitlist">Join the waitlist</a>
+      <button class="menu" type="button" id="menubtn" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </nav>
+  </div>
+  <div class="drawer" id="drawer">
+    <a href="#shop">Shop</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#about">About us</a><a href="#doctors">Doctors</a><a href="#questions">Questions</a><a href="#brand">Brand kit</a>
+  </div>
+</header>
+
+<main id="site">
+<span id="top"></span>
+<div class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Daily intimacy gummies, for her and for him</p>
+      <h1>Desire, <em>daily.</em></h1>
+      <p class="lead">Two gummies a day, made with ingredients at the doses used in human studies. One formula for her, one for him, and a set for the two of you.<sup>*</sup></p>
+      <div class="cta">
+        <a class="btn" href="#shop">Shop the set</a>
+        <a class="btn ghost" href="#inside">See what's inside</a>
+      </div>
+      <div class="stars"><span><i></i>Doses on the label</span><span><i></i>Vegan pectin gummies</span><span><i></i>30-day money back</span></div>
+    </div>
+    <div class="shot"><img src="img/duo.webp" width="1400" height="1208" alt="Rendering of two Saffra jars: For Her in plum with a cream label, For Him in dark slate with a saffron label"></div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>Full doses</b><span>Every amount printed on the jar</span></div>
+    <div><b>Medical board</b><span>Formulated with three doctors</span></div>
+    <div><b>Lab tested</b><span>Every batch, report posted</span></div>
+    <div><b>No blends</b><span>Nothing hidden, nothing extra</span></div>
+  </div>
+</div>
+
+<section class="story">
+  <div class="wrap">
+    <div class="photo"><img src="https://images.unsplash.com/photo-1763713512971-b1c2afa9b715?auto=format&fit=crop&w=1100&q=75" alt="A couple dancing in their kitchen under string lights" loading="lazy" onerror="this.remove()"></div>
+    <div class="txt">
+      <p class="eyebrow">Why Saffra</p>
+      <blockquote>Most products in this aisle promise a wild night. We would sooner give you <em>a better month.</em></blockquote>
+      <p class="muted">Saffra is a small daily ritual for couples who are close, busy and want the spark back. Take yours, hand over theirs, and make a little time for each other.</p>
+      <p><a class="btn ghost" href="#how">How it works</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="shop" style="padding-top:0">
+  <div class="wrap">
+    <div class="shop-head">
+      <div class="head" style="margin:0">
+        <p class="eyebrow">Shop</p>
+        <h2>One for her. One for him.</h2>
+      </div>
+      <div class="toggle" role="group" aria-label="Purchase type">
+        <button type="button" id="t-sub" aria-pressed="true">Monthly, save 18%</button>
+        <button type="button" id="t-one" aria-pressed="false">One-time</button>
+      </div>
+    </div>
+    <div class="products">
+      <article class="card her">
+        <img src="img/bottle-her.webp" width="840" height="1232" alt="Saffra For Her jar">
+        <div class="info">
+          <h3>Saffra <i>for her</i></h3>
+          <ul><li>Saffron extract <b>30 mg</b></li><li>Ashwagandha root extract <b>600 mg</b></li></ul>
+          <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month" data-one="one-time">a month</small></div>
+          <div class="acts"><a class="btn small" href="#waitlist">Join the waitlist</a><a class="more" href="#her">View details</a></div>
+        </div>
+      </article>
+      <article class="card him">
+        <img src="img/bottle-him.webp" width="840" height="1232" alt="Saffra For Him jar">
+        <div class="info">
+          <h3>Saffra <i>for him</i></h3>
+          <ul><li>Fenugreek seed extract <b>600 mg</b></li><li>Saffron extract <b>30 mg</b></li><li>Zinc <b>11 mg</b></li></ul>
+          <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month" data-one="one-time">a month</small></div>
+          <div class="acts"><a class="btn small" href="#waitlist">Join the waitlist</a><a class="more" href="#him">View details</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="two">
+      <div class="l">
+        <span class="tag">Best value</span>
+        <h3>Saffra for Two</h3>
+        <p class="muted">One jar of each, in a single box. 60 gummies per jar, a 30-day supply each.</p>
+      </div>
+      <div class="r">
+        <div class="amt"><span data-sub="$64" data-one="$78">$64</span> <small data-sub="a month" data-one="one-time">a month</small></div>
+        <a class="btn" href="#waitlist">Join the waitlist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inside" class="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What's inside</p>
+      <h2>Fewer ingredients. <em>Full doses.</em></h2>
+      <p class="muted">Each active is included at the daily amount researchers gave people in placebo-controlled studies. Amounts are per day, in two gummies.</p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tab-her" aria-selected="true" aria-controls="p-her">For her</button>
+      <button type="button" role="tab" id="tab-him" aria-selected="false" aria-controls="p-him">For him</button>
+    </div>
+    <div class="formula" id="p-her" role="tabpanel" aria-labelledby="tab-her">
+      <div class="tablewrap"><table>
+        <thead><tr><th>Ingredient</th><th>Per day</th><th>What it supports<sup>*</sup></th></tr></thead>
+        <tbody>
+          <tr><td>Saffron extract</td><td>30 mg</td><td>Desire, arousal and natural lubrication. Studied in women at this dose for four weeks.</td></tr>
+          <tr><td>Ashwagandha root extract</td><td>600 mg</td><td>Feeling relaxed and present, and sexual wellbeing. Studied in women at this dose for eight weeks.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="pic"><img src="img/bottle-her.webp" width="840" height="1232" alt="" loading="lazy"></div>
+    </div>
+    <div class="formula" id="p-him" role="tabpanel" aria-labelledby="tab-him" hidden>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Ingredient</th><th>Per day</th><th>What it supports<sup>*</sup></th></tr></thead>
+        <tbody>
+          <tr><td>Fenugreek seed extract</td><td>600 mg</td><td>Desire, arousal and vitality. Studied in men at this dose for six to twelve weeks.</td></tr>
+          <tr><td>Saffron extract</td><td>30 mg</td><td>Sexual wellbeing and satisfaction. Studied in men at this dose for four weeks.</td></tr>
+          <tr><td>Zinc</td><td>11 mg</td><td>Normal testosterone and reproductive health. 100% of the daily value.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="pic"><img src="img/bottle-him.webp" width="840" height="1232" alt="" loading="lazy"></div>
+    </div>
+    <p class="muted" style="margin-top:26px;font-size:15px">Pectin base. Vegan. Blood orange and honey flavor. No artificial colors or flavors. <a href="#science">Read the studies</a></p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">How it works</p>
+      <h2>A ritual that builds.</h2>
+    </div>
+    <div class="steps">
+      <div><h3>Two a day, each</h3><p class="muted">Take two gummies daily, with or without food. Take them together when you can.</p></div>
+      <div><h3>Give it four to eight weeks</h3><p class="muted">The studies behind these ingredients measured daily use over weeks, so stay with it.</p></div>
+      <div><h3>Not for you? Money back</h3><p class="muted">Try it for 30 days. If you are not happy, we refund your first order.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-sec" style="padding-top:0">
+  <div class="wrap gallery">
+    <div class="photo"><img src="https://images.unsplash.com/photo-1763713512970-a898b215025e?auto=format&fit=crop&w=1300&q=75" alt="A couple embracing in a dimly lit kitchen" loading="lazy" onerror="this.remove()"><span>Make time for each other.</span></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1758874089884-aecfd3f962a9?auto=format&fit=crop&w=900&q=75" alt="A woman kissing a man on the cheek" loading="lazy" onerror="this.remove()"><span>Two a day. For two.</span></div>
+  </div>
+</section>
+
+<section id="ingredients" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Meet the ingredients</p>
+      <h2>Three plants, chosen on purpose.</h2>
+      <p class="muted">Each one has a long history of use and at least one placebo-controlled human study at the dose we use.</p>
+    </div>
+    <div class="ings">
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=900&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div><small>In both formulas</small><h3>Saffron</h3><p class="muted">The dried red threads of the crocus flower, picked by hand. It takes thousands of flowers to make a small jar, which is why it is the world's most expensive spice.</p></div>
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=75" alt="Roots and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div><small>For her</small><h3>Ashwagandha</h3><p class="muted">A root used in Ayurveda for centuries, known for helping the body settle under stress. We use a root-only extract, never the leaves.</p></div>
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=900&q=75" alt="Spoons filled with ground spices and seeds" loading="lazy" onerror="this.remove()"></div><small>For him</small><h3>Fenugreek</h3><p class="muted">A seed found in kitchens from India to the Mediterranean. Its extract has been studied in men for desire and vitality.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="doctors" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Medical advisory board</p>
+      <h2>Formulated with doctors, by name.</h2>
+      <p class="muted">Our advisors review the formulas, the doses and every claim on this site. They are paid advisors to Saffra. Names are announced at launch.</p>
+    </div>
+    <div class="docs">
+      <div class="doc"><div class="avatar">U</div><h3>Men's sexual health</h3><p class="muted">Urologist</p></div>
+      <div class="doc"><div class="avatar">O</div><h3>Women's sexual health</h3><p class="muted">OB-GYN</p></div>
+      <div class="doc"><div class="avatar">P</div><h3>Herb and drug safety</h3><p class="muted">Pharmacist</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="std" style="padding-top:0">
+  <div class="wrap">
+    <div>
+      <div class="head" style="margin-bottom:22px">
+        <p class="eyebrow">The Saffra standard</p>
+        <h2>Tested, then posted.</h2>
+      </div>
+      <ul>
+        <li><svg width="24" height="24"><use href="#check"/></svg><span>An independent lab tests every batch for the active amounts on the label.</span></li>
+        <li><svg width="24" height="24"><use href="#check"/></svg><span>Each batch is screened for heavy metals, microbes and undeclared drug ingredients.</span></li>
+        <li><svg width="24" height="24"><use href="#check"/></svg><span>Look up the report by the lot number on your jar.</span></li>
+        <li><svg width="24" height="24"><use href="#check"/></svg><span>Made in the USA in a GMP-certified facility.</span></li>
+      </ul>
+    </div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1763713512979-97f3b63605b5?auto=format&fit=crop&w=1100&q=75" alt="A couple dancing in a kitchen at night" loading="lazy" onerror="this.remove()"></div>
+  </div>
+</section>
+
+<section id="compare" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">How we compare</p><h2>Read the back of the jar.</h2></div>
+    <div class="tablewrap"><table class="cmp">
+      <thead><tr><th></th><th>Saffra</th><th>Many libido gummies</th></tr></thead>
+      <tbody>
+        <tr><td>Doses</td><td>Every amount on the front label</td><td>Often a blend with no amounts</td></tr>
+        <tr><td>Amounts</td><td>Matched to human studies</td><td>Often a fraction of the studied dose</td></tr>
+        <tr><td>Who formulated it</td><td>A named medical advisory board</td><td>Usually not stated</td></tr>
+        <tr><td>Testing</td><td>Every batch, report posted by lot</td><td>Rarely published</td></tr>
+        <tr><td>Promise</td><td>Daily support over weeks</td><td>Results in minutes</td></tr>
+        <tr><td>Made for</td><td>Her, him, and the two of you</td><td>Usually one or the other</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section id="rituals" class="light rit">
+  <div class="wrap">
+    <div>
+      <div class="head"><p class="eyebrow">Small rituals</p><h2>The gummy is the easy part.</h2><p class="muted">No supplement replaces time and attention. Five small things that cost nothing and go well with two gummies a day.</p></div>
+      <ol>
+        <li><div><b>Take them together</b><span class="muted">Same time every day, in the same room. Thirty seconds that belong to the two of you.</span></div></li>
+        <li><div><b>Phones in another room</b><span class="muted">One hour, most nights. Start with dinner.</span></div></li>
+        <li><div><b>Cook one meal a week together</b><span class="muted">Music on. Nobody is the helper.</span></div></li>
+        <li><div><b>Ask one real question</b><span class="muted">Something you do not already know the answer to.</span></div></li>
+        <li><div><b>Go to bed at the same time</b><span class="muted">Even twice a week changes things.</span></div></li>
+      </ol>
+    </div>
+    <div class="stack">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=75" alt="A smiling couple cooking together in their kitchen" loading="lazy" onerror="this.remove()"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1746813629190-80f67d5050fa?auto=format&fit=crop&w=1000&q=75" alt="A happy couple laughing together, close to each other" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+
+<section id="questions" class="light faq" style="border-top:1px solid #dccdbb">
+  <div class="wrap">
+    <div class="head" style="margin:0;align-content:start"><p class="eyebrow">Questions</p><h2>Good to know.</h2></div>
+    <div>
+      <details><summary>How fast does it work?</summary><p>Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use.</p></details>
+      <details><summary>What is the difference between the two?</summary><p>For Her pairs saffron with ashwagandha, both studied in women. For Him pairs saffron with fenugreek, which was studied in men, and adds zinc.</p></details>
+      <details><summary>Who should not take it?</summary><p>Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions.</p></details>
+      <details><summary>What does lab tested mean?</summary><p>An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar.</p></details>
+      <details><summary>Should we both take the same one?</summary><p>No. Each of you takes your own formula. The For Two set has one jar of each.</p></details>
+      <details><summary>What does it taste like?</summary><p>Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky.</p></details>
+      <details><summary>Is it vegan?</summary><p>Yes. No gelatin, no artificial colors or flavors.</p></details>
+      <details><summary>How long does a jar last?</summary><p>Thirty days. Each jar holds 60 gummies and the serving is two a day.</p></details>
+      <details><summary>Can I take it with other supplements or medication?</summary><p>Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication.</p></details>
+      <details><summary>Can I cancel my subscription?</summary><p>Yes, anytime from your account, in two clicks. You can also skip a month.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist" class="wait">
+  <div class="wrap">
+    <p class="eyebrow">Launching 2027</p>
+    <h2>Make time for each other.</h2>
+    <p class="muted">Join the waitlist for first access and launch pricing.</p>
+    <form id="waitform" novalidate>
+      <label for="email" style="position:absolute;left:-9999px">Email address</label>
+      <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
+      <button class="btn" type="submit">Join the waitlist</button>
+    </form>
+    <p id="waitmsg" role="status"></p>
+  </div>
+</section>
+</main>
+
+<main id="v-her">
+  <section class="pdp">
+    <div class="wrap">
+      <p class="crumb"><a href="#shop">Shop</a> / Saffra for her</p>
+      <div class="top">
+        <div class="stage her"><img src="img/bottle-her.webp" width="840" height="1232" alt="Saffra for her jar"></div>
+        <div class="buy">
+          <p class="eyebrow">Daily intimacy gummies</p>
+          <h1>Saffra <i>for her</i></h1>
+          <p class="lead">Saffron and ashwagandha, the two botanicals studied in women for desire, arousal and feeling present.<sup>*</sup></p>
+          <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports natural lubrication and sensitivity<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Helps you feel relaxed and present<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Vegan pectin gummy, blood orange and honey</span></li></ul>
+          <div class="row">
+            <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month, cancel anytime" data-one="one-time">a month, cancel anytime</small></div>
+          </div>
+          <div class="row">
+            <a class="btn" href="#waitlist">Join the waitlist</a>
+            <span class="muted" style="font-size:14.5px">60 gummies. 30-day supply. 30-day money back.</span>
+          </div>
+          <div class="facts">
+            <h3>Supplement Facts</h3>
+            <div class="sv"><span>Serving size</span><b>2 gummies</b></div>
+            <div class="sv"><span>Servings per container</span><b>30</b></div>
+            <table>
+              <thead><tr><th>Amount per serving</th><th></th><th>% Daily Value</th></tr></thead>
+              <tbody><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>30 mg</td><td>†</td></tr><tr><td>Ashwagandha (<i>Withania somnifera</i>) root extract</td><td>600 mg</td><td>†</td></tr></tbody>
+            </table>
+            <p class="fn">† Daily Value not established.</p>
+            <p class="fn"><b>Other ingredients:</b> pectin, cane sugar, tapioca syrup, citric acid, natural flavors, fruit and vegetable juice (color).</p>
+          </div>
+          <p class="muted" style="font-size:14.5px"><b style="color:var(--cream)">Before you start.</b> Adults only. Do not use if you are pregnant, trying to conceive or nursing. Talk to your doctor first if you take medication or have a thyroid, liver or autoimmune condition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">What to expect</p><h2>A ritual that builds.</h2></div>
+      <div class="expect">
+        <div><b>Day 1</b><h3>Start the habit</h3><p class="muted">Two gummies a day, with or without food. Pick a time you will keep.</p></div>
+        <div><b>Weeks 2 to 4</b><h3>Stay with it</h3><p class="muted">These ingredients were studied as daily use. Skipping days works against you.</p></div>
+        <div><b>Weeks 4 to 8</b><h3>The window the studies measured</h3><p class="muted">Check in with yourself and each other. If it is not for you in the first 30 days, we refund your first order.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cross">
+        <div style="display:grid;gap:8px"><span class="tag">Best value</span><h3>Make it Saffra for Two</h3><p class="muted">Add Saffra for him and save on the set.</p></div>
+        <div class="row"><a class="btn ghost" href="#him">See Saffra for him</a><a class="btn" href="#shop">Shop the set</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<main id="v-him">
+  <section class="pdp">
+    <div class="wrap">
+      <p class="crumb"><a href="#shop">Shop</a> / Saffra for him</p>
+      <div class="top">
+        <div class="stage him"><img src="img/bottle-him.webp" width="840" height="1232" alt="Saffra for him jar"></div>
+        <div class="buy">
+          <p class="eyebrow">Daily intimacy gummies</p>
+          <h1>Saffra <i>for him</i></h1>
+          <p class="lead">Fenugreek, the botanical studied in men for desire and vitality, with saffron and a full day of zinc.<sup>*</sup></p>
+          <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports vitality and stamina<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Zinc for normal testosterone and reproductive health<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Vegan pectin gummy, blood orange and honey</span></li></ul>
+          <div class="row">
+            <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month, cancel anytime" data-one="one-time">a month, cancel anytime</small></div>
+          </div>
+          <div class="row">
+            <a class="btn" href="#waitlist">Join the waitlist</a>
+            <span class="muted" style="font-size:14.5px">60 gummies. 30-day supply. 30-day money back.</span>
+          </div>
+          <div class="facts">
+            <h3>Supplement Facts</h3>
+            <div class="sv"><span>Serving size</span><b>2 gummies</b></div>
+            <div class="sv"><span>Servings per container</span><b>30</b></div>
+            <table>
+              <thead><tr><th>Amount per serving</th><th></th><th>% Daily Value</th></tr></thead>
+              <tbody><tr><td>Fenugreek (<i>Trigonella foenum-graecum</i>) seed extract</td><td>600 mg</td><td>†</td></tr><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>30 mg</td><td>†</td></tr><tr><td>Zinc (as zinc citrate)</td><td>11 mg</td><td>100%</td></tr></tbody>
+            </table>
+            <p class="fn">† Daily Value not established.</p>
+            <p class="fn"><b>Other ingredients:</b> pectin, cane sugar, tapioca syrup, citric acid, natural flavors, fruit and vegetable juice (color).</p>
+          </div>
+          <p class="muted" style="font-size:14.5px"><b style="color:var(--cream)">Before you start.</b> Adults only. Talk to your doctor first if you take medication, especially for diabetes or blood thinning, or have a medical condition. Not for people with a peanut, chickpea or other legume allergy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">What to expect</p><h2>A ritual that builds.</h2></div>
+      <div class="expect">
+        <div><b>Day 1</b><h3>Start the habit</h3><p class="muted">Two gummies a day, with or without food. Pick a time you will keep.</p></div>
+        <div><b>Weeks 2 to 4</b><h3>Stay with it</h3><p class="muted">These ingredients were studied as daily use. Skipping days works against you.</p></div>
+        <div><b>Weeks 4 to 8</b><h3>The window the studies measured</h3><p class="muted">Check in with yourself and each other. If it is not for you in the first 30 days, we refund your first order.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cross">
+        <div style="display:grid;gap:8px"><span class="tag">Best value</span><h3>Make it Saffra for Two</h3><p class="muted">Add Saffra for her and save on the set.</p></div>
+        <div class="row"><a class="btn ghost" href="#her">See Saffra for her</a><a class="btn" href="#shop">Shop the set</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<main id="v-science">
+  <section class="pdp sci">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">The science</p>
+        <h1>What the studies <i style="font-style:italic;color:var(--saffron)">tested.</i></h1>
+        <p class="lead muted">Every botanical in Saffra is included at the daily amount used in a placebo-controlled human study. Here is each one, with the paper.</p>
+      </div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Ingredient</th><th>Our dose</th><th>Who was studied</th><th>How long</th><th>Paper</th></tr></thead>
+        <tbody>
+          <tr><td>Saffron</td><td>30 mg a day</td><td>38 women taking an antidepressant</td><td>4 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23280545/">Read on PubMed</a></td></tr>
+          <tr><td>Saffron</td><td>30 mg a day</td><td>36 men taking an antidepressant</td><td>4 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/22552758/">Read on PubMed</a></td></tr>
+          <tr><td>Ashwagandha</td><td>600 mg a day</td><td>80 women with low desire</td><td>8 weeks</td><td><a href="https://www.nutraingredients.com/Article/2022/12/19/ashwagandha-supplements-may-improve-female-sexual-health/">Read the report</a></td></tr>
+          <tr><td>Fenugreek</td><td>600 mg a day</td><td>60 healthy men, 25 to 52</td><td>6 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/21312304/">Read on PubMed</a></td></tr>
+          <tr><td>Fenugreek</td><td>600 mg a day</td><td>120 healthy men, 43 to 70</td><td>12 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26791805/">Read on PubMed</a></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+  <section class="light">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Straight talk</p><h2>What we will not tell you.</h2></div>
+      <div class="honest">
+        <div><h3>That it works in 30 minutes</h3><p class="muted">The studies measured daily use over weeks. So do we.</p></div>
+        <div><h3>That it is proven</h3><p class="muted">These studies are small and some were funded by ingredient makers. They are promising, and we will say when the evidence changes.</p></div>
+        <div><h3>That it treats anything</h3><p class="muted">Saffra is a supplement. If something feels wrong, see your doctor.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="cross">
+        <div style="display:grid;gap:8px"><h3>Tested, then posted.</h3><p class="muted">An independent lab checks every batch. Reports are posted by lot number.</p></div>
+        <div class="row"><a class="btn" href="#shop">Shop Saffra</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="v-about">
+  <section class="pdp about-hero">
+    <div class="wrap">
+      <div style="display:grid;gap:20px">
+        <p class="eyebrow">About us</p>
+        <h1>Made by a couple, <i style="font-style:italic;color:var(--saffron)">for couples.</i></h1>
+        <p class="lead">Saffra is a small Arizona company with one idea: intimacy products should tell you exactly what is inside and promise only what the evidence supports.</p>
+        <p><a class="btn" href="#shop">Shop Saffra</a></p>
+      </div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1549062572-b4280938a25f?auto=format&fit=crop&w=1000&q=75" alt="A smiling man and woman leaning in close" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </section>
+  <section class="light">
+    <div class="wrap letter">
+      <p class="eyebrow">Our story</p>
+      <h2>Why we started.</h2>
+      <p>We are Sarvesh and Daniela. When we looked at what was being sold for intimacy, we found two kinds of product. One kind promised a transformed night in thirty minutes. The other listed a dozen ingredients and would not say how much of any of them was inside.</p>
+      <p>We wanted something we would take ourselves: a short list of ingredients, at the amounts researchers have studied, checked by doctors and tested by a lab that does not work for us.</p>
+      <p>We also wanted it to be for both people. Desire is something couples build together, so we made a formula for her, a formula for him, and a box that holds one of each.</p>
+      <p>Saffra will not fix a relationship, and we will never say it will. It is two gummies and a reason to stop for a moment each day. The rest is up to the two of you.</p>
+      <p class="sig">Sarvesh &amp; Daniela</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">What we stand for</p><h2>Four promises.</h2></div>
+      <div class="vals">
+        <div><h3>Say what is inside</h3><p class="muted">Every amount is on the front of the jar. No blends.</p></div>
+        <div><h3>Use the studied dose</h3><p class="muted">If an ingredient will not fit at the amount researchers tested, we leave it out.</p></div>
+        <div><h3>Show the test</h3><p class="muted">Every batch goes to an independent lab and the report is posted.</p></div>
+        <div><h3>Promise less</h3><p class="muted">Daily support over weeks. No miracle claims.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap duo2">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1556911073-38141963c9e0?auto=format&fit=crop&w=800&q=75" alt="A man and woman cooking together" loading="lazy" onerror="this.remove()"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1466979939565-131c4b39a51b?auto=format&fit=crop&w=800&q=75" alt="A man and woman laughing outdoors" loading="lazy" onerror="this.remove()"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1643471672168-f4a4b6cfa440?auto=format&fit=crop&w=800&q=75" alt="A glass jar of red saffron threads on a table" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">How it is made</p><h2>From formula to jar.</h2></div>
+      <div class="steps">
+        <div><h3>Formulated with doctors</h3><p class="muted">Our medical advisory board reviews each formula, each dose and each warning before anything is made.</p></div>
+        <div><h3>Made in the USA</h3><p class="muted">Produced in a GMP-certified facility, in small runs so jars are fresh.</p></div>
+        <div><h3>Tested before it ships</h3><p class="muted">Nothing leaves until the independent lab report is back and posted.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap"><div class="cross">
+      <div style="display:grid;gap:8px"><h3>Questions for us?</h3><p class="muted">We read everything. Join the waitlist and reply to any email.</p></div>
+      <div class="row"><a class="btn ghost" href="#science">Read the science</a><a class="btn" href="#waitlist">Join the waitlist</a></div>
+    </div></div>
+  </section>
+</main>
+
+<main id="brand">
+  <section>
+    <div class="wrap" style="display:grid;gap:44px">
+      <div class="head" style="margin:0">
+        <p class="eyebrow">Brand kit</p>
+        <h2>Saffra</h2>
+        <p class="muted">The name comes from saffron, the ingredient both formulas share. The three threads on the final letter are saffron stigmas, the part of the flower the spice comes from.</p>
+        <p><a class="btn ghost small" href="#top">Back to the site</a></p>
+      </div>
+      <div class="grid2">
+        <div class="plate" style="background:var(--plum)"><span class="logo">saffra<svg aria-hidden="true"><use href="#threads"/></svg></span></div>
+        <div class="plate" style="background:var(--cream)"><span class="logo on-light">saffra<svg aria-hidden="true"><use href="#threads"/></svg></span></div>
+      </div>
+      <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <div class="icon" aria-label="App icon">s</div>
+        <p class="muted">Icon for social profiles and the site tab: the lowercase s on saffron. Keep clear space around the wordmark equal to the height of the letter a.</p>
+      </div>
+      <div style="display:grid;gap:14px">
+        <h3>Packaging</h3>
+        <img src="img/duo-dark.jpg" width="1600" height="1200" alt="Rendering of the For Her and For Him jars" style="border-radius:var(--r)">
+        <p class="muted">For Her: plum jar, cream label, saffron lid. For Him: slate jar, saffron label, dark lid. Doses sit on the front of both.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom:14px">Color</h3>
+        <div class="swatches">
+          <div class="sw" style="background:#F0A91E;color:#1E1A1D"><b>Saffron</b>#F0A91E</div>
+          <div class="sw" style="background:#2A1429"><b>Night plum</b>#2A1429</div>
+          <div class="sw" style="background:#52304F"><b>Plum</b>#52304F</div>
+          <div class="sw" style="background:#D9573B"><b>Ember</b>#D9573B</div>
+          <div class="sw" style="background:#F6EBDD;color:#1E1A1D"><b>Blush cream</b>#F6EBDD</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:10px">
+        <h3>Type</h3>
+        <div class="spec">Desire, <em>daily.</em></div>
+        <p class="muted">Headlines in Fraunces. Everything else in DM Sans.</p>
+      </div>
+      <div style="display:grid;gap:10px">
+        <h3>Lines</h3>
+        <p>Desire, daily.</p>
+        <p>Make time for each other.</p>
+        <p>A better month, not just a better night.</p>
+        <p>Two a day. For two.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="logo" style="font-size:25px">saffra<svg aria-hidden="true"><use href="#threads"/></svg></span>
+    <p style="display:flex;gap:20px;flex-wrap:wrap;font-size:14px"><a href="#shop">Shop</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#about">About us</a><a href="#questions">Questions</a></p>
+    <p class="fda"><sup>*</sup>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+    <p>For adults 18 and over. Do not use if pregnant or nursing. Consult your doctor before use if you take medication or have a medical condition. Keep out of reach of children.</p>
+    <p>Photography from Unsplash. © 2027 Saffra</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var views=['her','him','science','about','brand'];
+  var mb=document.getElementById('menubtn');
+  function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
+  mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
+  document.getElementById('drawer').addEventListener('click',function(){menu(false);});
+  function route(){
+    var h=location.hash.slice(1), v=views.indexOf(h)>-1?h:'home';
+    document.body.setAttribute('data-view',v); menu(false);
+    if(v!=='home'){window.scrollTo(0,0);}
+    else if(h){var el=document.getElementById(h); if(el) el.scrollIntoView();}
+  }
+  window.addEventListener('hashchange', route); route();
+
+  function setMode(m){
+    document.getElementById('t-sub').setAttribute('aria-pressed', m==='sub');
+    document.getElementById('t-one').setAttribute('aria-pressed', m==='one');
+    document.querySelectorAll('[data-sub]').forEach(function(n){ n.textContent = n.getAttribute('data-'+m); });
+  }
+  document.getElementById('t-sub').addEventListener('click', function(){ setMode('sub'); });
+  document.getElementById('t-one').addEventListener('click', function(){ setMode('one'); });
+
+  function setTab(t){
+    ['her','him'].forEach(function(k){
+      document.getElementById('tab-'+k).setAttribute('aria-selected', k===t);
+      document.getElementById('p-'+k).hidden = k!==t;
+    });
+  }
+  document.getElementById('tab-her').addEventListener('click', function(){ setTab('her'); });
+  document.getElementById('tab-him').addEventListener('click', function(){ setTab('him'); });
+
+  var form = document.getElementById('waitform'), msg = document.getElementById('waitmsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = document.getElementById('email').value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { msg.textContent = 'Enter a valid email address, like you@email.com.'; return; }
+    msg.textContent = 'Staging preview: the form works, but sign-ups are not saved until it is connected to an email list.';
+  });
+})();
+</script>
+</body>
+</html>
