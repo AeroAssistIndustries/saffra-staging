@@ -240,6 +240,7 @@ body.menu-open .drawer{display:block}
 .duo2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
 .duo2 .photo{aspect-ratio:1/1;min-height:0}
 body[data-view="about"] #v-about{display:block}
+@media (max-width:1100px){.vals[style]{grid-template-columns:1fr 1fr!important}}
 @media (max-width:900px){.ings,.vals,.duo2,.rit .wrap,.about-hero .wrap{grid-template-columns:1fr}.rit .stack{position:static}.vals{grid-template-columns:1fr 1fr}.about-hero .photo{aspect-ratio:4/3}}
 
 .reel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 22px 18px;scrollbar-width:thin;scrollbar-color:var(--plum-3) transparent}
@@ -304,6 +305,51 @@ body.scrolled .totop{display:block}
 .legalrow{display:flex;gap:8px 20px;flex-wrap:wrap;font-size:13px}
 .renew{font-size:13px;color:var(--muted);max-width:none}
 body[data-view="accessibility"] #v-accessibility{display:block}
+
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.story .photo,.about-hero .photo,.std .photo{min-height:0}
+details{padding:0}
+summary{padding:18px 0;align-items:center}
+details p{margin:0 0 18px}
+.tag{font-size:12px}
+@media (max-width:900px){
+  .flinks div{gap:0}
+  .flinks a,.legalrow a{display:inline-block;padding:11px 0}
+  .flinks b{padding:6px 0}
+  .legalrow{gap:0 20px}
+  .card .more{display:inline-block;padding:10px 0}
+  .crumb a{display:inline-block;padding:10px 0}
+}
+
+@media (max-width:900px){
+  .formula thead{display:none}
+  .formula table,.formula tbody{display:block}
+  .formula tr{display:grid;grid-template-columns:1fr auto;gap:6px 14px;padding:16px 0;border-top:1px solid #dccdbb;align-items:baseline}
+  .formula td{border:0;padding:0}
+  .formula td:first-child{white-space:normal}
+  .formula td:nth-child(3){grid-column:1/-1}
+}
+@media (max-width:700px){
+  .cmp{min-width:0}
+  .cmp thead{display:none}
+  .cmp,.cmp tbody{display:block}
+  .cmp tr{display:grid;gap:6px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .cmp td{border:0;padding:0}
+  .cmp td:first-child{font-family:var(--display);font-weight:400;font-size:21px}
+  .cmp td:nth-child(2){background:transparent;color:var(--cream)}
+  .cmp td:nth-child(2)::before{content:"Saffra  ";color:var(--saffron);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-right:8px}
+  .cmp td:nth-child(3)::before{content:"Others  ";font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-right:8px}
+}
+
+@media (max-width:700px){
+  .sci table{min-width:0}
+  .sci thead{display:none}
+  .sci table,.sci tbody{display:block}
+  .sci tr{display:grid;gap:4px;padding:16px 0;border-top:1px solid rgba(255,255,255,.12)}
+  .sci td{border:0;padding:0}
+  .sci td:nth-child(2){color:var(--saffron);font-weight:700}
+  .sci td a{display:inline-block;padding:8px 0}
+}
 .cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:900px){
   .menu{display:inline-flex}
@@ -577,7 +623,7 @@ body[data-view="accessibility"] #v-accessibility{display:block}
         <li><svg width="24" height="24"><use href="#check"/></svg><span>Made in the USA in a GMP-certified facility.</span></li>
       </ul>
       <form class="lot" id="lotform" novalidate>
-        <label for="lot" style="position:absolute;left:-9999px">Lot number</label>
+        <label for="lot" class="sr">Lot number</label>
         <input class="field" id="lot" placeholder="Lot number from your jar" autocomplete="off">
         <button class="btn" type="submit">Find the report</button>
       </form>
@@ -638,7 +684,7 @@ body[data-view="accessibility"] #v-accessibility{display:block}
   <div class="wrap">
     <div class="head" style="margin:0;align-content:start"><p class="eyebrow">Questions</p><h2>Good to know.</h2></div>
     <div id="faqlist">
-      <label for="faqq" style="position:absolute;left:-9999px">Search questions</label>
+      <label for="faqq" class="sr">Search questions</label>
       <input class="faqsearch" id="faqq" type="search" placeholder="Search questions">
       <p id="faqnone" hidden>No matching questions. Try a different word.</p>
       <details><summary>How fast does it work?</summary><p>Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use.</p></details>
@@ -661,8 +707,8 @@ body[data-view="accessibility"] #v-accessibility{display:block}
     <h2>Make time for each other.</h2>
     <p class="muted">Join the waitlist for first access and launch pricing.</p>
     <form id="waitform" novalidate>
-      <label for="email" style="position:absolute;left:-9999px">Email address</label>
-      <label for="interest" style="position:absolute;left:-9999px">Which product</label>
+      <label for="email" class="sr">Email address</label>
+      <label for="interest" class="sr">Which product</label>
       <select class="field" id="interest"><option value="">I am interested in...</option><option value="two">Saffra for Two</option><option value="her">Saffra for her</option><option value="him">Saffra for him</option><option value="unsure">Not sure yet</option></select>
       <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
       <button class="btn" type="submit">Join the waitlist</button>
@@ -831,56 +877,103 @@ body[data-view="accessibility"] #v-accessibility{display:block}
     <div class="wrap">
       <div style="display:grid;gap:20px">
         <p class="eyebrow">About us</p>
-        <h1>Made by a couple, <i style="font-style:italic;color:var(--saffron)">for couples.</i></h1>
-        <p class="lead">Saffra is a small Arizona company with one idea: intimacy products should tell you exactly what is inside and promise only what the evidence supports.</p>
-        <p><a class="btn" href="#shop">Shop Saffra</a></p>
+        <h1>It started <i style="font-style:italic;color:var(--saffron)">with us.</i></h1>
+        <p class="lead">Saffra was founded by Sarvesh and Daniela, two people who found something rare with each other and wanted more couples to feel it.</p>
+        <p class="muted">This is the long version of why we are doing this. It takes about four minutes to read.</p>
       </div>
       <div class="photo"><img src="https://images.unsplash.com/photo-1549062572-b4280938a25f?auto=format&fit=crop&w=1000&q=75" alt="A smiling man and woman leaning in close" loading="lazy" onerror="this.remove()"></div>
     </div>
   </section>
+
   <section class="light">
     <div class="wrap letter">
-      <p class="eyebrow">Our story</p>
-      <h2>Why we started.</h2>
-      <p>We are Sarvesh and Daniela. When we looked at what was being sold for intimacy, we found two kinds of product. One kind promised a transformed night in thirty minutes. The other listed a dozen ingredients and would not say how much of any of them was inside.</p>
-      <p>We wanted something we would take ourselves: a short list of ingredients, at the amounts researchers have studied, checked by doctors and tested by a lab that does not work for us.</p>
-      <p>We also wanted it to be for both people. Desire is something couples build together, so we made a formula for her, a formula for him, and a box that holds one of each.</p>
-      <p>Saffra will not fix a relationship, and we will never say it will. It is two gummies and a reason to stop for a moment each day. The rest is up to the two of you.</p>
-      <p class="sig">Sarvesh &amp; Daniela</p>
+      <p class="eyebrow">Chapter one</p>
+      <h2>The feeling.</h2>
+      <p>We will say the obvious part first. We are a couple, and we are close.</p>
+      <p>From early on, what we had was more than attraction. It was attention. We noticed each other. We made time when there was none. We learned that intimacy is mostly small things: a hand on a back in the kitchen, a look across a room, a real question at the end of a long day.</p>
+      <p>Being wanted by someone who truly sees you changes how you move through everything else. You are kinder at work. You are more patient with family. You are braver. We came to believe this feeling is one of the best things two people can give each other, and that it deserves to be looked after like anything else that matters.</p>
     </div>
   </section>
-  <section>
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">What we stand for</p><h2>Four promises.</h2></div>
-      <div class="vals">
-        <div><h3>Say what is inside</h3><p class="muted">Every amount is on the front of the jar. No blends.</p></div>
-        <div><h3>Use the studied dose</h3><p class="muted">If an ingredient will not fit at the amount researchers tested, we leave it out.</p></div>
-        <div><h3>Show the test</h3><p class="muted">Every batch goes to an independent lab and the report is posted.</p></div>
-        <div><h3>Promise less</h3><p class="muted">Daily support over weeks. No miracle claims.</p></div>
-      </div>
+
+  <section class="band-photo" style="padding:88px 0">
+    <div class="wrap"><div class="photo"><img src="https://images.unsplash.com/photo-1514480100661-33506ca03fe7?auto=format&fit=crop&w=1600&q=75" alt="A man kissing a woman on her forehead" loading="lazy" onerror="this.remove()"><span>Intimacy is mostly small things.</span></div></div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap letter">
+      <p class="eyebrow">Chapter two</p>
+      <h2>What we saw around us.</h2>
+      <p>Then we looked around, and we kept hearing the same story from couples in good relationships. We are fine. We are just tired.</p>
+      <p>Work, children, phones, money, stress. Nobody had stopped loving anybody. They had stopped having room. Desire had not gone anywhere. It had been crowded out, a little more each month, until it felt like something that used to happen.</p>
+      <p>That stayed with us. What we had did not feel like luck. It felt like something we chose every day. We started asking what it would take to help other couples choose it too.</p>
     </div>
   </section>
+
   <section style="padding-top:0">
     <div class="wrap duo2">
-      <div class="photo"><img src="https://images.unsplash.com/photo-1556911073-38141963c9e0?auto=format&fit=crop&w=800&q=75" alt="A man and woman cooking together" loading="lazy" onerror="this.remove()"></div>
-      <div class="photo"><img src="https://images.unsplash.com/photo-1466979939565-131c4b39a51b?auto=format&fit=crop&w=800&q=75" alt="A man and woman laughing outdoors" loading="lazy" onerror="this.remove()"></div>
-      <div class="photo"><img src="https://images.unsplash.com/photo-1643471672168-f4a4b6cfa440?auto=format&fit=crop&w=800&q=75" alt="A glass jar of red saffron threads on a table" loading="lazy" onerror="this.remove()"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1604881991405-b273c7a4386a?auto=format&fit=crop&w=800&q=75" alt="A couple sitting at a table with cups of coffee" loading="lazy" onerror="this.remove()"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1513267000941-598abe7be16f?auto=format&fit=crop&w=800&q=75" alt="Two people holding each other's hands" loading="lazy" onerror="this.remove()"></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1758522490155-b338da47f09f?auto=format&fit=crop&w=800&q=75" alt="A couple enjoying drinks by the window" loading="lazy" onerror="this.remove()"></div>
     </div>
   </section>
-  <section style="padding-top:0">
+
+  <section class="light">
+    <div class="wrap letter">
+      <p class="eyebrow">Chapter three</p>
+      <h2>Why a gummy, of all things.</h2>
+      <p>We are not doctors, and a gummy is not a relationship. We want to be clear about that before anything else.</p>
+      <p>But we do believe in rituals. A small thing you do together every day becomes a signal: this matters to us. So we went looking for something we could take ourselves, and we were disappointed by what we found. One kind of product promised a transformed night in thirty minutes. The other listed a dozen ingredients and would not say how much of any of them was inside.</p>
+      <p>We wanted the opposite. A short list of ingredients. The amounts researchers have studied in people. A label that tells you everything. And a promise small enough to be true.</p>
+      <p>Nobody was making that, so we decided to.</p>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap">
-      <div class="head"><p class="eyebrow">How it is made</p><h2>From formula to jar.</h2></div>
+      <div class="head"><p class="eyebrow">Chapter four</p><h2>How we are building it.</h2><p class="muted">Slowly, and with people who know more than we do.</p></div>
       <div class="steps">
-        <div><h3>Formulated with doctors</h3><p class="muted">Our medical advisory board reviews each formula, each dose and each warning before anything is made.</p></div>
-        <div><h3>Made in the USA</h3><p class="muted">Produced in a GMP-certified facility, in small runs so jars are fresh.</p></div>
-        <div><h3>Tested before it ships</h3><p class="muted">Nothing leaves until the independent lab report is back and posted.</p></div>
+        <div><h3>With doctors</h3><p class="muted">A medical advisory board in men's health, women's health and pharmacy reviews every formula, dose and warning before anything is made.</p></div>
+        <div><h3>With real doses</h3><p class="muted">If an ingredient will not fit in two gummies at the amount researchers tested, we leave it out. That is why the list is short.</p></div>
+        <div><h3>With open results</h3><p class="muted">Every batch goes to an independent lab. The report is posted by lot number, so you can check your own jar.</p></div>
       </div>
     </div>
   </section>
+
   <section style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">What we believe</p><h2>Five things we hold to.</h2></div>
+      <div class="vals" style="grid-template-columns:repeat(5,1fr)">
+        <div><h3>Desire is built</h3><p class="muted">It is something two people make, on purpose, over time.</p></div>
+        <div><h3>Both people count</h3><p class="muted">So there is one for her, one for him, and a box for two.</p></div>
+        <div><h3>Honesty is attractive</h3><p class="muted">Every amount on the label. No blends. No miracle claims.</p></div>
+        <div><h3>Small beats dramatic</h3><p class="muted">A better month matters more than one big night.</p></div>
+        <div><h3>The gummy is the easy part</h3><p class="muted">Time and attention do the real work. We just give you a reason to start.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-photo" style="padding:0 0 88px">
+    <div class="wrap"><div class="photo"><img src="https://images.unsplash.com/photo-1556911073-38141963c9e0?auto=format&fit=crop&w=1600&q=75" alt="A man and woman cooking together" loading="lazy" onerror="this.remove()"><span>A reason to stop for a moment, together.</span></div></div>
+  </section>
+
+  <section class="light">
+    <div class="wrap letter">
+      <p class="eyebrow">Chapter five</p>
+      <h2>What Saffra is not.</h2>
+      <p>It is not a fix for a relationship that is hurting. It is not a treatment for a medical problem. If something feels wrong in your body, please see your doctor, and if something feels wrong between you, please talk to each other or to someone trained to help.</p>
+      <p>It will not work in thirty minutes. The research behind our ingredients looked at daily use over weeks, and that is the only promise we are willing to make.</p>
+      <h2 style="margin-top:22px">A note to you.</h2>
+      <p>If you are reading this with someone in mind, that is already the point. You are thinking about them. Tell them. Take two gummies if you like, put your phones in another room, and ask each other one real question tonight.</p>
+      <p>We made Saffra because what we share has made our lives better, and we think more people deserve to feel that. Thank you for being here.</p>
+      <p class="sig">Sarvesh &amp; Daniela</p>
+      <p class="muted" style="font-size:15px">Founders, Saffra. Arizona.</p>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap"><div class="cross">
-      <div style="display:grid;gap:8px"><h3>Questions for us?</h3><p class="muted">We read everything. Join the waitlist and reply to any email.</p></div>
-      <div class="row"><a class="btn ghost" href="#science">Read the science</a><a class="btn" href="#waitlist">Join the waitlist</a></div>
+      <div style="display:grid;gap:8px"><h3>Start your own ritual.</h3><p class="muted">Find the formula for each of you in about a minute.</p></div>
+      <div class="row"><a class="btn ghost" href="#science">Read the science</a><a class="btn" href="#quiz">Find your formula</a></div>
     </div></div>
   </section>
 </main>
