@@ -562,6 +562,22 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
 .light .marks li{color:var(--ink)}
 @media (max-width:1100px){.marks{grid-template-columns:repeat(5,1fr);row-gap:22px}}
 @media (max-width:600px){.marks{grid-template-columns:repeat(3,1fr)}.marks li{font-size:12px}}
+
+body[data-view="creators"] #v-creators{display:block}
+.perks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.perk{border:1px solid rgba(255,255,255,.1);background:var(--plum-2);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
+.perk b{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.15}
+.perk span{color:var(--muted);font-size:14.5px}
+.perk i{font-style:normal;font-family:var(--display);font-size:30px;background:var(--line);-webkit-background-clip:text;background-clip:text;color:transparent}
+.noreviews{border-radius:var(--r);padding:34px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;border:1px solid transparent;background:linear-gradient(120deg,#231022,#3a1b3f) padding-box,var(--line) border-box}
+.noreviews ol{margin:0;padding-left:20px;display:grid;gap:8px;color:var(--muted)}
+.tldr{border-left:3px solid transparent;border-image:linear-gradient(180deg,var(--violet),var(--ruby)) 1;background:rgba(147,51,234,.12);padding:16px 18px;border-radius:0 12px 12px 0;margin:0 0 22px}
+.tldr b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:4px}
+.byline{font-size:14px;color:var(--muted);margin:-8px 0 18px}
+.consent{font-size:12.5px;color:var(--muted);max-width:520px}
+@media (max-width:1100px){.perks{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.noreviews{grid-template-columns:1fr;padding:24px}}
+@media (max-width:520px){.perks{grid-template-columns:1fr}}
 </style>
 </head>
 <body data-view="home">
@@ -600,7 +616,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     </nav>
   </div>
   <div class="drawer" id="drawer">
-    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#play">Play</a><a href="#journal">Journal</a><a href="#ask">Ask us</a><a href="#about">About us</a><a href="#brand">Brand kit</a>
+    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#play">Play</a><a href="#journal">Journal</a><a href="#ask">Ask us</a><a href="#about">About us</a><a href="#creators">Creators</a><a href="#brand">Brand kit</a>
   </div>
 </header>
 
@@ -670,7 +686,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
   </div>
 </section>
 
-<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
+<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg1" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg1)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg1)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
 <section id="shop" style="padding-top:24px">
   <div class="wrap">
     <div class="shop-head">
@@ -721,6 +737,18 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
   </div>
 </section>
 
+<section id="perks" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Subscriber perks</p><h2>Monthly, on your terms.</h2></div>
+    <div class="perks">
+      <div class="perk"><i>18%</i><b>Lower price</b><span>$36 a month against $44 one-time.</span></div>
+      <div class="perk"><i>$0</i><b>Free US shipping</b><span>On every order, no minimum.</span></div>
+      <div class="perk"><i>2</i><b>Clicks to cancel</b><span>Skip a month or stop anytime from your account.</span></div>
+      <div class="perk"><i>1</i><b>Reminder first</b><span>We email you before every renewal.</span></div>
+      <div class="perk"><i>30</i><b>Days to decide</b><span>Money back on your first order if it is not for you.</span></div>
+    </div>
+  </div>
+</section>
 <section style="padding-top:0">
   <div class="wrap"><div class="quizcta">
     <div style="display:grid;gap:8px"><p class="eyebrow" style="color:var(--gold-ink)">One minute</p><h3 style="font-size:30px">Not sure which one? Take the quiz.</h3><p class="muted">Five questions. Your answers stay on your device.</p></div>
@@ -810,7 +838,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
   </div>
 </section>
 
-<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
+<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg2" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg2)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg2)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
 <section id="doctors" style="padding-top:24px">
   <div class="wrap">
     <div class="head">
@@ -861,6 +889,21 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
   </div>
 </section>
 
+<section id="reviews" style="padding-top:0">
+  <div class="wrap"><div class="noreviews">
+    <div style="display:grid;gap:12px">
+      <p class="eyebrow">Reviews</p>
+      <h2>No reviews yet. We will not fake them.</h2>
+      <p class="muted">Saffra has not launched, so nobody has tried it. When they have, every review here will come from a verified order, including the unimpressed ones.</p>
+    </div>
+    <div style="display:grid;gap:12px">
+      <h3>Be a founding tester</h3>
+      <ol><li>Join the waitlist.</li><li>Get first access at launch pricing.</li><li>Take it for 30 days and tell us the truth.</li></ol>
+      <p><a class="btn" href="#waitlist">Join the waitlist</a></p>
+    </div>
+  </div></div>
+</section>
+
 <section id="compare" style="padding-top:0">
   <div class="wrap">
     <div class="head"><p class="eyebrow">How we compare</p><h2>Read the back of the jar.</h2></div>
@@ -878,7 +921,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
   </div>
 </section>
 
-<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
+<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg3" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg3)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg3)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
 <section id="more" style="padding-top:24px">
   <div class="wrap">
     <div class="head"><p class="eyebrow">More than a gummy</p><h2>Come for the ritual. Stay to play.</h2><p class="muted">Free things to do together, whether or not you ever buy a jar.</p></div>
@@ -944,6 +987,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
       <button class="btn" type="submit">Join the waitlist</button>
     </form>
     <p id="waitmsg" role="status"></p>
+    <p class="consent">By joining you agree to receive emails from Saffra. Unsubscribe anytime. See our <a href="#privacy">privacy policy</a>.</p>
   </div>
 </section>
 </main>
@@ -1281,6 +1325,8 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
 <h2>Who we share it with</h2>
 <p>Only the companies that help us run the store: our store platform, payment processor, shipping carriers, and email and support tools. They may use your information only to provide those services.</p>
 <p>We do not sell your personal information. We do not share it for targeted advertising, and we do not use what you buy from us to target ads about your health.</p>
+<h2>Consumer health data</h2>
+<p>Some of what you share with a wellness brand can count as consumer health data under state laws such as Washington's My Health My Data Act. We collect it only to provide what you asked for, we never sell it, and we ask for your consent before using it for anything else. You can withdraw consent or ask us to delete it at any time.</p>
 <h2>Your choices</h2>
 <p>You can ask us to show you, correct or delete the personal information we hold about you, and you can opt out of marketing at any time. Depending on your state, you may have further rights, including the right to appeal a decision. We will not treat you differently for using them.</p>
 <h2>How long we keep it</h2>
@@ -1406,6 +1452,8 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     <p class="crumb"><a href="#journal">Journal</a> / Relationships</p>
     <p class="eyebrow">Relationships</p>
     <h1>We are fine. We are just tired.</h1>
+    <p class="byline">By the Saffra team. Medical review by our advisory board before launch.</p>
+    <div class="tldr"><b>The short answer</b>Good couples drift because time and attention run out, not love. Protect twenty minutes, go to bed together, touch without an agenda, and say the tired part out loud.</div>
     <div class="photo"><img src="https://images.unsplash.com/photo-1758522490155-b338da47f09f?auto=format&fit=crop&w=1400&q=75" alt="A couple enjoying drinks by the window" loading="lazy" onerror="this.remove()"></div>
     
 <p>Ask a couple in a good relationship how things are and you will often hear the same answer. We are fine. We are just tired.</p>
@@ -1431,6 +1479,8 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     <p class="crumb"><a href="#journal">Journal</a> / Know your supplement</p>
     <p class="eyebrow">Know your supplement</p>
     <h1>How to read a supplement label in 60 seconds</h1>
+    <p class="byline">By the Saffra team. Medical review by our advisory board before launch.</p>
+    <div class="tldr"><b>The short answer</b>Avoid blends, compare each amount with a study, look for the plant part and extract, ask who tested it, and be wary of big promises.</div>
     <div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=75" alt="Roots and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div>
     
 <p>Most supplement labels are designed to be glanced at, not read. Here is how to read one properly in about a minute, whoever made it.</p>
@@ -1457,6 +1507,8 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     <p class="crumb"><a href="#journal">Journal</a> / Rituals</p>
     <p class="eyebrow">Rituals</p>
     <h1>The ten-minute evening</h1>
+    <p class="byline">By the Saffra team. Medical review by our advisory board before launch.</p>
+    <div class="tldr"><b>The short answer</b>Phones away, three sentences each about your day, one real question, one specific thank-you, one quiet minute. Ten minutes, most nights.</div>
     <div class="photo"><img src="https://images.unsplash.com/photo-1604881991405-b273c7a4386a?auto=format&fit=crop&w=1400&q=75" alt="A couple sitting at a table with cups" loading="lazy" onerror="this.remove()"></div>
     
 <p>Big gestures are lovely and rare. What changes a relationship is what happens on an ordinary Tuesday. This is a ten-minute routine you can start tonight.</p>
@@ -1481,6 +1533,8 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     <p class="crumb"><a href="#journal">Journal</a> / Rituals</p>
     <p class="eyebrow">Rituals</p>
     <h1>Morning and evening: how to make it stick</h1>
+    <p class="byline">By the Saffra team. Medical review by our advisory board before launch.</p>
+    <div class="tldr"><b>The short answer</b>Pair each gummy with something you already do, keep the jar in sight, take them together, never double up, and give it a month.</div>
     <div class="photo"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=1400&q=75" alt="Two people holding mugs across a table" loading="lazy" onerror="this.remove()"></div>
     
 <p>The hardest part of any daily supplement is remembering it on day nineteen. Here is how to make two gummies a day automatic.</p>
@@ -1504,6 +1558,8 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     <p class="crumb"><a href="#journal">Journal</a> / Ingredients</p>
     <p class="eyebrow">Ingredients</p>
     <h1>Saffron: the red thread</h1>
+    <p class="byline">By the Saffra team. Medical review by our advisory board before launch.</p>
+    <div class="tldr"><b>The short answer</b>Saffron is the hand-picked stigma of the crocus flower. Standardized extracts have been studied mostly for mood and sleep, at about 30 mg a day.</div>
     <div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=1400&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div>
     
 <p>Our name comes from saffron, and it is in every jar we make. Here is what it is and why we chose it.</p>
@@ -1515,6 +1571,8 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
 <p>Because saffron is so costly, it is one of the most commonly faked spices. A good extract names the plant part, is standardized to its active compounds, and comes with a lab report. We use 30 mg a day and print that number on the front of the jar.</p>
 <h2>What it will not do</h2>
 <p>Saffron is not a drug and it does not work in an evening. The trials measured daily use over weeks. You can see the studies, including the ones that found nothing, on our <a href="#science" style="color:var(--saffron)">science page</a>.</p>
+<h2>Sources</h2>
+<ul><li><a style="color:var(--saffron)" href="https://www.nutritionaloutlook.com/view/saffron-supplement-studied-for-effect-on-mild-depression-symptoms">12-week mood trial, 202 adults, 28 mg a day</a></li><li><a style="color:var(--saffron)" href="https://pubmed.ncbi.nlm.nih.gov/31516855/">Review of saffron trials on sexual function in men and women</a></li><li><a style="color:var(--saffron)" href="https://pubmed.ncbi.nlm.nih.gov/20520621/">A trial in 346 men that found no benefit</a></li></ul>
 
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
@@ -1599,6 +1657,33 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
   </section>
 </main>
 
+<main id="v-creators">
+  <section class="pdp">
+    <div class="wrap" style="max-width:860px">
+      <div class="head"><p class="eyebrow">Creators</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Work <i style="font-style:italic;color:var(--saffron)">with us.</i></h1><p class="lead muted">We partner with couples, creators and health professionals who talk honestly about intimacy and relationships.</p></div>
+      <div class="steps">
+        <div><h3>Try it first</h3><p class="muted">Every partner takes Saffra for at least 30 days before posting anything.</p></div>
+        <div><h3>Say what is true</h3><p class="muted">Your own experience, in your own words. No scripts, no medical claims, no promised results.</p></div>
+        <div><h3>Always disclosed</h3><p class="muted">Every post is clearly marked as a paid partnership, at the start.</p></div>
+      </div>
+      <div class="head" style="margin:44px 0 16px"><h2>What partners get.</h2></div>
+      <ul class="ticks" style="list-style:none;padding:0;margin:0;display:grid;gap:10px">
+        <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>Product for you and your partner</span></li>
+        <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>A personal code for your audience, with commission on orders</span></li>
+        <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>Paid content projects and early access to new products</span></li>
+      </ul>
+      <div class="head" style="margin:44px 0 16px"><h2>Apply.</h2></div>
+      <form class="askform" id="creatorform" novalidate>
+        <label class="sr" for="cname">Name</label><input class="field" id="cname" placeholder="Your name" autocomplete="name">
+        <label class="sr" for="chandle">Social handle or link</label><input class="field" id="chandle" placeholder="Your main social handle or link">
+        <label class="sr" for="cwhy">Why Saffra</label><textarea id="cwhy" placeholder="Tell us a little about what you make"></textarea>
+        <div><button class="btn" type="submit">Send application</button></div>
+        <p id="creatormsg" role="status" style="min-height:1.5em;color:var(--saffron);font-size:15px"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
 <main id="brand">
   <section>
     <div class="wrap" style="display:grid;gap:44px">
@@ -1654,7 +1739,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     <div class="flinks">
       <div><b>Shop</b><a href="#her">For her</a><a href="#him">For him</a><a href="#shop">For two</a><a href="#quiz">Find your formula</a></div>
       <div><b>Learn</b><a href="#science">Science</a><a href="#about">About us</a><a href="#ask">Ask us</a></div>
-      <div><b>Lifestyle</b><a href="#play">Games for two</a><a href="#journal">Journal</a><a href="#journal">Podcast</a></div>
+      <div><b>Lifestyle</b><a href="#play">Games for two</a><a href="#journal">Journal</a><a href="#journal">Podcast</a><a href="#creators">Creators</a></div>
       <div><b>Help</b><a href="#shipping">Shipping and returns</a><a href="#privacy">Privacy policy</a><a href="#brand">Brand kit</a></div>
     </div>
     <p class="fda"><sup>*</sup>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
@@ -1679,7 +1764,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
 
 <script>
 (function(){
-  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','brand'];
+  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','creators','brand'];
   var mb=document.getElementById('menubtn');
   function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
   mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
@@ -1844,6 +1929,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
   document.getElementById('dreset').addEventListener('click',function(){var m=document.getElementById('dmsg');
     if(!armed){armed=true; this.textContent='Tap again to clear all 30 days'; return;}
     armed=false; this.textContent='Start a new month'; D=[]; dsave(); daysEl.querySelectorAll('.day').forEach(function(b){b.setAttribute('aria-pressed','false');}); dstats(); m.textContent='Cleared.';});
+  document.getElementById('creatorform').addEventListener('submit',function(e){e.preventDefault();var ok=document.getElementById('cname').value.trim()&&document.getElementById('chandle').value.trim();document.getElementById('creatormsg').textContent=ok?'Staging preview: applications are not being sent yet.':'Add your name and a social handle or link.';});
   /* ask */
   document.getElementById('askform').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('askq').value.trim();document.getElementById('askmsg').textContent=v?'Staging preview: questions are not being sent yet.':'Type a question first.';});
 

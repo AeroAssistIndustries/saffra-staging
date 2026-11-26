@@ -15,6 +15,7 @@ Static staging site for Saffra daily intimacy gummies (working name).
 | Games for two | https://aeroassistindustries.github.io/saffra-staging/#play |
 | Journal and podcast preview | https://aeroassistindustries.github.io/saffra-staging/#journal |
 | Ask us | https://aeroassistindustries.github.io/saffra-staging/#ask |
+| Creators | https://aeroassistindustries.github.io/saffra-staging/#creators |
 | Science | https://aeroassistindustries.github.io/saffra-staging/#science |
 | About us | https://aeroassistindustries.github.io/saffra-staging/#about |
 | Shipping and returns | https://aeroassistindustries.github.io/saffra-staging/#shipping |
@@ -38,3 +39,4 @@ The live site is served from the `gh-pages` branch. Push `main` to `gh-pages` to
 - The lot lookup has no reports until the first batch ships.
 - The Ask us form does not send questions.
 - The podcast has no episodes yet.
+- The Creators application form does not send.
