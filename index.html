@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saffra Staging Site</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F0A91E'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Georgia,serif' font-size='46' fill='%232A1429'%3Es%3C/text%3E%3C/svg%3E">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2A1429">
+<meta property="og:title" content="Saffra. Desire, daily.">
+<meta property="og:description" content="Daily intimacy gummies for her and for him, with every dose on the label.">
+<meta property="og:image" content="img/duo-dark.jpg">
+<meta property="og:type" content="website">
+<link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="description" content="Daily intimacy gummies for her and for him, made with ingredients at the doses used in human studies.">
 <style>
 @font-face{font-family:"Fraunces";src:url("fonts/fraunces-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
@@ -20,7 +28,7 @@
   --cream:#F6EBDD;
   --muted:#C9B4C2;
   --ink:#1E1A1D;
-  --gold-ink:#96610a;
+  --gold-ink:#855407;
   --display:"Fraunces","Iowan Old Style",Georgia,serif;
   --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
   --r:22px;
@@ -371,6 +379,9 @@ details p{margin:0 0 18px}
 .two .twobody{padding:32px;display:grid;gap:22px;align-content:center}
 .two h3{font-size:32px}
 @media (max-width:900px){.two{grid-template-columns:1fr}.two .twobody{padding:22px}}
+
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--cream);color:var(--ink);padding:10px 16px;border-radius:10px;font-weight:700}
+.skip:focus{top:12px}
 .cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:900px){
   .menu{display:inline-flex}
@@ -418,6 +429,7 @@ details p{margin:0 0 18px}
   <symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="none" stroke="#F0A91E" stroke-width="1.5"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#F0A91E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
+<a class="skip" href="#top">Skip to content</a>
 <div class="bar">Launching 2027. <a href="#waitlist">Join the waitlist</a> for first access and launch pricing.</div>
 <header class="nav">
   <div class="wrap">
@@ -589,7 +601,7 @@ details p{margin:0 0 18px}
       <h2>A ritual that builds.</h2>
     </div>
     <div class="steps">
-      <div><h3>Two a day, each</h3><p class="muted">Take two gummies daily, with or without food. Take them together when you can.</p></div>
+      <div><h3>Two a day, each</h3><p class="muted">One in the morning and one in the evening, with or without food. Take them together when you can.</p></div>
       <div><h3>Give it four to eight weeks</h3><p class="muted">The studies behind these ingredients measured daily use over weeks, so stay with it.</p></div>
       <div><h3>Not for you? Money back</h3><p class="muted">Try it for 30 days. If you are not happy, we refund your first order.</p></div>
     </div>
@@ -711,7 +723,7 @@ details p{margin:0 0 18px}
       <label for="faqq" class="sr">Search questions</label>
       <input class="faqsearch" id="faqq" type="search" placeholder="Search questions">
       <p id="faqnone" hidden>No matching questions. Try a different word.</p>
-      <details><summary>How fast does it work?</summary><p>Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use.</p></details>
+      <details><summary>How fast does it work?</summary><p>Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening.</p></details>
       <details><summary>What is the difference between the two?</summary><p>They share one core: saffron and fenugreek, each studied in women and in men. For Him adds a full day of zinc. Each jar is labeled and dosed for the person taking it.</p></details>
       <details><summary>Who should not take it?</summary><p>Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions.</p></details>
       <details><summary>What does lab tested mean?</summary><p>An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar.</p></details>
@@ -784,7 +796,7 @@ details p{margin:0 0 18px}
     <div class="wrap">
       <div class="head"><p class="eyebrow">What to expect</p><h2>A ritual that builds.</h2></div>
       <div class="expect">
-        <div><b>Day 1</b><h3>Start the habit</h3><p class="muted">Two gummies a day, with or without food. Pick a time you will keep.</p></div>
+        <div><b>Day 1</b><h3>Start the habit</h3><p class="muted">One gummy in the morning and one in the evening, with or without food. Pick times you will keep.</p></div>
         <div><b>Weeks 2 to 4</b><h3>Stay with it</h3><p class="muted">These ingredients were studied as daily use. Skipping days works against you.</p></div>
         <div><b>Weeks 4 to 8</b><h3>The window the studies measured</h3><p class="muted">Check in with yourself and each other. If it is not for you in the first 30 days, we refund your first order.</p></div>
       </div>
@@ -841,7 +853,7 @@ details p{margin:0 0 18px}
     <div class="wrap">
       <div class="head"><p class="eyebrow">What to expect</p><h2>A ritual that builds.</h2></div>
       <div class="expect">
-        <div><b>Day 1</b><h3>Start the habit</h3><p class="muted">Two gummies a day, with or without food. Pick a time you will keep.</p></div>
+        <div><b>Day 1</b><h3>Start the habit</h3><p class="muted">One gummy in the morning and one in the evening, with or without food. Pick times you will keep.</p></div>
         <div><b>Weeks 2 to 4</b><h3>Stay with it</h3><p class="muted">These ingredients were studied as daily use. Skipping days works against you.</p></div>
         <div><b>Weeks 4 to 8</b><h3>The window the studies measured</h3><p class="muted">Check in with yourself and each other. If it is not for you in the first 30 days, we refund your first order.</p></div>
       </div>
@@ -1247,6 +1259,7 @@ details p{margin:0 0 18px}
       document.getElementById('p-'+k).hidden = k!==t;
     });
   }
+  ['her','him'].forEach(function(k,i,arr){document.getElementById('tab-'+k).addEventListener('keydown',function(e){ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var o=arr[1-i]; setTab(o); document.getElementById('tab-'+o).focus();} });});
   document.getElementById('tab-her').addEventListener('click', function(){ setTab('her'); });
   document.getElementById('tab-him').addEventListener('click', function(){ setTab('him'); });
 
@@ -1295,7 +1308,7 @@ details p{margin:0 0 18px}
     if(f.indexOf('legume')>-1) notes+='<p class="note"><b>Allergy note.</b> Saffra contains fenugreek, a legume. It is not suitable for anyone with a peanut, chickpea or other legume allergy.</p>';
     var imgs=jars.map(function(j){return '<img src="img/bottle-'+j+'.webp" alt="Saffra for '+j+' jar" width="840" height="1232">';}).join('');
     qb.innerHTML='<div class="result"><p class="eyebrow" style="color:var(--gold-ink)">Your match</p><h2>'+esc(name)+'</h2><div class="jars">'+imgs+'</div><p style="font-family:var(--display);font-size:30px">'+price+'</p><p class="muted">'+esc(why)+'</p>'+notes+
-      '<p class="muted">Two gummies a day, each. Give it four to eight weeks.<sup>*</sup></p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn dark" href="#waitlist" data-int="'+(both?'two':A.form)+'">Join the waitlist</a>'+
+      '<p class="muted">One gummy morning and evening, each. Give it four to eight weeks.<sup>*</sup></p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn dark" href="#waitlist" data-int="'+(both?'two':A.form)+'">Join the waitlist</a>'+
       (both?'':'<a class="btn ghost" style="color:var(--ink);border-color:#cdbba6" href="#'+A.form+'">See the details</a>')+'<button type="button" class="btn ghost" style="color:var(--ink);border-color:#cdbba6" id="qagain">Start over</button></div></div>';
     document.getElementById('qagain').addEventListener('click',function(){A={};qi=0;draw();});
   }
