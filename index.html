@@ -220,7 +220,10 @@ body.menu-open .drawer{display:block}
 .honest{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .honest div{border-top:2px solid var(--gold-ink);padding-top:16px;display:grid;gap:8px;align-content:start}
 
-.ings{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ings{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.only{display:inline-block;font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink);border:1px solid currentColor;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+.formula td:first-child{white-space:normal}
+@media (max-width:1100px){.ings{grid-template-columns:1fr 1fr}}
 .ing2{display:grid;gap:14px;align-content:start}
 .ing2 .photo{aspect-ratio:4/3;min-height:0}
 .ing2 small{color:var(--saffron);font-weight:650;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
@@ -284,7 +287,7 @@ body[data-view="about"] #v-about{display:block}
 .legal p+p{margin-top:12px}
 .legal ul{margin:10px 0 0;padding-left:20px;display:grid;gap:6px}
 .legal a{color:var(--saffron)}
-.flinks{display:grid;grid-template-columns:repeat(3,auto);gap:10px 44px;justify-content:start;font-size:14px}
+.flinks{display:grid;grid-template-columns:repeat(4,auto);gap:10px 44px;justify-content:start;font-size:14px}
 .flinks div{display:grid;gap:8px;align-content:start}
 .flinks b{color:var(--cream);font-weight:600}
 .flinks a{text-decoration:none}.flinks a:hover{text-decoration:underline}
@@ -382,6 +385,58 @@ details p{margin:0 0 18px}
 
 .skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--cream);color:var(--ink);padding:10px 16px;border-radius:10px;font-weight:700}
 .skip:focus{top:12px}
+
+body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-view="ask"] #v-ask,body[data-view="read-tired"] #v-read-tired,body[data-view="read-label"] #v-read-label,body[data-view="read-ritual"] #v-read-ritual{display:block}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tile{display:grid;gap:10px;align-content:start;text-decoration:none;border:1px solid rgba(255,255,255,.1);background:var(--plum-2);border-radius:var(--r);padding:26px;transition:border-color .15s,transform .15s}
+.tile:hover{border-color:var(--saffron);transform:translateY(-2px)}
+.tile .n{font-family:var(--display);font-style:italic;color:var(--saffron);font-size:18px}
+.tile .go{color:var(--saffron);font-weight:700;font-size:14.5px;margin-top:4px}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.post{display:grid;gap:12px;align-content:start;text-decoration:none}
+.post .photo{aspect-ratio:4/3;min-height:0}
+.post small{color:var(--saffron);font-weight:650;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+.post:hover h3{text-decoration:underline;text-underline-offset:4px}
+.article{max-width:720px}
+.article h1{font-size:clamp(36px,5.6vw,60px);margin:10px 0 18px}
+.article h2{font-size:28px;margin:30px 0 10px}
+.article p,.article li{font-size:18.5px;max-width:none;color:#eadfe6}
+.article p+p{margin-top:14px}
+.article ol,.article ul{margin:12px 0 0;padding-left:22px;display:grid;gap:8px}
+.article .photo{aspect-ratio:16/9;min-height:0;margin:8px 0 26px}
+.pod{border-radius:var(--r);background:linear-gradient(120deg,#1b0c1a,#3B1F3A 55%,#6a3a2a);border:1px solid rgba(255,255,255,.1);padding:34px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.pod .cover{width:150px;height:150px;border-radius:22px;background:radial-gradient(circle at 30% 25%,#ffcf66,#F0A91E 45%,#9c5a06);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-size:30px;color:var(--plum);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.pod ul{margin:6px 0 0;padding-left:20px;color:var(--muted);display:grid;gap:4px}
+.gtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.gtabs button{font:inherit;font-weight:600;font-size:15px;border:1px solid rgba(255,255,255,.22);background:transparent;color:var(--cream);padding:11px 20px;border-radius:999px;cursor:pointer;min-height:44px}
+.gtabs button[aria-selected="true"]{background:var(--saffron);color:var(--ink);border-color:var(--saffron)}
+.game{max-width:640px;display:grid;gap:20px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:inherit;font-size:14.5px;font-weight:600;border:1px solid rgba(255,255,255,.22);background:transparent;color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;min-height:42px}
+.chip[aria-pressed="true"]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.deckcard{min-height:250px;border-radius:26px;padding:32px;display:grid;align-content:space-between;gap:20px;background:linear-gradient(150deg,#f8e6c6,#F6EBDD 55%,#efcf9a);color:var(--ink);box-shadow:0 24px 50px rgba(0,0,0,.4)}
+.deckcard small{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--gold-ink)}
+.deckcard p{font-family:var(--display);font-size:clamp(24px,4.4vw,34px);line-height:1.15;max-width:none}
+.deckcard span{font-size:14px;color:#66525f}
+.score{display:flex;gap:14px}
+.score div{flex:1;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px;text-align:center}
+.score b{display:block;font-family:var(--display);font-weight:400;font-size:34px;color:var(--saffron)}
+.qa-cat{display:grid;gap:0;margin-bottom:34px}
+.qa-cat h3{margin-bottom:8px;color:var(--saffron)}
+.dark details{border-top:1px solid rgba(255,255,255,.14)}
+.dark details:last-of-type{border-bottom:1px solid rgba(255,255,255,.14)}
+.dark summary::after{color:var(--saffron)}
+.dark details p{color:var(--muted)}
+.askform{display:grid;gap:10px;max-width:560px}
+.askform textarea{border-radius:18px;border:1px solid var(--plum-3);background:var(--plum);color:var(--cream);font:inherit;padding:14px 18px;min-height:110px;resize:vertical}
+#askmsg{min-height:1.5em;color:var(--saffron);font-size:15px}
+@media (max-width:900px){.tiles{grid-template-columns:1fr 1fr}.posts{grid-template-columns:1fr}.pod{grid-template-columns:1fr}.pod .cover{width:110px;height:110px;font-size:22px}}
+@media (max-width:520px){.tiles{grid-template-columns:1fr}}
+
+.only{font-size:12px}
+.pdp .top>*{min-width:0}
+.facts{max-width:100%}
+.facts td:nth-child(2){white-space:normal;text-align:right}
 .cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:900px){
   .menu{display:inline-flex}
@@ -436,17 +491,16 @@ details p{margin:0 0 18px}
     <a class="logo" href="#top" aria-label="Saffra home">saffra<svg aria-hidden="true"><use href="#threads"/></svg></a>
     <nav>
       <a class="hide-s" href="#shop">Shop</a>
-      <a class="hide-s" href="#her">For her</a>
-      <a class="hide-s" href="#him">For him</a>
       <a class="hide-s" href="#science">Science</a>
+      <a class="hide-s" href="#journal">Journal</a>
+      <a class="hide-s" href="#play">Play</a>
       <a class="hide-s" href="#about">About</a>
-      <a href="#brand" id="brandlink">Brand kit</a>
       <a class="btn small" href="#waitlist">Join the waitlist</a>
       <button class="menu" type="button" id="menubtn" aria-label="Open menu" aria-expanded="false"><span></span></button>
     </nav>
   </div>
   <div class="drawer" id="drawer">
-    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#about">About us</a><a href="#doctors">Doctors</a><a href="#questions">Questions</a><a href="#brand">Brand kit</a>
+    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#play">Play</a><a href="#journal">Journal</a><a href="#ask">Ask us</a><a href="#about">About us</a><a href="#brand">Brand kit</a>
   </div>
 </header>
 
@@ -457,7 +511,7 @@ details p{margin:0 0 18px}
     <div class="copy">
       <p class="eyebrow">Daily intimacy gummies, for her and for him</p>
       <h1>Desire, <em>daily.</em></h1>
-      <p class="lead">Two gummies a day, made with ingredients at the doses used in human studies. One formula for her, one for him, and a set for the two of you.<sup>*</sup></p>
+      <p class="lead">Seven ingredients in two gummies a day, with every dose on the label. One formula for her, one for him, and a set for the two of you.<sup>*</sup></p>
       <div class="cta">
         <a class="btn" href="#shop">Shop the set</a>
         <a class="btn ghost" href="#quiz">Find your formula</a>
@@ -518,7 +572,7 @@ details p{margin:0 0 18px}
         <img src="img/bottle-her.webp" width="840" height="1232" alt="Saffra For Her jar">
         <div class="info">
           <h3>Saffra <i>for her</i></h3>
-          <ul><li>Saffron extract <b>28 mg</b></li><li>Fenugreek seed extract <b>600 mg</b></li></ul>
+          <ul><li>Saffron extract <b>30 mg</b></li><li>Fenugreek seed extract <b>600 mg</b></li><li>L-theanine, B6, folate, B12, D3 <b>+5</b></li></ul>
           <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month" data-one="one-time">a month</small></div>
           <div class="acts"><a class="btn small" href="#waitlist">Join the waitlist</a><a class="more" href="#her">View details</a></div>
         </div>
@@ -527,7 +581,7 @@ details p{margin:0 0 18px}
         <img src="img/bottle-him.webp" width="840" height="1232" alt="Saffra For Him jar">
         <div class="info">
           <h3>Saffra <i>for him</i></h3>
-          <ul><li>Saffron extract <b>28 mg</b></li><li>Fenugreek seed extract <b>600 mg</b></li><li>Zinc <b>11 mg</b></li></ul>
+          <ul><li>Saffron extract <b>30 mg</b></li><li>Fenugreek seed extract <b>600 mg</b></li><li>Zinc, selenium, vitamin E, B12, D3 <b>+5</b></li></ul>
           <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month" data-one="one-time">a month</small></div>
           <div class="acts"><a class="btn small" href="#waitlist">Join the waitlist</a><a class="more" href="#him">View details</a></div>
         </div>
@@ -562,8 +616,8 @@ details p{margin:0 0 18px}
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">What's inside</p>
-      <h2>Fewer ingredients. <em>Full doses.</em></h2>
-      <p class="muted">One shared core, tuned for each of you. Every botanical is included at the daily amount researchers gave people in placebo-controlled studies. Amounts are per day, in two gummies: one in the morning, one in the evening.</p>
+      <h2>Seven ingredients. <em>Every dose shown.</em></h2>
+      <p class="muted">Four ingredients are shared and three are chosen for each of you. The botanicals are included at amounts researchers gave people in studies, and the vitamins and minerals at sensible daily amounts. Amounts are per day, in two gummies: one in the morning, one in the evening.</p>
     </div>
     <div class="tabs" role="tablist">
       <button type="button" role="tab" id="tab-her" aria-selected="true" aria-controls="p-her">For her</button>
@@ -573,8 +627,13 @@ details p{margin:0 0 18px}
       <div class="tablewrap"><table>
         <thead><tr><th>Ingredient</th><th>Per day</th><th>What it supports<sup>*</sup></th></tr></thead>
         <tbody>
-          <tr><td>Saffron extract</td><td>28 mg</td><td>A positive mood, restful sleep and desire. The branded extract we use was studied at this dose in trials of up to 202 adults.</td></tr>
+          <tr><td>Saffron extract</td><td>30 mg</td><td>A positive mood and desire. Studied at 28 to 30 mg a day.</td></tr>
           <tr><td>Fenugreek seed extract</td><td>600 mg</td><td>Desire and arousal. Studied at this dose in 80 women over eight weeks.</td></tr>
+          <tr><td>L-theanine <span class=only>Only in For Her</span></td><td>200 mg</td><td>Feeling calm and present. Studied at this dose for stress and sleep.</td></tr>
+          <tr><td>Vitamin B6 <span class=only>Only in For Her</span></td><td>5 mg</td><td>Energy metabolism and normal hormone activity.</td></tr>
+          <tr><td>Folate <span class=only>Only in For Her</span></td><td>400 mcg DFE</td><td>Healthy cells and blood. A daily essential for women.</td></tr>
+          <tr><td>Vitamin B12</td><td>25 mcg</td><td>Energy metabolism, and helps reduce tiredness.</td></tr>
+          <tr><td>Vitamin D3</td><td>25 mcg</td><td>Mood, muscles and immune health.</td></tr>
         </tbody>
       </table></div>
       <div class="pic"><img src="img/bottle-her.webp" width="840" height="1232" alt="" loading="lazy"></div>
@@ -583,9 +642,13 @@ details p{margin:0 0 18px}
       <div class="tablewrap"><table>
         <thead><tr><th>Ingredient</th><th>Per day</th><th>What it supports<sup>*</sup></th></tr></thead>
         <tbody>
-          <tr><td>Saffron extract</td><td>28 mg</td><td>A positive mood, restful sleep and desire. The branded extract we use was studied at this dose in trials of up to 202 adults.</td></tr>
+          <tr><td>Saffron extract</td><td>30 mg</td><td>A positive mood and desire. Studied at 28 to 30 mg a day.</td></tr>
           <tr><td>Fenugreek seed extract</td><td>600 mg</td><td>Desire, arousal and vitality. Studied at this dose in men for six to twelve weeks.</td></tr>
-          <tr><td>Zinc</td><td>11 mg</td><td>Normal testosterone and reproductive health. 100% of the daily value.</td></tr>
+          <tr><td>Zinc <span class=only>Only in For Him</span></td><td>11 mg</td><td>Normal testosterone and reproductive health.</td></tr>
+          <tr><td>Selenium <span class=only>Only in For Him</span></td><td>55 mcg</td><td>Normal sperm production, and protects cells.</td></tr>
+          <tr><td>Vitamin E <span class=only>Only in For Him</span></td><td>15 mg</td><td>Protects cells from oxidative stress.</td></tr>
+          <tr><td>Vitamin B12</td><td>25 mcg</td><td>Energy metabolism, and helps reduce tiredness.</td></tr>
+          <tr><td>Vitamin D3</td><td>25 mcg</td><td>Mood, muscles and immune health.</td></tr>
         </tbody>
       </table></div>
       <div class="pic"><img src="img/bottle-him.webp" width="840" height="1232" alt="" loading="lazy"></div>
@@ -619,13 +682,14 @@ details p{margin:0 0 18px}
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">Meet the ingredients</p>
-      <h2>A short list, chosen on purpose.</h2>
-      <p class="muted">Two plants with placebo-controlled human studies at the dose we use, and one essential mineral.</p>
+      <h2>Seven ingredients, chosen on purpose.</h2>
+      <p class="muted">Both formulas share saffron, fenugreek, vitamin B12 and vitamin D3. Three more are chosen for her, and three for him.</p>
     </div>
     <div class="ings">
-      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=900&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div><small>In both formulas</small><h3>Saffron</h3><p class="muted">The dried red threads of the crocus flower, picked by hand, and the world's most expensive spice. We use a branded extract that is standardized and has its own clinical trials.</p></div>
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=900&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div><small>In both formulas</small><h3>Saffron</h3><p class="muted">The dried red threads of the crocus flower, picked by hand, and the world's most expensive spice. We use a standardized extract at 30 mg a day.</p></div>
       <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=900&q=75" alt="Spoons filled with ground spices and seeds" loading="lazy" onerror="this.remove()"></div><small>In both formulas</small><h3>Fenugreek</h3><p class="muted">A seed found in kitchens from India to the Mediterranean. Its extract has been studied in women and in men for desire and arousal.</p></div>
-      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=75" alt="Minerals and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div><small>For him</small><h3>Zinc</h3><p class="muted">An essential mineral that supports normal testosterone and reproductive health. For Him carries a full day's worth.</p></div>
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&w=900&q=75" alt="A clear glass mug of tea with green leaves" loading="lazy" onerror="this.remove()"></div><small>For her</small><h3>L-theanine</h3><p class="muted">The calming compound in green tea. For Her also carries B6 and folate.</p></div>
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=75" alt="Minerals and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div><small>For him</small><h3>Zinc and selenium</h3><p class="muted">Two essential minerals for normal testosterone and reproductive health. For Him also carries vitamin E.</p></div>
     </div>
   </div>
 </section>
@@ -687,13 +751,25 @@ details p{margin:0 0 18px}
       <thead><tr><th></th><th>Saffra</th><th>Many libido gummies</th></tr></thead>
       <tbody>
         <tr><td>Doses</td><td>Every amount on the front label</td><td>Often a blend with no amounts</td></tr>
-        <tr><td>Amounts</td><td>Matched to human studies</td><td>Often a fraction of the studied dose</td></tr>
+        <tr><td>Amounts</td><td>Botanicals matched to human studies</td><td>Often a fraction of the studied dose</td></tr>
         <tr><td>Who formulated it</td><td>A named medical advisory board</td><td>Usually not stated</td></tr>
         <tr><td>Testing</td><td>Every batch, report posted by lot</td><td>Rarely published</td></tr>
         <tr><td>Promise</td><td>Daily support over weeks</td><td>Results in minutes</td></tr>
         <tr><td>Made for</td><td>Her, him, and the two of you</td><td>Usually one or the other</td></tr>
       </tbody>
     </table></div>
+  </div>
+</section>
+
+<section id="more" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">More than a gummy</p><h2>Come for the ritual. Stay to play.</h2><p class="muted">Free things to do together, whether or not you ever buy a jar.</p></div>
+    <div class="tiles">
+      <a class="tile" href="#play"><span class="n">Play</span><h3>Games for two</h3><p class="muted">A question deck, a date night spinner and a how-well-do-you-know-me game.</p><span class="go">Play now</span></a>
+      <a class="tile" href="#journal"><span class="n">Read</span><h3>The Journal</h3><p class="muted">Short, honest reads on desire, rituals and how to read a supplement label.</p><span class="go">Read the Journal</span></a>
+      <a class="tile" href="#ask"><span class="n">Ask</span><h3>Questions, answered</h3><p class="muted">Plain answers about the product, safety and making time for each other.</p><span class="go">See the answers</span></a>
+      <a class="tile" href="#journal"><span class="n">Listen</span><h3>Podcast, coming 2027</h3><p class="muted">Conversations with doctors, therapists and real couples.</p><span class="go">See what is planned</span></a>
+    </div>
   </div>
 </section>
 
@@ -724,7 +800,7 @@ details p{margin:0 0 18px}
       <input class="faqsearch" id="faqq" type="search" placeholder="Search questions">
       <p id="faqnone" hidden>No matching questions. Try a different word.</p>
       <details><summary>How fast does it work?</summary><p>Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening.</p></details>
-      <details><summary>What is the difference between the two?</summary><p>They share one core: saffron and fenugreek, each studied in women and in men. For Him adds a full day of zinc. Each jar is labeled and dosed for the person taking it.</p></details>
+      <details><summary>What is the difference between the two?</summary><p>Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E.</p></details>
       <details><summary>Who should not take it?</summary><p>Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions.</p></details>
       <details><summary>What does lab tested mean?</summary><p>An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar.</p></details>
       <details><summary>Should we both take the same one?</summary><p>No. Each of you takes your own formula. The For Two set has one jar of each.</p></details>
@@ -763,8 +839,8 @@ details p{margin:0 0 18px}
         <div class="buy">
           <p class="eyebrow">Daily intimacy gummies</p>
           <h1>Saffra <i>for her</i></h1>
-          <p class="lead">Saffron for mood and desire, with fenugreek, studied in women for desire and arousal.<sup>*</sup></p>
-          <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports natural lubrication and sensitivity<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports a positive mood and restful sleep<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Vegan pectin gummy, blood orange and honey</span></li></ul>
+          <p class="lead">Seven ingredients for her: saffron and fenugreek for mood and desire, L-theanine for calm, and four daily vitamins.<sup>*</sup></p>
+          <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Helps you feel calm and present<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports a positive mood and restful sleep<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>With B6, folate, B12 and D3 for daily energy<sup>*</sup></span></li></ul>
           <div class="row">
             <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month, cancel anytime" data-one="one-time">a month, cancel anytime</small></div>
           </div>
@@ -778,7 +854,7 @@ details p{margin:0 0 18px}
             <div class="sv"><span>Servings per container</span><b>30</b></div>
             <table>
               <thead><tr><th>Amount per serving</th><th></th><th>% Daily Value</th></tr></thead>
-              <tbody><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>28 mg</td><td>†</td></tr><tr><td>Fenugreek (<i>Trigonella foenum-graecum</i>) seed extract</td><td>600 mg</td><td>†</td></tr></tbody>
+              <tbody><tr><td>Vitamin D3 (as cholecalciferol)</td><td>25 mcg</td><td>125%</td></tr><tr><td>Vitamin B6 (as pyridoxal 5-phosphate)</td><td>5 mg</td><td>294%</td></tr><tr><td>Folate (as L-5-methylfolate)</td><td>400 mcg DFE</td><td>100%</td></tr><tr><td>Vitamin B12 (as methylcobalamin)</td><td>25 mcg</td><td>1,042%</td></tr><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>30 mg</td><td>†</td></tr><tr><td>Fenugreek (<i>Trigonella foenum-graecum</i>) seed extract</td><td>600 mg</td><td>†</td></tr><tr><td>L-theanine</td><td>200 mg</td><td>†</td></tr></tbody>
             </table>
             <p class="fn">† Daily Value not established.</p>
             <p class="fn"><b>Other ingredients:</b> pectin, cane sugar, tapioca syrup, citric acid, natural flavors, fruit and vegetable juice (color).</p>
@@ -820,8 +896,8 @@ details p{margin:0 0 18px}
         <div class="buy">
           <p class="eyebrow">Daily intimacy gummies</p>
           <h1>Saffra <i>for him</i></h1>
-          <p class="lead">Saffron for mood and desire, fenugreek studied in men for desire and vitality, and a full day of zinc.<sup>*</sup></p>
-          <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports vitality and stamina<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Zinc for normal testosterone and reproductive health<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Vegan pectin gummy, blood orange and honey</span></li></ul>
+          <p class="lead">Seven ingredients for him: saffron and fenugreek for mood, desire and vitality, plus zinc, selenium and three daily vitamins.<sup>*</sup></p>
+          <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports vitality and stamina<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Zinc and selenium for normal testosterone and reproductive health<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>With vitamin E, B12 and D3 for daily energy<sup>*</sup></span></li></ul>
           <div class="row">
             <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month, cancel anytime" data-one="one-time">a month, cancel anytime</small></div>
           </div>
@@ -835,7 +911,7 @@ details p{margin:0 0 18px}
             <div class="sv"><span>Servings per container</span><b>30</b></div>
             <table>
               <thead><tr><th>Amount per serving</th><th></th><th>% Daily Value</th></tr></thead>
-              <tbody><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>28 mg</td><td>†</td></tr><tr><td>Fenugreek (<i>Trigonella foenum-graecum</i>) seed extract</td><td>600 mg</td><td>†</td></tr><tr><td>Zinc (as zinc citrate)</td><td>11 mg</td><td>100%</td></tr></tbody>
+              <tbody><tr><td>Vitamin D3 (as cholecalciferol)</td><td>25 mcg</td><td>125%</td></tr><tr><td>Vitamin E (as d-alpha tocopherol)</td><td>15 mg</td><td>100%</td></tr><tr><td>Vitamin B12 (as methylcobalamin)</td><td>25 mcg</td><td>1,042%</td></tr><tr><td>Zinc (as zinc citrate)</td><td>11 mg</td><td>100%</td></tr><tr><td>Selenium (as selenomethionine)</td><td>55 mcg</td><td>100%</td></tr><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>30 mg</td><td>†</td></tr><tr><td>Fenugreek (<i>Trigonella foenum-graecum</i>) seed extract</td><td>600 mg</td><td>†</td></tr></tbody>
             </table>
             <p class="fn">† Daily Value not established.</p>
             <p class="fn"><b>Other ingredients:</b> pectin, cane sugar, tapioca syrup, citric acid, natural flavors, fruit and vegetable juice (color).</p>
@@ -874,7 +950,7 @@ details p{margin:0 0 18px}
       <div class="head">
         <p class="eyebrow">The science</p>
         <h1>What the studies <i style="font-style:italic;color:var(--saffron)">tested.</i></h1>
-        <p class="lead muted">Every botanical in Saffra is included at the daily amount used in placebo-controlled human studies. Here is each one, with the paper.</p>
+        <p class="lead muted">The botanicals and L-theanine in Saffra are included at amounts used in placebo-controlled human studies. Here is each one, with the paper.</p>
       </div>
       <div class="tablewrap"><table>
         <thead><tr><th>Ingredient</th><th>Dose studied</th><th>Who was studied</th><th>How long</th><th>Paper</th></tr></thead>
@@ -882,6 +958,7 @@ details p{margin:0 0 18px}
           <tr><td>Saffron</td><td>28 mg a day</td><td>202 adults with low mood</td><td>12 weeks</td><td><a href="https://www.nutritionaloutlook.com/view/saffron-supplement-studied-for-effect-on-mild-depression-symptoms">Read the report</a></td></tr>
           <tr><td>Saffron</td><td>28 mg a day</td><td>86 women aged 50 to 70</td><td>12 weeks</td><td><a href="https://www.contemporaryobgyn.net/view/saffron-extract-linked-to-mood-and-sleep-gains-in-menopausal-women-in-rct">Read the report</a></td></tr>
           <tr><td>Saffron</td><td>30 mg a day</td><td>38 women taking an antidepressant</td><td>4 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23280545/">Read on PubMed</a></td></tr>
+          <tr><td>L-theanine</td><td>200 mg a day</td><td>30 healthy adults</td><td>4 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31623400/">Read on PubMed</a></td></tr>
           <tr><td>Fenugreek</td><td>600 mg a day</td><td>80 women with low desire</td><td>8 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25914334/">Read on PubMed</a></td></tr>
           <tr><td>Fenugreek</td><td>600 mg a day</td><td>60 healthy men, 25 to 52</td><td>6 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/21312304/">Read on PubMed</a></td></tr>
           <tr><td>Fenugreek</td><td>600 mg a day</td><td>120 healthy men, 43 to 70</td><td>12 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26791805/">Read on PubMed</a></td></tr>
@@ -891,11 +968,27 @@ details p{margin:0 0 18px}
   </section>
     <section style="padding-top:0">
     <div class="wrap">
+      <div class="head"><p class="eyebrow">Vitamins and minerals</p><h2>The daily essentials.</h2><p class="muted">These are included at sensible daily amounts to support energy, mood and reproductive health. They are not proven to raise desire on their own, and we do not claim they do.</p></div>
+      <div class="tablewrap"><table class="cmp">
+        <thead><tr><th>Nutrient</th><th>Amount and daily value</th><th>In which jar</th></tr></thead>
+        <tbody>
+          <tr><td>Vitamin B12</td><td>25 mcg, 1,042%</td><td>Both</td></tr>
+          <tr><td>Vitamin D3</td><td>25 mcg, 125%</td><td>Both</td></tr>
+          <tr><td>Vitamin B6</td><td>5 mg, 294%</td><td>For Her</td></tr>
+          <tr><td>Folate</td><td>400 mcg DFE, 100%</td><td>For Her</td></tr>
+          <tr><td>Zinc</td><td>11 mg, 100%</td><td>For Him</td></tr>
+          <tr><td>Selenium</td><td>55 mcg, 100%</td><td>For Him</td></tr>
+          <tr><td>Vitamin E</td><td>15 mg, 100%</td><td>For Him</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
       <div class="head"><p class="eyebrow">What we left out</p><h2>Popular is not the same as right.</h2><p class="muted">Some of the best-known ingredients in this aisle did not make it into the jar. Here is why.</p></div>
       <div class="tablewrap"><table class="cmp">
         <thead><tr><th>Ingredient</th><th>Why it is not in Saffra</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td>Ashwagandha</td><td>Rare cases of liver injury have been reported, and Denmark and France have banned it in supplements.</td><td><a href="https://mobil.bfr.bund.de/cm/349/ashwagandha-food-supplements-with-potential-health-risks.pdf">German risk institute</a></td></tr>
           <tr><td>Tongkat ali</td><td>European food safety reviewers concluded its safety has not been established.</td><td><a href="https://efsa.europa.eu/en/efsajournal/pub/6937">EFSA opinion</a></td></tr>
           <tr><td>L-citrulline and maca</td><td>The amounts studied are measured in grams and will not fit in two gummies.</td><td><a href="#about">Our dose rule</a></td></tr>
           <tr><td>Yohimbine and hormones</td><td>Not appropriate for a daily wellness product.</td><td></td></tr>
@@ -974,7 +1067,7 @@ details p{margin:0 0 18px}
       <h2>Why a gummy, of all things.</h2>
       <p>We are not doctors, and a gummy is not a relationship. We want to be clear about that before anything else.</p>
       <p>But we do believe in rituals. A small thing you do together every day becomes a signal: this matters to us. So we went looking for something we could take ourselves, and we were disappointed by what we found. One kind of product promised a transformed night in thirty minutes. The other listed a dozen ingredients and would not say how much of any of them was inside.</p>
-      <p>We wanted the opposite. A short list of ingredients. The amounts researchers have studied in people. A label that tells you everything. And a promise small enough to be true.</p>
+      <p>We wanted the opposite. A focused list of ingredients. The amounts researchers have studied in people. A label that tells you everything. And a promise small enough to be true.</p>
       <p>Nobody was making that, so we decided to.</p>
     </div>
   </section>
@@ -984,7 +1077,7 @@ details p{margin:0 0 18px}
       <div class="head"><p class="eyebrow">Chapter four</p><h2>How we are building it.</h2><p class="muted">Slowly, and with people who know more than we do.</p></div>
       <div class="steps">
         <div><h3>With doctors</h3><p class="muted">A medical advisory board in men's health, women's health and pharmacy reviews every formula, dose and warning before anything is made.</p></div>
-        <div><h3>With real doses</h3><p class="muted">If an ingredient will not fit in two gummies at the amount researchers tested, we leave it out. That is why the list is short.</p></div>
+        <div><h3>With real doses</h3><p class="muted">If an ingredient will not fit in two gummies at the amount researchers tested, we leave it out. That is why you will not find a dozen trendy herbs here.</p></div>
         <div><h3>With open results</h3><p class="muted">Every batch goes to an independent lab. The report is posted by lot number, so you can check your own jar.</p></div>
       </div>
     </div>
@@ -1152,6 +1245,176 @@ details p{margin:0 0 18px}
   </div></section>
 </main>
 
+<main id="v-journal">
+  <section class="pdp">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">The Journal</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Notes on staying <i style="font-style:italic;color:var(--saffron)">close.</i></h1><p class="lead muted">Short, honest reads. No miracle claims, no ten-step programs.</p></div>
+      <div class="posts">
+        <a class="post" href="#read-tired"><div class="photo"><img src="https://images.unsplash.com/photo-1758522490155-b338da47f09f?auto=format&fit=crop&w=900&q=75" alt="A couple enjoying drinks by the window" loading="lazy" onerror="this.remove()"></div><small>Relationships · 3 min</small><h3>We are fine. We are just tired.</h3><p class="muted">Why desire gets crowded out in good relationships, and four small ways to make room.</p></a>
+        <a class="post" href="#read-label"><div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=75" alt="Roots and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div><small>Know your supplement · 2 min</small><h3>How to read a supplement label in 60 seconds</h3><p class="muted">Six checks that work on any brand, including ours.</p></a>
+        <a class="post" href="#read-ritual"><div class="photo"><img src="https://images.unsplash.com/photo-1604881991405-b273c7a4386a?auto=format&fit=crop&w=900&q=75" alt="A couple sitting at a table with cups" loading="lazy" onerror="this.remove()"></div><small>Rituals · 2 min</small><h3>The ten-minute evening</h3><p class="muted">A routine for an ordinary Tuesday that you can start tonight.</p></a>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap"><div class="pod">
+      <div class="cover">closer</div>
+      <div style="display:grid;gap:10px">
+        <p class="eyebrow">Podcast · coming 2027</p>
+        <h2>Closer, a podcast from Saffra.</h2>
+        <p class="muted">Honest conversations about desire, long relationships and the science of feeling good together. No episodes are out yet. Here is what we are planning:</p>
+        <ul><li>A urologist and an OB-GYN answer the questions people are embarrassed to ask</li><li>A couples therapist on why good couples drift</li><li>Real couples on what brought them back</li><li>A formulator on what is really inside supplements</li></ul>
+        <p><a class="btn small" href="#waitlist">Tell me when it launches</a></p>
+      </div>
+    </div></div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap"><div class="cross">
+      <div style="display:grid;gap:8px"><h3>Would you rather play than read?</h3><p class="muted">Three free games for two.</p></div>
+      <div class="row"><a class="btn" href="#play">Open the games</a></div>
+    </div></div>
+  </section>
+</main>
+
+<main id="v-read-tired">
+  <section class="pdp"><div class="wrap article">
+    <p class="crumb"><a href="#journal">Journal</a> / Relationships</p>
+    <p class="eyebrow">Relationships</p>
+    <h1>We are fine. We are just tired.</h1>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1758522490155-b338da47f09f?auto=format&fit=crop&w=1400&q=75" alt="A couple enjoying drinks by the window" loading="lazy" onerror="this.remove()"></div>
+    
+<p>Ask a couple in a good relationship how things are and you will often hear the same answer. We are fine. We are just tired.</p>
+<p>Nothing is broken. Nobody stopped loving anybody. What happened is quieter than that. Work got bigger, the house got louder, the phones came to bed, and the part of the day that used to belong to the two of you slowly filled with everything else.</p>
+<h2>Desire needs room</h2>
+<p>Desire rarely survives on leftovers. It tends to show up when there is a little energy, a little attention and a little time with nothing else in it. When all three run out, it does not die. It waits.</p>
+<h2>Four small things that make room</h2>
+<ol>
+<li><b>Protect twenty minutes.</b> Same time, most days. No screens, no logistics.</li>
+<li><b>Go to bed together.</b> Even twice a week. Falling asleep at different times is one of the quietest ways couples drift.</li>
+<li><b>Touch without an agenda.</b> A hand on a shoulder, a longer hug at the door. Small touch through the day makes closeness at night feel less like a leap.</li>
+<li><b>Say the tired part out loud.</b> "I miss you and I am exhausted" is a much better sentence than silence.</li>
+</ol>
+<p>None of this needs a product. If a daily gummy helps you remember to stop for a moment together, good. The stopping is what counts.</p>
+<p>If the distance feels bigger than tiredness, or sex is painful or worrying, talk to a doctor or a couples therapist. That is what they are for.</p>
+
+    <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
+  </div></section>
+</main>
+
+<main id="v-read-label">
+  <section class="pdp"><div class="wrap article">
+    <p class="crumb"><a href="#journal">Journal</a> / Know your supplement</p>
+    <p class="eyebrow">Know your supplement</p>
+    <h1>How to read a supplement label in 60 seconds</h1>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=75" alt="Roots and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div>
+    
+<p>Most supplement labels are designed to be glanced at, not read. Here is how to read one properly in about a minute, whoever made it.</p>
+<h2>1. Look for the word "blend"</h2>
+<p>A "proprietary blend" lists ingredients but gives one total weight for all of them. You cannot tell if you are getting a useful amount of anything. If the label will not tell you the dose, assume it is small.</p>
+<h2>2. Check each amount against a study</h2>
+<p>An ingredient studied at 600 mg a day does very little at 50 mg. Search the ingredient name with the word "trial" and compare the numbers.</p>
+<h2>3. Look for the plant part and the extract</h2>
+<p>Good labels name the part of the plant, such as root, seed or stigma, and say what the extract is standardized to. Vague labels say "herb powder".</p>
+<h2>4. Ask who tested it</h2>
+<p>A brand testing its own product is not much of a test. Look for an independent lab and a report you can actually see for your batch.</p>
+<h2>5. Read the promise</h2>
+<p>Supplements can say they support normal body function. They cannot say they treat or cure anything. Words like "works in minutes" or "clinically proven" on a product that has never been in a trial are a warning sign.</p>
+<h2>6. Read the warnings</h2>
+<p>A careful brand tells you who should not take the product. No warnings at all usually means nobody thought about it.</p>
+<p>We built Saffra to pass this test. Hold us to it.</p>
+
+    <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
+  </div></section>
+</main>
+
+<main id="v-read-ritual">
+  <section class="pdp"><div class="wrap article">
+    <p class="crumb"><a href="#journal">Journal</a> / Rituals</p>
+    <p class="eyebrow">Rituals</p>
+    <h1>The ten-minute evening</h1>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1604881991405-b273c7a4386a?auto=format&fit=crop&w=1400&q=75" alt="A couple sitting at a table with cups" loading="lazy" onerror="this.remove()"></div>
+    
+<p>Big gestures are lovely and rare. What changes a relationship is what happens on an ordinary Tuesday. This is a ten-minute routine you can start tonight.</p>
+<h2>Minute 1: phones away</h2>
+<p>Another room is best. Face down on the table does not count.</p>
+<h2>Minutes 2 to 4: the day, in three sentences each</h2>
+<p>One good thing, one hard thing, one thing you are looking forward to. No fixing, no advice. Just listen.</p>
+<h2>Minutes 5 to 7: one real question</h2>
+<p>Ask something you do not know the answer to. If you are stuck, our <a href="#play" style="color:var(--saffron)">question deck</a> has plenty.</p>
+<h2>Minutes 8 to 9: thank you</h2>
+<p>Name one specific thing the other person did today. "Thank you for handling the school run" lands better than "thanks for everything".</p>
+<h2>Minute 10: stay close</h2>
+<p>Sit near each other for one more minute without talking. It feels strange for about four days. Then it becomes the part you look forward to.</p>
+<p>That is the whole ritual. Ten minutes, most nights, for a month. See what changes.</p>
+
+    <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
+  </div></section>
+</main>
+
+<main id="v-play">
+  <section class="pdp">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Play</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Games <i style="font-style:italic;color:var(--saffron)">for two.</i></h1><p class="lead muted">Free, no sign-up, nothing saved. Best played side by side with one phone between you.</p></div>
+      <div class="gtabs" role="tablist" aria-label="Games">
+        <button type="button" role="tab" id="g-deck" aria-selected="true">Question deck</button>
+        <button type="button" role="tab" id="g-spin" aria-selected="false">Date night spinner</button>
+        <button type="button" role="tab" id="g-know" aria-selected="false">Know me</button>
+      </div>
+
+      <div class="game" id="game-deck">
+        <p class="muted">Take turns. Read the card out loud, answer it, then pass the phone.</p>
+        <div class="chips" role="group" aria-label="Level">
+          <button type="button" class="chip" data-lv="light" aria-pressed="true">Light</button>
+          <button type="button" class="chip" data-lv="deeper" aria-pressed="false">Deeper</button>
+          <button type="button" class="chip" data-lv="closer" aria-pressed="false">Closer</button>
+        </div>
+        <div class="deckcard" aria-live="polite"><small id="decklv">Light</small><p id="deckq"></p><span id="deckn"></span></div>
+        <div class="row"><button type="button" class="btn" id="decknext">Next card</button></div>
+      </div>
+
+      <div class="game" id="game-spin" hidden>
+        <p class="muted">Cannot decide what to do tonight? Pick where and how long, then spin.</p>
+        <div class="chips" role="group" aria-label="Where">
+          <button type="button" class="chip" data-where="home" aria-pressed="true">At home</button>
+          <button type="button" class="chip" data-where="out" aria-pressed="false">Going out</button>
+        </div>
+        <div class="chips" role="group" aria-label="How long">
+          <button type="button" class="chip" data-len="short" aria-pressed="true">30 minutes</button>
+          <button type="button" class="chip" data-len="long" aria-pressed="false">A whole evening</button>
+        </div>
+        <div class="deckcard" aria-live="polite"><small>Tonight</small><p id="spinq">Press spin.</p><span id="spinn"></span></div>
+        <div class="row"><button type="button" class="btn" id="spinbtn">Spin</button></div>
+      </div>
+
+      <div class="game" id="game-know" hidden>
+        <p class="muted">One of you answers about the other. The other says if it is right. Then swap. Eight rounds.</p>
+        <div class="score"><div><b id="k1">0</b>Player one</div><div><b id="k2">0</b>Player two</div></div>
+        <div class="deckcard" aria-live="polite"><small id="kturn">Player one answers</small><p id="kq"></p><span id="kn"></span></div>
+        <div class="row" id="kbtns"><button type="button" class="btn" id="kyes">They got it right</button><button type="button" class="btn ghost" id="kno">Not quite</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="v-ask">
+  <section class="pdp dark">
+    <div class="wrap" style="max-width:860px">
+      <div class="head"><p class="eyebrow">Ask us</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Questions, <i style="font-style:italic;color:var(--saffron)">answered.</i></h1><p class="lead muted">Plain answers. If yours is not here, send it and we will add it.</p></div>
+      <div class="qa-cat"><h3>The product</h3><details><summary>What is in Saffra?</summary><p>Seven ingredients in each formula. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E. Every amount is on the label.</p></details><details><summary>Why two formulas?</summary><p>The core is the same because the research on saffron and fenugreek covers women and men. The three extras are chosen for each.</p></details><details><summary>Why gummies and not capsules?</summary><p>Because a ritual you enjoy is one you keep. The trade-off is space, which is why we only include ingredients that fit at a useful amount.</p></details></div>
+      <div class="qa-cat"><h3>Taking it</h3><details><summary>When should I take it?</summary><p>One gummy in the morning and one in the evening, with or without food.</p></details><details><summary>How long until I notice anything?</summary><p>Give it four to eight weeks of daily use. That is what the studies measured. Some people notice nothing, which is why the first order has a 30-day money-back guarantee.</p></details><details><summary>What if I miss a day?</summary><p>Carry on the next day. Do not double up.</p></details></div>
+      <div class="qa-cat"><h3>Safety</h3><details><summary>Who should not take it?</summary><p>Anyone under 18, anyone pregnant, trying to conceive or nursing, and anyone with a peanut, chickpea or other legume allergy. If you take medication or have a medical condition, check with your doctor first.</p></details><details><summary>Can I take it with my multivitamin?</summary><p>Check the totals. Saffra already contains vitamins B12 and D3, plus B6 and folate in For Her, or zinc, selenium and vitamin E in For Him. Your pharmacist can tell you in a minute if the combined amounts are fine.</p></details><details><summary>Is it a treatment for low libido or erectile problems?</summary><p>No. Saffra is a dietary supplement. If something is worrying you, please see a doctor.</p></details></div>
+      <div class="qa-cat"><h3>The two of you</h3><details><summary>My partner is not interested in trying this. What now?</summary><p>Do not push. Try one of the free games or the ten-minute evening instead. The gummy is the least important part.</p></details><details><summary>We have not been close in a long time. Where do we start?</summary><p>Small. Go to bed at the same time twice this week, and ask one real question each night. If the distance feels heavy, a couples therapist is a good next step, not a last resort.</p></details></div>
+      <div class="head" style="margin:20px 0 16px"><h2>Ask your own.</h2></div>
+      <form class="askform" id="askform" novalidate>
+        <label class="sr" for="askq">Your question</label>
+        <textarea id="askq" placeholder="Type your question"></textarea>
+        <div><button class="btn" type="submit">Send question</button></div>
+        <p id="askmsg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
 <main id="brand">
   <section>
     <div class="wrap" style="display:grid;gap:44px">
@@ -1206,8 +1469,9 @@ details p{margin:0 0 18px}
     <span class="logo" style="font-size:25px">saffra<svg aria-hidden="true"><use href="#threads"/></svg></span>
     <div class="flinks">
       <div><b>Shop</b><a href="#her">For her</a><a href="#him">For him</a><a href="#shop">For two</a><a href="#quiz">Find your formula</a></div>
-      <div><b>Learn</b><a href="#science">Science</a><a href="#about">About us</a><a href="#questions">Questions</a></div>
-      <div><b>Help</b><a href="#shipping">Shipping and returns</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a></div>
+      <div><b>Learn</b><a href="#science">Science</a><a href="#about">About us</a><a href="#ask">Ask us</a></div>
+      <div><b>Lifestyle</b><a href="#play">Games for two</a><a href="#journal">Journal</a><a href="#journal">Podcast</a></div>
+      <div><b>Help</b><a href="#shipping">Shipping and returns</a><a href="#privacy">Privacy policy</a><a href="#brand">Brand kit</a></div>
     </div>
     <p class="fda"><sup>*</sup>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
     <div class="fine">
@@ -1231,7 +1495,7 @@ details p{margin:0 0 18px}
 
 <script>
 (function(){
-  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','brand'];
+  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','brand'];
   var mb=document.getElementById('menubtn');
   function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
   mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
@@ -1267,7 +1531,7 @@ details p{margin:0 0 18px}
   /* quiz */
   var Q=[
     {k:'who',t:'Who is this for?',o:[['me','Just me'],['partner','My partner'],['both','Both of us']]},
-    {k:'form',t:'Which formula fits?',o:[['her','For her','Saffron and fenugreek, studied in women'],['him','For him','Fenugreek, saffron and zinc, studied in men']],when:function(a){return a.who!=='both';}},
+    {k:'form',t:'Which formula fits?',o:[['her','For her','Seven ingredients, with L-theanine, B6 and folate'],['him','For him','Seven ingredients, with zinc, selenium and vitamin E']],when:function(a){return a.who!=='both';}},
     {k:'pair',t:'Which two?',o:[['herhim','One for her, one for him'],['herher','Two for her'],['himhim','Two for him']],when:function(a){return a.who==='both';}},
     {k:'goal',t:'What matters most right now?',o:[['desire','More desire'],['present','Feeling relaxed and present'],['energy','Energy and vitality'],['time','More time for each other']]},
     {k:'flags',t:'Does any of this apply?',multi:true,o:[['preg','Pregnant, trying to conceive or nursing'],['meds','Taking prescription medication'],['legume','Peanut, chickpea or other legume allergy'],['none','None of these']]},
@@ -1299,8 +1563,8 @@ details p{margin:0 0 18px}
     var name=both?(A.pair==='herhim'?'Saffra for Two':'Saffra for Two, '+(A.pair==='herher'?'two jars for her':'two jars for him')):'Saffra for '+(A.form==='her'?'her':'him');
     var price=both?(A.plan==='sub'?'$64 a month':'$78 one-time'):(A.plan==='sub'?'$36 a month':'$44 one-time');
     var why={desire:'Both formulas pair saffron with fenugreek at 600 mg a day, the amount studied for desire and arousal.',
-      present:'Every jar includes saffron at 28 mg a day, studied for a positive mood and restful sleep.',
-      energy:hasHim?'For Him includes fenugreek at 600 mg a day, studied in men for desire and vitality, plus a full day of zinc.':'For Her pairs saffron with fenugreek at 600 mg a day, studied in women over eight weeks.',
+      present:hasHer?'For Her includes L-theanine at 200 mg a day, studied for stress and sleep, alongside saffron for mood.':'Every jar includes saffron at 30 mg a day for a positive mood.',
+      energy:hasHim?'For Him includes fenugreek at 600 mg a day, studied in men for desire and vitality, plus zinc, selenium and vitamin B12.':'Every jar includes vitamin B12 and vitamin D3 for daily energy, alongside saffron and fenugreek.',
       time:'Take them together, at the same time each day. That shared minute is the point.'}[A.goal];
     var notes='';
     if(f.indexOf('preg')>-1) notes+='<p class="note"><b>Please wait.</b> Saffra is not for use while pregnant, trying to conceive or nursing.</p>';
@@ -1343,6 +1607,40 @@ details p{margin:0 0 18px}
   /* back to top */
   window.addEventListener('scroll',function(){document.body.classList.toggle('scrolled',window.scrollY>900);},{passive:true});
   document.getElementById('totop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+
+  /* games */
+  var G=['deck','spin','know'];
+  G.forEach(function(g){document.getElementById('g-'+g).addEventListener('click',function(){G.forEach(function(x){document.getElementById('g-'+x).setAttribute('aria-selected',x===g);document.getElementById('game-'+x).hidden=x!==g;});});});
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  var DECK={light:['What is a small thing I do that makes your day better?','What song takes you straight back to when we met?','What is your favorite meal we have ever shared?','If we had a free Saturday with no plans, how would you spend it with me?','What is something silly we do that you hope never changes?','Which trip of ours would you repeat tomorrow?','What did you think the first time you saw me?','What is a habit of mine you secretly find charming?','What should we do more of this year?','What is the best gift I ever gave you?'],
+    deeper:['When do you feel most appreciated by me?','What is something you have been wanting to tell me but have not found the moment for?','What is one thing I could do this week that would make you feel cared for?','When did you last feel really proud of us?','What are you carrying right now that I could help with?','What is a dream you have put on hold?','What did you need more of as a child that you still need now?','What is one worry about us you would like me to understand?','When do you feel most like yourself around me?','What does a really good day together look like to you?'],
+    closer:['When do you feel most wanted by me?','What is a moment between us that you replay in your mind?','What kind of touch makes you feel closest to me?','What helps you switch off from the day and be here with me?','What would make our evenings feel more like ours?','What is something new you would like us to try together?','When do you find me most attractive?','What do you miss from when we first got together?','How can I tell when you want to be close, and how can I make it easier to say?','What is one thing that always brings you back to me?']};
+  var lv='light', pile=[], seen=0;
+  function deal(){ if(!pile.length){pile=shuffle(DECK[lv]);seen=0;} var q=pile.pop(); seen++; document.getElementById('deckq').textContent=q; document.getElementById('decklv').textContent=lv.charAt(0).toUpperCase()+lv.slice(1); document.getElementById('deckn').textContent='Card '+seen+' of '+DECK[lv].length; }
+  document.querySelectorAll('[data-lv]').forEach(function(b){b.addEventListener('click',function(){lv=b.getAttribute('data-lv');pile=[];document.querySelectorAll('[data-lv]').forEach(function(x){x.setAttribute('aria-pressed',x===b);});deal();});});
+  document.getElementById('decknext').addEventListener('click',deal); deal();
+  var IDEAS={home:{short:['Cook the simplest thing you both love, with music on and phones in another room.','Make two drinks, sit outside and watch the sky change.','Take turns playing each other one song that matters to you, and say why.','Give each other a ten-minute shoulder rub. Set a timer so it is fair.','Look through old photos from your first year together.','Dance to three songs in the kitchen. Badly is fine.'],
+      long:['Cook a three-course dinner together. One of you leads, one assists, then swap for dessert.','Build a blanket fort or a living room picnic and watch the first film you saw together.','Plan a trip you might never take. Budget unlimited. Write the itinerary.','Have a tasting night: three cheeses, three chocolates or three teas, and rank them.','Recreate your first date at home as closely as you can.','Turn off every screen at eight and see where the evening goes.']},
+    out:{short:['Walk around the block holding hands. No destination.','Go for one drink or one coffee at the nearest place you have never tried.','Drive to the best view within ten minutes and sit there together.','Get dessert only. Share it.','Walk to the shop for one treat each, and choose for the other person.','Sit in the car outside your home and talk for twenty minutes before you go in.'],
+      long:['Dress up for no reason and go somewhere slightly too nice.','Pick a neighborhood you never visit and wander until you find dinner.','Go to a late film and talk about it on the walk home.','Take a class together: cooking, dancing or pottery.','Watch the sunset somewhere outside the city and bring a picnic.','Play tourists in your own town for an evening.']}};
+  var where='home', len='short', lastIdea='';
+  function press(sel,attr,val){document.querySelectorAll(sel).forEach(function(x){x.setAttribute('aria-pressed',x.getAttribute(attr)===val);});}
+  document.querySelectorAll('[data-where]').forEach(function(b){b.addEventListener('click',function(){where=b.getAttribute('data-where');press('[data-where]','data-where',where);});});
+  document.querySelectorAll('[data-len]').forEach(function(b){b.addEventListener('click',function(){len=b.getAttribute('data-len');press('[data-len]','data-len',len);});});
+  document.getElementById('spinbtn').addEventListener('click',function(){var list=IDEAS[where][len],q;do{q=list[Math.floor(Math.random()*list.length)];}while(q===lastIdea&&list.length>1);lastIdea=q;document.getElementById('spinq').textContent=q;document.getElementById('spinn').textContent=(where==='home'?'At home':'Going out')+' · '+(len==='short'?'30 minutes':'A whole evening');this.textContent='Spin again';});
+  var KQ=["What is your partner's comfort food?","What would your partner order at a coffee shop?","What is your partner's dream holiday?","What song does your partner sing in the car?","What is the first thing your partner does in the morning?","What small thing annoys your partner most?","What is your partner most proud of?","How does your partner like to be cheered up?"];
+  var kq=[],ki=0,ks=[0,0];
+  function kdraw(){var done=ki>=8; document.getElementById('kbtns').hidden=false;
+    if(done){var m=ks[0]===ks[1]?'A tie. You know each other equally well.':(ks[0]>ks[1]?'Player one':'Player two')+' wins this round.'; document.getElementById('kturn').textContent='Final score'; document.getElementById('kq').textContent=m+' Loser plans the next date night.'; document.getElementById('kn').textContent=''; document.getElementById('kyes').textContent='Play again'; document.getElementById('kno').hidden=true; return;}
+    document.getElementById('kno').hidden=false; document.getElementById('kyes').textContent='They got it right';
+    document.getElementById('kturn').textContent=(ki%2===0?'Player one':'Player two')+' answers'; document.getElementById('kq').textContent=kq[ki]; document.getElementById('kn').textContent='Round '+(ki+1)+' of 8';}
+  function kstart(){kq=shuffle(KQ);ki=0;ks=[0,0];document.getElementById('k1').textContent='0';document.getElementById('k2').textContent='0';kdraw();}
+  document.getElementById('kyes').addEventListener('click',function(){ if(ki>=8){kstart();return;} ks[ki%2]++; document.getElementById('k'+(ki%2+1)).textContent=ks[ki%2]; ki++; kdraw();});
+  document.getElementById('kno').addEventListener('click',function(){ki++;kdraw();});
+  kstart();
+  /* ask */
+  document.getElementById('askform').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('askq').value.trim();document.getElementById('askmsg').textContent=v?'Staging preview: questions are not being sent yet.':'Type a question first.';});
 
   var form = document.getElementById('waitform'), msg = document.getElementById('waitmsg');
   form.addEventListener('submit', function(e){
