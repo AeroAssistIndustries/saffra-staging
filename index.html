@@ -350,6 +350,16 @@ details p{margin:0 0 18px}
   .sci td:nth-child(2){color:var(--saffron);font-weight:700}
   .sci td a{display:inline-block;padding:8px 0}
 }
+
+.buybar{display:none}
+@media (max-width:900px){
+  body[data-view="her"] .buybar.her,body[data-view="him"] .buybar.him{display:flex}
+  .buybar{position:fixed;left:0;right:0;bottom:0;z-index:18;background:rgba(42,20,41,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.12);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));align-items:center;justify-content:space-between;gap:12px}
+  .buybar b{font-family:var(--display);font-weight:400;font-size:18px;display:block;line-height:1.1}
+  .buybar small{color:var(--muted);font-size:13px}
+  body[data-view="her"] footer,body[data-view="him"] footer{padding-bottom:120px}
+  body[data-view="her"] .totop,body[data-view="him"] .totop{bottom:84px}
+}
 .cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:900px){
   .menu{display:inline-flex}
@@ -431,7 +441,7 @@ details p{margin:0 0 18px}
       </div>
       <div class="stars"><span><i></i>Doses on the label</span><span><i></i>Vegan pectin gummies</span><span><i></i>30-day money back</span></div>
     </div>
-    <div class="shot"><img src="img/duo.webp" width="1400" height="1208" alt="Rendering of two Saffra jars: For Her in plum with a cream label, For Him in dark slate with a saffron label"></div>
+    <div class="shot"><img src="img/duo.webp" width="1400" height="1232" alt="Rendering of two Saffra jars: For Her in matte plum with a gold cap, For Him in graphite with a steel cap, each with a window showing the gummies"></div>
   </div>
 </div>
 
@@ -1121,7 +1131,7 @@ details p{margin:0 0 18px}
       <div style="display:grid;gap:14px">
         <h3>Packaging</h3>
         <img src="img/duo-dark.jpg" width="1600" height="1200" alt="Rendering of the For Her and For Him jars" style="border-radius:var(--r)">
-        <p class="muted">For Her: plum jar, cream label, saffron lid. For Him: slate jar, saffron label, dark lid. Doses sit on the front of both.</p>
+        <p class="muted">One seamless capsule shape with no paper label. For Her: matte plum with a gold cap. For Him: graphite with a steel cap. Type is printed on the jar, a side window shows the gummies, and a saffron line marks the base. Doses sit on the front of both.</p>
       </div>
       <div>
         <h3 style="margin-bottom:14px">Color</h3>
@@ -1172,6 +1182,9 @@ details p{margin:0 0 18px}
     <p>Photography from Unsplash. Saffra and the Saffra logo are trademarks of Saffra. © 2027 Saffra. All rights reserved.</p>
   </div>
 </footer>
+
+<div class="buybar her"><div><b>Saffra for her</b><small><span data-sub="$36 a month" data-one="$44 one-time">$36 a month</span></small></div><a class="btn small" href="#waitlist" data-int="her">Join the waitlist</a></div>
+<div class="buybar him"><div><b>Saffra for him</b><small><span data-sub="$36 a month" data-one="$44 one-time">$36 a month</span></small></div><a class="btn small" href="#waitlist" data-int="him">Join the waitlist</a></div>
 <button class="iconbtn totop" type="button" id="totop" aria-label="Back to top">&#8593;</button>
 
 <script>
