@@ -437,6 +437,13 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
 .pdp .top>*{min-width:0}
 .facts{max-width:100%}
 .facts td:nth-child(2){white-space:normal;text-align:right}
+
+body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-read-saffron{display:block}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.day{aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--muted);font:inherit;font-weight:600;font-size:15px;cursor:pointer;min-width:44px}
+.day[aria-pressed="true"]{background:var(--saffron);border-color:var(--saffron);color:var(--ink)}
+.linkbtn{background:none;border:0;color:var(--muted);font:inherit;font-size:14.5px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:10px 0}
+@media (min-width:901px){.posts{grid-template-columns:repeat(3,1fr)}}
 .cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:900px){
   .menu{display:inline-flex}
@@ -765,7 +772,7 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
   <div class="wrap">
     <div class="head"><p class="eyebrow">More than a gummy</p><h2>Come for the ritual. Stay to play.</h2><p class="muted">Free things to do together, whether or not you ever buy a jar.</p></div>
     <div class="tiles">
-      <a class="tile" href="#play"><span class="n">Play</span><h3>Games for two</h3><p class="muted">A question deck, a date night spinner and a how-well-do-you-know-me game.</p><span class="go">Play now</span></a>
+      <a class="tile" href="#play"><span class="n">Play</span><h3>Games for two</h3><p class="muted">A question deck, a date night spinner, two quick games and a 30-day ritual tracker.</p><span class="go">Play now</span></a>
       <a class="tile" href="#journal"><span class="n">Read</span><h3>The Journal</h3><p class="muted">Short, honest reads on desire, rituals and how to read a supplement label.</p><span class="go">Read the Journal</span></a>
       <a class="tile" href="#ask"><span class="n">Ask</span><h3>Questions, answered</h3><p class="muted">Plain answers about the product, safety and making time for each other.</p><span class="go">See the answers</span></a>
       <a class="tile" href="#journal"><span class="n">Listen</span><h3>Podcast, coming 2027</h3><p class="muted">Conversations with doctors, therapists and real couples.</p><span class="go">See what is planned</span></a>
@@ -1253,6 +1260,8 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
         <a class="post" href="#read-tired"><div class="photo"><img src="https://images.unsplash.com/photo-1758522490155-b338da47f09f?auto=format&fit=crop&w=900&q=75" alt="A couple enjoying drinks by the window" loading="lazy" onerror="this.remove()"></div><small>Relationships · 3 min</small><h3>We are fine. We are just tired.</h3><p class="muted">Why desire gets crowded out in good relationships, and four small ways to make room.</p></a>
         <a class="post" href="#read-label"><div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=75" alt="Roots and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div><small>Know your supplement · 2 min</small><h3>How to read a supplement label in 60 seconds</h3><p class="muted">Six checks that work on any brand, including ours.</p></a>
         <a class="post" href="#read-ritual"><div class="photo"><img src="https://images.unsplash.com/photo-1604881991405-b273c7a4386a?auto=format&fit=crop&w=900&q=75" alt="A couple sitting at a table with cups" loading="lazy" onerror="this.remove()"></div><small>Rituals · 2 min</small><h3>The ten-minute evening</h3><p class="muted">A routine for an ordinary Tuesday that you can start tonight.</p></a>
+        <a class="post" href="#read-habit"><div class="photo"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=900&q=75" alt="Two people holding mugs across a table" loading="lazy" onerror="this.remove()"></div><small>Rituals · 2 min</small><h3>Morning and evening: how to make it stick</h3><p class="muted">Five ways to make two gummies a day automatic.</p></a>
+        <a class="post" href="#read-saffron"><div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=900&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div><small>Ingredients · 2 min</small><h3>Saffron: the red thread</h3><p class="muted">What it is, why it costs so much, and what the research looked at.</p></a>
       </div>
     </div>
   </section>
@@ -1270,7 +1279,7 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
   </section>
   <section style="padding-top:0">
     <div class="wrap"><div class="cross">
-      <div style="display:grid;gap:8px"><h3>Would you rather play than read?</h3><p class="muted">Three free games for two.</p></div>
+      <div style="display:grid;gap:8px"><h3>Would you rather play than read?</h3><p class="muted">Free games for two, and a 30-day ritual tracker.</p></div>
       <div class="row"><a class="btn" href="#play">Open the games</a></div>
     </div></div>
   </section>
@@ -1351,6 +1360,50 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
   </div></section>
 </main>
 
+<main id="v-read-habit">
+  <section class="pdp"><div class="wrap article">
+    <p class="crumb"><a href="#journal">Journal</a> / Rituals</p>
+    <p class="eyebrow">Rituals</p>
+    <h1>Morning and evening: how to make it stick</h1>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=1400&q=75" alt="Two people holding mugs across a table" loading="lazy" onerror="this.remove()"></div>
+    
+<p>The hardest part of any daily supplement is remembering it on day nineteen. Here is how to make two gummies a day automatic.</p>
+<h2>Attach it to something you already do</h2>
+<p>Do not rely on memory. Pair the morning gummy with coffee and the evening one with brushing your teeth. The existing habit does the reminding.</p>
+<h2>Keep the jar where you can see it</h2>
+<p>A jar in a cupboard is a jar you forget. Leave it next to the kettle or on the bathroom shelf.</p>
+<h2>Do it together</h2>
+<p>If you both take Saffra, take it at the same moment. It takes thirty seconds and it is one small thing in the day that belongs to the two of you. Use our <a href="#play" style="color:var(--saffron)">30-day tracker</a> if you like ticking things off.</p>
+<h2>If you miss one</h2>
+<p>Skip it and carry on. Never take extra to catch up.</p>
+<h2>Give it a fair run</h2>
+<p>The studies behind the ingredients ran for four to twelve weeks. Decide at the start that you will give it a month, then judge it honestly. If it is not for you, tell us within 30 days of your first order and we will refund it.</p>
+
+    <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
+  </div></section>
+</main>
+
+<main id="v-read-saffron">
+  <section class="pdp"><div class="wrap article">
+    <p class="crumb"><a href="#journal">Journal</a> / Ingredients</p>
+    <p class="eyebrow">Ingredients</p>
+    <h1>Saffron: the red thread</h1>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=1400&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div>
+    
+<p>Our name comes from saffron, and it is in every jar we make. Here is what it is and why we chose it.</p>
+<h2>What it is</h2>
+<p>Saffron is the dried stigma of the crocus flower. Each flower grows just three of these red threads, and they are picked by hand. That is why saffron has been the world's most expensive spice for centuries.</p>
+<h2>Why people study it</h2>
+<p>Cooks have used saffron for color and flavor for a very long time. More recently, researchers have tested standardized saffron extracts in placebo-controlled trials, mostly looking at mood and sleep, and in smaller studies at desire and arousal.</p>
+<h2>Why the extract matters</h2>
+<p>Because saffron is so costly, it is one of the most commonly faked spices. A good extract names the plant part, is standardized to its active compounds, and comes with a lab report. We use 30 mg a day and print that number on the front of the jar.</p>
+<h2>What it will not do</h2>
+<p>Saffron is not a drug and it does not work in an evening. The trials measured daily use over weeks. You can see the studies, including the ones that found nothing, on our <a href="#science" style="color:var(--saffron)">science page</a>.</p>
+
+    <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
+  </div></section>
+</main>
+
 <main id="v-play">
   <section class="pdp">
     <div class="wrap">
@@ -1359,6 +1412,8 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
         <button type="button" role="tab" id="g-deck" aria-selected="true">Question deck</button>
         <button type="button" role="tab" id="g-spin" aria-selected="false">Date night spinner</button>
         <button type="button" role="tab" id="g-know" aria-selected="false">Know me</button>
+        <button type="button" role="tab" id="g-tot" aria-selected="false">This or that</button>
+        <button type="button" role="tab" id="g-days" aria-selected="false">30-day ritual</button>
       </div>
 
       <div class="game" id="game-deck">
@@ -1391,6 +1446,19 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
         <div class="score"><div><b id="k1">0</b>Player one</div><div><b id="k2">0</b>Player two</div></div>
         <div class="deckcard" aria-live="polite"><small id="kturn">Player one answers</small><p id="kq"></p><span id="kn"></span></div>
         <div class="row" id="kbtns"><button type="button" class="btn" id="kyes">They got it right</button><button type="button" class="btn ghost" id="kno">Not quite</button></div>
+      </div>
+
+      <div class="game" id="game-tot" hidden>
+        <p class="muted">Read it out, count to three, and both answer at once. Then tap whether you matched. Ten rounds.</p>
+        <div class="deckcard" aria-live="polite"><small id="totn">Round 1 of 10</small><p id="totq"></p><span id="tots">Matches: 0</span></div>
+        <div class="row" id="totbtns"><button type="button" class="btn" id="totsame">We matched</button><button type="button" class="btn ghost" id="totdiff">We did not</button></div>
+      </div>
+
+      <div class="game" id="game-days" hidden>
+        <p class="muted">Tap a day when you both stopped for a moment together. It is saved on this device only.</p>
+        <div class="score"><div><b id="dcount">0</b>Days together</div><div><b id="dstreak">0</b>Current streak</div></div>
+        <div class="days" id="days" role="group" aria-label="30 days"></div>
+        <div><button type="button" class="linkbtn" id="dreset">Start a new month</button> <span class="muted" id="dmsg" role="status" style="font-size:14.5px"></span></div>
       </div>
     </div>
   </section>
@@ -1495,7 +1563,7 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
 
 <script>
 (function(){
-  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','brand'];
+  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','brand'];
   var mb=document.getElementById('menubtn');
   function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
   mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
@@ -1610,7 +1678,7 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
 
 
   /* games */
-  var G=['deck','spin','know'];
+  var G=['deck','spin','know','tot','days'];
   G.forEach(function(g){document.getElementById('g-'+g).addEventListener('click',function(){G.forEach(function(x){document.getElementById('g-'+x).setAttribute('aria-selected',x===g);document.getElementById('game-'+x).hidden=x!==g;});});});
   function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
   var DECK={light:['What is a small thing I do that makes your day better?','What song takes you straight back to when we met?','What is your favorite meal we have ever shared?','If we had a free Saturday with no plans, how would you spend it with me?','What is something silly we do that you hope never changes?','Which trip of ours would you repeat tomorrow?','What did you think the first time you saw me?','What is a habit of mine you secretly find charming?','What should we do more of this year?','What is the best gift I ever gave you?'],
@@ -1639,6 +1707,27 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
   document.getElementById('kyes').addEventListener('click',function(){ if(ki>=8){kstart();return;} ks[ki%2]++; document.getElementById('k'+(ki%2+1)).textContent=ks[ki%2]; ki++; kdraw();});
   document.getElementById('kno').addEventListener('click',function(){ki++;kdraw();});
   kstart();
+
+  /* this or that */
+  var TOT=['Night in or night out?','Sunrise or sunset?','Cook together or order in?','Beach or mountains?','Plan it all or see what happens?','Slow dance or silly dance?','Breakfast in bed or late dinner?','Road trip or flight?','Long walk or long bath?','Surprise or countdown?','Window seat or aisle?','Sweet or salty?'];
+  var tq=[],ti=0,tm=0;
+  function tdraw(){ if(ti>=10){var m=tm>=8?'You are very in sync.':tm>=5?'In step, with a few surprises.':'Opposites attract. Plenty to talk about.'; document.getElementById('totn').textContent='Result'; document.getElementById('totq').textContent=tm+' of 10 matched. '+m; document.getElementById('totsame').textContent='Play again'; document.getElementById('totdiff').hidden=true; return;}
+    document.getElementById('totdiff').hidden=false; document.getElementById('totsame').textContent='We matched'; document.getElementById('totn').textContent='Round '+(ti+1)+' of 10'; document.getElementById('totq').textContent=tq[ti]; document.getElementById('tots').textContent='Matches: '+tm; }
+  function tstart(){tq=shuffle(TOT);ti=0;tm=0;tdraw();}
+  document.getElementById('totsame').addEventListener('click',function(){ if(ti>=10){tstart();return;} tm++;ti++;tdraw(); document.getElementById('tots').textContent='Matches: '+tm; });
+  document.getElementById('totdiff').addEventListener('click',function(){ti++;tdraw();});
+  tstart();
+  /* 30-day ritual tracker */
+  var D=[]; try{D=JSON.parse(localStorage.getItem('saffra-ritual')||'[]');}catch(e){D=[];} if(!Array.isArray(D)) D=[];
+  var daysEl=document.getElementById('days'), armed=false;
+  function dsave(){try{localStorage.setItem('saffra-ritual',JSON.stringify(D));}catch(e){}}
+  function dstats(){var c=0,st=0,last=-1; for(var i=0;i<30;i++){ if(D[i]){c++;last=i;} } for(var j=last;j>=0&&D[j];j--) st++; document.getElementById('dcount').textContent=c; document.getElementById('dstreak').textContent=st; }
+  for(var di=0;di<30;di++){(function(i){var b=document.createElement('button'); b.type='button'; b.className='day'; b.textContent=i+1; b.setAttribute('aria-label','Day '+(i+1)); b.setAttribute('aria-pressed',!!D[i]);
+    b.addEventListener('click',function(){D[i]=!D[i]; b.setAttribute('aria-pressed',!!D[i]); dsave(); dstats();}); daysEl.appendChild(b);})(di);}
+  dstats();
+  document.getElementById('dreset').addEventListener('click',function(){var m=document.getElementById('dmsg');
+    if(!armed){armed=true; this.textContent='Tap again to clear all 30 days'; return;}
+    armed=false; this.textContent='Start a new month'; D=[]; dsave(); daysEl.querySelectorAll('.day').forEach(function(b){b.setAttribute('aria-pressed','false');}); dstats(); m.textContent='Cleared.';});
   /* ask */
   document.getElementById('askform').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('askq').value.trim();document.getElementById('askmsg').textContent=v?'Staging preview: questions are not being sent yet.':'Type a question first.';});
 
