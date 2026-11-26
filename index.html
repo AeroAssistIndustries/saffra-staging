@@ -241,6 +241,46 @@ body.menu-open .drawer{display:block}
 .duo2 .photo{aspect-ratio:1/1;min-height:0}
 body[data-view="about"] #v-about{display:block}
 @media (max-width:900px){.ings,.vals,.duo2,.rit .wrap,.about-hero .wrap{grid-template-columns:1fr}.rit .stack{position:static}.vals{grid-template-columns:1fr 1fr}.about-hero .photo{aspect-ratio:4/3}}
+
+.reel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 22px 18px;scrollbar-width:thin;scrollbar-color:var(--plum-3) transparent}
+.reel .photo{flex:0 0 min(300px,72vw);aspect-ratio:3/4;min-height:0;scroll-snap-align:start}
+.reel .photo span,.stages .photo span{position:absolute;left:18px;bottom:16px;z-index:2;font-family:var(--display);font-size:22px}
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.stages .photo{aspect-ratio:4/5;min-height:0}
+.band-photo .photo{aspect-ratio:21/9;min-height:220px}
+.band-photo .photo span{position:absolute;left:28px;bottom:24px;z-index:2;font-family:var(--display);font-size:clamp(24px,3.4vw,40px);max-width:16ch;line-height:1.1}
+.quizcta{border-radius:var(--r);background:linear-gradient(100deg,#f3dcb6,#F6EBDD 60%);color:var(--ink);padding:30px;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.quizcta .muted{color:#66525f}
+.btn.dark{background:var(--plum);color:var(--cream);box-shadow:none}.btn.dark:hover{background:var(--plum-3)}
+.quiz{max-width:720px;margin:0 auto;display:grid;gap:26px}
+.prog{height:6px;border-radius:99px;background:var(--plum-3);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--saffron);width:0;transition:width .25s}
+.q h2{font-size:clamp(28px,4.4vw,44px)}
+.opts{display:grid;gap:12px;margin-top:22px}
+.opt{font:inherit;text-align:left;background:var(--plum-2);color:var(--cream);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 20px;cursor:pointer;display:grid;gap:3px;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--saffron)}
+.opt[aria-pressed="true"]{border-color:var(--saffron);background:rgba(240,169,30,.14)}
+.opt b{font-family:var(--display);font-weight:400;font-size:21px}
+.opt small{color:var(--muted);font-size:14.5px}
+.qnav{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.result{background:var(--cream);color:var(--ink);border-radius:var(--r);padding:30px;display:grid;gap:16px}
+.result .muted{color:#66525f}
+.result .jars{display:flex;gap:10px;justify-content:center;background:radial-gradient(circle at 50% 45%,#f0d9b8,#e6d2bb 70%);border-radius:16px;padding:18px}
+.result .jars img{width:130px}
+.note{border-left:3px solid var(--ember);padding:10px 14px;background:#f9ddd4;border-radius:0 10px 10px 0;font-size:15px}
+.legal{max-width:760px}
+.legal h1{font-size:clamp(38px,6vw,60px);margin-bottom:10px}
+.legal h2{font-size:26px;margin:34px 0 10px}
+.legal p,.legal li{font-size:16.5px;max-width:none;color:#e9dbe4}
+.legal p+p{margin-top:12px}
+.legal ul{margin:10px 0 0;padding-left:20px;display:grid;gap:6px}
+.legal a{color:var(--saffron)}
+.flinks{display:grid;grid-template-columns:repeat(3,auto);gap:10px 44px;justify-content:start;font-size:14px}
+.flinks div{display:grid;gap:8px;align-content:start}
+.flinks b{color:var(--cream);font-weight:600}
+.flinks a{text-decoration:none}.flinks a:hover{text-decoration:underline}
+body[data-view="quiz"] #v-quiz,body[data-view="privacy"] #v-privacy,body[data-view="terms"] #v-terms,body[data-view="shipping"] #v-shipping{display:block}
+@media (max-width:900px){.stages{grid-template-columns:1fr}.stages .photo{aspect-ratio:4/3}.flinks{grid-template-columns:1fr 1fr}.band-photo .photo{aspect-ratio:4/3}}
 .cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:900px){
   .menu{display:inline-flex}
@@ -304,7 +344,7 @@ body[data-view="about"] #v-about{display:block}
     </nav>
   </div>
   <div class="drawer" id="drawer">
-    <a href="#shop">Shop</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#about">About us</a><a href="#doctors">Doctors</a><a href="#questions">Questions</a><a href="#brand">Brand kit</a>
+    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#about">About us</a><a href="#doctors">Doctors</a><a href="#questions">Questions</a><a href="#brand">Brand kit</a>
   </div>
 </header>
 
@@ -318,7 +358,7 @@ body[data-view="about"] #v-about{display:block}
       <p class="lead">Two gummies a day, made with ingredients at the doses used in human studies. One formula for her, one for him, and a set for the two of you.<sup>*</sup></p>
       <div class="cta">
         <a class="btn" href="#shop">Shop the set</a>
-        <a class="btn ghost" href="#inside">See what's inside</a>
+        <a class="btn ghost" href="#quiz">Find your formula</a>
       </div>
       <div class="stars"><span><i></i>Doses on the label</span><span><i></i>Vegan pectin gummies</span><span><i></i>30-day money back</span></div>
     </div>
@@ -334,6 +374,18 @@ body[data-view="about"] #v-about{display:block}
     <div><b>No blends</b><span>Nothing hidden, nothing extra</span></div>
   </div>
 </div>
+
+<section style="padding:64px 0 24px">
+  <div class="wrap"><div class="head" style="margin-bottom:26px"><p class="eyebrow">Real life</p><h2>For the everyday kind of close.</h2></div></div>
+  <div class="reel" tabindex="0" aria-label="Photo gallery">
+    <div class="photo"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=700&q=75" alt="Two people holding mugs across a table" loading="lazy" onerror="this.remove()"><span>Mornings</span></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1556911073-38141963c9e0?auto=format&fit=crop&w=700&q=75" alt="A man and woman cooking together" loading="lazy" onerror="this.remove()"><span>Dinner</span></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1758522490155-b338da47f09f?auto=format&fit=crop&w=700&q=75" alt="A couple enjoying drinks by the window" loading="lazy" onerror="this.remove()"><span>Evenings</span></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1640273296013-e4b54eaf52eb?auto=format&fit=crop&w=700&q=75" alt="A man and a woman holding hands as the sun sets" loading="lazy" onerror="this.remove()"><span>Weekends</span></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1514480100661-33506ca03fe7?auto=format&fit=crop&w=700&q=75" alt="A man kissing a woman on her forehead" loading="lazy" onerror="this.remove()"><span>Quiet moments</span></div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1758524944418-c8bf613c4de7?auto=format&fit=crop&w=700&q=75" alt="A couple talking on a staircase" loading="lazy" onerror="this.remove()"><span>Catching up</span></div>
+  </div>
+</section>
 
 <section class="story">
   <div class="wrap">
@@ -391,6 +443,13 @@ body[data-view="about"] #v-about{display:block}
       </div>
     </div>
   </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div class="quizcta">
+    <div style="display:grid;gap:8px"><p class="eyebrow" style="color:var(--gold-ink)">One minute</p><h3 style="font-size:30px">Not sure which one? Take the quiz.</h3><p class="muted">Five questions. Your answers stay on your device.</p></div>
+    <a class="btn dark" href="#quiz">Find your formula</a>
+  </div></div>
 </section>
 
 <section id="inside" class="light">
@@ -498,6 +557,17 @@ body[data-view="about"] #v-about{display:block}
   </div>
 </section>
 
+<section id="stages" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Two years in or twenty</p><h2>Desire changes. That is normal.</h2><p class="muted">New jobs, new babies, long weeks and long marriages all move it around. Saffra is for couples at any point who want to give it some attention.</p></div>
+    <div class="stages">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1782786661549-9c67f846c26d?auto=format&fit=crop&w=900&q=75" alt="A happy couple walking through a field of flowers at sunset" loading="lazy" onerror="this.remove()"><span>Just getting started</span></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1762445422858-49a118151881?auto=format&fit=crop&w=900&q=75" alt="A smiling couple wearing glasses outdoors" loading="lazy" onerror="this.remove()"><span>In the busy years</span></div>
+      <div class="photo"><img src="https://images.unsplash.com/photo-1684895800144-7fb91695a9be?auto=format&fit=crop&w=900&q=75" alt="A man hugging a woman in a field" loading="lazy" onerror="this.remove()"><span>Still choosing each other</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="compare" style="padding-top:0">
   <div class="wrap">
     <div class="head"><p class="eyebrow">How we compare</p><h2>Read the back of the jar.</h2></div>
@@ -601,6 +671,10 @@ body[data-view="about"] #v-about{display:block}
       </div>
     </div>
   </section>
+
+<section class="band-photo" style="padding:0 0 88px">
+  <div class="wrap"><div class="photo"><img src="https://images.unsplash.com/photo-1761206518179-1c36d002e349?auto=format&fit=crop&w=1600&q=75" alt="A couple holding hands in a sunlit field" loading="lazy" onerror="this.remove()"><span>Make time for each other.</span></div></div>
+</section>
   <section style="padding-top:0">
     <div class="wrap">
       <div class="head"><p class="eyebrow">What to expect</p><h2>A ritual that builds.</h2></div>
@@ -654,6 +728,10 @@ body[data-view="about"] #v-about{display:block}
       </div>
     </div>
   </section>
+
+<section class="band-photo" style="padding:0 0 88px">
+  <div class="wrap"><div class="photo"><img src="https://images.unsplash.com/photo-1761206518179-1c36d002e349?auto=format&fit=crop&w=1600&q=75" alt="A couple holding hands in a sunlit field" loading="lazy" onerror="this.remove()"><span>Make time for each other.</span></div></div>
+</section>
   <section style="padding-top:0">
     <div class="wrap">
       <div class="head"><p class="eyebrow">What to expect</p><h2>A ritual that builds.</h2></div>
@@ -772,6 +850,117 @@ body[data-view="about"] #v-about{display:block}
   </section>
 </main>
 
+<main id="v-quiz">
+  <section class="pdp">
+    <div class="wrap quiz">
+      <div><p class="eyebrow">Find your formula</p></div>
+      <div class="prog" aria-hidden="true"><i id="qbar"></i></div>
+      <div id="qbody" class="q" aria-live="polite"></div>
+      <div class="qnav"><button class="btn ghost small" type="button" id="qback">Back</button><span class="muted" style="font-size:14px">Your answers stay in this browser. We do not save or send them.</span></div>
+    </div>
+  </section>
+</main>
+
+<main id="v-privacy">
+  <section class="pdp"><div class="wrap legal">
+    <p class="eyebrow">Saffra</p>
+    <h1>Privacy policy</h1>
+    
+<p>This policy explains what Saffra collects, why, and the choices you have. Saffra is based in Arizona, USA.</p>
+<h2>What we collect</h2>
+<ul>
+<li><b>Waitlist and email.</b> Your email address when you join the waitlist or sign up for emails.</li>
+<li><b>Orders.</b> Your name, shipping address, email, phone number if you give it, and what you ordered.</li>
+<li><b>Payments.</b> Card details go straight to our payment processor. We never see or store your full card number.</li>
+<li><b>Messages.</b> What you write when you contact us.</li>
+<li><b>Site use.</b> Basic information such as pages visited, device type and approximate location, collected with cookies or similar tools.</li>
+</ul>
+<h2>What we do not collect</h2>
+<p>Your quiz answers. The quiz runs in your browser and your answers are not saved or sent to us.</p>
+<h2>How we use it</h2>
+<ul>
+<li>To fill, ship and support your orders and subscriptions.</li>
+<li>To send emails you asked for. You can unsubscribe in any email.</li>
+<li>To keep the site working, prevent fraud and meet legal duties.</li>
+</ul>
+<h2>Who we share it with</h2>
+<p>Only the companies that help us run the store: our store platform, payment processor, shipping carriers, and email and support tools. They may use your information only to provide those services.</p>
+<p>We do not sell your personal information. We do not share it for targeted advertising, and we do not use what you buy from us to target ads about your health.</p>
+<h2>Your choices</h2>
+<p>You can ask us to show you, correct or delete the personal information we hold about you, and you can opt out of marketing at any time. Depending on your state, you may have further rights, including the right to appeal a decision. We will not treat you differently for using them.</p>
+<h2>How long we keep it</h2>
+<p>We keep order records for as long as the law requires for tax and accounting. We delete waitlist emails when you unsubscribe.</p>
+<h2>Security</h2>
+<p>We use encryption in transit and limit who can see customer information. No system is perfectly secure, so we collect as little as we need.</p>
+<h2>Age</h2>
+<p>Saffra is for adults 18 and over. We do not knowingly collect information from anyone under 18.</p>
+<h2>Changes</h2>
+<p>If we change this policy in a way that matters, we will post the new version here and email subscribers.</p>
+<h2>Contact</h2>
+<p>Saffra, Arizona, USA. Our privacy contact address is published here at launch.</p>
+
+  </div></section>
+</main>
+
+<main id="v-terms">
+  <section class="pdp"><div class="wrap legal">
+    <p class="eyebrow">Saffra</p>
+    <h1>Terms of use</h1>
+    
+<p>By using this site or buying from Saffra, you agree to these terms.</p>
+<h2>Who can use Saffra</h2>
+<p>You must be 18 or older to buy or use our products.</p>
+<h2>Not medical advice</h2>
+<p>Saffra products are dietary supplements. Nothing on this site is medical advice. These statements have not been evaluated by the Food and Drug Administration, and our products are not intended to diagnose, treat, cure, or prevent any disease. Talk to your doctor before use if you are pregnant or nursing, take medication, or have a medical condition.</p>
+<h2>Orders and prices</h2>
+<p>Prices are in US dollars and can change before you order. We may refuse or cancel an order, for example if a price is listed in error, and will refund you in full if we do.</p>
+<h2>Subscriptions</h2>
+<p>A subscription renews every 30 days at the price shown when you signed up, charged to your payment method, until you cancel. You can skip or cancel anytime from your account before your next renewal date. See <a href="#shipping">Shipping, returns and subscriptions</a>.</p>
+<h2>Returns</h2>
+<p>Your first order is covered by our 30-day money-back guarantee. See <a href="#shipping">Shipping, returns and subscriptions</a>.</p>
+<h2>Our content</h2>
+<p>The Saffra name, logo, text, images and designs belong to Saffra or its licensors. Please do not copy them without permission.</p>
+<h2>Reviews and messages</h2>
+<p>If you send us a review or feedback, you give us permission to use it. Reviews must be your own honest experience.</p>
+<h2>Liability</h2>
+<p>We provide this site and our products as described here, without other promises. To the extent the law allows, our liability for any claim is limited to the amount you paid for the order involved. Nothing in these terms limits rights you have under law that cannot be waived.</p>
+<h2>Governing law</h2>
+<p>These terms are governed by the laws of the State of Arizona.</p>
+<h2>Contact</h2>
+<p>Saffra, Arizona, USA. Our contact address is published here at launch.</p>
+
+  </div></section>
+</main>
+
+<main id="v-shipping">
+  <section class="pdp"><div class="wrap legal">
+    <p class="eyebrow">Saffra</p>
+    <h1>Shipping, returns and subscriptions</h1>
+    
+<h2>Shipping</h2>
+<ul>
+<li>We ship within the United States.</li>
+<li>Shipping is free on every order.</li>
+<li>You get a tracking link by email when your order ships. Estimated delivery dates are shown at checkout.</li>
+</ul>
+<h2>30-day money-back guarantee</h2>
+<p>Try your first order for 30 days from delivery. If you are not happy, tell us and we will refund that order. You do not need to send the jar back.</p>
+<p>The guarantee covers one first order per household.</p>
+<h2>Damaged or wrong items</h2>
+<p>If a jar arrives damaged, unsealed or wrong, tell us within 14 days and we will replace it or refund you.</p>
+<h2>Subscriptions</h2>
+<ul>
+<li>Your subscription renews every 30 days at the price shown when you signed up.</li>
+<li>We email you before each renewal.</li>
+<li>Skip a month or cancel anytime from your account, in two clicks, before your renewal date.</li>
+<li>Cancelling stops future charges. Orders that already shipped are not refunded unless covered by the guarantee.</li>
+</ul>
+<h2>Contact</h2>
+<p>Our support address is published here at launch.</p>
+
+  </div></section>
+</main>
+
 <main id="brand">
   <section>
     <div class="wrap" style="display:grid;gap:44px">
@@ -823,7 +1012,11 @@ body[data-view="about"] #v-about{display:block}
 <footer>
   <div class="wrap">
     <span class="logo" style="font-size:25px">saffra<svg aria-hidden="true"><use href="#threads"/></svg></span>
-    <p style="display:flex;gap:20px;flex-wrap:wrap;font-size:14px"><a href="#shop">Shop</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#about">About us</a><a href="#questions">Questions</a></p>
+    <div class="flinks">
+      <div><b>Shop</b><a href="#her">For her</a><a href="#him">For him</a><a href="#shop">For two</a><a href="#quiz">Find your formula</a></div>
+      <div><b>Learn</b><a href="#science">Science</a><a href="#about">About us</a><a href="#questions">Questions</a></div>
+      <div><b>Help</b><a href="#shipping">Shipping and returns</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a></div>
+    </div>
     <p class="fda"><sup>*</sup>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
     <p>For adults 18 and over. Do not use if pregnant or nursing. Consult your doctor before use if you take medication or have a medical condition. Keep out of reach of children.</p>
     <p>Photography from Unsplash. © 2027 Saffra</p>
@@ -832,7 +1025,7 @@ body[data-view="about"] #v-about{display:block}
 
 <script>
 (function(){
-  var views=['her','him','science','about','brand'];
+  var views=['her','him','science','about','quiz','privacy','terms','shipping','brand'];
   var mb=document.getElementById('menubtn');
   function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
   mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
@@ -861,6 +1054,58 @@ body[data-view="about"] #v-about{display:block}
   }
   document.getElementById('tab-her').addEventListener('click', function(){ setTab('her'); });
   document.getElementById('tab-him').addEventListener('click', function(){ setTab('him'); });
+
+
+  /* quiz */
+  var Q=[
+    {k:'who',t:'Who is this for?',o:[['me','Just me'],['partner','My partner'],['both','Both of us']]},
+    {k:'form',t:'Which formula fits?',o:[['her','For her','Saffron and ashwagandha, studied in women'],['him','For him','Fenugreek, saffron and zinc, studied in men']],when:function(a){return a.who!=='both';}},
+    {k:'pair',t:'Which two?',o:[['herhim','One for her, one for him'],['herher','Two for her'],['himhim','Two for him']],when:function(a){return a.who==='both';}},
+    {k:'goal',t:'What matters most right now?',o:[['desire','More desire'],['present','Feeling relaxed and present'],['energy','Energy and vitality'],['time','More time for each other']]},
+    {k:'flags',t:'Does any of this apply?',multi:true,o:[['preg','Pregnant, trying to conceive or nursing'],['meds','Taking prescription medication'],['legume','Peanut, chickpea or other legume allergy'],['none','None of these']]},
+    {k:'plan',t:'How would you like it?',o:[['sub','Monthly','Save 18%. Skip or cancel anytime.'],['one','One-time','Try a single order first.']]}
+  ];
+  var A={}, qi=0, qb=document.getElementById('qbody'), bar=document.getElementById('qbar'), back=document.getElementById('qback');
+  function steps(){return Q.filter(function(q){return !q.when||q.when(A);});}
+  function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function draw(){
+    var S=steps();
+    if(qi>=S.length){return result();}
+    var q=S[qi]; bar.style.width=(qi/S.length*100)+'%'; back.style.visibility=qi?'visible':'hidden';
+    var h='<h2>'+esc(q.t)+'</h2>'+(q.multi?'<p class="muted" style="margin-top:8px">Choose all that apply.</p>':'')+'<div class="opts">';
+    q.o.forEach(function(o){var on=q.multi?(A[q.k]||[]).indexOf(o[0])>-1:A[q.k]===o[0];
+      h+='<button type="button" class="opt" data-v="'+o[0]+'" aria-pressed="'+on+'"><b>'+esc(o[1])+'</b>'+(o[2]?'<small>'+esc(o[2])+'</small>':'')+'</button>';});
+    h+='</div>'+(q.multi?'<p style="margin-top:20px"><button type="button" class="btn" id="qnext">Continue</button></p>':'');
+    qb.innerHTML=h;
+    qb.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){
+      var v=b.getAttribute('data-v');
+      if(q.multi){var arr=A[q.k]||[]; if(v==='none'){arr=['none'];}else{arr=arr.filter(function(x){return x!=='none';}); var i=arr.indexOf(v); if(i>-1)arr.splice(i,1); else arr.push(v);} A[q.k]=arr; draw();}
+      else{A[q.k]=v; qi++; draw();}
+    });});
+    var n=document.getElementById('qnext'); if(n) n.addEventListener('click',function(){ if(!(A.flags||[]).length) A.flags=['none']; qi++; draw(); });
+  }
+  function result(){
+    bar.style.width='100%'; back.style.visibility='visible';
+    var both=A.who==='both', jars=both?{herhim:['her','him'],herher:['her','her'],himhim:['him','him']}[A.pair]:[A.form];
+    var hasHim=jars.indexOf('him')>-1, hasHer=jars.indexOf('her')>-1, f=A.flags||[];
+    var name=both?(A.pair==='herhim'?'Saffra for Two':'Saffra for Two, '+(A.pair==='herher'?'two jars for her':'two jars for him')):'Saffra for '+(A.form==='her'?'her':'him');
+    var price=both?(A.plan==='sub'?'$64 a month':'$78 one-time'):(A.plan==='sub'?'$36 a month':'$44 one-time');
+    var why={desire:'Both formulas include saffron at 30 mg a day, the amount studied for desire and arousal.',
+      present:hasHer?'For Her includes ashwagandha at 600 mg a day, studied in women for sexual wellbeing and widely used to help the body settle under stress.':'Saffron at 30 mg a day is in every jar. Pair it with the small rituals on our home page.',
+      energy:hasHim?'For Him includes fenugreek at 600 mg a day, studied in men for desire and vitality, plus a full day of zinc.':'For Her pairs saffron with ashwagandha, both studied in women over four to eight weeks.',
+      time:'Take them together, at the same time each day. That shared minute is the point.'}[A.goal];
+    var notes='';
+    if(f.indexOf('preg')>-1) notes+='<p class="note"><b>Please wait.</b> Saffra is not for use while pregnant, trying to conceive or nursing.</p>';
+    if(f.indexOf('meds')>-1) notes+='<p class="note"><b>Check first.</b> Herbs can interact with medicines. Show the ingredient list to your doctor or pharmacist before you start.</p>';
+    if(f.indexOf('legume')>-1&&hasHim) notes+='<p class="note"><b>Allergy note.</b> For Him contains fenugreek, a legume. It is not suitable for anyone with a peanut, chickpea or other legume allergy.</p>';
+    var imgs=jars.map(function(j){return '<img src="img/bottle-'+j+'.webp" alt="Saffra for '+j+' jar" width="840" height="1232">';}).join('');
+    qb.innerHTML='<div class="result"><p class="eyebrow" style="color:var(--gold-ink)">Your match</p><h2>'+esc(name)+'</h2><div class="jars">'+imgs+'</div><p style="font-family:var(--display);font-size:30px">'+price+'</p><p class="muted">'+esc(why)+'</p>'+notes+
+      '<p class="muted">Two gummies a day, each. Give it four to eight weeks.<sup>*</sup></p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn dark" href="#waitlist">Join the waitlist</a>'+
+      (both?'':'<a class="btn ghost" style="color:var(--ink);border-color:#cdbba6" href="#'+A.form+'">See the details</a>')+'<button type="button" class="btn ghost" style="color:var(--ink);border-color:#cdbba6" id="qagain">Start over</button></div></div>';
+    document.getElementById('qagain').addEventListener('click',function(){A={};qi=0;draw();});
+  }
+  back.addEventListener('click',function(){ if(qi>0){qi--; draw();} });
+  draw();
 
   var form = document.getElementById('waitform'), msg = document.getElementById('waitmsg');
   form.addEventListener('submit', function(e){
