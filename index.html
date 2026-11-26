@@ -548,6 +548,20 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
 @keyframes rise{from{opacity:.15;transform:translateY(34px)}to{opacity:1;transform:none}}
 @media (max-width:900px){.orb.o1,.orb.o2{display:none}.orb{opacity:.7}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.marks{display:grid;grid-template-columns:repeat(9,1fr);gap:14px;list-style:none;margin:0;padding:0}
+.marks li{display:grid;justify-items:center;gap:10px;text-align:center;font-size:12.5px;font-weight:600;line-height:1.25;color:var(--cream)}
+.mark{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#16131a;background:var(--silver);border:1px solid rgba(255,255,255,.75);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 -3px 6px rgba(0,0,0,.2) inset,0 0 0 4px rgba(147,51,234,.18),0 10px 24px rgba(0,0,0,.35);position:relative}
+.mark::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1.5px solid transparent;background:conic-gradient(from 0deg,#7df9ff,#b79bff,#ff6ad5,#ffd36e,#7dffb2,#7db8ff,#7df9ff) border-box;-webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) padding-box exclude,linear-gradient(#000 0 0);animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mark svg{width:32px;height:32px}
+.marks.compact{grid-template-columns:repeat(4,1fr);gap:10px;max-width:460px}
+.marks.compact .mark{width:50px;height:50px}.marks.compact .mark svg{width:25px;height:25px}
+.marks.compact li{font-size:12px;font-weight:600}
+.marksnote{font-size:13.5px;color:var(--muted);max-width:none;margin-top:22px}
+.light .marks li{color:var(--ink)}
+@media (max-width:1100px){.marks{grid-template-columns:repeat(5,1fr);row-gap:22px}}
+@media (max-width:600px){.marks{grid-template-columns:repeat(3,1fr)}.marks li{font-size:12px}}
 </style>
 </head>
 <body data-view="home">
@@ -558,6 +572,15 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     <path d="M10 38 C10 24 10.5 14 10.5 1" fill="none" stroke="#D9573B" stroke-width="2.2" stroke-linecap="round"/>
     <path d="M10 38 C10 26 12 16 17 4" fill="none" stroke="#F0A91E" stroke-width="2.2" stroke-linecap="round"/>
   </symbol>
+  <symbol id="m-gmp" viewBox="0 0 48 48"><path d="M24 5l15 6v11c0 10-6.5 17.5-15 21C15.500 39.500 9 32 9 22V11z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M17 24l5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="m-fac" viewBox="0 0 48 48"><path d="M7 41V21l11 6v-6l11 6V11h10v30z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 34h4M23 34h4M32 34h4M32 26h4M32 18h4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="m-lab" viewBox="0 0 48 48"><path d="M19 6h10M21 6v13L10 38a3 3 0 0 0 2.600 4.500h22.800A3 3 0 0 0 38 38L27 19V6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 31h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="21" cy="36" r="1.6" fill="currentColor"/><circle cx="28" cy="35" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="m-usa" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 12l3.500 7.400 8 1-5.900 5.600 1.500 8L24 30.100 16.900 34l1.500-8-5.900-5.600 8-1z" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linejoin="round"/></symbol>
+  <symbol id="m-veg" viewBox="0 0 48 48"><path d="M10 38C8 22 18 9 40 8c1 20-10 32-26 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 42c6-12 14-20 24-26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="m-glu" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 36V14M24 20c-4-1-6-4-6-7 4 0 6 3 6 7zm0 0c4-1 6-4 6-7-4 0-6 3-6 7zm0 8c-4-1-6-4-6-7 4 0 6 3 6 7zm0 0c4-1 6-4 6-7-4 0-6 3-6 7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11.500 11.500l25 25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="m-art" viewBox="0 0 48 48"><path d="M24 6c8 10 12 16 12 23a12 12 0 0 1-24 0c0-7 4-13 12-23z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M9 9l30 30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="m-dose" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 15h16M16 23h10M30 23h2M16 31h10M30 31h2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="m-back" viewBox="0 0 48 48"><path d="M10 24a14 14 0 1 0 4.500-10.300" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M9 8v7.500h7.500" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 17v14M20.500 20.500c0-2 7-2 7 0s-7 3-7 5.500 7 2 7 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="none" stroke="#F0A91E" stroke-width="1.5"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#F0A91E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -614,6 +637,14 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
     <div><b>No blends</b><span>Nothing hidden, nothing extra</span></div>
   </div>
 </div>
+
+<section id="quality" style="padding:56px 0">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:30px"><p class="eyebrow">Quality you can check</p><h2>Made properly.</h2></div>
+    <ul class="marks"><li><span class="mark"><svg aria-hidden="true"><use href="#m-gmp"/></svg></span>GMP-certified facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-fac"/></svg></span>FDA-registered facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-lab"/></svg></span>Third-party lab tested</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-usa"/></svg></span>Made in the USA</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-veg"/></svg></span>Vegan</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-glu"/></svg></span>Gluten free</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-art"/></svg></span>No artificial colors or flavors</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-dose"/></svg></span>Every dose on the label</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-back"/></svg></span>30-day money back</li></ul>
+    <p class="marksnote">The FDA does not approve dietary supplements. Saffra is made in a facility that is registered with the FDA and certified to Good Manufacturing Practice standards by an independent auditor.</p>
+  </div>
+</section>
 
 <section style="padding:64px 0 24px">
   <div class="wrap"><div style="display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:26px"><div class="head" style="margin:0"><p class="eyebrow">Real life</p><h2>For the everyday kind of close.</h2></div><div class="reelnav"><button type="button" id="reelprev" aria-label="Previous photos">&#8592;</button><button type="button" id="reelnext" aria-label="Next photos">&#8594;</button></div></div></div>
@@ -935,6 +966,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
             <a class="btn" href="#waitlist">Join the waitlist</a>
             <span class="muted" style="font-size:14.5px">60 gummies. 30-day supply. 30-day money back.</span>
           </div>
+          <ul class="marks compact"><li><span class="mark"><svg aria-hidden="true"><use href="#m-gmp"/></svg></span>GMP-certified facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-fac"/></svg></span>FDA-registered facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-lab"/></svg></span>Third-party lab tested</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-usa"/></svg></span>Made in the USA</li></ul>
           <div class="facts">
             <h3>Supplement Facts</h3>
             <div class="sv"><span>Serving size</span><b>2 gummies</b></div>
@@ -992,6 +1024,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
             <a class="btn" href="#waitlist">Join the waitlist</a>
             <span class="muted" style="font-size:14.5px">60 gummies. 30-day supply. 30-day money back.</span>
           </div>
+          <ul class="marks compact"><li><span class="mark"><svg aria-hidden="true"><use href="#m-gmp"/></svg></span>GMP-certified facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-fac"/></svg></span>FDA-registered facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-lab"/></svg></span>Third-party lab tested</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-usa"/></svg></span>Made in the USA</li></ul>
           <div class="facts">
             <h3>Supplement Facts</h3>
             <div class="sv"><span>Serving size</span><b>2 gummies</b></div>
@@ -1092,6 +1125,9 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
         <div><h3>That it treats anything</h3><p class="muted">Saffra is a supplement. If something feels wrong, see your doctor.</p></div>
       </div>
     </div>
+  </section>
+  <section style="padding-bottom:0">
+    <div class="wrap"><ul class="marks"><li><span class="mark"><svg aria-hidden="true"><use href="#m-gmp"/></svg></span>GMP-certified facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-fac"/></svg></span>FDA-registered facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-lab"/></svg></span>Third-party lab tested</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-usa"/></svg></span>Made in the USA</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-veg"/></svg></span>Vegan</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-glu"/></svg></span>Gluten free</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-art"/></svg></span>No artificial colors or flavors</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-dose"/></svg></span>Every dose on the label</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-back"/></svg></span>30-day money back</li></ul></div>
   </section>
   <section>
     <div class="wrap">
@@ -1550,7 +1586,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
       <div class="head"><p class="eyebrow">Ask us</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Questions, <i style="font-style:italic;color:var(--saffron)">answered.</i></h1><p class="lead muted">Plain answers. If yours is not here, send it and we will add it.</p></div>
       <div class="qa-cat"><h3>The product</h3><details><summary>What is in Saffra?</summary><p>Seven ingredients in each formula. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E. Every amount is on the label.</p></details><details><summary>Why two formulas?</summary><p>The core is the same because the research on saffron and fenugreek covers women and men. The three extras are chosen for each.</p></details><details><summary>Why gummies and not capsules?</summary><p>Because a ritual you enjoy is one you keep. The trade-off is space, which is why we only include ingredients that fit at a useful amount.</p></details></div>
       <div class="qa-cat"><h3>Taking it</h3><details><summary>When should I take it?</summary><p>One gummy in the morning and one in the evening, with or without food.</p></details><details><summary>How long until I notice anything?</summary><p>Give it four to eight weeks of daily use. That is what the studies measured. Some people notice nothing, which is why the first order has a 30-day money-back guarantee.</p></details><details><summary>What if I miss a day?</summary><p>Carry on the next day. Do not double up.</p></details></div>
-      <div class="qa-cat"><h3>Safety</h3><details><summary>Who should not take it?</summary><p>Anyone under 18, anyone pregnant, trying to conceive or nursing, and anyone with a peanut, chickpea or other legume allergy. If you take medication or have a medical condition, check with your doctor first.</p></details><details><summary>Can I take it with my multivitamin?</summary><p>Check the totals. Saffra already contains vitamins B12 and D3, plus B6 and folate in For Her, or zinc, selenium and vitamin E in For Him. Your pharmacist can tell you in a minute if the combined amounts are fine.</p></details><details><summary>Is it a treatment for low libido or erectile problems?</summary><p>No. Saffra is a dietary supplement. If something is worrying you, please see a doctor.</p></details></div>
+      <div class="qa-cat"><h3>Safety</h3><details><summary>Who should not take it?</summary><p>Anyone under 18, anyone pregnant, trying to conceive or nursing, and anyone with a peanut, chickpea or other legume allergy. If you take medication or have a medical condition, check with your doctor first.</p></details><details><summary>Can I take it with my multivitamin?</summary><p>Check the totals. Saffra already contains vitamins B12 and D3, plus B6 and folate in For Her, or zinc, selenium and vitamin E in For Him. Your pharmacist can tell you in a minute if the combined amounts are fine.</p></details><details><summary>Is Saffra FDA approved?</summary><p>No supplement is. The FDA does not approve dietary supplements before they are sold. Saffra is made in an FDA-registered facility that is certified to Good Manufacturing Practice standards, and every batch is tested by an independent lab.</p></details><details><summary>Is it a treatment for low libido or erectile problems?</summary><p>No. Saffra is a dietary supplement. If something is worrying you, please see a doctor.</p></details></div>
       <div class="qa-cat"><h3>The two of you</h3><details><summary>My partner is not interested in trying this. What now?</summary><p>Do not push. Try one of the free games or the ten-minute evening instead. The gummy is the least important part.</p></details><details><summary>We have not been close in a long time. Where do we start?</summary><p>Small. Go to bed at the same time twice this week, and ask one real question each night. If the distance feels heavy, a couples therapist is a good next step, not a last resort.</p></details></div>
       <div class="head" style="margin:20px 0 16px"><h2>Ask your own.</h2></div>
       <form class="askform" id="askform" novalidate>
