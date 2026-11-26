@@ -360,6 +360,17 @@ details p{margin:0 0 18px}
   body[data-view="her"] footer,body[data-view="him"] footer{padding-bottom:120px}
   body[data-view="her"] .totop,body[data-view="him"] .totop{bottom:84px}
 }
+
+#v-science .cmp th:nth-child(2),#v-science .cmp td:nth-child(2){background:transparent;color:var(--cream)}
+#v-science .cmp thead th:nth-child(2){color:var(--cream)}
+#v-science .cmp td a{color:var(--saffron);text-underline-offset:3px}
+@media (max-width:700px){#v-science .cmp td:nth-child(2)::before,#v-science .cmp td:nth-child(3)::before{content:none}}
+
+.two{padding:0;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;align-items:stretch;gap:0}
+.two>img{width:100%;height:100%;object-fit:cover;min-height:260px}
+.two .twobody{padding:32px;display:grid;gap:22px;align-content:center}
+.two h3{font-size:32px}
+@media (max-width:900px){.two{grid-template-columns:1fr}.two .twobody{padding:22px}}
 .cross{border-radius:var(--r);border:1px solid var(--saffron);background:linear-gradient(100deg,rgba(240,169,30,.18),rgba(240,169,30,.02) 60%),var(--plum-2);padding:28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:900px){
   .menu{display:inline-flex}
@@ -495,7 +506,7 @@ details p{margin:0 0 18px}
         <img src="img/bottle-her.webp" width="840" height="1232" alt="Saffra For Her jar">
         <div class="info">
           <h3>Saffra <i>for her</i></h3>
-          <ul><li>Saffron extract <b>30 mg</b></li><li>Ashwagandha root extract <b>600 mg</b></li></ul>
+          <ul><li>Saffron extract <b>28 mg</b></li><li>Fenugreek seed extract <b>600 mg</b></li></ul>
           <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month" data-one="one-time">a month</small></div>
           <div class="acts"><a class="btn small" href="#waitlist">Join the waitlist</a><a class="more" href="#her">View details</a></div>
         </div>
@@ -504,7 +515,7 @@ details p{margin:0 0 18px}
         <img src="img/bottle-him.webp" width="840" height="1232" alt="Saffra For Him jar">
         <div class="info">
           <h3>Saffra <i>for him</i></h3>
-          <ul><li>Fenugreek seed extract <b>600 mg</b></li><li>Saffron extract <b>30 mg</b></li><li>Zinc <b>11 mg</b></li></ul>
+          <ul><li>Saffron extract <b>28 mg</b></li><li>Fenugreek seed extract <b>600 mg</b></li><li>Zinc <b>11 mg</b></li></ul>
           <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month" data-one="one-time">a month</small></div>
           <div class="acts"><a class="btn small" href="#waitlist">Join the waitlist</a><a class="more" href="#him">View details</a></div>
         </div>
@@ -512,14 +523,17 @@ details p{margin:0 0 18px}
     </div>
     <p class="renew" style="margin-top:14px">Monthly plans renew every 30 days at the price shown until you cancel. Skip or cancel anytime.</p>
     <div class="two">
-      <div class="l">
-        <span class="tag">Best value</span>
-        <h3>Saffra for Two</h3>
-        <p class="muted">One jar of each, in a single box. 60 gummies per jar, a 30-day supply each.</p>
-      </div>
-      <div class="r">
-        <div class="amt"><span data-sub="$64" data-one="$78">$64</span> <small data-sub="a month" data-one="one-time">a month</small></div>
-        <a class="btn" href="#waitlist">Join the waitlist</a>
+      <img src="img/set.jpg" width="1600" height="1200" alt="Rendering of the Saffra for Two gift box beside the For Her and For Him jars" loading="lazy">
+      <div class="twobody">
+        <div class="l">
+          <span class="tag">Best value</span>
+          <h3>Saffra for Two</h3>
+          <p class="muted">One jar of each in a keepsake box. 60 gummies per jar, a 30-day supply each. Made to be opened together.</p>
+        </div>
+        <div class="r">
+          <div class="amt"><span data-sub="$64" data-one="$78">$64</span> <small data-sub="a month" data-one="one-time">a month</small></div>
+          <a class="btn" href="#waitlist">Join the waitlist</a>
+        </div>
       </div>
     </div>
   </div>
@@ -537,7 +551,7 @@ details p{margin:0 0 18px}
     <div class="head">
       <p class="eyebrow">What's inside</p>
       <h2>Fewer ingredients. <em>Full doses.</em></h2>
-      <p class="muted">Each active is included at the daily amount researchers gave people in placebo-controlled studies. Amounts are per day, in two gummies.</p>
+      <p class="muted">One shared core, tuned for each of you. Every botanical is included at the daily amount researchers gave people in placebo-controlled studies. Amounts are per day, in two gummies: one in the morning, one in the evening.</p>
     </div>
     <div class="tabs" role="tablist">
       <button type="button" role="tab" id="tab-her" aria-selected="true" aria-controls="p-her">For her</button>
@@ -547,8 +561,8 @@ details p{margin:0 0 18px}
       <div class="tablewrap"><table>
         <thead><tr><th>Ingredient</th><th>Per day</th><th>What it supports<sup>*</sup></th></tr></thead>
         <tbody>
-          <tr><td>Saffron extract</td><td>30 mg</td><td>Desire, arousal and natural lubrication. Studied in women at this dose for four weeks.</td></tr>
-          <tr><td>Ashwagandha root extract</td><td>600 mg</td><td>Feeling relaxed and present, and sexual wellbeing. Studied in women at this dose for eight weeks.</td></tr>
+          <tr><td>Saffron extract</td><td>28 mg</td><td>A positive mood, restful sleep and desire. The branded extract we use was studied at this dose in trials of up to 202 adults.</td></tr>
+          <tr><td>Fenugreek seed extract</td><td>600 mg</td><td>Desire and arousal. Studied at this dose in 80 women over eight weeks.</td></tr>
         </tbody>
       </table></div>
       <div class="pic"><img src="img/bottle-her.webp" width="840" height="1232" alt="" loading="lazy"></div>
@@ -557,8 +571,8 @@ details p{margin:0 0 18px}
       <div class="tablewrap"><table>
         <thead><tr><th>Ingredient</th><th>Per day</th><th>What it supports<sup>*</sup></th></tr></thead>
         <tbody>
-          <tr><td>Fenugreek seed extract</td><td>600 mg</td><td>Desire, arousal and vitality. Studied in men at this dose for six to twelve weeks.</td></tr>
-          <tr><td>Saffron extract</td><td>30 mg</td><td>Sexual wellbeing and satisfaction. Studied in men at this dose for four weeks.</td></tr>
+          <tr><td>Saffron extract</td><td>28 mg</td><td>A positive mood, restful sleep and desire. The branded extract we use was studied at this dose in trials of up to 202 adults.</td></tr>
+          <tr><td>Fenugreek seed extract</td><td>600 mg</td><td>Desire, arousal and vitality. Studied at this dose in men for six to twelve weeks.</td></tr>
           <tr><td>Zinc</td><td>11 mg</td><td>Normal testosterone and reproductive health. 100% of the daily value.</td></tr>
         </tbody>
       </table></div>
@@ -593,13 +607,13 @@ details p{margin:0 0 18px}
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">Meet the ingredients</p>
-      <h2>Three plants, chosen on purpose.</h2>
-      <p class="muted">Each one has a long history of use and at least one placebo-controlled human study at the dose we use.</p>
+      <h2>A short list, chosen on purpose.</h2>
+      <p class="muted">Two plants with placebo-controlled human studies at the dose we use, and one essential mineral.</p>
     </div>
     <div class="ings">
-      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=900&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div><small>In both formulas</small><h3>Saffron</h3><p class="muted">The dried red threads of the crocus flower, picked by hand. It takes thousands of flowers to make a small jar, which is why it is the world's most expensive spice.</p></div>
-      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=75" alt="Roots and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div><small>For her</small><h3>Ashwagandha</h3><p class="muted">A root used in Ayurveda for centuries, known for helping the body settle under stress. We use a root-only extract, never the leaves.</p></div>
-      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=900&q=75" alt="Spoons filled with ground spices and seeds" loading="lazy" onerror="this.remove()"></div><small>For him</small><h3>Fenugreek</h3><p class="muted">A seed found in kitchens from India to the Mediterranean. Its extract has been studied in men for desire and vitality.</p></div>
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=900&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div><small>In both formulas</small><h3>Saffron</h3><p class="muted">The dried red threads of the crocus flower, picked by hand, and the world's most expensive spice. We use a branded extract that is standardized and has its own clinical trials.</p></div>
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=900&q=75" alt="Spoons filled with ground spices and seeds" loading="lazy" onerror="this.remove()"></div><small>In both formulas</small><h3>Fenugreek</h3><p class="muted">A seed found in kitchens from India to the Mediterranean. Its extract has been studied in women and in men for desire and arousal.</p></div>
+      <div class="ing2"><div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=75" alt="Minerals and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div><small>For him</small><h3>Zinc</h3><p class="muted">An essential mineral that supports normal testosterone and reproductive health. For Him carries a full day's worth.</p></div>
     </div>
   </div>
 </section>
@@ -698,7 +712,7 @@ details p{margin:0 0 18px}
       <input class="faqsearch" id="faqq" type="search" placeholder="Search questions">
       <p id="faqnone" hidden>No matching questions. Try a different word.</p>
       <details><summary>How fast does it work?</summary><p>Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use.</p></details>
-      <details><summary>What is the difference between the two?</summary><p>For Her pairs saffron with ashwagandha, both studied in women. For Him pairs saffron with fenugreek, which was studied in men, and adds zinc.</p></details>
+      <details><summary>What is the difference between the two?</summary><p>They share one core: saffron and fenugreek, each studied in women and in men. For Him adds a full day of zinc. Each jar is labeled and dosed for the person taking it.</p></details>
       <details><summary>Who should not take it?</summary><p>Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions.</p></details>
       <details><summary>What does lab tested mean?</summary><p>An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar.</p></details>
       <details><summary>Should we both take the same one?</summary><p>No. Each of you takes your own formula. The For Two set has one jar of each.</p></details>
@@ -737,8 +751,8 @@ details p{margin:0 0 18px}
         <div class="buy">
           <p class="eyebrow">Daily intimacy gummies</p>
           <h1>Saffra <i>for her</i></h1>
-          <p class="lead">Saffron and ashwagandha, the two botanicals studied in women for desire, arousal and feeling present.<sup>*</sup></p>
-          <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports natural lubrication and sensitivity<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Helps you feel relaxed and present<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Vegan pectin gummy, blood orange and honey</span></li></ul>
+          <p class="lead">Saffron for mood and desire, with fenugreek, studied in women for desire and arousal.<sup>*</sup></p>
+          <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports natural lubrication and sensitivity<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports a positive mood and restful sleep<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Vegan pectin gummy, blood orange and honey</span></li></ul>
           <div class="row">
             <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month, cancel anytime" data-one="one-time">a month, cancel anytime</small></div>
           </div>
@@ -752,12 +766,12 @@ details p{margin:0 0 18px}
             <div class="sv"><span>Servings per container</span><b>30</b></div>
             <table>
               <thead><tr><th>Amount per serving</th><th></th><th>% Daily Value</th></tr></thead>
-              <tbody><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>30 mg</td><td>†</td></tr><tr><td>Ashwagandha (<i>Withania somnifera</i>) root extract</td><td>600 mg</td><td>†</td></tr></tbody>
+              <tbody><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>28 mg</td><td>†</td></tr><tr><td>Fenugreek (<i>Trigonella foenum-graecum</i>) seed extract</td><td>600 mg</td><td>†</td></tr></tbody>
             </table>
             <p class="fn">† Daily Value not established.</p>
             <p class="fn"><b>Other ingredients:</b> pectin, cane sugar, tapioca syrup, citric acid, natural flavors, fruit and vegetable juice (color).</p>
           </div>
-          <p class="muted" style="font-size:14.5px"><b style="color:var(--cream)">Before you start.</b> Adults only. Do not use if you are pregnant, trying to conceive or nursing. Talk to your doctor first if you take medication or have a thyroid, liver or autoimmune condition.</p>
+          <p class="muted" style="font-size:14.5px"><b style="color:var(--cream)">Before you start.</b> Adults only. Do not use if you are pregnant, trying to conceive or nursing. Talk to your doctor first if you take medication, especially for diabetes or blood thinning, or have a hormone-sensitive condition. Not for people with a peanut, chickpea or other legume allergy.</p>
         </div>
       </div>
     </div>
@@ -794,7 +808,7 @@ details p{margin:0 0 18px}
         <div class="buy">
           <p class="eyebrow">Daily intimacy gummies</p>
           <h1>Saffra <i>for him</i></h1>
-          <p class="lead">Fenugreek, the botanical studied in men for desire and vitality, with saffron and a full day of zinc.<sup>*</sup></p>
+          <p class="lead">Saffron for mood and desire, fenugreek studied in men for desire and vitality, and a full day of zinc.<sup>*</sup></p>
           <ul class="ticks"><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports desire and arousal<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Supports vitality and stamina<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Zinc for normal testosterone and reproductive health<sup>*</sup></span></li><li><svg width="24" height="24"><use href="#check"/></svg><span>Vegan pectin gummy, blood orange and honey</span></li></ul>
           <div class="row">
             <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month, cancel anytime" data-one="one-time">a month, cancel anytime</small></div>
@@ -809,7 +823,7 @@ details p{margin:0 0 18px}
             <div class="sv"><span>Servings per container</span><b>30</b></div>
             <table>
               <thead><tr><th>Amount per serving</th><th></th><th>% Daily Value</th></tr></thead>
-              <tbody><tr><td>Fenugreek (<i>Trigonella foenum-graecum</i>) seed extract</td><td>600 mg</td><td>†</td></tr><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>30 mg</td><td>†</td></tr><tr><td>Zinc (as zinc citrate)</td><td>11 mg</td><td>100%</td></tr></tbody>
+              <tbody><tr><td>Saffron (<i>Crocus sativus</i>) stigma extract</td><td>28 mg</td><td>†</td></tr><tr><td>Fenugreek (<i>Trigonella foenum-graecum</i>) seed extract</td><td>600 mg</td><td>†</td></tr><tr><td>Zinc (as zinc citrate)</td><td>11 mg</td><td>100%</td></tr></tbody>
             </table>
             <p class="fn">† Daily Value not established.</p>
             <p class="fn"><b>Other ingredients:</b> pectin, cane sugar, tapioca syrup, citric acid, natural flavors, fruit and vegetable juice (color).</p>
@@ -848,16 +862,31 @@ details p{margin:0 0 18px}
       <div class="head">
         <p class="eyebrow">The science</p>
         <h1>What the studies <i style="font-style:italic;color:var(--saffron)">tested.</i></h1>
-        <p class="lead muted">Every botanical in Saffra is included at the daily amount used in a placebo-controlled human study. Here is each one, with the paper.</p>
+        <p class="lead muted">Every botanical in Saffra is included at the daily amount used in placebo-controlled human studies. Here is each one, with the paper.</p>
       </div>
       <div class="tablewrap"><table>
-        <thead><tr><th>Ingredient</th><th>Our dose</th><th>Who was studied</th><th>How long</th><th>Paper</th></tr></thead>
+        <thead><tr><th>Ingredient</th><th>Dose studied</th><th>Who was studied</th><th>How long</th><th>Paper</th></tr></thead>
         <tbody>
+          <tr><td>Saffron</td><td>28 mg a day</td><td>202 adults with low mood</td><td>12 weeks</td><td><a href="https://www.nutritionaloutlook.com/view/saffron-supplement-studied-for-effect-on-mild-depression-symptoms">Read the report</a></td></tr>
+          <tr><td>Saffron</td><td>28 mg a day</td><td>86 women aged 50 to 70</td><td>12 weeks</td><td><a href="https://www.contemporaryobgyn.net/view/saffron-extract-linked-to-mood-and-sleep-gains-in-menopausal-women-in-rct">Read the report</a></td></tr>
           <tr><td>Saffron</td><td>30 mg a day</td><td>38 women taking an antidepressant</td><td>4 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23280545/">Read on PubMed</a></td></tr>
-          <tr><td>Saffron</td><td>30 mg a day</td><td>36 men taking an antidepressant</td><td>4 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/22552758/">Read on PubMed</a></td></tr>
-          <tr><td>Ashwagandha</td><td>600 mg a day</td><td>80 women with low desire</td><td>8 weeks</td><td><a href="https://www.nutraingredients.com/Article/2022/12/19/ashwagandha-supplements-may-improve-female-sexual-health/">Read the report</a></td></tr>
+          <tr><td>Fenugreek</td><td>600 mg a day</td><td>80 women with low desire</td><td>8 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25914334/">Read on PubMed</a></td></tr>
           <tr><td>Fenugreek</td><td>600 mg a day</td><td>60 healthy men, 25 to 52</td><td>6 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/21312304/">Read on PubMed</a></td></tr>
           <tr><td>Fenugreek</td><td>600 mg a day</td><td>120 healthy men, 43 to 70</td><td>12 weeks</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26791805/">Read on PubMed</a></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+    <section style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">What we left out</p><h2>Popular is not the same as right.</h2><p class="muted">Some of the best-known ingredients in this aisle did not make it into the jar. Here is why.</p></div>
+      <div class="tablewrap"><table class="cmp">
+        <thead><tr><th>Ingredient</th><th>Why it is not in Saffra</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Ashwagandha</td><td>Rare cases of liver injury have been reported, and Denmark and France have banned it in supplements.</td><td><a href="https://mobil.bfr.bund.de/cm/349/ashwagandha-food-supplements-with-potential-health-risks.pdf">German risk institute</a></td></tr>
+          <tr><td>Tongkat ali</td><td>European food safety reviewers concluded its safety has not been established.</td><td><a href="https://efsa.europa.eu/en/efsajournal/pub/6937">EFSA opinion</a></td></tr>
+          <tr><td>L-citrulline and maca</td><td>The amounts studied are measured in grams and will not fit in two gummies.</td><td><a href="#about">Our dose rule</a></td></tr>
+          <tr><td>Yohimbine and hormones</td><td>Not appropriate for a daily wellness product.</td><td></td></tr>
         </tbody>
       </table></div>
     </div>
@@ -1131,7 +1160,8 @@ details p{margin:0 0 18px}
       <div style="display:grid;gap:14px">
         <h3>Packaging</h3>
         <img src="img/duo-dark.jpg" width="1600" height="1200" alt="Rendering of the For Her and For Him jars" style="border-radius:var(--r)">
-        <p class="muted">One seamless capsule shape with no paper label. For Her: matte plum with a gold cap. For Him: graphite with a steel cap. Type is printed on the jar, a side window shows the gummies, and a saffron line marks the base. Doses sit on the front of both.</p>
+        <img src="img/set.jpg" width="1600" height="1200" alt="Rendering of the For Two gift box with both jars" style="border-radius:var(--r)" loading="lazy">
+        <p class="muted">One seamless capsule shape with no paper label. For Her: matte plum with a gold cap. For Him: graphite with a steel cap. Type is printed on the jar, a side window shows the gummies, and a saffron line marks the base. Doses sit on the front of both. The For Two box is matte plum with the wordmark in gold foil.</p>
       </div>
       <div>
         <h3 style="margin-bottom:14px">Color</h3>
@@ -1172,7 +1202,7 @@ details p{margin:0 0 18px}
       <p><b>Medical information.</b> The content on this site is for general information only and is not medical advice. It does not replace a conversation with your doctor. Talk to a healthcare professional before starting any supplement, especially if you are pregnant, trying to conceive or nursing, take medication, or have a medical condition. Stop use and see your doctor if you have a reaction.</p>
       <p><b>Results vary.</b> Supplements affect people differently and no result is guaranteed. Saffra is not a treatment for any sexual or medical condition.</p>
       <p><b>About the research.</b> The studies we cite were carried out on individual ingredients, not on Saffra gummies. Some were small and some were funded by ingredient makers.</p>
-      <p><b>Allergens.</b> Saffra for him contains fenugreek, a legume. Do not use it if you are allergic to peanuts, chickpeas or other legumes.</p>
+      <p><b>Allergens.</b> Saffra contains fenugreek, a legume. Do not use it if you are allergic to peanuts, chickpeas or other legumes.</p>
       <p><b>Subscriptions.</b> Monthly plans renew automatically every 30 days at the price shown until you cancel. You can skip or cancel anytime before your renewal date. See <a href="#shipping">Shipping, returns and subscriptions</a>.</p>
       <p><b>Guarantee.</b> The 30-day money-back guarantee applies to your first order. See <a href="#shipping">full terms</a>.</p>
       <p><b>Adults only.</b> For adults 18 and over. Keep out of reach of children. Store in a cool, dry place.</p>
@@ -1224,7 +1254,7 @@ details p{margin:0 0 18px}
   /* quiz */
   var Q=[
     {k:'who',t:'Who is this for?',o:[['me','Just me'],['partner','My partner'],['both','Both of us']]},
-    {k:'form',t:'Which formula fits?',o:[['her','For her','Saffron and ashwagandha, studied in women'],['him','For him','Fenugreek, saffron and zinc, studied in men']],when:function(a){return a.who!=='both';}},
+    {k:'form',t:'Which formula fits?',o:[['her','For her','Saffron and fenugreek, studied in women'],['him','For him','Fenugreek, saffron and zinc, studied in men']],when:function(a){return a.who!=='both';}},
     {k:'pair',t:'Which two?',o:[['herhim','One for her, one for him'],['herher','Two for her'],['himhim','Two for him']],when:function(a){return a.who==='both';}},
     {k:'goal',t:'What matters most right now?',o:[['desire','More desire'],['present','Feeling relaxed and present'],['energy','Energy and vitality'],['time','More time for each other']]},
     {k:'flags',t:'Does any of this apply?',multi:true,o:[['preg','Pregnant, trying to conceive or nursing'],['meds','Taking prescription medication'],['legume','Peanut, chickpea or other legume allergy'],['none','None of these']]},
@@ -1255,14 +1285,14 @@ details p{margin:0 0 18px}
     var hasHim=jars.indexOf('him')>-1, hasHer=jars.indexOf('her')>-1, f=A.flags||[];
     var name=both?(A.pair==='herhim'?'Saffra for Two':'Saffra for Two, '+(A.pair==='herher'?'two jars for her':'two jars for him')):'Saffra for '+(A.form==='her'?'her':'him');
     var price=both?(A.plan==='sub'?'$64 a month':'$78 one-time'):(A.plan==='sub'?'$36 a month':'$44 one-time');
-    var why={desire:'Both formulas include saffron at 30 mg a day, the amount studied for desire and arousal.',
-      present:hasHer?'For Her includes ashwagandha at 600 mg a day, studied in women for sexual wellbeing and widely used to help the body settle under stress.':'Saffron at 30 mg a day is in every jar. Pair it with the small rituals on our home page.',
-      energy:hasHim?'For Him includes fenugreek at 600 mg a day, studied in men for desire and vitality, plus a full day of zinc.':'For Her pairs saffron with ashwagandha, both studied in women over four to eight weeks.',
+    var why={desire:'Both formulas pair saffron with fenugreek at 600 mg a day, the amount studied for desire and arousal.',
+      present:'Every jar includes saffron at 28 mg a day, studied for a positive mood and restful sleep.',
+      energy:hasHim?'For Him includes fenugreek at 600 mg a day, studied in men for desire and vitality, plus a full day of zinc.':'For Her pairs saffron with fenugreek at 600 mg a day, studied in women over eight weeks.',
       time:'Take them together, at the same time each day. That shared minute is the point.'}[A.goal];
     var notes='';
     if(f.indexOf('preg')>-1) notes+='<p class="note"><b>Please wait.</b> Saffra is not for use while pregnant, trying to conceive or nursing.</p>';
     if(f.indexOf('meds')>-1) notes+='<p class="note"><b>Check first.</b> Herbs can interact with medicines. Show the ingredient list to your doctor or pharmacist before you start.</p>';
-    if(f.indexOf('legume')>-1&&hasHim) notes+='<p class="note"><b>Allergy note.</b> For Him contains fenugreek, a legume. It is not suitable for anyone with a peanut, chickpea or other legume allergy.</p>';
+    if(f.indexOf('legume')>-1) notes+='<p class="note"><b>Allergy note.</b> Saffra contains fenugreek, a legume. It is not suitable for anyone with a peanut, chickpea or other legume allergy.</p>';
     var imgs=jars.map(function(j){return '<img src="img/bottle-'+j+'.webp" alt="Saffra for '+j+' jar" width="840" height="1232">';}).join('');
     qb.innerHTML='<div class="result"><p class="eyebrow" style="color:var(--gold-ink)">Your match</p><h2>'+esc(name)+'</h2><div class="jars">'+imgs+'</div><p style="font-family:var(--display);font-size:30px">'+price+'</p><p class="muted">'+esc(why)+'</p>'+notes+
       '<p class="muted">Two gummies a day, each. Give it four to eight weeks.<sup>*</sup></p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn dark" href="#waitlist" data-int="'+(both?'two':A.form)+'">Join the waitlist</a>'+
