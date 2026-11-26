@@ -478,6 +478,76 @@ body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-rea
   .nav nav{gap:14px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* ---------- motion and metal layer ---------- */
+:root{--violet:#9333EA;--violet-2:#5B1FB8;--ruby:#E11D48;--line:linear-gradient(90deg,var(--violet),#C026D3 45%,var(--ruby));--silver:linear-gradient(180deg,#ffffff 0%,#e6e7ee 22%,#b9bcc9 50%,#e9eaf0 74%,#9a9dab 100%);--purple-metal:linear-gradient(180deg,#c79bff 0%,#9a4dff 26%,#6a21c9 55%,#8d3df0 78%,#4a1596 100%)}
+.btn{background:var(--silver);color:#16131a;position:relative;overflow:hidden;isolation:isolate;border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 -2px 4px rgba(0,0,0,.18) inset,0 8px 26px rgba(170,175,200,.28);text-shadow:0 1px 0 rgba(255,255,255,.6)}
+.btn:hover{background:var(--silver);filter:brightness(1.06)}
+.btn.ghost,.btn.dark{background:var(--purple-metal);color:#fff;border:1px solid rgba(214,180,255,.7);box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 -2px 5px rgba(0,0,0,.3) inset,0 8px 26px rgba(147,51,234,.4);text-shadow:0 1px 1px rgba(40,0,90,.6)}
+.btn.ghost:hover,.btn.dark:hover{background:var(--purple-metal);border-color:#e9d5ff;filter:brightness(1.1)}
+.btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);z-index:-1;animation:sheen 4.5s ease-in-out infinite}
+.btn.ghost::after,.btn.dark::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);animation-delay:1.2s}
+.nav nav a.btn{color:#16131a}
+@keyframes sheen{0%,55%{left:-60%}85%,100%{left:130%}}
+.toggle button[aria-pressed="true"],.chip[aria-pressed="true"]{background:var(--silver);color:#16131a;border-color:rgba(255,255,255,.7)}
+.gtabs button[aria-selected="true"]{background:var(--purple-metal);color:#fff;border-color:rgba(214,180,255,.7)}
+.day[aria-pressed="true"]{background:var(--purple-metal);border-color:#d6b4ff;color:#fff}
+.bar{background:linear-gradient(90deg,var(--violet-2),var(--violet) 40%,var(--ruby));color:#fff}
+.nav{border-bottom:0}
+.nav::after,.trust::before,.trust::after,footer::before{content:"";display:block;height:2px;background:var(--line);background-size:200% 100%;animation:flow 6s linear infinite}
+.trust{border:0}
+footer{padding-top:0}
+footer::before{margin-bottom:44px}
+@keyframes flow{to{background-position:200% 0}}
+.steps div,.vals div,.proof div{border-top:0;position:relative}
+.steps div::after,.vals div::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--line);box-shadow:0 0 14px rgba(225,29,72,.55)}
+.honest div{border-top:2px solid transparent;border-image:var(--line) 1}
+.rit li,.light details{border-image:linear-gradient(90deg,rgba(147,51,234,.55),rgba(225,29,72,.55)) 1}
+.two,.cross{border:1px solid transparent;background:linear-gradient(100deg,#3a1b3f,var(--plum-2) 60%) padding-box,var(--line) border-box}
+.card,.tile,.doc,.expect div,.ing{background-clip:padding-box}
+.tile:hover{border-color:var(--violet)}
+.price.hero-offer{border-color:var(--violet)}
+.rule{position:relative;height:70px;overflow:hidden}
+.rule svg{position:absolute;inset:0;width:200%;height:100%;animation:drift 14s linear infinite}
+.rule path{fill:none;stroke-width:1.6;stroke-linecap:round}
+@keyframes drift{to{transform:translateX(-50%)}}
+.hero{overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero .lines{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero .lines path{fill:none;stroke-width:1.4;stroke-linecap:round;stroke-dasharray:6 14;animation:dash 9s linear infinite;opacity:.85}
+.hero .lines path:nth-child(2){animation-duration:13s;stroke-dasharray:2 10;opacity:.6}
+.hero .lines path:nth-child(3){animation-duration:17s;stroke-dasharray:14 18;opacity:.5}
+@keyframes dash{to{stroke-dashoffset:-400}}
+.hero .shot img{animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero .shot{position:relative}
+.hero .shot::before{content:"";position:absolute;left:8%;right:8%;top:18%;bottom:6%;border-radius:50%;background:radial-gradient(circle,rgba(147,51,234,.45),rgba(225,29,72,.18) 55%,transparent 72%);filter:blur(30px);animation:pulse 5s ease-in-out infinite;z-index:-1}
+@keyframes pulse{0%,100%{opacity:.65;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+.orb{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd872,#ee9a1c 60%,#9a4f06);box-shadow:0 0 18px rgba(240,169,30,.5);animation:bob 9s ease-in-out infinite;z-index:0}
+.orb.o1{width:16px;height:16px;left:6%;top:22%}.orb.o2{width:10px;height:10px;left:46%;top:12%;animation-delay:-3s}.orb.o3{width:22px;height:22px;right:5%;top:64%;animation-delay:-5s}.orb.o4{width:8px;height:8px;left:30%;bottom:10%;animation-delay:-7s}
+@keyframes bob{0%,100%{transform:translate(0,0)}33%{transform:translate(10px,-18px)}66%{transform:translate(-8px,10px)}}
+.ticker{overflow:hidden;white-space:nowrap;padding:16px 0;background:#1d0d1c}
+.ticker div{display:inline-block;animation:tick 32s linear infinite;font-family:var(--display);font-style:italic;font-size:22px;color:var(--cream)}
+.ticker span{margin:0 22px}
+.ticker i{display:inline-block;width:44px;height:2px;background:var(--line);vertical-align:middle;border-radius:2px}
+@keyframes tick{to{transform:translateX(-50%)}}
+h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F0A91E);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:flow 8s linear infinite}
+.eyebrow::before{content:"";display:inline-block;width:26px;height:2px;background:var(--line);vertical-align:middle;margin-right:10px;border-radius:2px}
+.deckcard{position:relative;overflow:hidden}
+.deckcard::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--line)}
+.card{transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(147,51,234,.28)}
+.card img,.stage img{transition:transform .5s}
+.card:hover img{transform:translateY(-6px) rotate(-2deg)}
+.photo img{transition:transform 1.2s ease}
+.photo:hover img{transform:scale(1.05)}
+.prog i{background:var(--line)}
+@supports (animation-timeline:view()){
+  .head,.ing2,.tile,.post,.doc,.steps div,.vals div,.products .card,.two,.stages .photo,.story .txt,.letter>*{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+}
+@keyframes rise{from{opacity:.15;transform:translateY(34px)}to{opacity:1;transform:none}}
+@media (max-width:900px){.orb.o1,.orb.o2{display:none}.orb{opacity:.7}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body data-view="home">
@@ -514,6 +584,12 @@ body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-rea
 <main id="site">
 <span id="top"></span>
 <div class="hero">
+  <svg class="lines" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".5" stop-color="#C026D3"/><stop offset="1" stop-color="#E11D48"/></linearGradient></defs>
+    <path stroke="url(#lg)" d="M-20 420 C 200 300, 380 520, 620 400 S 1000 260, 1220 380"/>
+    <path stroke="url(#lg)" d="M-20 480 C 240 380, 420 560, 660 450 S 1040 330, 1220 450"/>
+    <path stroke="url(#lg)" d="M-20 340 C 180 240, 400 430, 640 330 S 980 180, 1220 300"/>
+  </svg>
+  <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span><span class="orb o4"></span>
   <div class="wrap">
     <div class="copy">
       <p class="eyebrow">Daily intimacy gummies, for her and for him</p>
@@ -529,6 +605,7 @@ body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-rea
   </div>
 </div>
 
+<div class="ticker" aria-hidden="true"><div><span>Desire, daily</span><i></i><span>For her</span><i></i><span>For him</span><i></i><span>For two</span><i></i><span>Seven ingredients</span><i></i><span>Every dose shown</span><i></i><span>Make time for each other</span><i></i><span>Desire, daily</span><i></i><span>For her</span><i></i><span>For him</span><i></i><span>For two</span><i></i><span>Seven ingredients</span><i></i><span>Every dose shown</span><i></i><span>Make time for each other</span><i></i></div></div>
 <div class="trust">
   <div class="wrap">
     <div><b>Full doses</b><span>Every amount printed on the jar</span></div>
@@ -562,7 +639,8 @@ body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-rea
   </div>
 </section>
 
-<section id="shop" style="padding-top:0">
+<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
+<section id="shop" style="padding-top:24px">
   <div class="wrap">
     <div class="shop-head">
       <div class="head" style="margin:0">
@@ -701,7 +779,8 @@ body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-rea
   </div>
 </section>
 
-<section id="doctors" style="padding-top:0">
+<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
+<section id="doctors" style="padding-top:24px">
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">Medical advisory board</p>
@@ -768,7 +847,8 @@ body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-rea
   </div>
 </section>
 
-<section id="more" style="padding-top:0">
+<div class="rule" aria-hidden="true"><svg viewBox="0 0 2400 70" preserveAspectRatio="none"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#9333EA"/><stop offset=".25" stop-color="#E11D48"/><stop offset=".5" stop-color="#9333EA"/><stop offset=".75" stop-color="#E11D48"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs><path stroke="url(#wg)" d="M0 35 C 150 5, 300 65, 450 35 S 750 5, 900 35 S 1050 65, 1200 35 C 1350 5, 1500 65, 1650 35 S 1950 5, 2100 35 S 2250 65, 2400 35"/><path stroke="url(#wg)" opacity=".5" d="M0 35 C 150 60, 300 10, 450 35 S 750 60, 900 35 S 1050 10, 1200 35 C 1350 60, 1500 10, 1650 35 S 1950 60, 2100 35 S 2250 10, 2400 35"/></svg></div>
+<section id="more" style="padding-top:24px">
   <div class="wrap">
     <div class="head"><p class="eyebrow">More than a gummy</p><h2>Come for the ritual. Stay to play.</h2><p class="muted">Free things to do together, whether or not you ever buy a jar.</p></div>
     <div class="tiles">
@@ -1504,7 +1584,7 @@ body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-rea
         <h3>Packaging</h3>
         <img src="img/duo-dark.jpg" width="1600" height="1200" alt="Rendering of the For Her and For Him jars" style="border-radius:var(--r)">
         <img src="img/set.jpg" width="1600" height="1200" alt="Rendering of the For Two gift box with both jars" style="border-radius:var(--r)" loading="lazy">
-        <p class="muted">One seamless capsule shape with no paper label. For Her: matte plum with a gold cap. For Him: graphite with a steel cap. Type is printed on the jar, a side window shows the gummies, and a saffron line marks the base. Doses sit on the front of both. The For Two box is matte plum with the wordmark in gold foil.</p>
+        <p class="muted">One seamless capsule shape with no paper label. For Her: matte plum with a gold cap. For Him: graphite with a steel cap. Type is printed on the jar, a side window shows the gummies, and holographic foil marks the cap seam, the base line, the logo and a small 7-actives seal. Doses sit on the front of both. The For Two box is matte plum with the wordmark in holographic foil.</p>
       </div>
       <div>
         <h3 style="margin-bottom:14px">Color</h3>
@@ -1641,7 +1721,7 @@ body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-rea
     var imgs=jars.map(function(j){return '<img src="img/bottle-'+j+'.webp" alt="Saffra for '+j+' jar" width="840" height="1232">';}).join('');
     qb.innerHTML='<div class="result"><p class="eyebrow" style="color:var(--gold-ink)">Your match</p><h2>'+esc(name)+'</h2><div class="jars">'+imgs+'</div><p style="font-family:var(--display);font-size:30px">'+price+'</p><p class="muted">'+esc(why)+'</p>'+notes+
       '<p class="muted">One gummy morning and evening, each. Give it four to eight weeks.<sup>*</sup></p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn dark" href="#waitlist" data-int="'+(both?'two':A.form)+'">Join the waitlist</a>'+
-      (both?'':'<a class="btn ghost" style="color:var(--ink);border-color:#cdbba6" href="#'+A.form+'">See the details</a>')+'<button type="button" class="btn ghost" style="color:var(--ink);border-color:#cdbba6" id="qagain">Start over</button></div></div>';
+      (both?'':'<a class="btn ghost" href="#'+A.form+'">See the details</a>')+'<button type="button" class="btn ghost" id="qagain">Start over</button></div></div>';
     document.getElementById('qagain').addEventListener('click',function(){A={};qi=0;draw();});
   }
   back.addEventListener('click',function(){ if(qi>0){qi--; draw();} });
