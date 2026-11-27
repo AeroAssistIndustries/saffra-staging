@@ -14,6 +14,11 @@
 <meta property="og:site_name" content="Saffra">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="apple-touch-icon" href="img/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Saffra">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#2A1429">
 <link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -568,7 +573,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
 @media (max-width:1100px){.marks{grid-template-columns:repeat(5,1fr);row-gap:22px}}
 @media (max-width:600px){.marks{grid-template-columns:repeat(3,1fr)}.marks li{font-size:12px}}
 
-body[data-view="creators"] #v-creators{display:block}body[data-view="giving"] #v-giving{display:block}body[data-view="rewards"] #v-rewards{display:block}body[data-view="app"] #v-app{display:block}body[data-view="members"] #v-members{display:block}
+body[data-view="creators"] #v-creators{display:block}body[data-view="giving"] #v-giving{display:block}body[data-view="rewards"] #v-rewards{display:block}body[data-view="app"] #v-app{display:block}body[data-view="download"] #v-download{display:block}body[data-view="members"] #v-members{display:block}
 .perks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .perk{border:1px solid rgba(255,255,255,.1);background:var(--plum-2);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
 .perk b{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.15}
@@ -738,6 +743,50 @@ body.bagopen{overflow:hidden}
 .ap-small{background:none;border:0;color:var(--muted);font:inherit;font-size:13.5px;text-decoration:underline;cursor:pointer;padding:10px 0;min-height:44px}
 @media(max-width:760px){.tiers{grid-template-columns:1fr}.earn{grid-template-columns:1fr 1fr}.locked{grid-template-columns:1fr}}
 @media(max-width:400px){.ap-scale button{width:40px;height:40px}.ap-card{padding:18px}}
+
+.ap-nav{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ap-nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--cream);font-size:20px;cursor:pointer}
+.ap-nav button:disabled{opacity:.3;cursor:default}
+.ap-hello{font-family:var(--display);font-size:26px;margin:0}
+.ap-jar{height:12px;border-radius:8px;background:rgba(255,255,255,.1);overflow:hidden}
+.ap-jar i{display:block;height:100%;background:var(--line);border-radius:8px}
+.ap-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.ap-cal span{font-size:11.5px;color:var(--muted);padding-bottom:2px}
+.ap-cal button{aspect-ratio:1;border-radius:12px;border:1px solid transparent;background:rgba(255,255,255,.05);color:var(--cream);font:inherit;font-size:13.5px;cursor:pointer;position:relative;min-width:0;padding:0}
+.ap-cal button.on{background:linear-gradient(135deg,rgba(147,51,234,.55),rgba(225,29,72,.5))}
+.ap-cal button.heart::after{content:"";position:absolute;right:5px;top:5px;width:6px;height:6px;border-radius:50%;background:var(--saffron)}
+.ap-cal button.today{border-color:var(--cream)}
+.ap-cal button:disabled{opacity:.28;cursor:default}
+.ap-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ap-badges div{border-radius:16px;padding:14px 8px;text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);opacity:.45;display:grid;gap:4px;justify-items:center}
+.ap-badges div.got{opacity:1;border-color:transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box}
+.ap-badges svg{width:26px;height:26px;color:var(--saffron)}
+.ap-badges b{font-size:13.5px}.ap-badges span{font-size:11.5px;color:var(--muted)}
+.ap-field{display:grid;gap:6px;font-size:14px;color:var(--muted)}
+.ap-field input,.ap-field select{font:inherit;color:var(--cream);background:var(--plum);border:1px solid var(--plum-3);border-radius:14px;padding:12px 14px;min-height:46px;width:100%;box-sizing:border-box}
+.ap-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ap-favs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ap-favs li{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:15px;border-top:1px solid rgba(255,255,255,.08);padding-top:8px}
+.ap-favs button{background:none;border:0;color:var(--muted);font-size:20px;min-width:44px;min-height:44px;cursor:pointer}
+.ap-td{font-family:var(--display);font-size:24px;line-height:1.25;margin:0;min-height:92px}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.dl .ap-card{margin:0;align-content:start}
+.dl ol{margin:0;padding-left:20px;color:var(--muted);display:grid;gap:8px;font-size:15.5px}
+.dl .plat{display:flex;align-items:center;gap:12px}
+.dl .plat svg{width:36px;height:36px;color:var(--saffron)}
+.phone{width:220px;aspect-ratio:9/19;border-radius:34px;border:3px solid #cfd0da;background:linear-gradient(180deg,#371B36,#2A1429);margin:0 auto;padding:18px 14px;display:grid;gap:10px;align-content:start;box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 6px #17101a}
+.phone b{font-family:var(--display);font-weight:400;font-size:20px}
+.phone i{display:block;height:34px;border-radius:12px;background:rgba(255,255,255,.07)}
+.phone i.g{background:var(--line);height:8px;border-radius:6px;width:60%}
+.phone .ic{width:54px;height:54px;border-radius:14px;margin:0 auto 4px}
+.dlhero{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+@media(max-width:760px){.dl,.dlhero{grid-template-columns:1fr}
+  body[data-view="app"] .ap-tabs{position:fixed;left:0;right:0;bottom:0;z-index:18;margin:0;border-radius:0;border:0;border-top:1px solid rgba(255,255,255,.12);background:rgba(29,12,29,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+  body[data-view="app"] .ap-tabs button{padding:10px 4px;font-size:13.5px}
+  body[data-view="app"] footer{padding-bottom:90px}
+  body[data-view="app"] .totop{display:none!important}
+  .ap-two{grid-template-columns:1fr}}
+@media(display-mode:standalone){body[data-view="app"] .bar,body[data-view="app"] footer{display:none}body[data-view="app"] #v-app{padding-bottom:90px}}
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Saffra", "url": "https://aeroassistindustries.github.io/saffra-staging/", "logo": "https://aeroassistindustries.github.io/saffra-staging/img/icon-512.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast does it work?", "acceptedAnswer": {"@type": "Answer", "text": "Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening."}}, {"@type": "Question", "name": "What is the difference between the two?", "acceptedAnswer": {"@type": "Answer", "text": "Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E."}}, {"@type": "Question", "name": "Who should not take it?", "acceptedAnswer": {"@type": "Answer", "text": "Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions."}}, {"@type": "Question", "name": "What does lab tested mean?", "acceptedAnswer": {"@type": "Answer", "text": "An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar."}}, {"@type": "Question", "name": "Should we both take the same one?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each of you takes your own formula. The For Two set has one jar of each."}}, {"@type": "Question", "name": "What does it taste like?", "acceptedAnswer": {"@type": "Answer", "text": "Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky."}}, {"@type": "Question", "name": "Is it vegan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No gelatin, no artificial colors or flavors."}}, {"@type": "Question", "name": "How long does a jar last?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty days. Each jar holds 60 gummies and the serving is two a day."}}, {"@type": "Question", "name": "Can I take it with other supplements or medication?", "acceptedAnswer": {"@type": "Answer", "text": "Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication."}}, {"@type": "Question", "name": "Can I cancel my subscription?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime from your account, in two clicks. You can also skip a month."}}]}]</script>
 </head>
@@ -1105,7 +1154,7 @@ body.bagopen{overflow:hidden}
   <div class="wrap">
     <div class="head"><p class="eyebrow">More than a gummy</p><h2>Come for the ritual. Stay to play.</h2><p class="muted">Free things to do together, whether or not you ever buy a jar.</p></div>
     <div class="tiles">
-      <a class="tile" href="#app"><span class="n">App</span><h3>Saffra Together</h3><p class="muted">A private daily check-in for two, with insights, trivia and ideas for tonight.</p><span class="go">Open the app</span></a>
+      <a class="tile" href="#app"><span class="n">App</span><h3>Saffra Together</h3><p class="muted">A private daily check-in for two, with insights, trivia and ideas for tonight.</p><span class="go">Open or install</span></a>
       <a class="tile" href="#play"><span class="n">Play</span><h3>Games for two</h3><p class="muted">A question deck, a date night spinner, two quick games and a 30-day ritual tracker.</p><span class="go">Play now</span></a>
       <a class="tile" href="#journal"><span class="n">Read</span><h3>The Journal</h3><p class="muted">Short, honest reads on desire, rituals and how to read a supplement label.</p><span class="go">Read the Journal</span></a>
       <a class="tile" href="#ask"><span class="n">Ask</span><h3>Questions, answered</h3><p class="muted">Plain answers about the product, safety and making time for each other.</p><span class="go">See the answers</span></a>
@@ -1953,34 +2002,40 @@ body.bagopen{overflow:hidden}
 <main id="v-app">
   <section class="pdp">
     <div class="wrap"><div class="ap">
-      <div class="head"><p class="eyebrow">Saffra Together</p><h1 style="font-size:clamp(36px,6vw,60px)">Your ritual, <i style="font-style:italic;color:var(--saffron)">together.</i></h1><p class="muted">A private space for the two of you. Everything you log stays on this device.</p></div>
+      <div class="head"><p class="eyebrow">Saffra Together</p><h1 style="font-size:clamp(34px,6vw,56px)">Your ritual, <i style="font-style:italic;color:var(--saffron)">together.</i></h1><p class="muted">A private space for the two of you. Everything you log stays on this device.</p></div>
       <div class="ap-tabs" role="tablist" aria-label="App sections">
-        <button role="tab" type="button" data-ap="today" aria-selected="true">Today</button><button role="tab" type="button" data-ap="insights" aria-selected="false">Insights</button><button role="tab" type="button" data-ap="trivia" aria-selected="false">Trivia</button><button role="tab" type="button" data-ap="ideas" aria-selected="false">Ideas</button><button role="tab" type="button" data-ap="more" aria-selected="false">More</button>
+        <button role="tab" type="button" data-ap="today" aria-selected="true">Today</button><button role="tab" type="button" data-ap="history" aria-selected="false">History</button><button role="tab" type="button" data-ap="play" aria-selected="false">Play</button><button role="tab" type="button" data-ap="ideas" aria-selected="false">Ideas</button><button role="tab" type="button" data-ap="me" aria-selected="false">Me</button>
       </div>
       <div id="ap-today">
         <div class="ap-card">
-          <div class="ap-row"><h3 id="ap-date">Today</h3><span class="muted" id="ap-streak"></span></div>
-          <div class="ap-row"><span>I took my gummies</span><button type="button" class="chip" id="ap-me" aria-pressed="false">Not yet</button></div>
-          <div class="ap-row"><span>My partner took theirs</span><button type="button" class="chip" id="ap-partner" aria-pressed="false">Not yet</button></div>
+          <p class="ap-hello" id="ap-hello"></p>
+          <div class="ap-nav"><button type="button" id="ap-prev" aria-label="Previous day">&lsaquo;</button><div style="text-align:center"><b id="ap-date"></b><br><span class="muted" id="ap-streak" style="font-size:13.5px"></span></div><button type="button" id="ap-nextd" aria-label="Next day">&rsaquo;</button></div>
         </div>
         <div class="ap-card">
-          <h3>How was today?</h3>
-          <div class="ap-row"><span id="l-mood">Mood</span><div class="ap-scale" role="group" aria-labelledby="l-mood" data-scale="mood"></div></div>
-          <div class="ap-row"><span id="l-desire">Desire</span><div class="ap-scale" role="group" aria-labelledby="l-desire" data-scale="desire"></div></div>
-          <div class="ap-row"><span id="l-close">Closeness</span><div class="ap-scale" role="group" aria-labelledby="l-close" data-scale="close"></div></div>
-          <div class="ap-row"><span>We were intimate today</span><button type="button" class="chip" id="ap-int" aria-pressed="false">No</button></div>
-          <label class="sr" for="ap-notes">A private note</label><textarea id="ap-notes" placeholder="A private note about today (optional)" maxlength="500"></textarea>
-          <div class="ap-row"><button type="button" class="btn" id="ap-save">Save today</button><span class="muted" id="ap-saved" role="status"></span></div>
+          <h3>Gummies</h3>
+          <div class="ap-row"><span>My morning gummy</span><button type="button" class="chip" data-flag="am" aria-pressed="false">Not yet</button></div>
+          <div class="ap-row"><span>My evening gummy</span><button type="button" class="chip" data-flag="pm" aria-pressed="false">Not yet</button></div>
+          <div class="ap-row"><span id="ap-plabel">My partner took theirs</span><button type="button" class="chip" data-flag="partner" aria-pressed="false">Not yet</button></div>
+          <div id="ap-jarbox"></div>
         </div>
-        <div class="ap-card"><h3>Last 14 days</h3><div class="ap-dots" id="ap-dots" aria-hidden="true"></div><p class="ap-note">Filled: gummies taken. Gold ring: an intimate day.</p></div>
+        <div class="ap-card">
+          <h3>How was the day?</h3>
+          <div class="ap-row"><span id="l-mood">Mood</span><div class="ap-scale" role="group" aria-labelledby="l-mood" data-scale="mood"></div></div><div class="ap-row"><span id="l-energy">Energy</span><div class="ap-scale" role="group" aria-labelledby="l-energy" data-scale="energy"></div></div><div class="ap-row"><span id="l-desire">Desire</span><div class="ap-scale" role="group" aria-labelledby="l-desire" data-scale="desire"></div></div><div class="ap-row"><span id="l-close">Closeness</span><div class="ap-scale" role="group" aria-labelledby="l-close" data-scale="close"></div></div>
+          <div class="ap-row"><span>We were intimate</span><button type="button" class="chip" data-flag="int" data-y="Yes" data-n="No" aria-pressed="false">No</button></div>
+          <label class="sr" for="ap-notes">A private note</label><textarea id="ap-notes" placeholder="A private note about the day (optional)" maxlength="500"></textarea>
+          <div class="ap-row"><button type="button" class="btn" id="ap-save">Save</button><span class="muted" id="ap-saved" role="status"></span></div>
+        </div>
       </div>
-      <div id="ap-insights" hidden>
-        <div class="ap-card"><h3>Your last 30 days</h3><div class="ap-stats" id="ap-stats"></div></div>
+      <div id="ap-history" hidden>
+        <div class="ap-card"><div class="ap-nav"><button type="button" id="cal-prev" aria-label="Previous month">&lsaquo;</button><h3 id="cal-title"></h3><button type="button" id="cal-next" aria-label="Next month">&rsaquo;</button></div><div class="ap-cal" id="ap-cal"></div><p class="ap-note">Tap a day to open it. Filled: gummies taken. Gold dot: an intimate day.</p></div>
+        <div class="ap-card"><h3>Last 30 days</h3><div class="ap-stats" id="ap-stats"></div></div>
         <div class="ap-card"><h3>Closeness, day by day</h3><div class="ap-bars" id="ap-bars" aria-hidden="true"></div><p class="ap-note" id="ap-trend"></p></div>
-        <div class="ap-card"><h3>Averages</h3><div class="ap-stats" id="ap-avgs"></div><p class="ap-note">Out of 5. Log for a few weeks to see how things move. Most studies of these ingredients ran four to eight weeks.<sup>*</sup></p></div>
+        <div class="ap-card"><h3>Averages</h3><div class="ap-stats" id="ap-avgs" style="grid-template-columns:repeat(4,1fr)"></div><p class="ap-note">Out of 5. Most studies of these ingredients ran four to eight weeks, so give it time.<sup>*</sup></p></div>
       </div>
-      <div id="ap-trivia" hidden>
-        <div class="ap-card"><div class="ap-row"><span class="muted" id="tv-n"></span><span class="muted" id="tv-score"></span></div><p class="ap-q" id="tv-q"></p><div class="ap-opts" id="tv-opts"></div><p class="muted" id="tv-why" role="status" style="margin:0;min-height:44px"></p><div><button type="button" class="btn" id="tv-next" hidden>Next question</button></div></div>
+      <div id="ap-play" hidden>
+        <div class="ap-card"><div class="ap-row"><h3>Trivia</h3><span class="muted" id="tv-best"></span></div><div class="ap-row"><span class="muted" id="tv-n"></span><span class="muted" id="tv-score"></span></div><p class="ap-q" id="tv-q"></p><div class="ap-opts" id="tv-opts"></div><p class="muted" id="tv-why" role="status" style="margin:0;min-height:44px"></p><div><button type="button" class="btn" id="tv-next" hidden>Next question</button></div></div>
+        <div class="ap-card"><h3>Truth or dare, for two</h3><p class="ap-td" id="td-text" role="status">Take turns. Pick one.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="td-truth">Truth</button><button type="button" class="btn ghost" id="td-dare">Dare</button></div></div>
+        <div class="ap-card"><h3>More games</h3><p class="muted" style="margin:0">The question deck, date night spinner, Know me and This or that.</p><div><a class="btn ghost" href="#play">Open the games</a></div></div>
       </div>
       <div id="ap-ideas" hidden>
         <div class="ap-card">
@@ -1988,16 +2043,44 @@ body.bagopen{overflow:hidden}
           <div><p class="ap-note" style="margin-bottom:8px">How much time?</p><div class="chips" data-pick="time"><button type="button" class="chip" data-v="short" aria-pressed="true">10 minutes</button><button type="button" class="chip" data-v="hour" aria-pressed="false">An hour</button><button type="button" class="chip" data-v="night" aria-pressed="false">The evening</button></div></div>
           <div><p class="ap-note" style="margin-bottom:8px">What mood?</p><div class="chips" data-pick="mood"><button type="button" class="chip" data-v="tender" aria-pressed="true">Tender</button><button type="button" class="chip" data-v="playful" aria-pressed="false">Playful</button><button type="button" class="chip" data-v="bold" aria-pressed="false">Bold</button></div></div>
           <p class="ap-idea" id="idea" role="status"></p>
-          <div><button type="button" class="btn" id="idea-next">Another idea</button></div>
+          <div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="idea-next">Another idea</button><button type="button" class="btn ghost" id="idea-save">Save it</button></div>
         </div>
+        <div class="ap-card"><h3>Saved ideas</h3><ul class="ap-favs" id="ap-favs"></ul></div>
       </div>
-      <div id="ap-more" hidden>
-        <div class="ap-card"><h3>Games for two</h3><p class="muted" style="margin:0">The question deck, date night spinner, Know me and This or that.</p><div><a class="btn" href="#play">Open the games</a></div></div>
-        <div class="ap-card"><h3>Members only</h3><p class="muted" style="margin:0">The After Dark deck, monthly date nights, guided evenings and couple sync.</p><div><a class="btn ghost" href="#members">See what is inside</a></div></div>
-        <div class="ap-card"><h3>Put it on your phone</h3><p class="muted" style="margin:0">On iPhone, tap Share, then Add to Home Screen. On Android, open the browser menu and tap Install app or Add to Home screen.</p></div>
-        <div class="ap-card"><h3>Your data</h3><p class="muted" style="margin:0">Check-ins are stored only in this browser, on this device. We cannot see them.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-export">Download my data</button><button type="button" class="ap-small" id="ap-wipe">Delete everything</button></div><span class="muted" id="ap-wiped" role="status"></span></div>
+      <div id="ap-me" hidden>
+        <div class="ap-card"><h3>The two of you</h3>
+          <div class="ap-two"><label class="ap-field">Your first name<input id="pf-me" maxlength="24" autocomplete="off"></label><label class="ap-field">Your partner's first name<input id="pf-partner" maxlength="24" autocomplete="off"></label></div>
+          <div class="ap-two"><label class="ap-field">Your formula<select id="pf-form"><option value="">Choose</option><option value="her">Saffra for her</option><option value="him">Saffra for him</option></select></label><label class="ap-field">Day you started<input id="pf-start" type="date"></label></div>
+          <div class="ap-row"><button type="button" class="btn" id="pf-save">Save</button><span class="muted" id="pf-saved" role="status"></span></div>
+        </div>
+        <div class="ap-card"><h3>Milestones</h3><div class="ap-badges" id="ap-badges"></div></div>
+        <div class="ap-card"><h3>Members only</h3><p class="muted" style="margin:0">The After Dark deck, monthly date nights, guided evenings and couple sync.</p><div class="ap-row" style="justify-content:flex-start"><a class="btn ghost small" href="#members">See what is inside</a><a class="btn ghost small" href="#rewards">Rewards</a></div></div>
+        <div class="ap-card"><h3>Put it on your phone</h3><p class="muted" style="margin:0">Install Saffra Together on iPhone or Android and open it like any other app.</p><div><a class="btn" href="#download">Get the app</a></div></div>
+        <div class="ap-card"><h3>Your data</h3><p class="muted" style="margin:0">Everything here is stored only in this browser, on this device. We cannot see it.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-export">Download my data</button><button type="button" class="ap-small" id="ap-wipe">Delete everything</button></div><span class="muted" id="ap-wiped" role="status"></span></div>
       </div>
     </div></div>
+  </section>
+</main>
+
+<main id="v-download">
+  <section class="pdp">
+    <div class="wrap" style="max-width:960px">
+      <div class="dlhero">
+        <div class="head" style="margin:0"><p class="eyebrow">Get the app</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Saffra Together, <i style="font-style:italic;color:var(--saffron)">on your phone.</i></h1><p class="lead muted">Daily check-ins, history, trivia, truth or dare and ideas for tonight. Free, private and made for two.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px"><button type="button" class="btn" id="dl-install">Install the app</button><a class="btn ghost" href="#app">Open in the browser</a></div><p class="muted" id="dl-msg" role="status" style="font-size:14.5px;min-height:22px"></p></div>
+        <div class="phone" aria-hidden="true"><img class="ic" src="img/icon-180.png" alt="" width="54" height="54"><b>Good evening</b><i class="g"></i><i></i><i></i><i></i><i class="g" style="width:40%"></i><i></i></div>
+      </div>
+      <div class="dl">
+        <div class="ap-card" id="dl-ios"><div class="plat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.500" width="12" height="19" rx="3"/><path d="M10.500 5.500h3"/></svg><h3 style="margin:0">iPhone and iPad</h3></div>
+          <ol><li>Open this page in Safari.</li><li>Tap the Share button at the bottom of the screen.</li><li>Scroll down and tap Add to Home Screen.</li><li>Tap Add. Saffra appears with your other apps.</li></ol></div>
+        <div class="ap-card" id="dl-android"><div class="plat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.500" y="2.500" width="13" height="19" rx="2.500"/><circle cx="12" cy="18" r="1"/></svg><h3 style="margin:0">Android</h3></div>
+          <ol><li>Open this page in Chrome.</li><li>Tap Install the app above, or open the menu with the three dots.</li><li>Tap Install app, or Add to Home screen.</li><li>Tap Install. Saffra appears with your other apps.</li></ol></div>
+      </div>
+      <div class="steps" style="margin-top:40px">
+        <div><h3>Private</h3><p class="muted">Your check-ins never leave your phone. No account needed.</p></div>
+        <div><h3>Works offline</h3><p class="muted">Once installed, it opens without a connection.</p></div>
+        <div><h3>Free</h3><p class="muted">For everyone, whether or not you ever buy a jar.</p></div>
+      </div>
+    </div>
   </section>
 </main>
 
@@ -2095,7 +2178,7 @@ body.bagopen{overflow:hidden}
     <div class="flinks">
       <div><b>Shop</b><a href="#her">For her</a><a href="#him">For him</a><a href="#shop">For two</a><a href="#quiz">Find your formula</a></div>
       <div><b>Learn</b><a href="#science">Science</a><a href="#about">About us</a><a href="#giving">Giving back</a><a href="#ask">Ask us</a></div>
-      <div><b>Lifestyle</b><a href="#play">Games for two</a><a href="#journal">Journal</a><a href="#app">Saffra Together app</a><a href="#journal">Podcast</a><a href="#creators">Creators</a></div>
+      <div><b>Lifestyle</b><a href="#play">Games for two</a><a href="#journal">Journal</a><a href="#app">Saffra Together app</a><a href="#download">Get the app</a><a href="#journal">Podcast</a><a href="#creators">Creators</a></div>
       <div><b>Members</b><a href="#rewards">Rewards</a><a href="#rewards">Refer a friend</a><a href="#members">Members only</a></div>
       <div><b>Help</b><a href="#shipping">Shipping and returns</a><a href="#privacy">Privacy policy</a><a href="#brand">Brand kit</a></div>
     </div>
@@ -2130,7 +2213,7 @@ body.bagopen{overflow:hidden}
 
 <script>
 (function(){
-  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','creators','brand','giving','rewards','app','members'];
+  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','creators','brand','giving','rewards','app','members','download'];
   var mb=document.getElementById('menubtn');
   function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
   mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
@@ -2276,64 +2359,108 @@ body.bagopen{overflow:hidden}
 
   /* Saffra Together app */
   (function(){
-    var KEY='saffra-log', TV=[["Which hormone, released with touch, is often called the bonding hormone?", ["Oxytocin", "Insulin", "Melatonin"], 0, "Oxytocin rises with hugging, touch and closeness."], ["Saffron comes from which flower?", ["Rose", "Crocus", "Orchid"], 1, "Saffron is the dried stigma of Crocus sativus."], ["How many saffron threads does one crocus flower give?", ["Three", "Twelve", "About fifty"], 0, "Each flower has three stigmas, picked by hand."], ["Desire that shows up after things get started, rather than before, is called what?", ["Spontaneous desire", "Responsive desire", "Delayed desire"], 1, "Responsive desire is common and completely normal."], ["Researcher John Gottman found stable couples have about how many positive moments for each negative one?", ["Two to one", "Five to one", "Twenty to one"], 1, "His work points to a ratio of about five to one."], ["Which mineral are oysters famously rich in?", ["Zinc", "Calcium", "Iron"], 0, "Oysters have more zinc per serving than almost any food."], ["L-theanine is found naturally in which drink?", ["Coffee", "Green tea", "Orange juice"], 1, "It is an amino acid in tea leaves."], ["Which vitamin does your skin make in sunlight?", ["Vitamin C", "Vitamin D", "Vitamin B12"], 1, "Sunlight on skin produces vitamin D."], ["Sensate focus, a slow touch exercise for couples, was developed by whom?", ["Masters and Johnson", "Freud and Jung", "Watson and Crick"], 0, "Masters and Johnson introduced it in the 1960s."], ["What is the scientific study of kissing called?", ["Philematology", "Osculogy", "Labiology"], 0, "Philematology, from the Greek word for kiss."], ["How many love languages are in Gary Chapman's well-known book?", ["Three", "Five", "Seven"], 1, "Words, time, gifts, service and touch."], ["What is the body's largest organ?", ["The liver", "The skin", "The lungs"], 1, "Skin, and it is full of touch receptors."]], IDEAS={"short": {"tender": ["Hold each other for a full minute without talking.", "Trade a slow shoulder rub, five minutes each.", "Tell each other one thing you noticed and loved this week.", "Lie down face to face and match your breathing."], "playful": ["Slow dance in the kitchen to one song.", "Play This or that, and the loser gives a kiss.", "Send each other a flirty text from different rooms.", "Have a thumb war. Winner picks tonight's dessert."], "bold": ["Kiss for a full sixty seconds. Set a timer.", "Whisper one thing you have been wanting to try.", "Each name one place you love to be touched.", "Pick each other's outfit for tonight."]}, "hour": {"tender": ["Take a bath or shower together, no phones nearby.", "Give a full back massage with oil, then swap.", "Cook something simple together and eat by candlelight.", "Read your old messages or look at old photos together."], "playful": ["Play the question deck, level two, with a glass of something.", "Build a blanket fort and watch one episode in it.", "Have a taste test, blindfolded, with five things from the kitchen.", "Teach each other one dance move each."], "bold": ["Play the question deck on level three.", "Take turns: three minutes each of being touched exactly how you ask.", "Write down one fantasy each and trade papers.", "Try the slow touch exercise: explore, with no goal."]}, "night": {"tender": ["Phones off at seven. Dinner, a walk and an early night.", "Recreate your first date at home.", "Make a playlist together, then lie down and listen to all of it.", "Plan a trip you will take this year, with wine and a map."], "playful": ["Spin the date night spinner and do whatever it says.", "Dress up and have a fancy dinner at your own table.", "Game night for two. The winner plans next weekend.", "Make cocktails or mocktails and name them after each other."], "bold": ["Check into a hotel in your own city.", "Plan the whole evening for your partner and keep it a surprise.", "Write each other a letter about what you want more of, then read them aloud.", "Leave a trail of notes that ends in the bedroom."]}};
-    function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){return {};}}
-    function save(d){try{localStorage.setItem(KEY,JSON.stringify(d));return true;}catch(e){return false;}}
+    var KEY='saffra-log',PK='saffra-profile',FK='saffra-favs',TV=[["Which hormone, released with touch, is often called the bonding hormone?", ["Oxytocin", "Insulin", "Melatonin"], 0, "Oxytocin rises with hugging, touch and closeness."], ["Saffron comes from which flower?", ["Rose", "Crocus", "Orchid"], 1, "Saffron is the dried stigma of Crocus sativus."], ["How many saffron threads does one crocus flower give?", ["Three", "Twelve", "About fifty"], 0, "Each flower has three stigmas, picked by hand."], ["Desire that shows up after things get started, rather than before, is called what?", ["Spontaneous desire", "Responsive desire", "Delayed desire"], 1, "Responsive desire is common and completely normal."], ["Researcher John Gottman found stable couples have about how many positive moments for each negative one?", ["Two to one", "Five to one", "Twenty to one"], 1, "His work points to a ratio of about five to one."], ["Which mineral are oysters famously rich in?", ["Zinc", "Calcium", "Iron"], 0, "Oysters have more zinc per serving than almost any food."], ["L-theanine is found naturally in which drink?", ["Coffee", "Green tea", "Orange juice"], 1, "It is an amino acid in tea leaves."], ["Which vitamin does your skin make in sunlight?", ["Vitamin C", "Vitamin D", "Vitamin B12"], 1, "Sunlight on skin produces vitamin D."], ["Sensate focus, a slow touch exercise for couples, was developed by whom?", ["Masters and Johnson", "Freud and Jung", "Watson and Crick"], 0, "Masters and Johnson introduced it in the 1960s."], ["What is the scientific study of kissing called?", ["Philematology", "Osculogy", "Labiology"], 0, "Philematology, from the Greek word for kiss."], ["How many love languages are in Gary Chapman's well-known book?", ["Three", "Five", "Seven"], 1, "Words, time, gifts, service and touch."], ["What is the body's largest organ?", ["The liver", "The skin", "The lungs"], 1, "Skin, and it is full of touch receptors."], ["Which brain chemical is most tied to wanting and reward?", ["Dopamine", "Histamine", "Cortisol"], 0, "Dopamine drives anticipation and motivation."], ["About how many crocus flowers does it take to make one gram of saffron?", ["About 15", "About 150", "About 1,500"], 1, "Roughly 150 flowers, which is why it costs so much."], ["Which country grows most of the world's saffron?", ["Iran", "Brazil", "Canada"], 0, "Iran produces the large majority of it."], ["Which nut is famous for its selenium?", ["Brazil nut", "Peanut", "Cashew"], 0, "One or two Brazil nuts can cover a day's selenium."], ["Vitamin B12 comes naturally mainly from what?", ["Leafy greens", "Animal foods", "Citrus fruit"], 1, "Meat, fish, eggs and dairy are the natural sources."], ["Which part of the nervous system handles rest and relaxation?", ["Sympathetic", "Parasympathetic", "Peripheral motor"], 1, "It slows the heart and helps the body settle."], ["Which sense is most closely tied to memory and emotion?", ["Smell", "Sight", "Hearing"], 0, "Scent signals go straight to the brain's emotion centers."], ["Endorphins are the body's natural what?", ["Pain relievers", "Antibodies", "Digestive enzymes"], 0, "They ease pain and lift mood."], ["The word aphrodisiac comes from which goddess?", ["Aphrodite", "Athena", "Artemis"], 0, "Aphrodite, the Greek goddess of love."], ["How much sleep do most adults need each night?", ["4 to 5 hours", "7 to 9 hours", "10 to 12 hours"], 1, "Seven to nine hours, and sleep affects desire."], ["When two partners want intimacy at different levels, it is called what?", ["Desire discrepancy", "Attachment gap", "Mood mismatch"], 0, "It is one of the most common things couples face."], ["Chocolate is made from the seeds of which tree?", ["Cacao", "Carob", "Coconut"], 0, "Theobroma cacao, which means food of the gods."], ["Fenugreek seeds are a staple spice in which cuisine?", ["Indian", "Norwegian", "Japanese"], 0, "Known as methi, used in curries and breads."]],IDEAS={"short": {"tender": ["Hold each other for a full minute without talking.", "Trade a slow shoulder rub, five minutes each.", "Tell each other one thing you noticed and loved this week.", "Lie down face to face and match your breathing.", "Wash each other's hair.", "Share one memory of the day you met."], "playful": ["Slow dance in the kitchen to one song.", "Play This or that, and the loser gives a kiss.", "Send each other a flirty text from different rooms.", "Have a thumb war. Winner picks tonight's dessert.", "Give each other a new nickname for the night.", "Staring contest. First to laugh owes a kiss."], "bold": ["Kiss for a full sixty seconds. Set a timer.", "Whisper one thing you have been wanting to try.", "Each name one place you love to be touched.", "Pick each other's outfit for tonight.", "Tell your partner the moment you last wanted them most.", "Trade one compliment about each other's body."]}, "hour": {"tender": ["Take a bath or shower together, no phones nearby.", "Give a full back massage with oil, then swap.", "Cook something simple together and eat by candlelight.", "Read your old messages or look at old photos together.", "Go for a walk holding hands, with no destination.", "Lie in bed and ask each other the question deck, level one."], "playful": ["Play the question deck, level two, with a glass of something.", "Build a blanket fort and watch one episode in it.", "Have a blindfolded taste test with five things from the kitchen.", "Teach each other one dance move each.", "Play truth or dare in the app.", "Draw portraits of each other. Worst one gets framed."], "bold": ["Play the question deck on level three.", "Take turns: three minutes each of being touched exactly how you ask.", "Write down one fantasy each and trade papers.", "Try the slow touch exercise: explore, with no goal.", "Undress each other slowly, one piece per question answered.", "Give a massage where the receiver gives every instruction."]}, "night": {"tender": ["Phones off at seven. Dinner, a walk and an early night.", "Recreate your first date at home.", "Make a playlist together, then lie down and listen to all of it.", "Plan a trip you will take this year, with wine and a map.", "Cook each other's favorite childhood meal.", "Watch the sunset somewhere new, then come home slowly."], "playful": ["Spin the date night spinner and do whatever it says.", "Dress up and have a fancy dinner at your own table.", "Game night for two. The winner plans next weekend.", "Make cocktails or mocktails and name them after each other.", "Go out and pretend it is your first date.", "Karaoke at home. Duets only."], "bold": ["Check into a hotel in your own city.", "Plan the whole evening for your partner and keep it a surprise.", "Write each other a letter about what you want more of, then read them aloud.", "Leave a trail of notes that ends in the bedroom.", "Spend the whole evening on one rule: the other person chooses.", "Turn the bedroom into a spa: candles, oil, music, no clock."]}},TR=["What is your favorite memory of us?", "When do you feel most wanted by me?", "What is something small I do that you love?", "What did you think the first time you saw me?", "Where would you most like to be kissed right now?", "What is one thing you want more of from me?", "What is a fantasy you have never told me?", "What song makes you think of us?", "When did you last feel really close to me?", "What outfit of mine is your favorite?", "What is the best kiss we ever had?", "What should we try that we never have?"],DA=["Kiss me somewhere you have not kissed in a while.", "Give me a one-minute massage, anywhere I choose.", "Whisper something in my ear that makes me blush.", "Slow dance with me for one whole song.", "Describe my best feature without using your hands.", "Feed me something sweet with your eyes closed.", "Send me a flirty text right now, from across the room.", "Hold eye contact with me for sixty seconds, no talking.", "Trace a word on my back and let me guess it.", "Take off one thing I choose.", "Show me how you want to be kissed.", "Tell me your plan for the rest of tonight."];
+    function get(k,f){try{var v=JSON.parse(localStorage.getItem(k));return v==null?f:v;}catch(e){return f;}}
+    function put(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(e){return false;}}
     function key(dt){return dt.getFullYear()+'-'+('0'+(dt.getMonth()+1)).slice(-2)+'-'+('0'+dt.getDate()).slice(-2);}
     function ago(n){var d=new Date();d.setDate(d.getDate()-n);return key(d);}
-    var $=function(i){return document.getElementById(i);}, cur={};
-    function chip(b,on,y,n){b.setAttribute('aria-pressed',!!on);b.textContent=on?y:n;}
+    function parse(k){var p=k.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+    function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function took(e){return !!(e&&(e.am||e.pm||e.me));}
+    function doses(e){return e?(e.me&&!e.am&&!e.pm?2:(e.am?1:0)+(e.pm?1:0)):0;}
+    var $=function(i){return document.getElementById(i);},sel=ago(0),cur={},calM=new Date();calM.setDate(1);
+    function streaks(d){var st=0,i=took(d[ago(0)])?0:1;for(;i<800;i++){if(took(d[ago(i)]))st++;else break;}
+      var ks=Object.keys(d).filter(function(k){return took(d[k]);}).sort(),best=0,run=0,prev=null;
+      ks.forEach(function(k){var t=parse(k).getTime();run=(prev!==null&&Math.round((t-prev)/864e5)===1)?run+1:1;prev=t;if(run>best)best=run;});return [st,best];}
     function drawToday(){
-      var d=load(); cur=Object.assign({me:false,partner:false,int:false,mood:0,desire:0,close:0,note:''},d[ago(0)]||{});
-      $('ap-date').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
-      chip($('ap-me'),cur.me,'Taken','Not yet'); chip($('ap-partner'),cur.partner,'Taken','Not yet'); chip($('ap-int'),cur.int,'Yes','No');
-      document.querySelectorAll('[data-scale]').forEach(function(g){var k=g.getAttribute('data-scale'),h='';for(var i=1;i<=5;i++)h+='<button type="button" data-n="'+i+'" aria-pressed="'+(cur[k]===i)+'" aria-label="'+i+' out of 5">'+i+'</button>';g.innerHTML=h;});
-      $('ap-notes').value=cur.note||'';
-      var st=0;for(var i=(d[ago(0)]&&d[ago(0)].me)?0:1;i<400;i++){if(d[ago(i)]&&d[ago(i)].me)st++;else break;}
-      $('ap-streak').textContent=st?st+(st===1?' day streak':' day streak'):'';
-      var h='';for(var j=13;j>=0;j--){var e=d[ago(j)]||{};h+='<i class="'+(e.me?'on':'')+(e.int?' heart':'')+'"></i>';}$('ap-dots').innerHTML=h;
+      var d=get(KEY,{}),p=get(PK,{}),e=d[sel]||{};
+      cur={am:!!(e.am||(e.me&&!e.pm&&!e.am)),pm:!!(e.pm||(e.me&&!e.pm&&!e.am)),partner:!!e.partner,int:!!e.int,mood:e.mood||0,energy:e.energy||0,desire:e.desire||0,close:e.close||0,note:e.note||''};
+      var h=new Date().getHours(),g=h<12?'Good morning':h<18?'Good afternoon':'Good evening',day='';
+      if(p.start){var n=Math.round((parse(ago(0))-parse(p.start))/864e5)+1;if(n>0)day=' Day '+n+' on Saffra.';}
+      $('ap-hello').textContent=g+(p.me?', '+p.me:'')+'.'+day;
+      $('ap-plabel').textContent=(p.partner?p.partner:'My partner')+' took theirs';
+      $('ap-date').textContent=sel===ago(0)?'Today':sel===ago(1)?'Yesterday':parse(sel).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
+      $('ap-nextd').disabled=sel===ago(0);
+      var s=streaks(d);$('ap-streak').textContent=s[0]?s[0]+' day streak':'Log today to start a streak';
+      document.querySelectorAll('[data-flag]').forEach(function(b){var on=cur[b.getAttribute('data-flag')];b.setAttribute('aria-pressed',on);b.textContent=on?(b.getAttribute('data-y')||'Taken'):(b.getAttribute('data-n')||'Not yet');});
+      document.querySelectorAll('[data-scale]').forEach(function(gp){var k=gp.getAttribute('data-scale'),x='';for(var i=1;i<=5;i++)x+='<button type="button" data-n="'+i+'" aria-pressed="'+(cur[k]===i)+'" aria-label="'+i+' out of 5">'+i+'</button>';gp.innerHTML=x;});
+      $('ap-notes').value=cur.note;
+      var jb=$('ap-jarbox');
+      if(p.jar){var used=0;Object.keys(d).forEach(function(k){if(k>=p.jar)used+=doses(d[k]);});var left=Math.max(0,60-used);
+        jb.innerHTML='<div class="ap-row"><span class="muted" style="font-size:14px">'+left+' of 60 gummies left in your jar</span><button type="button" class="ap-small" id="ap-newjar">New jar</button></div><div class="ap-jar"><i style="width:'+(left/60*100)+'%"></i></div>'+(left<=14?'<p class="ap-note" style="margin-top:8px">About a week left. <a href="#shop" style="color:var(--saffron)">Reorder</a></p>':'');}
+      else jb.innerHTML='<button type="button" class="ap-small" id="ap-newjar">Track my jar: I opened one today</button>';
     }
-    function commit(msg){var d=load();cur.note=$('ap-notes').value.slice(0,500);d[ago(0)]=cur;var ok=save(d);drawToday();$('ap-saved').textContent=msg?(ok?'Saved.':'Could not save on this device.'):'';}
-    $('ap-me').addEventListener('click',function(){cur.me=!cur.me;commit();});
-    $('ap-partner').addEventListener('click',function(){cur.partner=!cur.partner;commit();});
-    $('ap-int').addEventListener('click',function(){cur.int=!cur.int;commit();});
+    function commit(msg){var d=get(KEY,{});cur.note=$('ap-notes').value.slice(0,500);d[sel]=cur;var ok=put(KEY,d);drawToday();$('ap-saved').textContent=msg?(ok?'Saved.':'Could not save on this device.'):'';}
+    $('ap-today').addEventListener('click',function(e){
+      var f=e.target.closest('[data-flag]');if(f){var k=f.getAttribute('data-flag');cur[k]=!cur[k];commit();return;}
+      var sc=e.target.closest('[data-scale] button');if(sc){var kk=sc.parentNode.getAttribute('data-scale'),n=+sc.getAttribute('data-n');cur[kk]=cur[kk]===n?0:n;commit();return;}
+      if(e.target.id==='ap-newjar'){var p=get(PK,{});p.jar=ago(0);put(PK,p);drawToday();}
+    });
     $('ap-save').addEventListener('click',function(){commit(true);});
-    document.querySelectorAll('[data-scale]').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var k=g.getAttribute('data-scale'),n=+b.getAttribute('data-n');cur[k]=cur[k]===n?0:n;commit();});});
+    function shift(n){var t=parse(sel);t.setDate(t.getDate()+n);var k=key(t);if(k>ago(0))return;sel=k;$('ap-saved').textContent='';drawToday();}
+    $('ap-prev').addEventListener('click',function(){shift(-1);});$('ap-nextd').addEventListener('click',function(){shift(1);});
     function stat(v,l){return '<div><i>'+v+'</i><span>'+l+'</span></div>';}
-    function drawInsights(){
-      var d=load(),n=0,me=0,it=0,s={mood:[0,0],desire:[0,0],close:[0,0]},bars='',first=[0,0],last=[0,0];
-      for(var i=29;i>=0;i--){var e=d[ago(i)];if(e){n++;if(e.me)me++;if(e.int)it++;['mood','desire','close'].forEach(function(k){if(e[k]){s[k][0]+=e[k];s[k][1]++;}});}
-        var c=e&&e.close||0;bars+='<i class="'+(c?'':'none')+'" style="height:'+(c?c*20:3)+'%"></i>'; if(c){var t=i>=15?first:last;t[0]+=c;t[1]++;}}
-      function av(k){return s[k][1]?(s[k][0]/s[k][1]).toFixed(1):'-';}
+    function drawHistory(){
+      var d=get(KEY,{}),y=calM.getFullYear(),m=calM.getMonth(),first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate(),today=ago(0),h='';
+      $('cal-title').textContent=calM.toLocaleDateString(undefined,{month:'long',year:'numeric'});
+      ['S','M','T','W','T','F','S'].forEach(function(x){h+='<span>'+x+'</span>';});
+      for(var b=0;b<first;b++)h+='<span></span>';
+      for(var i=1;i<=days;i++){var k=key(new Date(y,m,i)),e=d[k];h+='<button type="button" data-day="'+k+'" class="'+(took(e)?'on':'')+(e&&e.int?' heart':'')+(k===today?' today':'')+'"'+(k>today?' disabled':'')+' aria-label="'+new Date(y,m,i).toLocaleDateString(undefined,{month:'long',day:'numeric'})+(took(e)?', gummies taken':'')+(e&&e.int?', intimate day':'')+'">'+i+'</button>';}
+      $('ap-cal').innerHTML=h;var now=new Date();$('cal-next').disabled=y===now.getFullYear()&&m===now.getMonth();
+      var n=0,me=0,it=0,s={mood:[0,0],energy:[0,0],desire:[0,0],close:[0,0]},bars='',fa=[0,0],la=[0,0];
+      for(var j=29;j>=0;j--){var x=d[ago(j)];if(x){n++;if(took(x))me++;if(x.int)it++;Object.keys(s).forEach(function(q){if(x[q]){s[q][0]+=x[q];s[q][1]++;}});}
+        var c=x&&x.close||0;bars+='<i class="'+(c?'':'none')+'" style="height:'+(c?c*20:3)+'%"></i>';if(c){var t=j>=15?fa:la;t[0]+=c;t[1]++;}}
+      function av(q){return s[q][1]?(s[q][0]/s[q][1]).toFixed(1):'-';}
       $('ap-stats').innerHTML=stat(n,'days logged')+stat(Math.round(me/30*100)+'%','gummy days')+stat(it,'intimate days');
-      $('ap-avgs').innerHTML=stat(av('mood'),'mood')+stat(av('desire'),'desire')+stat(av('close'),'closeness');
-      $('ap-bars').innerHTML=bars;
-      var tr='Log closeness for a couple of weeks to see your trend.';
-      if(first[1]>=3&&last[1]>=3){var a=first[0]/first[1],b=last[0]/last[1];tr=b>a+.2?'Closeness is up over the last two weeks.':b<a-.2?'Closeness is down a little over the last two weeks. Try an idea tonight.':'Closeness has been steady over the last month.';}
+      $('ap-avgs').innerHTML=stat(av('mood'),'mood')+stat(av('energy'),'energy')+stat(av('desire'),'desire')+stat(av('close'),'closeness');
+      $('ap-bars').innerHTML=bars;var tr='Log closeness for a couple of weeks to see your trend.';
+      if(fa[1]>=3&&la[1]>=3){var a=fa[0]/fa[1],z=la[0]/la[1];tr=z>a+.2?'Closeness is up over the last two weeks.':z<a-.2?'Closeness is down a little over the last two weeks. Try an idea tonight.':'Closeness has been steady over the last month.';}
       $('ap-trend').textContent=tr;
     }
-    var ti=0,score=0,order=[];
-    function shuffle(){order=TV.map(function(_,i){return i;});for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=order[i];order[i]=order[j];order[j]=t;}ti=0;score=0;}
-    function drawTrivia(){
-      if(ti>=order.length){$('tv-n').textContent='Finished';$('tv-score').textContent='';$('tv-q').textContent='You scored '+score+' out of '+order.length+'.';$('tv-opts').innerHTML='';$('tv-why').textContent=score>=10?'You two could teach this.':score>=6?'Solid. Play again to beat it.':'Now you know. Try again together.';$('tv-next').hidden=false;$('tv-next').textContent='Play again';return;}
+    $('ap-cal').addEventListener('click',function(e){var b=e.target.closest('[data-day]');if(!b||b.disabled)return;sel=b.getAttribute('data-day');tab('today');window.scrollTo(0,0);});
+    $('cal-prev').addEventListener('click',function(){calM.setMonth(calM.getMonth()-1);drawHistory();});
+    $('cal-next').addEventListener('click',function(){calM.setMonth(calM.getMonth()+1);drawHistory();});
+    var ti=0,score=0,order=[],ROUND=10;
+    function shuffle(){var a=TV.map(function(_,i){return i;});for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}order=a.slice(0,ROUND);ti=0;score=0;}
+    function drawTrivia(){var best=get('saffra-tv',0);$('tv-best').textContent=best?'Best '+best+' of '+ROUND:'';
+      if(ti>=order.length){if(score>best){put('saffra-tv',score);$('tv-best').textContent='Best '+score+' of '+ROUND;}$('tv-n').textContent='Finished';$('tv-score').textContent='';$('tv-q').textContent='You scored '+score+' out of '+order.length+'.';$('tv-opts').innerHTML='';$('tv-why').textContent=score>=9?'You two could teach this.':score>=6?'Solid. Play again to beat it.':'Now you know. Try again together.';$('tv-next').hidden=false;$('tv-next').textContent='Play again';return;}
       var q=TV[order[ti]];$('tv-n').textContent='Question '+(ti+1)+' of '+order.length;$('tv-score').textContent='Score '+score;$('tv-q').textContent=q[0];$('tv-why').textContent='';$('tv-next').hidden=true;$('tv-next').textContent='Next question';
-      $('tv-opts').innerHTML=q[1].map(function(o,i){return '<button type="button" data-i="'+i+'">'+o+'</button>';}).join('');
-    }
+      $('tv-opts').innerHTML=q[1].map(function(o,i){return '<button type="button" data-i="'+i+'">'+o+'</button>';}).join('');}
     $('tv-opts').addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;var q=TV[order[ti]],i=+b.getAttribute('data-i');
       this.querySelectorAll('button').forEach(function(x,k){x.disabled=true;if(k===q[2])x.classList.add('right');});
       if(i===q[2])score++;else b.classList.add('wrong');$('tv-why').textContent=(i===q[2]?'Correct. ':'Not quite. ')+q[3];$('tv-score').textContent='Score '+score;$('tv-next').hidden=false;$('tv-next').focus();});
     $('tv-next').addEventListener('click',function(){if(ti>=order.length)shuffle();else ti++;drawTrivia();});
+    var lastTD='';function td(l,tag){var t;do{t=l[Math.floor(Math.random()*l.length)];}while(t===lastTD);lastTD=t;$('td-text').textContent=tag+': '+t;}
+    $('td-truth').addEventListener('click',function(){td(TR,'Truth');});$('td-dare').addEventListener('click',function(){td(DA,'Dare');});
     var pick={time:'short',mood:'tender'},lastIdea='';
-    function idea(){var l=IDEAS[pick.time][pick.mood],t;do{t=l[Math.floor(Math.random()*l.length)];}while(t===lastIdea&&l.length>1);lastIdea=t;$('idea').textContent=t;}
+    function idea(){var l=IDEAS[pick.time][pick.mood],t;do{t=l[Math.floor(Math.random()*l.length)];}while(t===lastIdea&&l.length>1);lastIdea=t;$('idea').textContent=t;$('idea-save').textContent=get(FK,[]).indexOf(t)>-1?'Saved':'Save it';}
+    function favs(){var f=get(FK,[]);$('ap-favs').innerHTML=f.length?f.map(function(t,i){return '<li><span>'+esc(t)+'</span><button type="button" data-rm="'+i+'" aria-label="Remove this idea">&times;</button></li>';}).join(''):'<li class="muted" style="border:0;padding:0">Nothing saved yet. Tap Save it on an idea you like.</li>';}
     document.querySelectorAll('[data-pick]').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pick[g.getAttribute('data-pick')]=b.getAttribute('data-v');g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});idea();});});
     $('idea-next').addEventListener('click',idea);
-    function tab(t){['today','insights','trivia','ideas','more'].forEach(function(k){$('ap-'+k).hidden=k!==t;});document.querySelectorAll('[data-ap]').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-ap')===t);});if(t==='insights')drawInsights();if(t==='today')drawToday();}
-    document.querySelectorAll('[data-ap]').forEach(function(b){b.addEventListener('click',function(){tab(b.getAttribute('data-ap'));});});
-    $('ap-export').addEventListener('click',function(){var a=document.createElement('a');a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(load(),null,1));a.download='saffra-together.json';document.body.appendChild(a);a.click();a.remove();});
+    $('idea-save').addEventListener('click',function(){var f=get(FK,[]);if(f.indexOf(lastIdea)<0){f.unshift(lastIdea);put(FK,f.slice(0,30));}this.textContent='Saved';favs();});
+    $('ap-favs').addEventListener('click',function(e){var b=e.target.closest('[data-rm]');if(!b)return;var f=get(FK,[]);f.splice(+b.getAttribute('data-rm'),1);put(FK,f);favs();idea.call&&($('idea-save').textContent=get(FK,[]).indexOf(lastIdea)>-1?'Saved':'Save it');});
+    var BI='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.600 5.600 6.100.700-4.500 4.200 1.200 6-5.400-3-5.400 3 1.200-6L3.300 9.300l6.100-.700z"/></svg>';
+    function drawMe(){var p=get(PK,{}),d=get(KEY,{});$('pf-me').value=p.me||'';$('pf-partner').value=p.partner||'';$('pf-form').value=p.form||'';$('pf-start').value=p.start||'';$('pf-start').max=ago(0);
+      var ks=Object.keys(d),n=ks.length,it=ks.filter(function(k){return d[k].int;}).length,best=streaks(d)[1],tvb=get('saffra-tv',0),fv=get(FK,[]).length;
+      var B=[['First check-in','Log one day',n>=1],['One week','7-day streak',best>=7],['One month','30-day streak',best>=30],['Close','10 intimate days',it>=10],['Trivia ace','Score 9 of 10',tvb>=9],['Collector','Save 3 ideas',fv>=3]];
+      $('ap-badges').innerHTML=B.map(function(b){return '<div class="'+(b[2]?'got':'')+'">'+BI+'<b>'+b[0]+'</b><span>'+b[1]+'</span></div>';}).join('');}
+    $('pf-save').addEventListener('click',function(){var p=get(PK,{});p.me=$('pf-me').value.trim().slice(0,24);p.partner=$('pf-partner').value.trim().slice(0,24);p.form=$('pf-form').value;p.start=$('pf-start').value;$('pf-saved').textContent=put(PK,p)?'Saved.':'Could not save on this device.';});
+    function tab(t){['today','history','play','ideas','me'].forEach(function(k){$('ap-'+k).hidden=k!==t;});document.querySelectorAll('[data-ap]').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-ap')===t);});
+      if(t==='history')drawHistory();if(t==='today')drawToday();if(t==='me')drawMe();if(t==='ideas')favs();if(t==='play')drawTrivia();}
+    document.querySelectorAll('[data-ap]').forEach(function(b){b.addEventListener('click',function(){if(b.getAttribute('data-ap')==='today')sel=ago(0);tab(b.getAttribute('data-ap'));});});
+    $('ap-export').addEventListener('click',function(){var a=document.createElement('a');a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify({log:get(KEY,{}),profile:get(PK,{}),ideas:get(FK,[])},null,1));a.download='saffra-together.json';document.body.appendChild(a);a.click();a.remove();});
     var armed=false;
-    $('ap-wipe').addEventListener('click',function(){if(!armed){armed=true;this.textContent='Tap again to delete everything';return;}armed=false;this.textContent='Delete everything';try{localStorage.removeItem(KEY);}catch(e){}$('ap-wiped').textContent='Deleted.';drawToday();});
-    shuffle();drawTrivia();idea();drawToday();
-    window.addEventListener('hashchange',function(){if(location.hash==='#app')drawToday();});
+    $('ap-wipe').addEventListener('click',function(){if(!armed){armed=true;this.textContent='Tap again to delete everything';return;}armed=false;this.textContent='Delete everything';try{[KEY,PK,FK,'saffra-tv'].forEach(function(k){localStorage.removeItem(k);});}catch(e){}$('ap-wiped').textContent='Deleted.';drawMe();});
+    shuffle();drawTrivia();idea();favs();drawToday();
+    window.addEventListener('hashchange',function(){if(location.hash==='#app'){sel=ago(0);drawToday();}});
+    /* install */
+    var deferred=null,ua=navigator.userAgent||'',ios=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1),standalone=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone;
+    window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;});
+    window.addEventListener('appinstalled',function(){$('dl-msg').textContent='Installed. Look for Saffra with your other apps.';});
+    $('dl-install').addEventListener('click',function(){
+      if(standalone){$('dl-msg').textContent='You are already using the installed app.';return;}
+      if(deferred){deferred.prompt();deferred.userChoice.then(function(){deferred=null;});return;}
+      var t=$(ios?'dl-ios':'dl-android');$('dl-msg').textContent=ios?'On iPhone, follow the four steps below in Safari.':'Follow the steps for your phone below.';t.scrollIntoView({behavior:'smooth',block:'center'});});
   })();
   if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js').catch(function(){});}
   /* reel */
