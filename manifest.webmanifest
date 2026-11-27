@@ -3,8 +3,8 @@
  "short_name": "Saffra",
  "start_url": "./#app",
  "display": "standalone",
- "background_color": "#2A1429",
- "theme_color": "#2A1429",
+ "background_color": "#4c112d",
+ "theme_color": "#4c112d",
  "icons": [
   {
    "src": "img/icon-192.png",
