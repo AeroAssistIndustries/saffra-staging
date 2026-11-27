@@ -578,6 +578,19 @@ body[data-view="creators"] #v-creators{display:block}
 @media (max-width:1100px){.perks{grid-template-columns:1fr 1fr}}
 @media (max-width:900px){.noreviews{grid-template-columns:1fr;padding:24px}}
 @media (max-width:520px){.perks{grid-template-columns:1fr}}
+
+.askform .field,.askform textarea{width:100%;box-sizing:border-box}
+.askform .field{border-radius:16px}
+.article p.eyebrow,.legal p.eyebrow{color:var(--saffron)}
+.article p.byline{color:var(--muted)}
+.facts table{table-layout:auto}
+.facts td:first-child{word-break:normal;overflow-wrap:break-word}
+.askform{justify-content:stretch;width:100%}
+@media (max-width:420px){.facts{font-size:13px;padding:16px}.facts td:nth-child(2){white-space:normal}}
+.facts td:nth-child(2){white-space:nowrap}
+.sw.metal{color:#16131a}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.holobar{height:14px;border-radius:99px;background:linear-gradient(90deg,#7df9ff,#b79bff,#ff6ad5,#ffd36e,#7dffb2,#7db8ff)}
 </style>
 </head>
 <body data-view="home">
@@ -1712,10 +1725,22 @@ body[data-view="creators"] #v-creators{display:block}
         <div class="swatches">
           <div class="sw" style="background:#F0A91E;color:#1E1A1D"><b>Saffron</b>#F0A91E</div>
           <div class="sw" style="background:#2A1429"><b>Night plum</b>#2A1429</div>
+          <div class="sw" style="background:#9333EA"><b>Violet</b>#9333EA</div>
+          <div class="sw" style="background:#E11D48"><b>Ruby</b>#E11D48</div>
+          <div class="sw" style="background:#F6EBDD;color:#1E1A1D"><b>Blush cream</b>#F6EBDD</div>
+          <div class="sw metal" style="background:var(--silver)"><b>Silver</b>Metallic gradient</div>
+          <div class="sw" style="background:var(--purple-metal)"><b>Purple metal</b>Metallic gradient</div>
+          <div class="sw metal" style="background:linear-gradient(135deg,#7df9ff,#b79bff,#ff6ad5,#ffd36e,#7dffb2,#7db8ff)"><b>Holographic</b>Foil, packaging only</div>
           <div class="sw" style="background:#52304F"><b>Plum</b>#52304F</div>
           <div class="sw" style="background:#D9573B"><b>Ember</b>#D9573B</div>
-          <div class="sw" style="background:#F6EBDD;color:#1E1A1D"><b>Blush cream</b>#F6EBDD</div>
         </div>
+      </div>
+      <div style="display:grid;gap:14px">
+        <h3>Buttons and lines</h3>
+        <div class="btnrow"><span class="btn">Primary, silver</span><span class="btn ghost">Secondary, purple</span></div>
+        <div style="height:2px;background:var(--line);border-radius:2px"></div>
+        <p class="muted">Primary actions are metallic silver and secondary actions metallic purple. Lines and dividers run violet to ruby. Holographic foil is kept for packaging and the quality marks.</p>
+        <div class="holobar"></div>
       </div>
       <div style="display:grid;gap:10px">
         <h3>Type</h3>
