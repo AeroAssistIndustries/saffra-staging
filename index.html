@@ -608,6 +608,48 @@ body[data-view="creators"] #v-creators{display:block}
 .social .mark{width:46px;height:46px}
 .social .mark svg{width:22px;height:22px}
 .social a{display:grid;justify-items:center;gap:6px;text-decoration:none;color:inherit}
+
+.bagbtn{position:relative;background:none;border:0;color:var(--cream);width:44px;height:44px;display:grid;place-items:center;cursor:pointer;border-radius:50%}
+.bagbtn svg{width:24px;height:24px}
+.bagbtn b{position:absolute;top:2px;right:0;min-width:18px;height:18px;border-radius:9px;background:var(--line);color:#fff;font-size:11px;line-height:18px;text-align:center;padding:0 4px}
+.bagbtn b[hidden]{display:none}
+.shade{position:fixed;inset:0;background:rgba(12,4,14,.6);z-index:40;opacity:0;pointer-events:none;transition:opacity .25s}
+.bag{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:41;background:#231022;border-left:1px solid rgba(255,255,255,.1);transform:translateX(102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;visibility:hidden}
+body.bagopen .shade{opacity:1;pointer-events:auto}
+body.bagopen .bag{transform:none;visibility:visible}
+body.bagopen{overflow:hidden}
+.bag .bhead{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.bag .bhead h2{font-size:26px;margin:0}
+.bag .x{background:none;border:0;color:var(--cream);font-size:28px;width:44px;height:44px;cursor:pointer;line-height:1}
+.bag .ship{margin:0;padding:10px 20px;font-size:13.5px;color:#fff;background:var(--line)}
+.bag .items{flex:1;overflow:auto;padding:8px 20px}
+.bag .it{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.bag .it img{width:64px;height:auto}
+.bag .it b{display:block;font-family:var(--display);font-weight:400;font-size:19px}
+.bag .it small{color:var(--muted);font-size:13px}
+.qty{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.22);border-radius:999px;margin-top:8px}
+.qty button{background:none;border:0;color:var(--cream);width:36px;height:36px;font-size:18px;cursor:pointer}
+.qty span{min-width:22px;text-align:center;font-size:14px}
+.bag .empty{color:var(--muted);padding:28px 0;display:grid;gap:14px;justify-items:start}
+.bag .nudge{margin:14px 0;padding:14px;border-radius:14px;border:1px solid transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box;font-size:14px;display:grid;gap:10px;justify-items:start}
+.bag .bfoot{padding:16px 20px 20px;border-top:1px solid rgba(255,255,255,.1);display:grid;gap:10px;background:#1d0c1d}
+.bag .tot{display:flex;justify-content:space-between;font-size:17px}
+.bag .tot b{font-family:var(--display);font-weight:400;font-size:24px}
+.bag .save{color:var(--saffron);font-size:13.5px;margin:0}
+.bag .bfoot .btn{width:100%;text-align:center;justify-content:center}
+.bag .bfoot p.bnote{font-size:12.5px;color:var(--muted);margin:0;text-align:center}
+.disc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.disc div{border-radius:20px;padding:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);display:grid;gap:8px;align-content:start}
+.disc svg{width:34px;height:34px;color:var(--saffron)}
+.disc b{font-family:var(--display);font-weight:400;font-size:22px}
+.disc span{color:var(--muted);font-size:15px}
+.refer{border-radius:26px;padding:34px;border:1px solid transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box;display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+.refer .gg{display:flex;gap:14px}
+.refer .gg div{flex:1;border-radius:18px;background:rgba(255,255,255,.05);padding:18px;text-align:center}
+.refer .gg i{font-family:var(--display);font-style:normal;font-size:40px;display:block;background:var(--line);-webkit-background-clip:text;background-clip:text;color:transparent}
+.refer .gg span{font-size:13.5px;color:var(--muted)}
+@media(max-width:760px){.disc{grid-template-columns:1fr}.refer{grid-template-columns:1fr;padding:24px}}
+@media(max-width:480px){nav .btn.small{display:none}}
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Saffra", "url": "https://aeroassistindustries.github.io/saffra-staging/", "logo": "https://aeroassistindustries.github.io/saffra-staging/img/icon-512.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast does it work?", "acceptedAnswer": {"@type": "Answer", "text": "Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening."}}, {"@type": "Question", "name": "What is the difference between the two?", "acceptedAnswer": {"@type": "Answer", "text": "Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E."}}, {"@type": "Question", "name": "Who should not take it?", "acceptedAnswer": {"@type": "Answer", "text": "Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions."}}, {"@type": "Question", "name": "What does lab tested mean?", "acceptedAnswer": {"@type": "Answer", "text": "An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar."}}, {"@type": "Question", "name": "Should we both take the same one?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each of you takes your own formula. The For Two set has one jar of each."}}, {"@type": "Question", "name": "What does it taste like?", "acceptedAnswer": {"@type": "Answer", "text": "Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky."}}, {"@type": "Question", "name": "Is it vegan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No gelatin, no artificial colors or flavors."}}, {"@type": "Question", "name": "How long does a jar last?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty days. Each jar holds 60 gummies and the serving is two a day."}}, {"@type": "Question", "name": "Can I take it with other supplements or medication?", "acceptedAnswer": {"@type": "Answer", "text": "Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication."}}, {"@type": "Question", "name": "Can I cancel my subscription?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime from your account, in two clicks. You can also skip a month."}}]}]</script>
 </head>
@@ -649,6 +691,7 @@ body[data-view="creators"] #v-creators{display:block}
       <a class="hide-s" href="#journal">Journal</a>
       <a class="hide-s" href="#play">Play</a>
       <a class="hide-s" href="#about">About</a>
+      <button class="bagbtn" type="button" id="bagbtn" aria-label="Open your bag" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" stroke-linecap="round"/></svg><b id="bagcount" hidden>0</b></button>
       <a class="btn small" href="#waitlist">Join the waitlist</a>
       <button class="menu" type="button" id="menubtn" aria-label="Open menu" aria-expanded="false"><span></span></button>
     </nav>
@@ -784,6 +827,16 @@ body[data-view="creators"] #v-creators{display:block}
       <div class="perk"><i>2</i><b>Clicks to cancel</b><span>Skip a month or stop anytime from your account.</span></div>
       <div class="perk"><i>1</i><b>Reminder first</b><span>We email you before every renewal.</span></div>
       <div class="perk"><i>30</i><b>Days to decide</b><span>Money back on your first order if it is not for you.</span></div>
+    </div>
+  </div>
+</section>
+<section id="discreet" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Private by design</p><h2>Nobody knows but you two.</h2><p class="muted">What you take for your love life is your business. The box keeps it that way.</p></div>
+    <div class="disc">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-4 9 4v9l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v9"/></svg><b>A plain box</b><span>No product name, no description and no logo on the outside.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h6M7 14h10"/></svg><b>A quiet label</b><span>The sender line and your card statement show a neutral company name.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><b>Quiet emails</b><span>Subject lines never say what is inside, and we never sell your details.</span></div>
     </div>
   </div>
 </section>
@@ -991,6 +1044,13 @@ body[data-view="creators"] #v-creators{display:block}
   </div>
 </section>
 
+<section id="refer" style="padding-bottom:0">
+  <div class="wrap"><div class="refer">
+    <div style="display:grid;gap:10px"><p class="eyebrow">Share it</p><h2 style="margin:0">Give $10, get $10.</h2><p class="muted">Every customer gets a personal link at launch. A friend takes $10 off a first jar, and you get $10 toward your next one.</p><div><a class="btn" href="#waitlist">Join the waitlist</a></div></div>
+    <div class="gg"><div><i>$10</i><span>off for a friend</span></div><div><i>$10</i><span>credit for you</span></div></div>
+  </div></div>
+</section>
+
 <section id="questions" class="light faq" style="border-top:1px solid #dccdbb">
   <div class="wrap">
     <div class="head" style="margin:0;align-content:start"><p class="eyebrow">Questions</p><h2>Good to know.</h2></div>
@@ -1007,7 +1067,8 @@ body[data-view="creators"] #v-creators{display:block}
       <details><summary>Is it vegan?</summary><p>Yes. No gelatin, no artificial colors or flavors.</p></details>
       <details><summary>How long does a jar last?</summary><p>Thirty days. Each jar holds 60 gummies and the serving is two a day.</p></details>
       <details><summary>Can I take it with other supplements or medication?</summary><p>Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication.</p></details>
-      <details><summary>Can I cancel my subscription?</summary><p>Yes, anytime from your account, in two clicks. You can also skip a month.</p></details>
+      <details><summary>Is the packaging discreet?</summary><p>Yes. Orders ship in a plain box with no product name or logo on the outside, and the sender line and your card statement show a neutral company name.</p></details>
+<details><summary>Can I cancel my subscription?</summary><p>Yes, anytime from your account, in two clicks. You can also skip a month.</p></details>
     </div>
   </div>
 </section>
@@ -1045,7 +1106,8 @@ body[data-view="creators"] #v-creators{display:block}
             <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month, cancel anytime" data-one="one-time">a month, cancel anytime</small></div>
           </div>
           <div class="row">
-            <a class="btn" href="#waitlist">Join the waitlist</a>
+            <button class="btn" type="button" data-add="her">Add to bag</button>
+            <a class="btn ghost" href="#waitlist">Join the waitlist</a>
             <span class="muted" style="font-size:14.5px">60 gummies. 30-day supply. 30-day money back.</span>
           </div>
           <ul class="marks compact"><li><span class="mark"><svg aria-hidden="true"><use href="#m-gmp"/></svg></span>GMP-certified facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-fac"/></svg></span>FDA-registered facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-lab"/></svg></span>Third-party lab tested</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-usa"/></svg></span>Made in the USA with U.S. and imported ingredients</li></ul>
@@ -1083,7 +1145,7 @@ body[data-view="creators"] #v-creators{display:block}
     <div class="wrap">
       <div class="cross">
         <div style="display:grid;gap:8px"><span class="tag">Best value</span><h3>Make it Saffra for Two</h3><p class="muted">Add Saffra for him and save on the set.</p></div>
-        <div class="row"><a class="btn ghost" href="#him">See Saffra for him</a><a class="btn" href="#shop">Shop the set</a></div>
+        <div class="row"><button class="btn" type="button" data-add="him">Add to bag</button><a class="btn ghost" href="#him">See Saffra for him</a><a class="btn" href="#shop">Shop the set</a></div>
       </div>
     </div>
   </section>
@@ -1103,7 +1165,8 @@ body[data-view="creators"] #v-creators{display:block}
             <div class="amt"><span data-sub="$36" data-one="$44">$36</span> <small data-sub="a month, cancel anytime" data-one="one-time">a month, cancel anytime</small></div>
           </div>
           <div class="row">
-            <a class="btn" href="#waitlist">Join the waitlist</a>
+            <button class="btn" type="button" data-add="him">Add to bag</button>
+            <a class="btn ghost" href="#waitlist">Join the waitlist</a>
             <span class="muted" style="font-size:14.5px">60 gummies. 30-day supply. 30-day money back.</span>
           </div>
           <ul class="marks compact"><li><span class="mark"><svg aria-hidden="true"><use href="#m-gmp"/></svg></span>GMP-certified facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-fac"/></svg></span>FDA-registered facility</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-lab"/></svg></span>Third-party lab tested</li><li><span class="mark"><svg aria-hidden="true"><use href="#m-usa"/></svg></span>Made in the USA with U.S. and imported ingredients</li></ul>
@@ -1141,7 +1204,7 @@ body[data-view="creators"] #v-creators{display:block}
     <div class="wrap">
       <div class="cross">
         <div style="display:grid;gap:8px"><span class="tag">Best value</span><h3>Make it Saffra for Two</h3><p class="muted">Add Saffra for her and save on the set.</p></div>
-        <div class="row"><a class="btn ghost" href="#her">See Saffra for her</a><a class="btn" href="#shop">Shop the set</a></div>
+        <div class="row"><button class="btn" type="button" data-add="her">Add to bag</button><a class="btn ghost" href="#her">See Saffra for her</a><a class="btn" href="#shop">Shop the set</a></div>
       </div>
     </div>
   </section>
@@ -1810,8 +1873,15 @@ body[data-view="creators"] #v-creators{display:block}
   </div>
 </footer>
 
-<div class="buybar her"><div><b>Saffra for her</b><small><span data-sub="$36 a month" data-one="$44 one-time">$36 a month</span></small></div><a class="btn small" href="#waitlist" data-int="her">Join the waitlist</a></div>
-<div class="buybar him"><div><b>Saffra for him</b><small><span data-sub="$36 a month" data-one="$44 one-time">$36 a month</span></small></div><a class="btn small" href="#waitlist" data-int="him">Join the waitlist</a></div>
+<div class="buybar her"><div><b>Saffra for her</b><small><span data-sub="$36 a month" data-one="$44 one-time">$36 a month</span></small></div><button class="btn small" type="button" data-add="her">Add to bag</button></div>
+<div class="buybar him"><div><b>Saffra for him</b><small><span data-sub="$36 a month" data-one="$44 one-time">$36 a month</span></small></div><button class="btn small" type="button" data-add="him">Add to bag</button></div>
+<div class="shade" id="shade"></div>
+<aside class="bag" id="bag" role="dialog" aria-modal="true" aria-labelledby="bagtitle">
+  <div class="bhead"><h2 id="bagtitle">Your bag</h2><button class="x" type="button" id="bagx" aria-label="Close bag">&times;</button></div>
+  <p class="ship">Free US shipping on every order, in a plain box.</p>
+  <div class="items" id="bagitems"></div>
+  <div class="bfoot" id="bagfoot"></div>
+</aside>
 <button class="iconbtn totop" type="button" id="totop" aria-label="Back to top">&#8593;</button>
 
 <script>
@@ -1910,6 +1980,41 @@ body[data-view="creators"] #v-creators{display:block}
     var v=a.getAttribute('data-int')||(a.closest('.card.her,#v-her')?'her':a.closest('.card.him,#v-him')?'him':a.closest('.two,.cross')?'two':'');
     if(v) document.getElementById('interest').value=v;
   });
+
+  /* bag */
+  (function(){
+    var P={sub:{one:36,two:64,u:' a month'},one:{one:44,two:78,u:''}},N={her:'Saffra for her',him:'Saffra for him'};
+    var bag={her:0,him:0}, last=null;
+    try{var b=JSON.parse(localStorage.getItem('saffra-bag')||'{}'); bag.her=Math.min(9,Math.max(0,b.her|0)); bag.him=Math.min(9,Math.max(0,b.him|0));}catch(e){}
+    var items=document.getElementById('bagitems'),foot=document.getElementById('bagfoot'),cnt=document.getElementById('bagcount'),btn=document.getElementById('bagbtn');
+    function mode(){return document.getElementById('t-one').getAttribute('aria-pressed')==='true'?'one':'sub';}
+    function draw(){
+      var m=mode(),p=P[m],n=bag.her+bag.him,h='';
+      cnt.textContent=n; cnt.hidden=!n; btn.setAttribute('aria-label','Open your bag, '+n+(n===1?' item':' items'));
+      try{localStorage.setItem('saffra-bag',JSON.stringify(bag));}catch(e){}
+      if(!n){items.innerHTML='<div class="empty"><p>Your bag is empty.</p><button class="btn" type="button" data-add="her">Add Saffra for her</button><button class="btn ghost" type="button" data-add="him">Add Saffra for him</button></div>';foot.innerHTML='';return;}
+      ['her','him'].forEach(function(k){ if(!bag[k]) return;
+        h+='<div class="it"><img src="img/bottle-'+k+'.webp" width="64" height="94" alt=""><div><b>'+N[k]+'</b><small>60 gummies, 30-day supply</small><br><span class="qty"><button type="button" data-q="'+k+'" data-d="-1" aria-label="One fewer '+N[k]+'">&minus;</button><span>'+bag[k]+'</span><button type="button" data-q="'+k+'" data-d="1" aria-label="One more '+N[k]+'">+</button></span></div><span>$'+p.one+'</span></div>';});
+      var pairs=Math.min(bag.her,bag.him),full=n*p.one,tot=pairs*p.two+(n-2*pairs)*p.one,o=bag.her?'him':'her';
+      if(!pairs) h+='<div class="nudge"><span>Taking it together? Add '+N[o]+' and the pair is $'+p.two+p.u+' instead of $'+(2*p.one)+'.</span><button class="btn small" type="button" data-add="'+o+'">Add '+N[o]+'</button></div>';
+      items.innerHTML=h;
+      foot.innerHTML=(tot<full?'<p class="save">Set price applied. You save $'+(full-tot)+'.</p>':'')+'<div class="tot"><span>'+(m==='sub'?'Monthly total':'Total')+'</span><b>$'+tot+p.u+'</b></div><a class="btn" href="#waitlist" id="bagreserve" data-int="'+(pairs?'two':bag.her?'her':'him')+'">Reserve my bag</a><p class="bnote">Nothing is charged today. Checkout opens at launch.</p>';
+    }
+    function open(){last=document.activeElement;draw();document.body.classList.add('bagopen');document.getElementById('bagx').focus();}
+    function close(){document.body.classList.remove('bagopen'); if(last&&last.focus) last.focus();}
+    btn.addEventListener('click',open);
+    document.getElementById('bagx').addEventListener('click',close);
+    document.getElementById('shade').addEventListener('click',close);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('bagopen'))close();});
+    document.addEventListener('click',function(e){
+      var t=e.target.closest&&e.target.closest('[data-add],[data-q],#bagreserve'); if(!t) return;
+      if(t.id==='bagreserve'){document.body.classList.remove('bagopen');return;}
+      if(t.hasAttribute('data-add')){var k=t.getAttribute('data-add'); if(bag[k]<9)bag[k]++; if(document.body.classList.contains('bagopen'))draw(); else open(); return;}
+      var q=t.getAttribute('data-q'); bag[q]=Math.max(0,Math.min(9,bag[q]+(+t.getAttribute('data-d')))); draw();
+    });
+    ['t-sub','t-one'].forEach(function(i){document.getElementById(i).addEventListener('click',draw);});
+    draw();
+  })();
   /* reel */
   var reel=document.getElementById('reel');
   function nudge(d){reel.scrollBy({left:d*320,behavior:'smooth'});}
