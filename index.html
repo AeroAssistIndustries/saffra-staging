@@ -568,7 +568,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
 @media (max-width:1100px){.marks{grid-template-columns:repeat(5,1fr);row-gap:22px}}
 @media (max-width:600px){.marks{grid-template-columns:repeat(3,1fr)}.marks li{font-size:12px}}
 
-body[data-view="creators"] #v-creators{display:block}
+body[data-view="creators"] #v-creators{display:block}body[data-view="giving"] #v-giving{display:block}
 .perks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .perk{border:1px solid rgba(255,255,255,.1);background:var(--plum-2);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
 .perk b{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.15}
@@ -666,6 +666,22 @@ body.bagopen{overflow:hidden}
 .opt i{font-style:normal;font-family:var(--display);font-size:22px;white-space:nowrap}
 .opt em{font-style:normal;font-size:11.5px;font-weight:700;letter-spacing:.06em;background:var(--line);color:#fff;border-radius:999px;padding:3px 8px;margin-left:8px;vertical-align:middle}
 @media(max-width:900px){.gal{position:static}}
+
+.pledge{border-radius:26px;padding:30px;border:1px solid transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin:34px 0}
+.pledge i{font-family:var(--display);font-style:normal;font-size:clamp(64px,12vw,104px);line-height:1;background:var(--line);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pledge b{font-family:var(--display);font-weight:400;font-size:26px;display:block;margin-bottom:6px}
+.orgs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.orgs a{display:grid;gap:6px;text-decoration:none;color:var(--cream);border-radius:20px;padding:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);transition:transform .2s,border-color .2s}
+.orgs a:hover{transform:translateY(-3px);border-color:var(--violet)}
+.orgs b{font-family:var(--display);font-weight:400;font-size:22px}
+.orgs span{color:var(--muted);font-size:15px}
+.orgs em{font-style:normal;font-size:13px;color:var(--saffron)}
+.helpbox{border-radius:22px;background:var(--cream);color:var(--ink);padding:26px;margin-top:40px;display:grid;gap:12px}
+.helpbox h2{color:var(--ink);font-size:28px;margin:0}
+.helpbox p{margin:0;color:#3a3238}
+.helpbox a{color:var(--ink);font-weight:700}
+.givecta{border-radius:26px;padding:30px 34px;background:linear-gradient(120deg,rgba(147,51,234,.22),rgba(225,29,72,.18));border:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+@media(max-width:700px){.pledge{grid-template-columns:1fr;gap:8px;padding:24px}.orgs{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Saffra", "url": "https://aeroassistindustries.github.io/saffra-staging/", "logo": "https://aeroassistindustries.github.io/saffra-staging/img/icon-512.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast does it work?", "acceptedAnswer": {"@type": "Answer", "text": "Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening."}}, {"@type": "Question", "name": "What is the difference between the two?", "acceptedAnswer": {"@type": "Answer", "text": "Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E."}}, {"@type": "Question", "name": "Who should not take it?", "acceptedAnswer": {"@type": "Answer", "text": "Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions."}}, {"@type": "Question", "name": "What does lab tested mean?", "acceptedAnswer": {"@type": "Answer", "text": "An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar."}}, {"@type": "Question", "name": "Should we both take the same one?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each of you takes your own formula. The For Two set has one jar of each."}}, {"@type": "Question", "name": "What does it taste like?", "acceptedAnswer": {"@type": "Answer", "text": "Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky."}}, {"@type": "Question", "name": "Is it vegan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No gelatin, no artificial colors or flavors."}}, {"@type": "Question", "name": "How long does a jar last?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty days. Each jar holds 60 gummies and the serving is two a day."}}, {"@type": "Question", "name": "Can I take it with other supplements or medication?", "acceptedAnswer": {"@type": "Answer", "text": "Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication."}}, {"@type": "Question", "name": "Can I cancel my subscription?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime from your account, in two clicks. You can also skip a month."}}]}]</script>
 </head>
@@ -713,7 +729,7 @@ body.bagopen{overflow:hidden}
     </nav>
   </div>
   <div class="drawer" id="drawer">
-    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#play">Play</a><a href="#journal">Journal</a><a href="#ask">Ask us</a><a href="#about">About us</a><a href="#creators">Creators</a><a href="#brand">Brand kit</a>
+    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#play">Play</a><a href="#journal">Journal</a><a href="#ask">Ask us</a><a href="#about">About us</a><a href="#giving">Giving back</a><a href="#creators">Creators</a><a href="#brand">Brand kit</a>
   </div>
 </header>
 
@@ -1060,6 +1076,13 @@ body.bagopen{overflow:hidden}
   </div>
 </section>
 
+<section id="give" style="padding-bottom:0">
+  <div class="wrap"><div class="givecta">
+    <div style="display:grid;gap:8px;max-width:640px"><p class="eyebrow">Giving back</p><h2 style="margin:0">1% of every sale helps survivors.</h2><p class="muted">Part of every order supports women rebuilding their lives after sexual abuse and trafficking.</p></div>
+    <a class="btn ghost" href="#giving">See how it works</a>
+  </div></div>
+</section>
+
 <section id="refer" style="padding-bottom:0">
   <div class="wrap"><div class="refer">
     <div style="display:grid;gap:10px"><p class="eyebrow">Share it</p><h2 style="margin:0">Give $10, get $10.</h2><p class="muted">Every customer gets a personal link at launch. A friend takes $10 off a first jar, and you get $10 toward your next one.</p><div><a class="btn" href="#waitlist">Join the waitlist</a></div></div>
@@ -1083,7 +1106,8 @@ body.bagopen{overflow:hidden}
       <details><summary>Is it vegan?</summary><p>Yes. No gelatin, no artificial colors or flavors.</p></details>
       <details><summary>How long does a jar last?</summary><p>Thirty days. Each jar holds 60 gummies and the serving is two a day.</p></details>
       <details><summary>Can I take it with other supplements or medication?</summary><p>Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication.</p></details>
-      <details><summary>Is the packaging discreet?</summary><p>Yes. Orders ship in a plain box with no product name or logo on the outside, and the sender line and your card statement show a neutral company name.</p></details>
+      <details><summary>Do you give back?</summary><p>Yes. One percent of every sale goes to a nonprofit that supports survivors of sexual abuse and sex trafficking. See the <a href="#giving">Giving back</a> page.</p></details>
+<details><summary>Is the packaging discreet?</summary><p>Yes. Orders ship in a plain box with no product name or logo on the outside, and the sender line and your card statement show a neutral company name.</p></details>
 <details><summary>Can I cancel my subscription?</summary><p>Yes, anytime from your account, in two clicks. You can also skip a month.</p></details>
     </div>
   </div>
@@ -1776,6 +1800,37 @@ body.bagopen{overflow:hidden}
   </section>
 </main>
 
+<main id="v-giving">
+  <section class="pdp">
+    <div class="wrap" style="max-width:920px">
+      <div class="head"><p class="eyebrow">Giving back</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Intimacy should always be <i style="font-style:italic;color:var(--saffron)">a choice.</i></h1><p class="lead muted">We make something for people who choose each other. Many women never got that choice. So part of every Saffra order goes to helping survivors of sexual abuse and sex trafficking rebuild their lives.</p></div>
+      <div class="pledge"><i>1%</i><div><b>Of every sale, not of profit.</b><span class="muted">One percent of what you pay for every jar goes to our nonprofit partner, from the first order. We will publish the total given here every year.</span></div></div>
+      <div class="head" style="margin:44px 0 16px"><h2>What the money does.</h2></div>
+      <div class="steps">
+        <div><h3>Someone to call</h3><p class="muted">Crisis lines and advocates who answer at any hour, in any language.</p></div>
+        <div><h3>A safe place</h3><p class="muted">Emergency shelter and long-term housing for women leaving abuse or trafficking.</p></div>
+        <div><h3>A way forward</h3><p class="muted">Counseling, legal help and paid work, so leaving can last.</p></div>
+      </div>
+      <div class="head" style="margin:48px 0 16px"><h2>Who does this work.</h2><p class="muted">We are choosing our launch partner from organizations like these, and will name it here before the first order ships. They are independent nonprofits and are not affiliated with Saffra.</p></div>
+      <div class="orgs"><a href="https://rainn.org" target="_blank" rel="noopener noreferrer"><em>Crisis support</em><b>RAINN</b><span>The largest anti-sexual violence organization in the US. Runs the National Sexual Assault Hotline.</span></a><a href="https://polarisproject.org" target="_blank" rel="noopener noreferrer"><em>Anti-trafficking</em><b>Polaris</b><span>Works to end sex and labor trafficking in the US, led by data and by survivors.</span></a><a href="https://www.safehorizon.org" target="_blank" rel="noopener noreferrer"><em>Shelter and counseling</em><b>Safe Horizon</b><span>Shelter, counseling and legal help for survivors of abuse, assault and trafficking.</span></a><a href="https://thistlefarms.org" target="_blank" rel="noopener noreferrer"><em>Housing and jobs</em><b>Thistle Farms</b><span>Housing, healing and paid work for women survivors of trafficking and addiction.</span></a><a href="https://www.gems-girls.org" target="_blank" rel="noopener noreferrer"><em>Young women</em><b>GEMS</b><span>Serves girls and young women who have experienced commercial sexual exploitation and trafficking.</span></a><a href="https://www.safehouseproject.org" target="_blank" rel="noopener noreferrer"><em>Safe housing</em><b>Safe House Project</b><span>Expands safe housing and emergency services for survivors of sex trafficking.</span></a></div>
+      <div class="head" style="margin:48px 0 16px"><h2>How we will choose.</h2></div>
+      <ul class="ticks" style="list-style:none;padding:0;margin:0;display:grid;gap:10px">
+        <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>Led by survivors, or with survivors in leadership</span></li>
+        <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>Direct services: housing, counseling, legal help and jobs</span></li>
+        <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>A registered 501(c)(3) with public, audited financials</span></li>
+        <li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>A written agreement, so every dollar is tracked and reported</span></li>
+      </ul>
+      <div class="helpbox">
+        <h2>If you need help now.</h2>
+        <p>National Sexual Assault Hotline: <a href="tel:18006564673">800-656-4673</a>. Free and confidential, 24 hours a day.</p>
+        <p>National Human Trafficking Hotline: <a href="tel:18883737888">1-888-373-7888</a>, or text 233733. 24 hours a day.</p>
+        <p>If you are in immediate danger, call 911.</p>
+      </div>
+      <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#shop">Shop Saffra</a><a class="btn ghost" href="#about">Read our story</a></div>
+    </div>
+  </section>
+</main>
+
 <main id="v-creators">
   <section class="pdp">
     <div class="wrap" style="max-width:860px">
@@ -1869,7 +1924,7 @@ body.bagopen{overflow:hidden}
     <span class="logo" style="font-size:25px">saffra<svg aria-hidden="true"><use href="#threads"/></svg></span>
     <div class="flinks">
       <div><b>Shop</b><a href="#her">For her</a><a href="#him">For him</a><a href="#shop">For two</a><a href="#quiz">Find your formula</a></div>
-      <div><b>Learn</b><a href="#science">Science</a><a href="#about">About us</a><a href="#ask">Ask us</a></div>
+      <div><b>Learn</b><a href="#science">Science</a><a href="#about">About us</a><a href="#giving">Giving back</a><a href="#ask">Ask us</a></div>
       <div><b>Lifestyle</b><a href="#play">Games for two</a><a href="#journal">Journal</a><a href="#journal">Podcast</a><a href="#creators">Creators</a></div>
       <div><b>Help</b><a href="#shipping">Shipping and returns</a><a href="#privacy">Privacy policy</a><a href="#brand">Brand kit</a></div>
     </div>
@@ -1904,7 +1959,7 @@ body.bagopen{overflow:hidden}
 
 <script>
 (function(){
-  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','creators','brand'];
+  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','creators','brand','giving'];
   var mb=document.getElementById('menubtn');
   function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
   mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
