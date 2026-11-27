@@ -448,7 +448,7 @@ body[data-view="journal"] #v-journal,body[data-view="play"] #v-play,body[data-vi
 .facts{max-width:100%}
 .facts td:nth-child(2){white-space:normal;text-align:right}
 
-body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-read-saffron{display:block}
+body[data-view="read-desire"] #v-read-desire,body[data-view="read-touch"] #v-read-touch,body[data-view="read-habit"] #v-read-habit,body[data-view="read-saffron"] #v-read-saffron{display:block}
 .days{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
 .day{aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--muted);font:inherit;font-weight:600;font-size:15px;cursor:pointer;min-width:44px}
 .day[aria-pressed="true"]{background:var(--saffron);border-color:var(--saffron);color:var(--ink)}
@@ -847,7 +847,22 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 .tier .lv{font-family:var(--display);font-size:54px;line-height:1;position:absolute;right:20px;top:14px;opacity:.14}
 @media(max-width:760px){.rhero{grid-template-columns:1fr}.uses{grid-template-columns:1fr}.calc{padding:20px}.calc .out i{font-size:26px}.mcard{transform:rotate(-2deg)}}
 @media(prefers-reduced-motion:reduce){.mcard::before{animation:none}}
-#v-rewards{overflow-x:clip}@media(max-width:360px){.calc .out{grid-template-columns:1fr}.track b{font-size:11.5px}}</style>
+#v-rewards{overflow-x:clip}@media(max-width:360px){.calc .out{grid-template-columns:1fr}.track b{font-size:11.5px}}
+.peek{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.pk{perspective:900px;background:none;border:0;padding:0;cursor:pointer;aspect-ratio:3/4;font:inherit;color:inherit;min-width:0}
+.pk span{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.pk[aria-pressed="true"] span{transform:rotateY(180deg)}
+.pk i,.pk b{position:absolute;inset:0;border-radius:20px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;place-items:center;padding:18px;text-align:center;font-style:normal}
+.pk i{background:linear-gradient(135deg,#3b1456,#7E22CE 45%,#E11D48);color:#fff;font-family:var(--display);font-size:22px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.pk i small{display:block;font-family:var(--body);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:8px;opacity:.85}
+.pk b{background:var(--cream);color:var(--ink);transform:rotateY(180deg);font-family:var(--display);font-weight:400;font-size:clamp(16px,2.2vw,21px);line-height:1.3}
+.mhero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.mlock{width:170px;height:170px;border-radius:50%;margin:0 auto;display:grid;place-items:center;background:var(--silver);position:relative;box-shadow:0 24px 50px rgba(0,0,0,.5)}
+.mlock::before{content:"";position:absolute;inset:-7px;border-radius:50%;background:conic-gradient(#7df9ff,#b79bff,#ff6ad5,#ffd36e,#7df9ff);z-index:-1;animation:spin 10s linear infinite}
+.mlock svg{width:74px;height:74px;color:#2A1429}
+@media(max-width:760px){.peek{grid-template-columns:1fr;max-width:260px;margin-left:auto;margin-right:auto}.mhero{grid-template-columns:1fr}.mlock{width:120px;height:120px}.mlock svg{width:52px;height:52px}}
+@media(prefers-reduced-motion:reduce){.pk span{transition:none}.mlock::before{animation:none}}
+</style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Saffra", "url": "https://aeroassistindustries.github.io/saffra-staging/", "logo": "https://aeroassistindustries.github.io/saffra-staging/img/icon-512.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast does it work?", "acceptedAnswer": {"@type": "Answer", "text": "Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening."}}, {"@type": "Question", "name": "What is the difference between the two?", "acceptedAnswer": {"@type": "Answer", "text": "Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E."}}, {"@type": "Question", "name": "Who should not take it?", "acceptedAnswer": {"@type": "Answer", "text": "Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions."}}, {"@type": "Question", "name": "What does lab tested mean?", "acceptedAnswer": {"@type": "Answer", "text": "An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar."}}, {"@type": "Question", "name": "Should we both take the same one?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each of you takes your own formula. The For Two set has one jar of each."}}, {"@type": "Question", "name": "What does it taste like?", "acceptedAnswer": {"@type": "Answer", "text": "Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky."}}, {"@type": "Question", "name": "Is it vegan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No gelatin, no artificial colors or flavors."}}, {"@type": "Question", "name": "How long does a jar last?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty days. Each jar holds 60 gummies and the serving is two a day."}}, {"@type": "Question", "name": "Can I take it with other supplements or medication?", "acceptedAnswer": {"@type": "Answer", "text": "Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication."}}, {"@type": "Question", "name": "Can I cancel my subscription?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime from your account, in two clicks. You can also skip a month."}}]}]</script>
 </head>
 <body data-view="home">
@@ -1349,6 +1364,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
       </div>
     </div>
   </section>
+  <section style="padding-top:0"><div class="wrap" style="max-width:820px"><div class="head"><p class="eyebrow">Questions</p><h2>Before you start.</h2></div><div class="rfaq"><details><summary>When should I take it?</summary><p>One gummy in the morning and one in the evening, with or without food.</p></details><details><summary>How long until I notice anything?</summary><p>The studies behind these ingredients measured daily use over four to eight weeks, so give it at least a month.</p></details><details><summary>Can I take it with my multivitamin?</summary><p>Check the labels first. Saffra already contains B6, folate, B12 and D3, so you may not need both. Ask your pharmacist if you are unsure.</p></details><details><summary>Can I take it if I am pregnant or nursing?</summary><p>No. Do not use Saffra if you are pregnant, trying to conceive or nursing.</p></details><details><summary>What does it taste like?</summary><p>Blood orange and honey. No artificial colors or flavors.</p></details></div><p class="muted" style="margin-top:16px;font-size:15px">More in <a href="#ask" style="color:var(--saffron)">Questions, answered</a>.</p></div></section>
   <section style="padding-top:0">
     <div class="wrap">
       <div class="cross">
@@ -1410,6 +1426,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
       </div>
     </div>
   </section>
+  <section style="padding-top:0"><div class="wrap" style="max-width:820px"><div class="head"><p class="eyebrow">Questions</p><h2>Before you start.</h2></div><div class="rfaq"><details><summary>When should I take it?</summary><p>One gummy in the morning and one in the evening, with or without food.</p></details><details><summary>How long until I notice anything?</summary><p>The studies behind these ingredients measured daily use over six to twelve weeks, so give it at least a month.</p></details><details><summary>Is this a treatment for erectile problems?</summary><p>No. Saffra is a daily supplement, not a medicine. If something feels wrong, see your doctor.</p></details><details><summary>Can I take it with my multivitamin?</summary><p>Check the labels first. Saffra already contains zinc, selenium, vitamin E, B12 and D3, so you may not need both.</p></details><details><summary>What does it taste like?</summary><p>Blood orange and honey. No artificial colors or flavors.</p></details></div><p class="muted" style="margin-top:16px;font-size:15px">More in <a href="#ask" style="color:var(--saffron)">Questions, answered</a>.</p></div></section>
   <section style="padding-top:0">
     <div class="wrap">
       <div class="cross">
@@ -1628,6 +1645,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 </ul>
 <h2>What we do not collect</h2>
 <p>Your quiz answers. The quiz runs in your browser and your answers are not saved or sent to us.</p>
+<h2>The Saffra Together app</h2>
+<p>Everything you log in the app, including check-ins, notes, names, saved ideas and your privacy code, is stored only in your browser on your own device. It is never sent to us and we cannot see it. You can download or delete it at any time from the Me tab. Clearing your browser data also deletes it.</p>
 <h2>How we use it</h2>
 <ul>
 <li>To fill, ship and support your orders and subscriptions.</li>
@@ -1671,6 +1690,10 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <p>A subscription renews every 30 days at the price shown when you signed up, charged to your payment method, until you cancel. You can skip or cancel anytime from your account before your next renewal date. See <a href="#shipping">Shipping, returns and subscriptions</a>.</p>
 <h2>Returns</h2>
 <p>Your first order is covered by our 30-day money-back guarantee. See <a href="#shipping">Shipping, returns and subscriptions</a>.</p>
+<h2>Rewards and referrals</h2>
+<p>Saffra Circle points and referral credits have no cash value, cannot be transferred or sold, and can be used only on Saffra orders. Points are earned when an order ships and are removed if that order is refunded. Referral credit is earned when a new customer you referred receives a first order, and cannot be earned on your own orders. We may change or end the program, and will give members notice before we do.</p>
+<h2>The app and games</h2>
+<p>The Saffra Together app, games and ideas are for adults and for entertainment and general wellbeing. They are not medical, psychological or relationship advice.</p>
 <h2>Our content</h2>
 <p>The Saffra name, logo, text, images and designs belong to Saffra or its licensors. Please do not copy them without permission.</p>
 <h2>Reviews and messages</h2>
@@ -1734,6 +1757,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
         <a class="post" href="#read-tired"><div class="photo"><img src="https://images.unsplash.com/photo-1758522490155-b338da47f09f?auto=format&fit=crop&w=900&q=75" alt="A couple enjoying drinks by the window" loading="lazy" onerror="this.remove()"></div><small>Relationships · 3 min</small><h3>We are fine. We are just tired.</h3><p class="muted">Why desire gets crowded out in good relationships, and four small ways to make room.</p></a>
         <a class="post" href="#read-label"><div class="photo"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=75" alt="Roots and spices laid out on a white table" loading="lazy" onerror="this.remove()"></div><small>Know your supplement · 2 min</small><h3>How to read a supplement label in 60 seconds</h3><p class="muted">Six checks that work on any brand, including ours.</p></a>
         <a class="post" href="#read-ritual"><div class="photo"><img src="https://images.unsplash.com/photo-1604881991405-b273c7a4386a?auto=format&fit=crop&w=900&q=75" alt="A couple sitting at a table with cups" loading="lazy" onerror="this.remove()"></div><small>Rituals · 2 min</small><h3>The ten-minute evening</h3><p class="muted">A routine for an ordinary Tuesday that you can start tonight.</p></a>
+        <a class="post" href="#read-desire"><div class="photo"><img src="https://images.unsplash.com/photo-1514480100661-33506ca03fe7?auto=format&fit=crop&w=900&q=75" alt="A man kissing a woman on her forehead" loading="lazy" onerror="this.remove()"></div><small>Relationships · 3 min</small><h3>Two kinds of desire, and why yours is normal</h3><p class="muted">Desire does not always show up first. For many people it arrives after things begin, and that is not a problem to fix.</p></a>
+        <a class="post" href="#read-touch"><div class="photo"><img src="https://images.unsplash.com/photo-1763713512970-a898b215025e?auto=format&fit=crop&w=900&q=75" alt="A couple embracing in a dimly lit kitchen" loading="lazy" onerror="this.remove()"></div><small>Rituals · 3 min</small><h3>Slow touch: the twenty-minute exercise therapists teach</h3><p class="muted">It is called sensate focus. There is no goal, and that is the whole idea.</p></a>
         <a class="post" href="#read-habit"><div class="photo"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=900&q=75" alt="Two people holding mugs across a table" loading="lazy" onerror="this.remove()"></div><small>Rituals · 2 min</small><h3>Morning and evening: how to make it stick</h3><p class="muted">Five ways to make two gummies a day automatic.</p></a>
         <a class="post" href="#read-saffron"><div class="photo"><img src="https://images.unsplash.com/photo-1754146282712-f238a371b970?auto=format&fit=crop&w=900&q=75" alt="Saffron threads beside crocus flowers" loading="lazy" onerror="this.remove()"></div><small>Ingredients · 2 min</small><h3>Saffron: the red thread</h3><p class="muted">What it is, why it costs so much, and what the research looked at.</p></a>
       </div>
@@ -1835,6 +1860,58 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <h2>Minute 10: stay close</h2>
 <p>Sit near each other for one more minute without talking. It feels strange for about four days. Then it becomes the part you look forward to.</p>
 <p>That is the whole ritual. Ten minutes, most nights, for a month. See what changes.</p>
+
+    <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
+  </div></section>
+</main>
+
+<main id="v-read-desire">
+  <section class="pdp"><div class="wrap article">
+    <p class="crumb"><a href="#journal">Journal</a> / Relationships</p>
+    <p class="eyebrow">Relationships</p>
+    <h1>Two kinds of desire, and why yours is normal</h1>
+    <p class="byline">By the Saffra team. Medical review by our advisory board before launch.</p>
+    <div class="tldr"><b>The short answer</b>Some people feel desire out of nowhere. Many others feel it only once closeness has started. Both are normal, and knowing which one you are changes how you plan your evenings.</div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1514480100661-33506ca03fe7?auto=format&fit=crop&w=1400&q=75" alt="A man kissing a woman on her forehead" loading="lazy" onerror="this.remove()"></div>
+    
+<p>Most of us learned one story about desire: it strikes first, and everything else follows. For a lot of people, and in a lot of long relationships, that is not how it works.</p>
+<h2>Spontaneous desire</h2>
+<p>This is the kind in films. You are making dinner and suddenly you want your partner. It tends to be more common early in a relationship, when everything is new.</p>
+<h2>Responsive desire</h2>
+<p>Here, wanting comes second. A long kiss, a back rub, an unhurried conversation, and then desire shows up. Researchers and sex therapists describe this pattern as very common, especially in long relationships. It is not low desire. It is desire with a different starting point.</p>
+<h2>Why it matters</h2>
+<p>If one of you is waiting to feel desire before starting anything, and the other reads that as rejection, you can both end up hurt over nothing. Couples who understand responsive desire stop waiting for a spark and start building the conditions for one.</p>
+<h2>What to do with this</h2>
+<p>Talk about which pattern fits each of you. Make room for closeness with no goal attached: ten minutes on the sofa, a shower together, a slow dance in the kitchen. Agree that either of you can say "not tonight" at any point without it being a big deal. That safety is what lets responsive desire appear.</p>
+<p>Our <a href="#app" style="color:var(--saffron)">Saffra Together app</a> has an Ideas tab built for exactly this: small starts, sorted by how much time you have.</p>
+<h2>When to get help</h2>
+<p>If a change in desire is sudden, distressing, or comes with pain or other symptoms, talk to your doctor. A supplement is not the answer to a medical problem, and a good sex therapist can help with the rest.</p>
+
+    <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
+  </div></section>
+</main>
+
+<main id="v-read-touch">
+  <section class="pdp"><div class="wrap article">
+    <p class="crumb"><a href="#journal">Journal</a> / Rituals</p>
+    <p class="eyebrow">Rituals</p>
+    <h1>Slow touch: the twenty-minute exercise therapists teach</h1>
+    <p class="byline">By the Saffra team. Medical review by our advisory board before launch.</p>
+    <div class="tldr"><b>The short answer</b>Take turns touching each other for ten minutes each, with no goal and nothing off the table except pressure to perform. Notice temperature, texture and pressure. That is it.</div>
+    <div class="photo"><img src="https://images.unsplash.com/photo-1763713512970-a898b215025e?auto=format&fit=crop&w=1400&q=75" alt="A couple embracing in a dimly lit kitchen" loading="lazy" onerror="this.remove()"></div>
+    
+<p>In the 1960s the researchers William Masters and Virginia Johnson developed an exercise for couples called sensate focus. Sex therapists still teach versions of it today. The idea is simple: take the goal away, and attention comes back.</p>
+<h2>Set it up</h2>
+<p>Pick a time when you will not be interrupted. Phones in another room. Warm room, low light. Agree in advance that tonight is only this exercise, and nothing has to follow.</p>
+<h2>Take turns</h2>
+<p>One of you touches, the other receives, for about ten minutes. Then swap. The person touching explores for their own curiosity: temperature, texture, pressure. The person receiving just notices what they feel.</p>
+<h2>The first rule</h2>
+<p>In the classic first stage, the most intimate areas are left out on purpose. It sounds strange. It works because it removes every question about where this is going, and lets both of you relax.</p>
+<h2>Talk afterward, not during</h2>
+<p>During the exercise, say only what you need to: softer, slower, or stop. Afterward, tell each other what you noticed and what you liked.</p>
+<h2>Why it helps</h2>
+<p>Pressure is the enemy of desire. When there is nothing to achieve, most people find they can actually feel what is happening. Many couples say it is the closest they have felt in months.</p>
+<p>If touch is difficult for either of you because of past experiences, go gently, stop whenever you need to, and consider working with a therapist. Our <a href="#giving" style="color:var(--saffron)">Giving back</a> page lists support lines.</p>
 
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
@@ -2066,8 +2143,15 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <main id="v-members">
   <section class="pdp">
     <div class="wrap" style="max-width:920px">
-      <div class="head"><p class="eyebrow">Members only</p><h1 style="font-size:clamp(40px,6.4vw,72px)">The inner <i style="font-style:italic;color:var(--saffron)">Circle.</i></h1><p class="lead muted">Every subscriber is a member. Sign in opens with the store. Here is what is waiting inside.</p></div>
-      <div class="locked" style="margin-top:34px">
+      <div class="mhero"><div class="head" style="margin:0"><p class="eyebrow">Members only</p><h1 style="font-size:clamp(40px,6.4vw,72px)">The inner <i style="font-style:italic;color:var(--saffron)">Circle.</i></h1><p class="lead muted">Every subscriber is a member. Sign in opens with the store. Here is what is waiting inside.</p></div><div class="mlock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg></div></div>
+      <div class="head" style="margin:44px 0 0"><h2>A taste of After Dark.</h2><p class="muted">Three cards from the members deck. Tap to turn them over.</p></div>
+      <div class="peek">
+        <button type="button" class="pk" aria-pressed="false"><span><i>Warm<small>Tap to turn</small></i><b>What is something I do that you can never resist?</b></span></button>
+        <button type="button" class="pk" aria-pressed="false"><span><i>Hot<small>Tap to turn</small></i><b>Describe the best night we have ever had, in three sentences.</b></span></button>
+        <button type="button" class="pk" aria-pressed="false"><span><i>Dare<small>Tap to turn</small></i><b>Blindfold me, and kiss me somewhere I do not expect.</b></span></button>
+      </div>
+      <div class="head" style="margin:48px 0 0"><h2>Everything inside.</h2></div>
+      <div class="locked" style="margin-top:20px">
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>The After Dark deck</b><span>Sixty bolder questions and dares for two, in three heat levels.</span></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>Date night, planned</b><span>A new at-home date every month: the plan, the playlist and the prompts.</span></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>Guided evenings</b><span>Audio sessions for couples: slow touch, breathing together and winding down.</span></div>
@@ -2308,7 +2392,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 
 <script>
 (function(){
-  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','creators','brand','giving','rewards','app','members','download'];
+  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','read-desire','read-touch','creators','brand','giving','rewards','app','members','download'];
   var mb=document.getElementById('menubtn');
   function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
   mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
@@ -2603,6 +2687,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
       document.getElementById('rc-note').textContent='You would reach '+nm+(next>0?', with '+next+' points to go until '+['Glow','Flame'][lvl]+'.':', the top level.')+' Includes 100 welcome points.';}
     document.getElementById('rc-plan').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;price=+b.getAttribute('data-p');this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});draw();});
     m.addEventListener('input',draw);draw();})();
+  document.querySelectorAll('.pk').forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');});});
   /* reel */
   var reel=document.getElementById('reel');
   function nudge(d){reel.scrollBy({left:d*320,behavior:'smooth'});}
