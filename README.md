@@ -40,3 +40,14 @@ The live site is served from the `gh-pages` branch. Push `main` to `gh-pages` to
 - The Ask us form does not send questions.
 - The podcast has no episodes yet.
 - The Creators application form does not send.
+
+## Launch switches
+
+Flip these when the real domain and store are ready:
+
+1. `index.html` head: remove the `robots` noindex tag and change the title from "Saffra Staging Site".
+2. Replace `https://aeroassistindustries.github.io/saffra-staging/` in the `og:` tags and JSON-LD with the live domain.
+3. Social icons in the footer: wrap each `li[data-social]` in a link to the real profile.
+4. Forms (waitlist, ask, creators, lot lookup): connect to an email service and remove the "Staging preview" messages.
+5. Add the business contact address to the privacy, terms and shipping pages.
+6. Connect checkout.

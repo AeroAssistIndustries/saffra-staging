@@ -1,0 +1,20 @@
+{
+ "name": "Saffra",
+ "short_name": "Saffra",
+ "start_url": "./",
+ "display": "standalone",
+ "background_color": "#2A1429",
+ "theme_color": "#2A1429",
+ "icons": [
+  {
+   "src": "img/icon-180.png",
+   "sizes": "180x180",
+   "type": "image/png"
+  },
+  {
+   "src": "img/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}
