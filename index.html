@@ -862,7 +862,29 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 .mlock svg{width:74px;height:74px;color:#2A1429}
 @media(max-width:760px){.peek{grid-template-columns:1fr;max-width:260px;margin-left:auto;margin-right:auto}.mhero{grid-template-columns:1fr}.mlock{width:120px;height:120px}.mlock svg{width:52px;height:52px}}
 @media(prefers-reduced-motion:reduce){.pk span{transition:none}.mlock::before{animation:none}}
-</style>
+
+.srch{position:fixed;inset:0;z-index:50;background:rgba(18,7,20,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:none;padding:9vh 18px 18px;overflow:auto}
+body.searching .srch{display:block}body.searching{overflow:hidden}
+.srch .box{max-width:640px;margin:0 auto;display:grid;gap:14px}
+.srch .in{display:flex;gap:10px;align-items:center;border-radius:18px;padding:6px 8px 6px 18px;border:1px solid transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box}
+.srch input{flex:1;min-width:0;font:inherit;font-size:18px;color:var(--cream);background:transparent;border:0;outline:0;padding:12px 0}
+.srch input::placeholder{color:var(--muted)}
+.srch .x{background:none;border:0;color:var(--cream);font-size:26px;width:44px;height:44px;cursor:pointer}
+.srch ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.srch li a{display:grid;gap:2px;text-decoration:none;color:var(--cream);border-radius:14px;padding:13px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.srch li a:hover,.srch li a:focus-visible{border-color:var(--violet);background:rgba(147,51,234,.16)}
+.srch li small{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--saffron);font-weight:700}
+.srch li b{font-family:var(--display);font-weight:400;font-size:19px}
+.srch li span{font-size:13.5px;color:var(--muted)}
+.srch .hint{color:var(--muted);font-size:14px;margin:0}
+.keep{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.keephead{margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.keephead h2{font-size:28px}
+.ap-notes{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ap-notes button{width:100%;text-align:left;font:inherit;color:var(--cream);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 14px;cursor:pointer;display:grid;gap:2px}
+.ap-notes small{color:var(--saffron);font-size:12px;font-weight:700;letter-spacing:.06em}
+@media(max-width:640px){.keep{grid-template-columns:1fr}}
+.keephead .btn{min-height:44px}</style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Saffra", "url": "https://aeroassistindustries.github.io/saffra-staging/", "logo": "https://aeroassistindustries.github.io/saffra-staging/img/icon-512.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast does it work?", "acceptedAnswer": {"@type": "Answer", "text": "Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening."}}, {"@type": "Question", "name": "What is the difference between the two?", "acceptedAnswer": {"@type": "Answer", "text": "Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E."}}, {"@type": "Question", "name": "Who should not take it?", "acceptedAnswer": {"@type": "Answer", "text": "Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions."}}, {"@type": "Question", "name": "What does lab tested mean?", "acceptedAnswer": {"@type": "Answer", "text": "An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar."}}, {"@type": "Question", "name": "Should we both take the same one?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each of you takes your own formula. The For Two set has one jar of each."}}, {"@type": "Question", "name": "What does it taste like?", "acceptedAnswer": {"@type": "Answer", "text": "Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky."}}, {"@type": "Question", "name": "Is it vegan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No gelatin, no artificial colors or flavors."}}, {"@type": "Question", "name": "How long does a jar last?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty days. Each jar holds 60 gummies and the serving is two a day."}}, {"@type": "Question", "name": "Can I take it with other supplements or medication?", "acceptedAnswer": {"@type": "Answer", "text": "Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication."}}, {"@type": "Question", "name": "Can I cancel my subscription?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime from your account, in two clicks. You can also skip a month."}}]}]</script>
 </head>
 <body data-view="home">
@@ -903,6 +925,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
       <a class="hide-s" href="#journal">Journal</a>
       <a class="hide-s" href="#play">Play</a>
       <a class="hide-s" href="#about">About</a>
+      <button class="bagbtn" type="button" id="srchbtn" aria-label="Search" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.500"/><path d="M16 16l4.500 4.500"/></svg></button>
       <button class="bagbtn" type="button" id="bagbtn" aria-label="Open your bag" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" stroke-linecap="round"/></svg><b id="bagcount" hidden>0</b></button>
       <a class="btn small" href="#waitlist">Join the waitlist</a>
       <button class="menu" type="button" id="menubtn" aria-label="Open menu" aria-expanded="false"><span></span></button>
@@ -1807,6 +1830,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <p>None of this needs a product. If a daily gummy helps you remember to stop for a moment together, good. The stopping is what counts.</p>
 <p>If the distance feels bigger than tiredness, or sex is painful or worrying, talk to a doctor or a couples therapist. That is what they are for.</p>
 
+    <div class="keephead"><h2>Keep reading</h2><button type="button" class="btn ghost small" data-share>Share this article</button></div>
+    <div class="keep" data-keep="read-tired"></div>
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
 </main>
@@ -1835,6 +1860,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <p>A careful brand tells you who should not take the product. No warnings at all usually means nobody thought about it.</p>
 <p>We built Saffra to pass this test. Hold us to it.</p>
 
+    <div class="keephead"><h2>Keep reading</h2><button type="button" class="btn ghost small" data-share>Share this article</button></div>
+    <div class="keep" data-keep="read-label"></div>
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
 </main>
@@ -1861,6 +1888,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <p>Sit near each other for one more minute without talking. It feels strange for about four days. Then it becomes the part you look forward to.</p>
 <p>That is the whole ritual. Ten minutes, most nights, for a month. See what changes.</p>
 
+    <div class="keephead"><h2>Keep reading</h2><button type="button" class="btn ghost small" data-share>Share this article</button></div>
+    <div class="keep" data-keep="read-ritual"></div>
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
 </main>
@@ -1887,6 +1916,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <h2>When to get help</h2>
 <p>If a change in desire is sudden, distressing, or comes with pain or other symptoms, talk to your doctor. A supplement is not the answer to a medical problem, and a good sex therapist can help with the rest.</p>
 
+    <div class="keephead"><h2>Keep reading</h2><button type="button" class="btn ghost small" data-share>Share this article</button></div>
+    <div class="keep" data-keep="read-desire"></div>
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
 </main>
@@ -1913,6 +1944,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <p>Pressure is the enemy of desire. When there is nothing to achieve, most people find they can actually feel what is happening. Many couples say it is the closest they have felt in months.</p>
 <p>If touch is difficult for either of you because of past experiences, go gently, stop whenever you need to, and consider working with a therapist. Our <a href="#giving" style="color:var(--saffron)">Giving back</a> page lists support lines.</p>
 
+    <div class="keephead"><h2>Keep reading</h2><button type="button" class="btn ghost small" data-share>Share this article</button></div>
+    <div class="keep" data-keep="read-touch"></div>
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
 </main>
@@ -1938,6 +1971,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <h2>Give it a fair run</h2>
 <p>The studies behind the ingredients ran for four to twelve weeks. Decide at the start that you will give it a month, then judge it honestly. If it is not for you, tell us within 30 days of your first order and we will refund it.</p>
 
+    <div class="keephead"><h2>Keep reading</h2><button type="button" class="btn ghost small" data-share>Share this article</button></div>
+    <div class="keep" data-keep="read-habit"></div>
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
 </main>
@@ -1963,6 +1998,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 <h2>Sources</h2>
 <ul><li><a style="color:var(--saffron)" href="https://www.nutritionaloutlook.com/view/saffron-supplement-studied-for-effect-on-mild-depression-symptoms">12-week mood trial, 202 adults, 28 mg a day</a></li><li><a style="color:var(--saffron)" href="https://pubmed.ncbi.nlm.nih.gov/31516855/">Review of saffron trials on sexual function in men and women</a></li><li><a style="color:var(--saffron)" href="https://pubmed.ncbi.nlm.nih.gov/20520621/">A trial in 346 men that found no benefit</a></li></ul>
 
+    <div class="keephead"><h2>Keep reading</h2><button type="button" class="btn ghost small" data-share>Share this article</button></div>
+    <div class="keep" data-keep="read-saffron"></div>
     <p style="margin-top:34px"><a class="btn ghost" href="#journal">Back to the Journal</a></p>
   </div></section>
 </main>
@@ -2182,6 +2219,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
           <div class="ap-nav"><button type="button" id="ap-prev" aria-label="Previous day">&lsaquo;</button><div style="text-align:center"><b id="ap-date"></b><br><span class="muted" id="ap-streak" style="font-size:13.5px"></span></div><button type="button" id="ap-nextd" aria-label="Next day">&rsaquo;</button></div>
         </div>
         <div class="ap-card" id="ap-datecard" hidden><div class="ap-date"><i id="ap-datein"></i><div><b id="ap-datehead"></b><br><span class="muted" id="ap-datewhat"></span></div></div></div>
+        <div class="ap-card ap-welcome" id="ap-nudge" hidden><h3>A small start tonight?</h3><p class="muted" style="margin:0">Closeness has been on the low side this week. That happens. Ten minutes together can shift it.</p><div><button type="button" class="btn" id="ap-nudgego">Show me an idea</button></div></div>
         <div class="ap-card"><h3>Tonight's question</h3><p class="ap-qd" id="ap-qd"></p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-qshare">Send to my partner</button><span class="muted" id="ap-qmsg" role="status"></span></div></div>
         <div class="ap-card"><h3>This week</h3><div class="ap-week" id="ap-week"></div><p class="ap-note" id="ap-weeknote"></p></div>
         <div class="ap-card">
@@ -2201,6 +2239,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
       </div>
       <div id="ap-history" hidden>
         <div class="ap-card"><div class="ap-nav"><button type="button" id="cal-prev" aria-label="Previous month">&lsaquo;</button><h3 id="cal-title"></h3><button type="button" id="cal-next" aria-label="Next month">&rsaquo;</button></div><div class="ap-cal" id="ap-cal"></div><p class="ap-note">Tap a day to open it. Filled: gummies taken. Gold dot: an intimate day.</p></div>
+        <div class="ap-card" id="ap-notescard" hidden><h3>Your notes</h3><ul class="ap-notes" id="ap-noteslist"></ul></div>
         <div class="ap-card"><h3>Last 30 days</h3><div class="ap-stats" id="ap-stats"></div></div>
         <div class="ap-card"><h3>Closeness, day by day</h3><div class="ap-bars" id="ap-bars" aria-hidden="true"></div><p class="ap-note" id="ap-trend"></p></div>
         <div class="ap-card"><h3>Averages</h3><div class="ap-stats" id="ap-avgs" style="grid-template-columns:repeat(4,1fr)"></div><p class="ap-note">Out of 5. Most studies of these ingredients ran four to eight weeks, so give it time.<sup>*</sup></p></div>
@@ -2381,6 +2420,11 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
 
 <div class="buybar her"><div><b>Saffra for her</b><small><span data-sub="$36 a month" data-one="$44 one-time">$36 a month</span></small></div><button class="btn small" type="button" data-add="her">Add to bag</button></div>
 <div class="buybar him"><div><b>Saffra for him</b><small><span data-sub="$36 a month" data-one="$44 one-time">$36 a month</span></small></div><button class="btn small" type="button" data-add="him">Add to bag</button></div>
+<div class="srch" id="srch" role="dialog" aria-modal="true" aria-label="Search Saffra"><div class="box">
+  <div class="in"><label class="sr" for="srchq">Search</label><input id="srchq" type="text" inputmode="search" enterkeyhint="search" placeholder="Search products, articles and answers" autocomplete="off"><button type="button" class="x" id="srchx" aria-label="Close search">&times;</button></div>
+  <p class="hint" id="srchhint" role="status"></p>
+  <ul id="srchres"></ul>
+</div></div>
 <div class="shade" id="shade"></div>
 <aside class="bag" id="bag" role="dialog" aria-modal="true" aria-labelledby="bagtitle">
   <div class="bhead"><h2 id="bagtitle">Your bag</h2><button class="x" type="button" id="bagx" aria-label="Close bag">&times;</button></div>
@@ -2566,6 +2610,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
       document.querySelectorAll('[data-scale]').forEach(function(gp){var k=gp.getAttribute('data-scale'),x='';for(var i=1;i<=5;i++)x+='<button type="button" data-n="'+i+'" aria-pressed="'+(cur[k]===i)+'" aria-label="'+i+' out of 5">'+i+'</button>';gp.innerHTML=x;});
       $('ap-notes').value=cur.note;
       $('ap-welcome').hidden=!!(p.me||p.skip);extras();
+      var cs=0,cn=0;for(var q=0;q<7;q++){var ce=d[ago(q)];if(ce&&ce.close){cs+=ce.close;cn++;}}$('ap-nudge').hidden=!(cn>=3&&cs/cn<3&&sel===ago(0));
       var wk='',gd=0,idn=0;for(var w=6;w>=0;w--){var wkk=ago(w),we=wkk===sel?cur:d[wkk],dz=doses(we);if(dz)gd++;if(we&&we.int)idn++;wk+='<div class="'+(w===0?'now':'')+'"><i class="'+(dz>=2?'on':dz===1?'half':'')+(we&&we.int?' heart':'')+'"></i>'+parse(wkk).toLocaleDateString(undefined,{weekday:'narrow'})+'</div>';}
       $('ap-week').innerHTML=wk;$('ap-weeknote').textContent=gd+' of 7 gummy days'+(idn?', '+idn+(idn===1?' intimate day':' intimate days'):'')+'. Half circle: one of two gummies.';
       var jb=$('ap-jarbox');
@@ -2577,6 +2622,7 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
     $('ap-today').addEventListener('click',function(e){
       var f=e.target.closest('[data-flag]');if(f){var k=f.getAttribute('data-flag');cur[k]=!cur[k];commit();return;}
       var sc=e.target.closest('[data-scale] button');if(sc){var kk=sc.parentNode.getAttribute('data-scale'),n=+sc.getAttribute('data-n');cur[kk]=cur[kk]===n?0:n;commit();return;}
+      if(e.target.id==='ap-nudgego'){tab('ideas');window.scrollTo(0,0);return;}
       if(e.target.id==='ap-setup'){tab('me');$('pf-me').focus();return;}
       if(e.target.id==='ap-skip'){var ps=get(PK,{});ps.skip=1;put(PK,ps);drawToday();return;}
       if(e.target.id==='ap-newjar'){var p=get(PK,{});p.jar=ago(0);put(PK,p);drawToday();}
@@ -2591,7 +2637,9 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
       ['S','M','T','W','T','F','S'].forEach(function(x){h+='<span>'+x+'</span>';});
       for(var b=0;b<first;b++)h+='<span></span>';
       for(var i=1;i<=days;i++){var k=key(new Date(y,m,i)),e=d[k];h+='<button type="button" data-day="'+k+'" class="'+(took(e)?'on':'')+(e&&e.int?' heart':'')+(k===today?' today':'')+'"'+(k>today?' disabled':'')+' aria-label="'+new Date(y,m,i).toLocaleDateString(undefined,{month:'long',day:'numeric'})+(took(e)?', gummies taken':'')+(e&&e.int?', intimate day':'')+'">'+i+'</button>';}
-      $('ap-cal').innerHTML=h;var now=new Date();$('cal-next').disabled=y===now.getFullYear()&&m===now.getMonth();
+      $('ap-cal').innerHTML=h;var now=new Date();
+      var nk=Object.keys(d).filter(function(k){return d[k].note;}).sort().reverse().slice(0,10);$('ap-notescard').hidden=!nk.length;
+      $('ap-noteslist').innerHTML=nk.map(function(k){return '<li><button type="button" data-day="'+k+'"><small>'+parse(k).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+'</small><span>'+esc(d[k].note)+'</span></button></li>';}).join('');$('cal-next').disabled=y===now.getFullYear()&&m===now.getMonth();
       var n=0,me=0,it=0,s={mood:[0,0],energy:[0,0],desire:[0,0],close:[0,0]},bars='',fa=[0,0],la=[0,0];
       for(var j=29;j>=0;j--){var x=d[ago(j)];if(x){n++;if(took(x))me++;if(x.int)it++;Object.keys(s).forEach(function(q){if(x[q]){s[q][0]+=x[q];s[q][1]++;}});}
         var c=x&&x.close||0;bars+='<i class="'+(c?'':'none')+'" style="height:'+(c?c*20:3)+'%"></i>';if(c){var t=j>=15?fa:la;t[0]+=c;t[1]++;}}
@@ -2602,7 +2650,8 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
       if(fa[1]>=3&&la[1]>=3){var a=fa[0]/fa[1],z=la[0]/la[1];tr=z>a+.2?'Closeness is up over the last two weeks.':z<a-.2?'Closeness is down a little over the last two weeks. Try an idea tonight.':'Closeness has been steady over the last month.';}
       $('ap-trend').textContent=tr;
     }
-    $('ap-cal').addEventListener('click',function(e){var b=e.target.closest('[data-day]');if(!b||b.disabled)return;sel=b.getAttribute('data-day');tab('today');window.scrollTo(0,0);});
+    function openDay(e){var b=e.target.closest('[data-day]');if(!b||b.disabled)return;sel=b.getAttribute('data-day');tab('today');window.scrollTo(0,0);}
+    $('ap-cal').addEventListener('click',openDay);$('ap-noteslist').addEventListener('click',openDay);
     $('cal-prev').addEventListener('click',function(){calM.setMonth(calM.getMonth()-1);drawHistory();});
     $('cal-next').addEventListener('click',function(){calM.setMonth(calM.getMonth()+1);drawHistory();});
     var ti=0,score=0,order=[],ROUND=10;
@@ -2688,6 +2737,30 @@ h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
     document.getElementById('rc-plan').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;price=+b.getAttribute('data-p');this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});draw();});
     m.addEventListener('input',draw);draw();})();
   document.querySelectorAll('.pk').forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');});});
+
+  /* search, keep reading, share */
+  (function(){
+    var IDX=[['Product','Saffra for her','Seven ingredients for her, with L-theanine, B6 and folate','#her'],['Product','Saffra for him','Seven ingredients for him, with zinc, selenium and vitamin E','#him'],['Product','Saffra for Two','Both jars together at the set price','#shop'],
+      ['Page','The science','Every ingredient, dose and study','#science'],['Page','Our story','Founded by a couple','#about'],['Page','Find your formula','A two-minute quiz','#quiz'],['Page','Games for two','Question deck, spinner, Know me, This or that','#play'],['Page','Saffra Together app','Daily check-in, trivia, truth or dare, ideas','#app'],['Page','Get the app','Install on iPhone or Android','#download'],['Page','Rewards and referrals','Points, levels, give $10 get $10','#rewards'],['Page','Members only','After Dark deck, date nights, guided evenings','#members'],['Page','Giving back','10% of every sale helps survivors','#giving'],['Page','Ask us','Send a question to the team','#ask'],['Page','Shipping, returns and subscriptions','Free shipping, 30-day guarantee, cancel anytime, discreet plain box','#shipping'],['Page','Privacy policy','What we collect and your choices','#privacy'],['Page','Terms of use','','#terms'],['Page','Creators','Work with us','#creators'],['Page','Ingredients','Saffron, fenugreek, L-theanine, zinc, selenium, vitamins B6 B12 D3 E, folate','#ingredients']];
+    document.querySelectorAll('#v-journal .post').forEach(function(p){var h=p.querySelector('h3'),d=p.querySelector('p');if(h)IDX.push(['Article',h.textContent,d?d.textContent:'',p.getAttribute('href')]);});
+    document.querySelectorAll('#faqlist details').forEach(function(d,i){var q=d.querySelector('summary'),a=d.querySelector('p');if(q)IDX.push(['Answer',q.textContent,a?a.textContent:'','#questions',i]);});
+    var box=document.getElementById('srch'),q=document.getElementById('srchq'),res=document.getElementById('srchres'),hint=document.getElementById('srchhint'),last=null;
+    function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function draw(){var t=q.value.trim().toLowerCase(),out=[];
+      if(!t){out=IDX.slice(0,3).concat(IDX.filter(function(x){return x[3]==='#app'||x[3]==='#rewards'||x[3]==='#giving';}));hint.textContent='Popular';}
+      else{var w=t.split(/\s+/);IDX.forEach(function(x){var a=x[1].toLowerCase(),b=(x[2]||'').toLowerCase(),sc=0,ok=w.every(function(k){var ia=a.indexOf(k)>-1,ib=b.indexOf(k)>-1;if(ia)sc+=3;else if(ib)sc+=1;return ia||ib;});if(ok)out.push([sc,x]);});out.sort(function(m,n){return n[0]-m[0];});out=out.slice(0,8).map(function(o){return o[1];});hint.textContent=out.length?out.length+(out.length===1?' result':' results'):'Nothing found. Try another word, or ask us.';}
+      res.innerHTML=out.map(function(x){var s2=x[2]||'';if(s2.length>110)s2=s2.slice(0,108)+'...';return '<li><a href="'+x[3]+'"'+(x[4]!=null?' data-faq="'+x[4]+'"':'')+'><small>'+x[0]+'</small><b>'+esc(x[1])+'</b>'+(s2?'<span>'+esc(s2)+'</span>':'')+'</a></li>';}).join('');}
+    function open(){last=document.activeElement;document.body.classList.add('searching');q.value='';draw();q.focus();}
+    function close(){document.body.classList.remove('searching');if(last&&last.focus)last.focus();}
+    document.getElementById('srchbtn').addEventListener('click',open);document.getElementById('srchx').addEventListener('click',close);
+    box.addEventListener('click',function(e){if(e.target===box){close();return;}var a=e.target.closest('a');if(!a)return;document.body.classList.remove('searching');var f=a.getAttribute('data-faq');if(f!=null){setTimeout(function(){var d=document.querySelectorAll('#faqlist details')[+f];if(d){d.open=true;d.scrollIntoView({block:'center'});}},350);}});
+    q.addEventListener('input',draw);
+    document.addEventListener('keydown',function(e){var typing=/INPUT|TEXTAREA|SELECT/.test((e.target.tagName||''));if(e.key==='Escape'&&document.body.classList.contains('searching'))close();else if(e.key==='/'&&!typing&&!document.body.classList.contains('searching')){e.preventDefault();open();}});
+    var posts=[].slice.call(document.querySelectorAll('#v-journal .post'));
+    document.querySelectorAll('[data-keep]').forEach(function(k){var me='#'+k.getAttribute('data-keep'),i=posts.findIndex(function(p){return p.getAttribute('href')===me;}),n=posts.length;if(i<0||n<3)return;[posts[(i+1)%n],posts[(i+2)%n]].forEach(function(p){k.appendChild(p.cloneNode(true));});});
+    document.addEventListener('click',function(e){var b=e.target.closest('[data-share]');if(!b)return;var h=b.closest('main').querySelector('h1'),u=location.href,t=h?h.textContent:'Saffra';
+      if(navigator.share){navigator.share({title:t,url:u}).catch(function(){});}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){b.textContent='Link copied';setTimeout(function(){b.textContent='Share this article';},2000);});}});
+  })();
   /* reel */
   var reel=document.getElementById('reel');
   function nudge(d){reel.scrollBy({left:d*320,behavior:'smooth'});}
