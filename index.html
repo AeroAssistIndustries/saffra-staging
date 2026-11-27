@@ -787,6 +787,25 @@ body.bagopen{overflow:hidden}
   body[data-view="app"] .totop{display:none!important}
   .ap-two{grid-template-columns:1fr}}
 @media(display-mode:standalone){body[data-view="app"] .bar,body[data-view="app"] footer{display:none}body[data-view="app"] #v-app{padding-bottom:90px}}
+
+main[id^="v-"]{animation:viewin .35s ease both}
+@keyframes viewin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h1:focus{outline:none}
+.qr{display:flex;gap:18px;align-items:center;border-radius:22px;padding:20px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);margin-top:18px}
+.qr svg{width:124px;height:124px;border-radius:12px;flex:none}
+.qr b{font-family:var(--display);font-weight:400;font-size:22px;display:block}
+.ap-tabs button{display:grid;justify-items:center;gap:2px}
+.ap-tabs button svg{width:20px;height:20px}
+.ap-week{display:flex;gap:6px;justify-content:space-between}
+.ap-week div{flex:1;text-align:center;font-size:11.5px;color:var(--muted);display:grid;gap:5px;justify-items:center}
+.ap-week i{width:100%;max-width:34px;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.08);display:block;box-sizing:border-box}
+.ap-week i.half{background:linear-gradient(90deg,#9333EA 50%,rgba(255,255,255,.08) 50%)}
+.ap-week i.on{background:var(--line)}
+.ap-week i.heart{box-shadow:0 0 0 2px var(--saffron)}
+.ap-week div.now{color:var(--cream);font-weight:700}
+.ap-welcome{border-color:transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box}
+@media(max-width:760px){.qr{display:none}}
+@media(prefers-reduced-motion:reduce){main[id^="v-"]{animation:none}}
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Saffra", "url": "https://aeroassistindustries.github.io/saffra-staging/", "logo": "https://aeroassistindustries.github.io/saffra-staging/img/icon-512.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast does it work?", "acceptedAnswer": {"@type": "Answer", "text": "Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening."}}, {"@type": "Question", "name": "What is the difference between the two?", "acceptedAnswer": {"@type": "Answer", "text": "Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E."}}, {"@type": "Question", "name": "Who should not take it?", "acceptedAnswer": {"@type": "Answer", "text": "Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions."}}, {"@type": "Question", "name": "What does lab tested mean?", "acceptedAnswer": {"@type": "Answer", "text": "An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar."}}, {"@type": "Question", "name": "Should we both take the same one?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each of you takes your own formula. The For Two set has one jar of each."}}, {"@type": "Question", "name": "What does it taste like?", "acceptedAnswer": {"@type": "Answer", "text": "Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky."}}, {"@type": "Question", "name": "Is it vegan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No gelatin, no artificial colors or flavors."}}, {"@type": "Question", "name": "How long does a jar last?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty days. Each jar holds 60 gummies and the serving is two a day."}}, {"@type": "Question", "name": "Can I take it with other supplements or medication?", "acceptedAnswer": {"@type": "Answer", "text": "Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication."}}, {"@type": "Question", "name": "Can I cancel my subscription?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime from your account, in two clicks. You can also skip a month."}}]}]</script>
 </head>
@@ -2004,13 +2023,15 @@ body.bagopen{overflow:hidden}
     <div class="wrap"><div class="ap">
       <div class="head"><p class="eyebrow">Saffra Together</p><h1 style="font-size:clamp(34px,6vw,56px)">Your ritual, <i style="font-style:italic;color:var(--saffron)">together.</i></h1><p class="muted">A private space for the two of you. Everything you log stays on this device.</p></div>
       <div class="ap-tabs" role="tablist" aria-label="App sections">
-        <button role="tab" type="button" data-ap="today" aria-selected="true">Today</button><button role="tab" type="button" data-ap="history" aria-selected="false">History</button><button role="tab" type="button" data-ap="play" aria-selected="false">Play</button><button role="tab" type="button" data-ap="ideas" aria-selected="false">Ideas</button><button role="tab" type="button" data-ap="me" aria-selected="false">Me</button>
+        <button role="tab" type="button" data-ap="today" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.600 5.600l1.400 1.400M17 17l1.400 1.400M5.600 18.400L7 17M17 7l1.400-1.400"/></svg>Today</button><button role="tab" type="button" data-ap="history" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.500"/><path d="M4 10h16M8.500 3v4M15.500 3v4"/></svg>History</button><button role="tab" type="button" data-ap="play" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/><circle cx="9" cy="15" r="1" fill="currentColor"/></svg>Play</button><button role="tab" type="button" data-ap="ideas" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.500 10.900c.500.400.800 1 .800 1.600h5.400c0-.600.300-1.200.800-1.600A6 6 0 0 0 12 3z"/></svg>Ideas</button><button role="tab" type="button" data-ap="me" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.500" r="3.500"/><path d="M5 20c.600-3.600 3.400-5.500 7-5.500s6.400 1.900 7 5.500"/></svg>Me</button>
       </div>
       <div id="ap-today">
+        <div class="ap-card ap-welcome" id="ap-welcome" hidden><h3>Welcome to Saffra Together</h3><p class="muted" style="margin:0">Add your first names and the day you started, and the app will count your days and greet you both.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="ap-setup">Set it up</button><button type="button" class="ap-small" id="ap-skip">Not now</button></div></div>
         <div class="ap-card">
           <p class="ap-hello" id="ap-hello"></p>
           <div class="ap-nav"><button type="button" id="ap-prev" aria-label="Previous day">&lsaquo;</button><div style="text-align:center"><b id="ap-date"></b><br><span class="muted" id="ap-streak" style="font-size:13.5px"></span></div><button type="button" id="ap-nextd" aria-label="Next day">&rsaquo;</button></div>
         </div>
+        <div class="ap-card"><h3>This week</h3><div class="ap-week" id="ap-week"></div><p class="ap-note" id="ap-weeknote"></p></div>
         <div class="ap-card">
           <h3>Gummies</h3>
           <div class="ap-row"><span>My morning gummy</span><button type="button" class="chip" data-flag="am" aria-pressed="false">Not yet</button></div>
@@ -2069,6 +2090,7 @@ body.bagopen{overflow:hidden}
         <div class="head" style="margin:0"><p class="eyebrow">Get the app</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Saffra Together, <i style="font-style:italic;color:var(--saffron)">on your phone.</i></h1><p class="lead muted">Daily check-ins, history, trivia, truth or dare and ideas for tonight. Free, private and made for two.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px"><button type="button" class="btn" id="dl-install">Install the app</button><a class="btn ghost" href="#app">Open in the browser</a></div><p class="muted" id="dl-msg" role="status" style="font-size:14.5px;min-height:22px"></p></div>
         <div class="phone" aria-hidden="true"><img class="ic" src="img/icon-180.png" alt="" width="54" height="54"><b>Good evening</b><i class="g"></i><i></i><i></i><i></i><i class="g" style="width:40%"></i><i></i></div>
       </div>
+      <div class="qr"><svg role="img" aria-label="QR code that opens the app download page" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 164" class="segno"><g transform="scale(4)"><path fill="#f6ebdd" d="M0 0h41v41h-41z"/><path class="qrline" stroke="#2a1429" d="M2 2.5h7m1 0h1m1 0h1m1 0h5m2 0h2m5 0h3m1 0h7m-37 1h1m5 0h1m5 0h1m2 0h1m3 0h1m1 0h1m1 0h4m1 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m3 0h2m4 0h3m2 0h2m1 0h1m1 0h1m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m5 0h1m1 0h1m1 0h1m3 0h5m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h4m1 0h2m4 0h1m3 0h2m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h2m3 0h1m3 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m2 0h1m4 0h1m4 0h1m1 0h2m3 0h1m-29 1h1m3 0h1m1 0h8m1 0h2m3 0h1m7 0h6m2 0h1m-36 1h2m2 0h1m1 0h2m2 0h3m4 0h2m1 0h2m1 0h5m3 0h1m2 0h1m-36 1h1m2 0h2m1 0h1m1 0h1m1 0h2m2 0h2m3 0h1m1 0h5m1 0h1m1 0h1m1 0h1m2 0h1m-33 1h2m3 0h3m1 0h1m2 0h4m1 0h3m1 0h1m2 0h1m5 0h4m-33 1h2m1 0h1m5 0h1m1 0h1m2 0h2m1 0h3m4 0h5m2 0h3m-37 1h1m1 0h1m6 0h2m1 0h5m1 0h1m2 0h1m1 0h1m3 0h2m3 0h2m-32 1h2m1 0h2m1 0h1m4 0h3m1 0h1m5 0h2m1 0h2m2 0h5m-35 1h2m1 0h3m2 0h1m3 0h1m2 0h4m1 0h1m1 0h1m5 0h5m1 0h3m-36 1h3m1 0h4m2 0h2m1 0h1m3 0h2m2 0h1m1 0h1m4 0h3m1 0h2m1 0h1m-37 1h1m1 0h3m2 0h2m1 0h3m3 0h2m1 0h2m4 0h4m3 0h4m-35 1h2m1 0h6m2 0h1m3 0h1m1 0h1m1 0h2m4 0h3m2 0h2m1 0h1m-35 1h4m4 0h2m1 0h2m1 0h1m2 0h1m3 0h1m2 0h1m2 0h1m3 0h1m2 0h2m-36 1h1m4 0h2m2 0h1m5 0h1m1 0h1m1 0h1m1 0h3m4 0h4m1 0h2m-35 1h1m1 0h3m4 0h2m3 0h5m3 0h2m2 0h4m1 0h2m2 0h1m-36 1h1m2 0h8m1 0h1m1 0h2m2 0h1m1 0h8m3 0h4m-35 1h1m2 0h1m4 0h4m1 0h2m1 0h1m4 0h1m1 0h2m1 0h3m1 0h3m1 0h3m-36 1h2m3 0h1m1 0h7m1 0h1m3 0h1m3 0h1m5 0h2m1 0h4m-37 1h1m1 0h1m5 0h3m6 0h3m2 0h1m1 0h1m1 0h3m3 0h1m-29 1h1m1 0h2m5 0h3m1 0h1m1 0h1m2 0h2m3 0h1m1 0h1m1 0h1m-24 1h3m1 0h2m1 0h7m1 0h1m2 0h1m1 0h3m3 0h1m1 0h1m-37 1h4m2 0h2m1 0h6m1 0h2m2 0h2m6 0h8m-28 1h2m2 0h5m1 0h1m2 0h1m1 0h1m1 0h2m1 0h1m3 0h1m-33 1h7m1 0h3m1 0h4m1 0h1m2 0h1m2 0h1m4 0h1m1 0h1m1 0h1m-33 1h1m5 0h1m3 0h1m1 0h1m4 0h4m1 0h3m1 0h1m1 0h1m3 0h5m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m2 0h2m2 0h1m1 0h1m3 0h9m-37 1h1m1 0h3m1 0h1m4 0h1m1 0h1m2 0h2m1 0h3m2 0h1m1 0h6m1 0h1m1 0h1m-36 1h1m1 0h3m1 0h1m5 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h2m2 0h2m2 0h3m-36 1h1m5 0h1m2 0h6m2 0h2m2 0h4m2 0h1m2 0h1m1 0h1m1 0h2m-36 1h7m1 0h3m1 0h1m1 0h2m1 0h6m1 0h1m4 0h1m1 0h1m2 0h3"/></g></svg><div><b>On a computer?</b><span class="muted">Point your phone's camera at this code to open the download page on your phone.</span></div></div>
       <div class="dl">
         <div class="ap-card" id="dl-ios"><div class="plat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.500" width="12" height="19" rx="3"/><path d="M10.500 5.500h3"/></svg><h3 style="margin:0">iPhone and iPad</h3></div>
           <ol><li>Open this page in Safari.</li><li>Tap the Share button at the bottom of the screen.</li><li>Scroll down and tap Add to Home Screen.</li><li>Tap Add. Saffra appears with your other apps.</li></ol></div>
@@ -2222,10 +2244,11 @@ body.bagopen{overflow:hidden}
     var h=location.hash.slice(1), v=views.indexOf(h)>-1?h:'home';
     document.body.setAttribute('data-view',v); menu(false);
     document.querySelectorAll('.nav nav a').forEach(function(a){ if(a.getAttribute('href')==='#'+v) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
-    if(v!=='home'){window.scrollTo(0,0);}
+    var T={"home": "Saffra Staging Site", "her": "Saffra for her", "him": "Saffra for him", "science": "The science", "about": "Our story", "quiz": "Find your formula", "privacy": "Privacy policy", "terms": "Terms of use", "shipping": "Shipping and returns", "accessibility": "Accessibility", "journal": "The Journal", "play": "Games for two", "ask": "Ask us", "creators": "Creators", "brand": "Brand kit", "giving": "Giving back", "rewards": "Rewards and referrals", "app": "Saffra Together", "members": "Members only", "download": "Get the app"};document.title=v==='home'?T.home:(T[v]||'Journal')+' | Saffra';
+    if(v!=='home'){window.scrollTo(0,0);var m=document.getElementById('v-'+v),h1=m&&m.querySelector('h1');if(h1&&routed){h1.setAttribute('tabindex','-1');h1.focus({preventScroll:true});}}
     else if(h){var el=document.getElementById(h); if(el) el.scrollIntoView();}
   }
-  window.addEventListener('hashchange', route); route();
+  var routed=false;window.addEventListener('hashchange', route); route(); routed=true;
 
   function setMode(m){
     document.getElementById('t-sub').setAttribute('aria-pressed', m==='sub');
@@ -2385,6 +2408,9 @@ body.bagopen{overflow:hidden}
       document.querySelectorAll('[data-flag]').forEach(function(b){var on=cur[b.getAttribute('data-flag')];b.setAttribute('aria-pressed',on);b.textContent=on?(b.getAttribute('data-y')||'Taken'):(b.getAttribute('data-n')||'Not yet');});
       document.querySelectorAll('[data-scale]').forEach(function(gp){var k=gp.getAttribute('data-scale'),x='';for(var i=1;i<=5;i++)x+='<button type="button" data-n="'+i+'" aria-pressed="'+(cur[k]===i)+'" aria-label="'+i+' out of 5">'+i+'</button>';gp.innerHTML=x;});
       $('ap-notes').value=cur.note;
+      $('ap-welcome').hidden=!!(p.me||p.skip);
+      var wk='',gd=0,idn=0;for(var w=6;w>=0;w--){var wkk=ago(w),we=wkk===sel?cur:d[wkk],dz=doses(we);if(dz)gd++;if(we&&we.int)idn++;wk+='<div class="'+(w===0?'now':'')+'"><i class="'+(dz>=2?'on':dz===1?'half':'')+(we&&we.int?' heart':'')+'"></i>'+parse(wkk).toLocaleDateString(undefined,{weekday:'narrow'})+'</div>';}
+      $('ap-week').innerHTML=wk;$('ap-weeknote').textContent=gd+' of 7 gummy days'+(idn?', '+idn+(idn===1?' intimate day':' intimate days'):'')+'. Half circle: one of two gummies.';
       var jb=$('ap-jarbox');
       if(p.jar){var used=0;Object.keys(d).forEach(function(k){if(k>=p.jar)used+=doses(d[k]);});var left=Math.max(0,60-used);
         jb.innerHTML='<div class="ap-row"><span class="muted" style="font-size:14px">'+left+' of 60 gummies left in your jar</span><button type="button" class="ap-small" id="ap-newjar">New jar</button></div><div class="ap-jar"><i style="width:'+(left/60*100)+'%"></i></div>'+(left<=14?'<p class="ap-note" style="margin-top:8px">About a week left. <a href="#shop" style="color:var(--saffron)">Reorder</a></p>':'');}
@@ -2394,6 +2420,8 @@ body.bagopen{overflow:hidden}
     $('ap-today').addEventListener('click',function(e){
       var f=e.target.closest('[data-flag]');if(f){var k=f.getAttribute('data-flag');cur[k]=!cur[k];commit();return;}
       var sc=e.target.closest('[data-scale] button');if(sc){var kk=sc.parentNode.getAttribute('data-scale'),n=+sc.getAttribute('data-n');cur[kk]=cur[kk]===n?0:n;commit();return;}
+      if(e.target.id==='ap-setup'){tab('me');$('pf-me').focus();return;}
+      if(e.target.id==='ap-skip'){var ps=get(PK,{});ps.skip=1;put(PK,ps);drawToday();return;}
       if(e.target.id==='ap-newjar'){var p=get(PK,{});p.jar=ago(0);put(PK,p);drawToday();}
     });
     $('ap-save').addEventListener('click',function(){commit(true);});
@@ -2447,6 +2475,7 @@ body.bagopen{overflow:hidden}
     $('pf-save').addEventListener('click',function(){var p=get(PK,{});p.me=$('pf-me').value.trim().slice(0,24);p.partner=$('pf-partner').value.trim().slice(0,24);p.form=$('pf-form').value;p.start=$('pf-start').value;$('pf-saved').textContent=put(PK,p)?'Saved.':'Could not save on this device.';});
     function tab(t){['today','history','play','ideas','me'].forEach(function(k){$('ap-'+k).hidden=k!==t;});document.querySelectorAll('[data-ap]').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-ap')===t);});
       if(t==='history')drawHistory();if(t==='today')drawToday();if(t==='me')drawMe();if(t==='ideas')favs();if(t==='play')drawTrivia();}
+    document.querySelector('.ap-tabs').addEventListener('keydown',function(e){if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;var bs=[].slice.call(this.querySelectorAll('[data-ap]')),i=bs.indexOf(document.activeElement);if(i<0)return;e.preventDefault();var n=bs[(i+(e.key==='ArrowRight'?1:bs.length-1))%bs.length];n.focus();n.click();});
     document.querySelectorAll('[data-ap]').forEach(function(b){b.addEventListener('click',function(){if(b.getAttribute('data-ap')==='today')sel=ago(0);tab(b.getAttribute('data-ap'));});});
     $('ap-export').addEventListener('click',function(){var a=document.createElement('a');a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify({log:get(KEY,{}),profile:get(PK,{}),ideas:get(FK,[])},null,1));a.download='saffra-together.json';document.body.appendChild(a);a.click();a.remove();});
     var armed=false;
