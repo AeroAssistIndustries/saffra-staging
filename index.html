@@ -21,12 +21,12 @@
 <meta name="theme-color" content="#2A1429">
 <link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
-<link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="description" content="Daily intimacy gummies for her and for him, made with ingredients at the doses used in human studies.">
 <style>
-@font-face{font-family:"Fraunces";src:url("fonts/fraunces-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Fraunces";font-style:italic;src:url("fonts/fraunces-latin-wght-italic.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url("fonts/bodoni-moda-latin-wght-normal.woff2") format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Bodoni Moda";font-style:italic;src:url("fonts/bodoni-moda-latin-wght-italic.woff2") format("woff2");font-weight:400 900;font-display:swap}
 @font-face{font-family:"DM Sans";src:url("fonts/dm-sans-latin-wght-normal.woff2") format("woff2");font-weight:100 1000;font-display:swap}
 :root{
   /* Layout idea: one evening-lit world. Deep plum ground, saffron as the only loud color, photos as warm windows, left-aligned editorial columns. */
@@ -39,7 +39,7 @@
   --muted:#C9B4C2;
   --ink:#1E1A1D;
   --gold-ink:#855407;
-  --display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --display:"Bodoni Moda","Iowan Old Style",Georgia,serif;
   --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
   --r:22px;
   color-scheme:dark;
@@ -51,7 +51,7 @@ a{color:inherit}
 img{max-width:100%;height:auto;display:block}
 :focus-visible{outline:2px solid var(--saffron);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
-h1,h2,h3{font-family:var(--display);font-weight:380;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-0.015em}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-0.012em}
 h1{font-size:clamp(46px,8.4vw,98px)}
 h2{font-size:clamp(32px,4.8vw,54px)}
 h3{font-size:25px;line-height:1.15}
@@ -701,7 +701,7 @@ body.bagopen{overflow:hidden}
 
 .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .tier{border-radius:22px;padding:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:grid;gap:10px;align-content:start}
-.tier.top{border-color:transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box}
+.tier.best{border-color:transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box}
 .tier h3{font-size:28px;margin:0}.tier small{color:var(--saffron);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
 .tier ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px;display:grid;gap:6px}
 .earn{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -813,6 +813,40 @@ h1:focus{outline:none}
 .ap-date{display:flex;gap:14px;align-items:center}
 .ap-date i{font-family:var(--display);font-style:normal;font-size:38px;line-height:1;min-width:64px;text-align:center;background:var(--line);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ap-qd{font-family:var(--display);font-size:23px;line-height:1.3;margin:0}
+
+h1 i,h2 i,h1 em,h2 em{letter-spacing:-.005em}
+.rhero{display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center}
+.mcard{aspect-ratio:1.586;border-radius:22px;padding:24px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;color:#fff;background:linear-gradient(135deg,#3b1456 0%,#7E22CE 38%,#C026D3 62%,#E11D48 100%);box-shadow:0 30px 60px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.25);transform:rotate(-4deg);max-width:420px;margin:0 auto;width:100%}
+.mcard::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,rgba(255,255,255,0),rgba(125,249,255,.35),rgba(255,255,255,0) 25%,rgba(255,214,102,.35),rgba(255,255,255,0) 50%,rgba(255,138,216,.35),rgba(255,255,255,0) 75%);animation:spin 14s linear infinite;mix-blend-mode:screen}
+.mcard>*{position:relative}
+.mcard .mt{display:flex;justify-content:space-between;align-items:flex-start;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.mcard .mn{font-family:var(--display);font-size:clamp(30px,5vw,40px);line-height:1}
+.mcard .mb{display:flex;justify-content:space-between;align-items:flex-end;font-size:13px}
+.mcard .mb b{font-family:var(--display);font-weight:400;font-size:26px;display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.calc{border-radius:26px;padding:28px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);display:grid;gap:20px}
+.calc input[type=range]{width:100%;accent-color:#C026D3;height:32px}
+.calc .out{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.calc .out div{border-radius:16px;background:rgba(255,255,255,.05);padding:16px;text-align:center}
+.calc .out i{font-family:var(--display);font-style:normal;font-size:34px;display:block;background:var(--line);-webkit-background-clip:text;background-clip:text;color:transparent}
+.calc .out span{font-size:13px;color:var(--muted)}
+.track{position:relative;height:10px;border-radius:8px;background:rgba(255,255,255,.1);margin:26px 6px 34px}
+.track i{position:absolute;left:0;top:0;bottom:0;border-radius:8px;background:var(--line);transition:width .4s}
+.track b{position:absolute;top:18px;transform:translateX(-50%);font-size:12.5px;font-weight:600;color:var(--muted);white-space:nowrap}
+.track b::before{content:"";position:absolute;left:50%;top:-23px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#3a2140;border:2px solid rgba(255,255,255,.35);box-sizing:border-box}
+.track b.hit{color:var(--cream)}.track b.hit::before{background:var(--saffron);border-color:#fff}
+.uses{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.uses div{border-radius:20px;padding:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:grid;gap:8px;align-content:start}
+.uses svg{width:30px;height:30px;color:var(--saffron)}
+.uses b{font-family:var(--display);font-weight:400;font-size:22px}.uses span{color:var(--muted);font-size:15px}
+.rfaq details{border-top:1px solid rgba(255,255,255,.14);padding:18px 0}
+.rfaq details:last-of-type{border-bottom:1px solid rgba(255,255,255,.14)}
+.rfaq details p{color:var(--muted)}
+.tier{position:relative;transition:transform .25s}
+.tier:hover{transform:translateY(-4px)}
+.tier .lv{font-family:var(--display);font-size:54px;line-height:1;position:absolute;right:20px;top:14px;opacity:.14}
+@media(max-width:760px){.rhero{grid-template-columns:1fr}.uses{grid-template-columns:1fr}.calc{padding:20px}.calc .out i{font-size:26px}.mcard{transform:rotate(-2deg)}}
+@media(prefers-reduced-motion:reduce){.mcard::before{animation:none}}
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Saffra", "url": "https://aeroassistindustries.github.io/saffra-staging/", "logo": "https://aeroassistindustries.github.io/saffra-staging/img/icon-512.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast does it work?", "acceptedAnswer": {"@type": "Answer", "text": "Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening."}}, {"@type": "Question", "name": "What is the difference between the two?", "acceptedAnswer": {"@type": "Answer", "text": "Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E."}}, {"@type": "Question", "name": "Who should not take it?", "acceptedAnswer": {"@type": "Answer", "text": "Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions."}}, {"@type": "Question", "name": "What does lab tested mean?", "acceptedAnswer": {"@type": "Answer", "text": "An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar."}}, {"@type": "Question", "name": "Should we both take the same one?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each of you takes your own formula. The For Two set has one jar of each."}}, {"@type": "Question", "name": "What does it taste like?", "acceptedAnswer": {"@type": "Answer", "text": "Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky."}}, {"@type": "Question", "name": "Is it vegan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No gelatin, no artificial colors or flavors."}}, {"@type": "Question", "name": "How long does a jar last?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty days. Each jar holds 60 gummies and the serving is two a day."}}, {"@type": "Question", "name": "Can I take it with other supplements or medication?", "acceptedAnswer": {"@type": "Answer", "text": "Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication."}}, {"@type": "Question", "name": "Can I cancel my subscription?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime from your account, in two clicks. You can also skip a month."}}]}]</script>
 </head>
@@ -1319,7 +1353,7 @@ h1:focus{outline:none}
     <div class="wrap">
       <div class="cross">
         <div style="display:grid;gap:8px"><span class="tag">Best value</span><h3>Make it Saffra for Two</h3><p class="muted">Add Saffra for him and save on the set.</p></div>
-        <div class="row"><button class="btn" type="button" data-add="him">Add to bag</button><a class="btn ghost" href="#him">See Saffra for him</a><a class="btn" href="#shop">Shop the set</a></div>
+        <div class="row"><button class="btn" type="button" data-add="him">Add Saffra for him</button><a class="btn ghost" href="#him">See Saffra for him</a><a class="btn" href="#shop">Shop the set</a></div>
       </div>
     </div>
   </section>
@@ -1380,7 +1414,7 @@ h1:focus{outline:none}
     <div class="wrap">
       <div class="cross">
         <div style="display:grid;gap:8px"><span class="tag">Best value</span><h3>Make it Saffra for Two</h3><p class="muted">Add Saffra for her and save on the set.</p></div>
-        <div class="row"><button class="btn" type="button" data-add="her">Add to bag</button><a class="btn ghost" href="#her">See Saffra for her</a><a class="btn" href="#shop">Shop the set</a></div>
+        <div class="row"><button class="btn" type="button" data-add="her">Add Saffra for her</button><a class="btn ghost" href="#her">See Saffra for her</a><a class="btn" href="#shop">Shop the set</a></div>
       </div>
     </div>
   </section>
@@ -1976,7 +2010,8 @@ h1:focus{outline:none}
 <main id="v-rewards">
   <section class="pdp">
     <div class="wrap" style="max-width:960px">
-      <div class="head"><p class="eyebrow">Saffra Circle</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Rewards for <i style="font-style:italic;color:var(--saffron)">staying close.</i></h1><p class="lead muted">Earn points on every order, move up as you go, and share Saffra with friends. Joining is free and automatic with your first order.</p></div>
+      <div class="rhero"><div class="head" style="margin:0"><p class="eyebrow">Saffra Circle</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Rewards for <i style="font-style:italic;color:var(--saffron)">staying close.</i></h1><p class="lead muted">Earn points on every order, move up as you go, and share Saffra with friends. Joining is free and automatic with your first order.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="#referral">Refer a couple</a></div></div>
+      <div class="mcard" aria-hidden="true"><div class="mt"><span>Saffra Circle</span><span>Member</span></div><div class="mn">Flame</div><div class="mb"><span><b>1,240</b>points</span><span>Give $10, get $10</span></div></div></div>
       <div class="head" style="margin:40px 0 16px"><h2>How you earn.</h2></div>
       <div class="earn">
         <div><i>1 pt</i><b>Per $1 spent</b><span>On every order and renewal</span></div>
@@ -1985,11 +2020,25 @@ h1:focus{outline:none}
         <div><i>25</i><b>Ritual streak</b><span>For 30 days logged in the app</span></div>
       </div>
       <div class="pledge" style="margin:24px 0"><i>$5</i><div><b>For every 100 points.</b><span class="muted">Use points on any order, or give them: we turn donated points into extra dollars for survivors, on top of the 10% we already give.</span></div></div>
-      <div class="head" style="margin:40px 0 16px"><h2>Three levels.</h2></div>
+      <div class="head" style="margin:44px 0 16px"><h2>See what you would earn.</h2></div>
+      <div class="calc">
+        <div class="chips" id="rc-plan" role="group" aria-label="Plan"><button type="button" class="chip" data-p="36" aria-pressed="true">One jar, monthly</button><button type="button" class="chip" data-p="64" aria-pressed="false">The set for two, monthly</button></div>
+        <label style="display:grid;gap:6px"><span class="muted" style="font-size:14.5px">Months as a member: <b id="rc-mv" style="color:var(--cream)">12</b></span><input type="range" id="rc-m" min="1" max="12" value="12"></label>
+        <div class="out"><div><i id="rc-pts">0</i><span>points earned</span></div><div><i id="rc-usd">$0</i><span>in rewards</span></div><div><i id="rc-give">$0</i><span>given to survivors</span></div></div>
+        <div class="track" aria-hidden="true"><i id="rc-bar"></i><b style="left:0" id="rc-t0">Spark</b><b style="left:37.5%" id="rc-t1">Glow</b><b style="left:87.5%" id="rc-t2">Flame</b></div>
+        <p class="muted" id="rc-note" role="status" style="margin:0;font-size:15px"></p>
+      </div>
+      <div class="head" style="margin:44px 0 16px"><h2>Three levels.</h2></div>
       <div class="tiers">
-        <div class="tier"><small>From your first order</small><h3>Spark</h3><ul><li>1 point per $1</li><li>Member games and trivia in the app</li><li>Birthday points</li></ul></div>
-        <div class="tier"><small>300 points in a year</small><h3>Glow</h3><ul><li>Everything in Spark</li><li>Early access to new flavors and formulas</li><li>A free gift with every third renewal</li></ul></div>
-        <div class="tier top"><small>700 points in a year</small><h3>Flame</h3><ul><li>Everything in Glow</li><li>1.5 points per $1</li><li>First invites to events and the podcast</li><li>A yearly anniversary gift for two</li></ul></div>
+        <div class="tier"><span class="lv" aria-hidden="true">I</span><small>From your first order</small><h3>Spark</h3><ul><li>1 point per $1</li><li>Member games and trivia in the app</li><li>Birthday points</li></ul></div>
+        <div class="tier"><span class="lv" aria-hidden="true">II</span><small>300 points in a year</small><h3>Glow</h3><ul><li>Everything in Spark</li><li>Early access to new flavors and formulas</li><li>A free gift with every third renewal</li></ul></div>
+        <div class="tier best"><span class="lv" aria-hidden="true">III</span><small>700 points in a year</small><h3>Flame</h3><ul><li>Everything in Glow</li><li>1.5 points per $1</li><li>First invites to events and the podcast</li><li>A yearly anniversary gift for two</li></ul></div>
+      </div>
+      <div class="head" style="margin:48px 0 16px"><h2>Three ways to use points.</h2></div>
+      <div class="uses">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.500h16v3a2 2 0 0 0 0 4v3H4v-3a2 2 0 0 0 0-4z"/><path d="M14 8.500v10" stroke-dasharray="2 2.500"/></svg><b>Take $5 off</b><span>Every 100 points is $5 off any order or renewal.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.500s-7.500-4.600-7.500-10.200A4.300 4.300 0 0 1 12 7.600a4.300 4.300 0 0 1 7.500 2.700c0 5.600-7.500 10.200-7.500 10.200z"/></svg><b>Give them</b><span>Donate points and we send the dollars to survivors, on top of our 10%.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="1.500"/><path d="M3 7h18v3H3zM12 7v13M12 7c-1.500-3.500-5-3.500-5-1.500S9.500 7 12 7zM12 7c1.500-3.500 5-3.500 5-1.500S14.500 7 12 7z"/></svg><b>Gift a jar</b><span>Use 700 points to send a jar to another couple.</span></div>
       </div>
       <div class="head" id="referral" style="margin:48px 0 16px"><h2>Refer a couple.</h2></div>
       <div class="refer">
@@ -2000,6 +2049,14 @@ h1:focus{outline:none}
         <div><h3>Share your link</h3><p class="muted">Find it in your account and in the app. Send it by text, email or social.</p></div>
         <div><h3>They save $10</h3><p class="muted">The discount applies at checkout on their first order.</p></div>
         <div><h3>You get $10</h3><p class="muted">Credit lands in your account when their order ships.</p></div>
+      </div>
+      <div class="head" style="margin:48px 0 8px"><h2>Good to know.</h2></div>
+      <div class="rfaq">
+        <details><summary>Do I need to sign up?</summary><p>No. You join Saffra Circle automatically with your first order, and it is free.</p></details>
+        <details><summary>When do points arrive?</summary><p>Points land in your account when each order ships.</p></details>
+        <details><summary>Do points expire?</summary><p>Points stay active as long as you order at least once every 12 months.</p></details>
+        <details><summary>Can I use points and a referral credit together?</summary><p>Yes. Referral credit and points can be combined on the same order.</p></details>
+        <details><summary>How do levels work?</summary><p>Your level is based on points earned in the last 12 months. Once you reach a level, you keep it for a full year.</p></details>
       </div>
       <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="#app">Open the app</a></div>
     </div>
@@ -2197,7 +2254,7 @@ h1:focus{outline:none}
       <div style="display:grid;gap:10px">
         <h3>Type</h3>
         <div class="spec">Desire, <em>daily.</em></div>
-        <p class="muted">Headlines in Fraunces. Everything else in DM Sans.</p>
+        <p class="muted">Headlines in Bodoni Moda. Everything else in DM Sans.</p>
       </div>
       <div style="display:grid;gap:10px">
         <h3>Lines</h3>
@@ -2535,6 +2592,17 @@ h1:focus{outline:none}
       var t=$(ios?'dl-ios':'dl-android');$('dl-msg').textContent=ios?'On iPhone, follow the four steps below in Safari.':'Follow the steps for your phone below.';t.scrollIntoView({behavior:'smooth',block:'center'});});
   })();
   if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js').catch(function(){});}
+
+  /* rewards calculator */
+  (function(){var price=36,m=document.getElementById('rc-m');
+    function draw(){var n=+m.value,spend=price*n,pts=100+spend,usd=Math.floor(pts/100)*5,lvl=pts>=700?2:pts>=300?1:0;
+      document.getElementById('rc-mv').textContent=n;document.getElementById('rc-pts').textContent=pts.toLocaleString();document.getElementById('rc-usd').textContent='$'+usd;document.getElementById('rc-give').textContent='$'+(spend/10).toFixed(2);
+      document.getElementById('rc-bar').style.width=Math.min(100,pts/800*100)+'%';
+      ['rc-t0','rc-t1','rc-t2'].forEach(function(id,i){document.getElementById(id).classList.toggle('hit',i<=lvl);});
+      var nm=['Spark','Glow','Flame'][lvl],next=lvl===0?300-pts:lvl===1?700-pts:0;
+      document.getElementById('rc-note').textContent='You would reach '+nm+(next>0?', with '+next+' points to go until '+['Glow','Flame'][lvl]+'.':', the top level.')+' Includes 100 welcome points.';}
+    document.getElementById('rc-plan').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;price=+b.getAttribute('data-p');this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});draw();});
+    m.addEventListener('input',draw);draw();})();
   /* reel */
   var reel=document.getElementById('reel');
   function nudge(d){reel.scrollBy({left:d*320,behavior:'smooth'});}
