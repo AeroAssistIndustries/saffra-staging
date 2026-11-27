@@ -568,7 +568,7 @@ h1 em,.hero em,.pdp h1 i{background:linear-gradient(90deg,#F0A91E,#ff7a59 60%,#F
 @media (max-width:1100px){.marks{grid-template-columns:repeat(5,1fr);row-gap:22px}}
 @media (max-width:600px){.marks{grid-template-columns:repeat(3,1fr)}.marks li{font-size:12px}}
 
-body[data-view="creators"] #v-creators{display:block}body[data-view="giving"] #v-giving{display:block}
+body[data-view="creators"] #v-creators{display:block}body[data-view="giving"] #v-giving{display:block}body[data-view="rewards"] #v-rewards{display:block}body[data-view="app"] #v-app{display:block}body[data-view="members"] #v-members{display:block}
 .perks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .perk{border:1px solid rgba(255,255,255,.1);background:var(--plum-2);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
 .perk b{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.15}
@@ -682,6 +682,62 @@ body.bagopen{overflow:hidden}
 .helpbox a{color:var(--ink);font-weight:700}
 .givecta{border-radius:26px;padding:30px 34px;background:linear-gradient(120deg,rgba(147,51,234,.22),rgba(225,29,72,.18));border:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 @media(max-width:700px){.pledge{grid-template-columns:1fr;gap:8px;padding:24px}.orgs{grid-template-columns:1fr}}
+
+.givenote{display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--cream);margin:2px 0}
+.givenote svg{width:20px;height:20px;flex:none;color:#E879F9}
+.givenote a{color:inherit}
+.bag .give{display:flex;gap:8px;align-items:center;font-size:13.5px;margin:0;color:var(--cream)}
+.bag .give svg{width:18px;height:18px;flex:none;color:#E879F9}
+.gives{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gives div{border-radius:18px;padding:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:grid;gap:4px}
+.gives i{font-family:var(--display);font-style:normal;font-size:34px;background:var(--line);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gives b{font-size:15px}.gives span{font-size:13.5px;color:var(--muted)}
+@media(max-width:760px){.gives{grid-template-columns:1fr 1fr}}
+
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tier{border-radius:22px;padding:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:grid;gap:10px;align-content:start}
+.tier.top{border-color:transparent;background:linear-gradient(#2c1530,#2c1530) padding-box,var(--line) border-box}
+.tier h3{font-size:28px;margin:0}.tier small{color:var(--saffron);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.tier ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px;display:grid;gap:6px}
+.earn{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.earn div{border-radius:18px;padding:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:grid;gap:4px}
+.earn i{font-family:var(--display);font-style:normal;font-size:32px;background:var(--line);-webkit-background-clip:text;background-clip:text;color:transparent}
+.earn b{font-size:15px}.earn span{font-size:13.5px;color:var(--muted)}
+.locked{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.locked div{border-radius:18px;padding:20px 20px 20px 58px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);position:relative;display:grid;gap:4px}
+.locked svg{position:absolute;left:18px;top:20px;width:26px;height:26px;color:var(--saffron)}
+.locked b{font-family:var(--display);font-weight:400;font-size:20px}.locked span{font-size:14.5px;color:var(--muted)}
+.ap{max-width:640px;margin:0 auto}
+.ap-tabs{display:flex;gap:6px;overflow:auto;padding:4px;border-radius:999px;background:var(--plum-2);border:1px solid var(--plum-3);margin:22px 0;scrollbar-width:none}
+.ap-tabs button{flex:1;font:inherit;font-size:14.5px;font-weight:600;border:0;background:transparent;color:var(--muted);padding:11px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;min-height:44px}
+.ap-tabs button[aria-selected="true"]{background:var(--silver);color:#16131a}
+.ap-card{border-radius:24px;padding:24px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);display:grid;gap:16px;margin-bottom:16px}
+.ap-card h3{margin:0;font-size:24px}
+.ap-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.ap-scale{display:flex;gap:6px}
+.ap-scale button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:transparent;color:var(--muted);font:inherit;font-weight:600;cursor:pointer}
+.ap-scale button[aria-pressed="true"]{background:var(--purple-metal);color:#fff;border-color:transparent}
+.ap-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ap-stats div{border-radius:16px;background:rgba(255,255,255,.05);padding:14px;text-align:center}
+.ap-stats i{font-family:var(--display);font-style:normal;font-size:30px;display:block;background:var(--line);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ap-stats span{font-size:12.5px;color:var(--muted)}
+.ap-dots{display:grid;grid-template-columns:repeat(14,1fr);gap:5px}
+.ap-dots i{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.1)}
+.ap-dots i.on{background:var(--line)}.ap-dots i.heart{box-shadow:0 0 0 2px var(--saffron)}
+.ap-bars{display:flex;align-items:flex-end;gap:3px;height:90px}
+.ap-bars i{flex:1;background:var(--line);border-radius:3px 3px 0 0;min-height:2px;opacity:.9}
+.ap-bars i.none{background:rgba(255,255,255,.1)}
+.ap-q{font-family:var(--display);font-size:24px;line-height:1.25;margin:0}
+.ap-opts{display:grid;gap:10px}
+.ap-opts button{text-align:left;font:inherit;color:var(--cream);background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.16);border-radius:14px;padding:13px 16px;cursor:pointer;min-height:48px}
+.ap-opts button.right{border-color:#34d399;background:rgba(52,211,153,.14)}
+.ap-opts button.wrong{border-color:var(--ruby);background:rgba(225,29,72,.14)}
+.ap-idea{font-family:var(--display);font-size:26px;line-height:1.25;margin:0;min-height:98px}
+.ap-note{font-size:13px;color:var(--muted);margin:0}
+.ap textarea{min-height:80px;width:100%;box-sizing:border-box;border-radius:16px;border:1px solid var(--plum-3);background:var(--plum);color:var(--cream);font:inherit;padding:12px 16px;resize:vertical}.ap textarea::placeholder{color:var(--muted)}
+.ap-small{background:none;border:0;color:var(--muted);font:inherit;font-size:13.5px;text-decoration:underline;cursor:pointer;padding:10px 0;min-height:44px}
+@media(max-width:760px){.tiers{grid-template-columns:1fr}.earn{grid-template-columns:1fr 1fr}.locked{grid-template-columns:1fr}}
+@media(max-width:400px){.ap-scale button{width:40px;height:40px}.ap-card{padding:18px}}
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Saffra", "url": "https://aeroassistindustries.github.io/saffra-staging/", "logo": "https://aeroassistindustries.github.io/saffra-staging/img/icon-512.png"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast does it work?", "acceptedAnswer": {"@type": "Answer", "text": "Saffra is a daily supplement. The studies on its ingredients ran four to twelve weeks, so give it at least a month of daily use, one gummy in the morning and one in the evening."}}, {"@type": "Question", "name": "What is the difference between the two?", "acceptedAnswer": {"@type": "Answer", "text": "Each has seven ingredients. Both share saffron, fenugreek, vitamin B12 and vitamin D3. For Her adds L-theanine, vitamin B6 and folate. For Him adds zinc, selenium and vitamin E."}}, {"@type": "Question", "name": "Who should not take it?", "acceptedAnswer": {"@type": "Answer", "text": "Adults only. Do not use if you are pregnant or nursing. Talk to your doctor first if you take any medication or have a medical condition, including diabetes, thyroid, liver, heart or blood pressure conditions."}}, {"@type": "Question", "name": "What does lab tested mean?", "acceptedAnswer": {"@type": "Answer", "text": "An independent lab tests each batch for the active amounts, heavy metals, microbes and undeclared drug ingredients. You can look up the report by the lot number on your jar."}}, {"@type": "Question", "name": "Should we both take the same one?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each of you takes your own formula. The For Two set has one jar of each."}}, {"@type": "Question", "name": "What does it taste like?", "acceptedAnswer": {"@type": "Answer", "text": "Blood orange with a little honey. The gummy is pectin based, so it is soft and not sticky."}}, {"@type": "Question", "name": "Is it vegan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No gelatin, no artificial colors or flavors."}}, {"@type": "Question", "name": "How long does a jar last?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty days. Each jar holds 60 gummies and the serving is two a day."}}, {"@type": "Question", "name": "Can I take it with other supplements or medication?", "acceptedAnswer": {"@type": "Answer", "text": "Check with your doctor or pharmacist first. Herbs can interact with medicines, including antidepressants, blood thinners and diabetes medication."}}, {"@type": "Question", "name": "Can I cancel my subscription?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime from your account, in two clicks. You can also skip a month."}}]}]</script>
 </head>
@@ -729,7 +785,7 @@ body.bagopen{overflow:hidden}
     </nav>
   </div>
   <div class="drawer" id="drawer">
-    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#play">Play</a><a href="#journal">Journal</a><a href="#ask">Ask us</a><a href="#about">About us</a><a href="#giving">Giving back</a><a href="#creators">Creators</a><a href="#brand">Brand kit</a>
+    <a href="#shop">Shop</a><a href="#quiz">Find your formula</a><a href="#her">For her</a><a href="#him">For him</a><a href="#science">Science</a><a href="#play">Play</a><a href="#app">The app</a><a href="#rewards">Rewards</a><a href="#members">Members</a><a href="#journal">Journal</a><a href="#ask">Ask us</a><a href="#about">About us</a><a href="#giving">Giving back</a><a href="#creators">Creators</a><a href="#brand">Brand kit</a>
   </div>
 </header>
 
@@ -757,13 +813,13 @@ body.bagopen{overflow:hidden}
   </div>
 </div>
 
-<div class="ticker" aria-hidden="true"><div><span>Desire, daily</span><i></i><span>For her</span><i></i><span>For him</span><i></i><span>For two</span><i></i><span>Seven ingredients</span><i></i><span>Every dose shown</span><i></i><span>Make time for each other</span><i></i><span>Desire, daily</span><i></i><span>For her</span><i></i><span>For him</span><i></i><span>For two</span><i></i><span>Seven ingredients</span><i></i><span>Every dose shown</span><i></i><span>Make time for each other</span><i></i></div></div>
+<div class="ticker" aria-hidden="true"><div><span>Desire, daily</span><i></i><span>For her</span><i></i><span>For him</span><i></i><span>For two</span><i></i><span>Seven ingredients</span><i></i><span>Every dose shown</span><i></i><span>10% to survivors</span><i></i><span>Make time for each other</span><i></i><span>Desire, daily</span><i></i><span>For her</span><i></i><span>For him</span><i></i><span>For two</span><i></i><span>Seven ingredients</span><i></i><span>Every dose shown</span><i></i><span>10% to survivors</span><i></i><span>Make time for each other</span><i></i></div></div>
 <div class="trust">
   <div class="wrap">
     <div><b>Full doses</b><span>Every amount printed on the jar</span></div>
     <div><b>Medical board</b><span>Formulated with three doctors</span></div>
     <div><b>Lab tested</b><span>Every batch, report posted</span></div>
-    <div><b>No blends</b><span>Nothing hidden, nothing extra</span></div>
+    <div><b>10% given</b><span>Of every sale, to help survivors</span></div>
   </div>
 </div>
 
@@ -1049,6 +1105,7 @@ body.bagopen{overflow:hidden}
   <div class="wrap">
     <div class="head"><p class="eyebrow">More than a gummy</p><h2>Come for the ritual. Stay to play.</h2><p class="muted">Free things to do together, whether or not you ever buy a jar.</p></div>
     <div class="tiles">
+      <a class="tile" href="#app"><span class="n">App</span><h3>Saffra Together</h3><p class="muted">A private daily check-in for two, with insights, trivia and ideas for tonight.</p><span class="go">Open the app</span></a>
       <a class="tile" href="#play"><span class="n">Play</span><h3>Games for two</h3><p class="muted">A question deck, a date night spinner, two quick games and a 30-day ritual tracker.</p><span class="go">Play now</span></a>
       <a class="tile" href="#journal"><span class="n">Read</span><h3>The Journal</h3><p class="muted">Short, honest reads on desire, rituals and how to read a supplement label.</p><span class="go">Read the Journal</span></a>
       <a class="tile" href="#ask"><span class="n">Ask</span><h3>Questions, answered</h3><p class="muted">Plain answers about the product, safety and making time for each other.</p><span class="go">See the answers</span></a>
@@ -1085,8 +1142,8 @@ body.bagopen{overflow:hidden}
 
 <section id="refer" style="padding-bottom:0">
   <div class="wrap"><div class="refer">
-    <div style="display:grid;gap:10px"><p class="eyebrow">Share it</p><h2 style="margin:0">Give $10, get $10.</h2><p class="muted">Every customer gets a personal link at launch. A friend takes $10 off a first jar, and you get $10 toward your next one.</p><div><a class="btn" href="#waitlist">Join the waitlist</a></div></div>
-    <div class="gg"><div><i>$10</i><span>off for a friend</span></div><div><i>$10</i><span>credit for you</span></div></div>
+    <div style="display:grid;gap:10px"><p class="eyebrow">Saffra Circle</p><h2 style="margin:0">Earn points. Give $10, get $10.</h2><p class="muted">One point for every dollar, $5 back for every 100 points, and $10 for you and a friend each time you refer a couple.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#rewards">See rewards</a><a class="btn ghost" href="#members">Members only</a></div></div>
+    <div class="gg"><div><i>1 pt</i><span>per $1 spent</span></div><div><i>$10</i><span>for you and a friend</span></div></div>
   </div></div>
 </section>
 
@@ -1146,6 +1203,7 @@ body.bagopen{overflow:hidden}
             <button type="button" class="opt" data-setmode="sub" aria-pressed="true"><span><b>Monthly<em>SAVE 18%</em></b><small>Free shipping. Skip or cancel anytime.</small></span><i>$36</i></button>
             <button type="button" class="opt" data-setmode="one" aria-pressed="false"><span><b>One-time</b><small>One jar, free shipping.</small></span><i>$44</i></button>
           </div>
+          <p class="givenote"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.500s-7.500-4.600-7.500-10.200A4.300 4.300 0 0 1 12 7.600a4.300 4.300 0 0 1 7.500 2.700c0 5.600-7.500 10.200-7.500 10.200z"/></svg><span><span data-sub="$3.60" data-one="$4.40">$3.60</span> of this jar goes to help survivors. <a href="#giving">How it works</a></span></p>
           <div class="row">
             <button class="btn" type="button" data-add="her">Add to bag</button>
             <a class="btn ghost" href="#waitlist">Join the waitlist</a>
@@ -1206,6 +1264,7 @@ body.bagopen{overflow:hidden}
             <button type="button" class="opt" data-setmode="sub" aria-pressed="true"><span><b>Monthly<em>SAVE 18%</em></b><small>Free shipping. Skip or cancel anytime.</small></span><i>$36</i></button>
             <button type="button" class="opt" data-setmode="one" aria-pressed="false"><span><b>One-time</b><small>One jar, free shipping.</small></span><i>$44</i></button>
           </div>
+          <p class="givenote"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.500s-7.500-4.600-7.500-10.200A4.300 4.300 0 0 1 12 7.600a4.300 4.300 0 0 1 7.500 2.700c0 5.600-7.500 10.200-7.500 10.200z"/></svg><span><span data-sub="$3.60" data-one="$4.40">$3.60</span> of this jar goes to help survivors. <a href="#giving">How it works</a></span></p>
           <div class="row">
             <button class="btn" type="button" data-add="him">Add to bag</button>
             <a class="btn ghost" href="#waitlist">Join the waitlist</a>
@@ -1418,6 +1477,7 @@ body.bagopen{overflow:hidden}
       <p>It will not work in thirty minutes. The research behind our ingredients looked at daily use over weeks, and that is the only promise we are willing to make.</p>
       <h2 style="margin-top:22px">A note to you.</h2>
       <p>If you are reading this with someone in mind, that is already the point. You are thinking about them. Tell them. Take two gummies if you like, put your phones in another room, and ask each other one real question tonight.</p>
+      <p>One more thing. Intimacy only means something when it is chosen, and too many women have had that choice taken from them. So ten percent of every sale goes to help survivors of sexual abuse and trafficking rebuild their lives. You can read how on our <a href="#giving">Giving back</a> page.</p>
       <p>We made Saffra because what we share has made our lives better, and we think more people deserve to feel that. Thank you for being here.</p>
       <p class="sig">The founders of Saffra</p>
       <p class="muted" style="font-size:15px">Arizona</p>
@@ -1811,6 +1871,13 @@ body.bagopen{overflow:hidden}
         <div><h3>A safe place</h3><p class="muted">Emergency shelter and long-term housing for women leaving abuse or trafficking.</p></div>
         <div><h3>A way forward</h3><p class="muted">Counseling, legal help and paid work, so leaving can last.</p></div>
       </div>
+      <div class="head" style="margin:48px 0 16px"><h2>What your order gives.</h2></div>
+      <div class="gives">
+        <div><i>$3.60</i><b>One jar, monthly</b><span>Every month you stay</span></div>
+        <div><i>$4.40</i><b>One jar, one-time</b><span>From a single order</span></div>
+        <div><i>$6.40</i><b>The set for two</b><span>Every month you stay</span></div>
+        <div><i>$76.80</i><b>A year for two</b><span>Twelve months of the set</span></div>
+      </div>
       <div class="head" style="margin:48px 0 16px"><h2>Who does this work.</h2><p class="muted">We are choosing our launch partner from organizations like these, and will name it here before the first order ships. They are independent nonprofits and are not affiliated with Saffra.</p></div>
       <div class="orgs"><a href="https://rainn.org" target="_blank" rel="noopener noreferrer"><em>Crisis support</em><b>RAINN</b><span>The largest anti-sexual violence organization in the US. Runs the National Sexual Assault Hotline.</span></a><a href="https://polarisproject.org" target="_blank" rel="noopener noreferrer"><em>Anti-trafficking</em><b>Polaris</b><span>Works to end sex and labor trafficking in the US, led by data and by survivors.</span></a><a href="https://www.safehorizon.org" target="_blank" rel="noopener noreferrer"><em>Shelter and counseling</em><b>Safe Horizon</b><span>Shelter, counseling and legal help for survivors of abuse, assault and trafficking.</span></a><a href="https://thistlefarms.org" target="_blank" rel="noopener noreferrer"><em>Housing and jobs</em><b>Thistle Farms</b><span>Housing, healing and paid work for women survivors of trafficking and addiction.</span></a><a href="https://www.gems-girls.org" target="_blank" rel="noopener noreferrer"><em>Young women</em><b>GEMS</b><span>Serves girls and young women who have experienced commercial sexual exploitation and trafficking.</span></a><a href="https://www.safehouseproject.org" target="_blank" rel="noopener noreferrer"><em>Safe housing</em><b>Safe House Project</b><span>Expands safe housing and emergency services for survivors of sex trafficking.</span></a></div>
       <div class="head" style="margin:48px 0 16px"><h2>How we will choose.</h2></div>
@@ -1828,6 +1895,109 @@ body.bagopen{overflow:hidden}
       </div>
       <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#shop">Shop Saffra</a><a class="btn ghost" href="#about">Read our story</a></div>
     </div>
+  </section>
+</main>
+
+<main id="v-rewards">
+  <section class="pdp">
+    <div class="wrap" style="max-width:960px">
+      <div class="head"><p class="eyebrow">Saffra Circle</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Rewards for <i style="font-style:italic;color:var(--saffron)">staying close.</i></h1><p class="lead muted">Earn points on every order, move up as you go, and share Saffra with friends. Joining is free and automatic with your first order.</p></div>
+      <div class="head" style="margin:40px 0 16px"><h2>How you earn.</h2></div>
+      <div class="earn">
+        <div><i>1 pt</i><b>Per $1 spent</b><span>On every order and renewal</span></div>
+        <div><i>100</i><b>Welcome points</b><span>With your first order</span></div>
+        <div><i>50</i><b>Birthday points</b><span>Every year, on us</span></div>
+        <div><i>25</i><b>Ritual streak</b><span>For 30 days logged in the app</span></div>
+      </div>
+      <div class="pledge" style="margin:24px 0"><i>$5</i><div><b>For every 100 points.</b><span class="muted">Use points on any order, or give them: we turn donated points into extra dollars for survivors, on top of the 10% we already give.</span></div></div>
+      <div class="head" style="margin:40px 0 16px"><h2>Three levels.</h2></div>
+      <div class="tiers">
+        <div class="tier"><small>From your first order</small><h3>Spark</h3><ul><li>1 point per $1</li><li>Member games and trivia in the app</li><li>Birthday points</li></ul></div>
+        <div class="tier"><small>300 points in a year</small><h3>Glow</h3><ul><li>Everything in Spark</li><li>Early access to new flavors and formulas</li><li>A free gift with every third renewal</li></ul></div>
+        <div class="tier top"><small>700 points in a year</small><h3>Flame</h3><ul><li>Everything in Glow</li><li>1.5 points per $1</li><li>First invites to events and the podcast</li><li>A yearly anniversary gift for two</li></ul></div>
+      </div>
+      <div class="head" id="referral" style="margin:48px 0 16px"><h2>Refer a couple.</h2></div>
+      <div class="refer">
+        <div style="display:grid;gap:10px"><h3 style="margin:0;font-size:30px">Give $10, get $10.</h3><p class="muted">Every member gets a personal link. A friend takes $10 off a first jar, and you get $10 toward your next order when theirs ships. There is no limit on how many friends you can refer.</p></div>
+        <div class="gg"><div><i>$10</i><span>off for a friend</span></div><div><i>$10</i><span>credit for you</span></div></div>
+      </div>
+      <div class="steps" style="margin-top:26px">
+        <div><h3>Share your link</h3><p class="muted">Find it in your account and in the app. Send it by text, email or social.</p></div>
+        <div><h3>They save $10</h3><p class="muted">The discount applies at checkout on their first order.</p></div>
+        <div><h3>You get $10</h3><p class="muted">Credit lands in your account when their order ships.</p></div>
+      </div>
+      <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="#app">Open the app</a></div>
+    </div>
+  </section>
+</main>
+
+<main id="v-members">
+  <section class="pdp">
+    <div class="wrap" style="max-width:920px">
+      <div class="head"><p class="eyebrow">Members only</p><h1 style="font-size:clamp(40px,6.4vw,72px)">The inner <i style="font-style:italic;color:var(--saffron)">Circle.</i></h1><p class="lead muted">Every subscriber is a member. Sign in opens with the store. Here is what is waiting inside.</p></div>
+      <div class="locked" style="margin-top:34px">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>The After Dark deck</b><span>Sixty bolder questions and dares for two, in three heat levels.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>Date night, planned</b><span>A new at-home date every month: the plan, the playlist and the prompts.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>Guided evenings</b><span>Audio sessions for couples: slow touch, breathing together and winding down.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>Ask the doctors</b><span>Send questions to our medical advisors and read the monthly answers.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>Couple sync</b><span>Link your app with your partner's to share check-ins and streaks.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><b>Member pricing</b><span>Early access and member-only prices on every new product.</span></div>
+      </div>
+      <div class="head" style="margin:48px 0 16px"><h2>Open to everyone now.</h2></div>
+      <ul class="ticks" style="list-style:none;padding:0;margin:0;display:grid;gap:10px"><li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>The Saffra Together app: daily check-in, insights, trivia and intimacy ideas</span></li><li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>Games for two: question deck, date spinner, Know me and This or that</span></li><li style="display:grid;grid-template-columns:24px 1fr;gap:12px"><svg width="24" height="24"><use href="#check"/></svg><span>The Journal</span></li></ul>
+      <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="#app">Open the app</a><a class="btn ghost" href="#rewards">See rewards</a></div>
+    </div>
+  </section>
+</main>
+
+<main id="v-app">
+  <section class="pdp">
+    <div class="wrap"><div class="ap">
+      <div class="head"><p class="eyebrow">Saffra Together</p><h1 style="font-size:clamp(36px,6vw,60px)">Your ritual, <i style="font-style:italic;color:var(--saffron)">together.</i></h1><p class="muted">A private space for the two of you. Everything you log stays on this device.</p></div>
+      <div class="ap-tabs" role="tablist" aria-label="App sections">
+        <button role="tab" type="button" data-ap="today" aria-selected="true">Today</button><button role="tab" type="button" data-ap="insights" aria-selected="false">Insights</button><button role="tab" type="button" data-ap="trivia" aria-selected="false">Trivia</button><button role="tab" type="button" data-ap="ideas" aria-selected="false">Ideas</button><button role="tab" type="button" data-ap="more" aria-selected="false">More</button>
+      </div>
+      <div id="ap-today">
+        <div class="ap-card">
+          <div class="ap-row"><h3 id="ap-date">Today</h3><span class="muted" id="ap-streak"></span></div>
+          <div class="ap-row"><span>I took my gummies</span><button type="button" class="chip" id="ap-me" aria-pressed="false">Not yet</button></div>
+          <div class="ap-row"><span>My partner took theirs</span><button type="button" class="chip" id="ap-partner" aria-pressed="false">Not yet</button></div>
+        </div>
+        <div class="ap-card">
+          <h3>How was today?</h3>
+          <div class="ap-row"><span id="l-mood">Mood</span><div class="ap-scale" role="group" aria-labelledby="l-mood" data-scale="mood"></div></div>
+          <div class="ap-row"><span id="l-desire">Desire</span><div class="ap-scale" role="group" aria-labelledby="l-desire" data-scale="desire"></div></div>
+          <div class="ap-row"><span id="l-close">Closeness</span><div class="ap-scale" role="group" aria-labelledby="l-close" data-scale="close"></div></div>
+          <div class="ap-row"><span>We were intimate today</span><button type="button" class="chip" id="ap-int" aria-pressed="false">No</button></div>
+          <label class="sr" for="ap-notes">A private note</label><textarea id="ap-notes" placeholder="A private note about today (optional)" maxlength="500"></textarea>
+          <div class="ap-row"><button type="button" class="btn" id="ap-save">Save today</button><span class="muted" id="ap-saved" role="status"></span></div>
+        </div>
+        <div class="ap-card"><h3>Last 14 days</h3><div class="ap-dots" id="ap-dots" aria-hidden="true"></div><p class="ap-note">Filled: gummies taken. Gold ring: an intimate day.</p></div>
+      </div>
+      <div id="ap-insights" hidden>
+        <div class="ap-card"><h3>Your last 30 days</h3><div class="ap-stats" id="ap-stats"></div></div>
+        <div class="ap-card"><h3>Closeness, day by day</h3><div class="ap-bars" id="ap-bars" aria-hidden="true"></div><p class="ap-note" id="ap-trend"></p></div>
+        <div class="ap-card"><h3>Averages</h3><div class="ap-stats" id="ap-avgs"></div><p class="ap-note">Out of 5. Log for a few weeks to see how things move. Most studies of these ingredients ran four to eight weeks.<sup>*</sup></p></div>
+      </div>
+      <div id="ap-trivia" hidden>
+        <div class="ap-card"><div class="ap-row"><span class="muted" id="tv-n"></span><span class="muted" id="tv-score"></span></div><p class="ap-q" id="tv-q"></p><div class="ap-opts" id="tv-opts"></div><p class="muted" id="tv-why" role="status" style="margin:0;min-height:44px"></p><div><button type="button" class="btn" id="tv-next" hidden>Next question</button></div></div>
+      </div>
+      <div id="ap-ideas" hidden>
+        <div class="ap-card">
+          <h3>Something for tonight</h3>
+          <div><p class="ap-note" style="margin-bottom:8px">How much time?</p><div class="chips" data-pick="time"><button type="button" class="chip" data-v="short" aria-pressed="true">10 minutes</button><button type="button" class="chip" data-v="hour" aria-pressed="false">An hour</button><button type="button" class="chip" data-v="night" aria-pressed="false">The evening</button></div></div>
+          <div><p class="ap-note" style="margin-bottom:8px">What mood?</p><div class="chips" data-pick="mood"><button type="button" class="chip" data-v="tender" aria-pressed="true">Tender</button><button type="button" class="chip" data-v="playful" aria-pressed="false">Playful</button><button type="button" class="chip" data-v="bold" aria-pressed="false">Bold</button></div></div>
+          <p class="ap-idea" id="idea" role="status"></p>
+          <div><button type="button" class="btn" id="idea-next">Another idea</button></div>
+        </div>
+      </div>
+      <div id="ap-more" hidden>
+        <div class="ap-card"><h3>Games for two</h3><p class="muted" style="margin:0">The question deck, date night spinner, Know me and This or that.</p><div><a class="btn" href="#play">Open the games</a></div></div>
+        <div class="ap-card"><h3>Members only</h3><p class="muted" style="margin:0">The After Dark deck, monthly date nights, guided evenings and couple sync.</p><div><a class="btn ghost" href="#members">See what is inside</a></div></div>
+        <div class="ap-card"><h3>Put it on your phone</h3><p class="muted" style="margin:0">On iPhone, tap Share, then Add to Home Screen. On Android, open the browser menu and tap Install app or Add to Home screen.</p></div>
+        <div class="ap-card"><h3>Your data</h3><p class="muted" style="margin:0">Check-ins are stored only in this browser, on this device. We cannot see them.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-export">Download my data</button><button type="button" class="ap-small" id="ap-wipe">Delete everything</button></div><span class="muted" id="ap-wiped" role="status"></span></div>
+      </div>
+    </div></div>
   </section>
 </main>
 
@@ -1925,7 +2095,8 @@ body.bagopen{overflow:hidden}
     <div class="flinks">
       <div><b>Shop</b><a href="#her">For her</a><a href="#him">For him</a><a href="#shop">For two</a><a href="#quiz">Find your formula</a></div>
       <div><b>Learn</b><a href="#science">Science</a><a href="#about">About us</a><a href="#giving">Giving back</a><a href="#ask">Ask us</a></div>
-      <div><b>Lifestyle</b><a href="#play">Games for two</a><a href="#journal">Journal</a><a href="#journal">Podcast</a><a href="#creators">Creators</a></div>
+      <div><b>Lifestyle</b><a href="#play">Games for two</a><a href="#journal">Journal</a><a href="#app">Saffra Together app</a><a href="#journal">Podcast</a><a href="#creators">Creators</a></div>
+      <div><b>Members</b><a href="#rewards">Rewards</a><a href="#rewards">Refer a friend</a><a href="#members">Members only</a></div>
       <div><b>Help</b><a href="#shipping">Shipping and returns</a><a href="#privacy">Privacy policy</a><a href="#brand">Brand kit</a></div>
     </div>
     <div class="usa"><svg viewBox="0 0 76 52" role="img" aria-label="Flag of the United States"><rect y="0" width="76" height="4" fill="#B22234"/><rect y="4" width="76" height="4" fill="#fff"/><rect y="8" width="76" height="4" fill="#B22234"/><rect y="12" width="76" height="4" fill="#fff"/><rect y="16" width="76" height="4" fill="#B22234"/><rect y="20" width="76" height="4" fill="#fff"/><rect y="24" width="76" height="4" fill="#B22234"/><rect y="28" width="76" height="4" fill="#fff"/><rect y="32" width="76" height="4" fill="#B22234"/><rect y="36" width="76" height="4" fill="#fff"/><rect y="40" width="76" height="4" fill="#B22234"/><rect y="44" width="76" height="4" fill="#fff"/><rect y="48" width="76" height="4" fill="#B22234"/><rect width="32" height="28" fill="#3C3B6E"/><circle cx="3.0" cy="2.6" r="1" fill="#fff"/><circle cx="8.2" cy="2.6" r="1" fill="#fff"/><circle cx="13.4" cy="2.6" r="1" fill="#fff"/><circle cx="18.6" cy="2.6" r="1" fill="#fff"/><circle cx="23.8" cy="2.6" r="1" fill="#fff"/><circle cx="29.0" cy="2.6" r="1" fill="#fff"/><circle cx="5.6" cy="5.7" r="1" fill="#fff"/><circle cx="10.8" cy="5.7" r="1" fill="#fff"/><circle cx="16.0" cy="5.7" r="1" fill="#fff"/><circle cx="21.2" cy="5.7" r="1" fill="#fff"/><circle cx="26.4" cy="5.7" r="1" fill="#fff"/><circle cx="3.0" cy="8.8" r="1" fill="#fff"/><circle cx="8.2" cy="8.8" r="1" fill="#fff"/><circle cx="13.4" cy="8.8" r="1" fill="#fff"/><circle cx="18.6" cy="8.8" r="1" fill="#fff"/><circle cx="23.8" cy="8.8" r="1" fill="#fff"/><circle cx="29.0" cy="8.8" r="1" fill="#fff"/><circle cx="5.6" cy="11.9" r="1" fill="#fff"/><circle cx="10.8" cy="11.9" r="1" fill="#fff"/><circle cx="16.0" cy="11.9" r="1" fill="#fff"/><circle cx="21.2" cy="11.9" r="1" fill="#fff"/><circle cx="26.4" cy="11.9" r="1" fill="#fff"/><circle cx="3.0" cy="15.0" r="1" fill="#fff"/><circle cx="8.2" cy="15.0" r="1" fill="#fff"/><circle cx="13.4" cy="15.0" r="1" fill="#fff"/><circle cx="18.6" cy="15.0" r="1" fill="#fff"/><circle cx="23.8" cy="15.0" r="1" fill="#fff"/><circle cx="29.0" cy="15.0" r="1" fill="#fff"/><circle cx="5.6" cy="18.1" r="1" fill="#fff"/><circle cx="10.8" cy="18.1" r="1" fill="#fff"/><circle cx="16.0" cy="18.1" r="1" fill="#fff"/><circle cx="21.2" cy="18.1" r="1" fill="#fff"/><circle cx="26.4" cy="18.1" r="1" fill="#fff"/><circle cx="3.0" cy="21.2" r="1" fill="#fff"/><circle cx="8.2" cy="21.2" r="1" fill="#fff"/><circle cx="13.4" cy="21.2" r="1" fill="#fff"/><circle cx="18.6" cy="21.2" r="1" fill="#fff"/><circle cx="23.8" cy="21.2" r="1" fill="#fff"/><circle cx="29.0" cy="21.2" r="1" fill="#fff"/><circle cx="5.6" cy="24.3" r="1" fill="#fff"/><circle cx="10.8" cy="24.3" r="1" fill="#fff"/><circle cx="16.0" cy="24.3" r="1" fill="#fff"/><circle cx="21.2" cy="24.3" r="1" fill="#fff"/><circle cx="26.4" cy="24.3" r="1" fill="#fff"/><circle cx="3.0" cy="27.4" r="1" fill="#fff"/><circle cx="8.2" cy="27.4" r="1" fill="#fff"/><circle cx="13.4" cy="27.4" r="1" fill="#fff"/><circle cx="18.6" cy="27.4" r="1" fill="#fff"/><circle cx="23.8" cy="27.4" r="1" fill="#fff"/><circle cx="29.0" cy="27.4" r="1" fill="#fff"/></svg><div><b>Proudly made in the USA</b><span>With U.S. and imported ingredients, in a GMP-certified, FDA-registered facility.</span></div></div>
@@ -1959,7 +2130,7 @@ body.bagopen{overflow:hidden}
 
 <script>
 (function(){
-  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','creators','brand','giving'];
+  var views=['her','him','science','about','quiz','privacy','terms','shipping','accessibility','journal','play','ask','read-tired','read-label','read-ritual','read-habit','read-saffron','creators','brand','giving','rewards','app','members'];
   var mb=document.getElementById('menubtn');
   function menu(open){document.body.classList.toggle('menu-open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');}
   mb.addEventListener('click',function(){menu(!document.body.classList.contains('menu-open'));});
@@ -2071,7 +2242,7 @@ body.bagopen{overflow:hidden}
       var pairs=Math.min(bag.her,bag.him),full=n*p.one,tot=pairs*p.two+(n-2*pairs)*p.one,o=bag.her?'him':'her';
       if(!pairs) h+='<div class="nudge"><span>Taking it together? Add '+N[o]+' and the pair is $'+p.two+p.u+' instead of $'+(2*p.one)+'.</span><button class="btn small" type="button" data-add="'+o+'">Add '+N[o]+'</button></div>';
       items.innerHTML=h;
-      foot.innerHTML=(tot<full?'<p class="save">Set price applied. You save $'+(full-tot)+'.</p>':'')+'<div class="tot"><span>'+(m==='sub'?'Monthly total':'Total')+'</span><b>$'+tot+p.u+'</b></div><a class="btn" href="#waitlist" id="bagreserve" data-int="'+(pairs?'two':bag.her?'her':'him')+'">Reserve my bag</a><p class="bnote">Nothing is charged today. Checkout opens at launch.</p>';
+      foot.innerHTML='<p class="give" style="color:var(--muted)"><span>You earn '+tot+' Circle points with this order.</span></p><p class="give"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.500s-7.500-4.600-7.500-10.200A4.300 4.300 0 0 1 12 7.600a4.300 4.300 0 0 1 7.500 2.700c0 5.600-7.500 10.200-7.500 10.200z"/></svg><span>$'+(tot/10).toFixed(2)+' of this order goes to help survivors.</span></p>'+(tot<full?'<p class="save">Set price applied. You save $'+(full-tot)+'.</p>':'')+'<div class="tot"><span>'+(m==='sub'?'Monthly total':'Total')+'</span><b>$'+tot+p.u+'</b></div><a class="btn" href="#waitlist" id="bagreserve" data-int="'+(pairs?'two':bag.her?'her':'him')+'">Reserve my bag</a><p class="bnote">Nothing is charged today. Checkout opens at launch.</p>';
     }
     function open(){last=document.activeElement;draw();document.body.classList.add('bagopen');document.getElementById('bagx').focus();}
     function close(){document.body.classList.remove('bagopen'); if(last&&last.focus) last.focus();}
@@ -2102,6 +2273,69 @@ body.bagopen{overflow:hidden}
     var f=this.querySelectorAll('button,a[href]'); if(!f.length) return; var a=f[0],z=f[f.length-1];
     if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();} else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}
   });
+
+  /* Saffra Together app */
+  (function(){
+    var KEY='saffra-log', TV=[["Which hormone, released with touch, is often called the bonding hormone?", ["Oxytocin", "Insulin", "Melatonin"], 0, "Oxytocin rises with hugging, touch and closeness."], ["Saffron comes from which flower?", ["Rose", "Crocus", "Orchid"], 1, "Saffron is the dried stigma of Crocus sativus."], ["How many saffron threads does one crocus flower give?", ["Three", "Twelve", "About fifty"], 0, "Each flower has three stigmas, picked by hand."], ["Desire that shows up after things get started, rather than before, is called what?", ["Spontaneous desire", "Responsive desire", "Delayed desire"], 1, "Responsive desire is common and completely normal."], ["Researcher John Gottman found stable couples have about how many positive moments for each negative one?", ["Two to one", "Five to one", "Twenty to one"], 1, "His work points to a ratio of about five to one."], ["Which mineral are oysters famously rich in?", ["Zinc", "Calcium", "Iron"], 0, "Oysters have more zinc per serving than almost any food."], ["L-theanine is found naturally in which drink?", ["Coffee", "Green tea", "Orange juice"], 1, "It is an amino acid in tea leaves."], ["Which vitamin does your skin make in sunlight?", ["Vitamin C", "Vitamin D", "Vitamin B12"], 1, "Sunlight on skin produces vitamin D."], ["Sensate focus, a slow touch exercise for couples, was developed by whom?", ["Masters and Johnson", "Freud and Jung", "Watson and Crick"], 0, "Masters and Johnson introduced it in the 1960s."], ["What is the scientific study of kissing called?", ["Philematology", "Osculogy", "Labiology"], 0, "Philematology, from the Greek word for kiss."], ["How many love languages are in Gary Chapman's well-known book?", ["Three", "Five", "Seven"], 1, "Words, time, gifts, service and touch."], ["What is the body's largest organ?", ["The liver", "The skin", "The lungs"], 1, "Skin, and it is full of touch receptors."]], IDEAS={"short": {"tender": ["Hold each other for a full minute without talking.", "Trade a slow shoulder rub, five minutes each.", "Tell each other one thing you noticed and loved this week.", "Lie down face to face and match your breathing."], "playful": ["Slow dance in the kitchen to one song.", "Play This or that, and the loser gives a kiss.", "Send each other a flirty text from different rooms.", "Have a thumb war. Winner picks tonight's dessert."], "bold": ["Kiss for a full sixty seconds. Set a timer.", "Whisper one thing you have been wanting to try.", "Each name one place you love to be touched.", "Pick each other's outfit for tonight."]}, "hour": {"tender": ["Take a bath or shower together, no phones nearby.", "Give a full back massage with oil, then swap.", "Cook something simple together and eat by candlelight.", "Read your old messages or look at old photos together."], "playful": ["Play the question deck, level two, with a glass of something.", "Build a blanket fort and watch one episode in it.", "Have a taste test, blindfolded, with five things from the kitchen.", "Teach each other one dance move each."], "bold": ["Play the question deck on level three.", "Take turns: three minutes each of being touched exactly how you ask.", "Write down one fantasy each and trade papers.", "Try the slow touch exercise: explore, with no goal."]}, "night": {"tender": ["Phones off at seven. Dinner, a walk and an early night.", "Recreate your first date at home.", "Make a playlist together, then lie down and listen to all of it.", "Plan a trip you will take this year, with wine and a map."], "playful": ["Spin the date night spinner and do whatever it says.", "Dress up and have a fancy dinner at your own table.", "Game night for two. The winner plans next weekend.", "Make cocktails or mocktails and name them after each other."], "bold": ["Check into a hotel in your own city.", "Plan the whole evening for your partner and keep it a surprise.", "Write each other a letter about what you want more of, then read them aloud.", "Leave a trail of notes that ends in the bedroom."]}};
+    function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){return {};}}
+    function save(d){try{localStorage.setItem(KEY,JSON.stringify(d));return true;}catch(e){return false;}}
+    function key(dt){return dt.getFullYear()+'-'+('0'+(dt.getMonth()+1)).slice(-2)+'-'+('0'+dt.getDate()).slice(-2);}
+    function ago(n){var d=new Date();d.setDate(d.getDate()-n);return key(d);}
+    var $=function(i){return document.getElementById(i);}, cur={};
+    function chip(b,on,y,n){b.setAttribute('aria-pressed',!!on);b.textContent=on?y:n;}
+    function drawToday(){
+      var d=load(); cur=Object.assign({me:false,partner:false,int:false,mood:0,desire:0,close:0,note:''},d[ago(0)]||{});
+      $('ap-date').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
+      chip($('ap-me'),cur.me,'Taken','Not yet'); chip($('ap-partner'),cur.partner,'Taken','Not yet'); chip($('ap-int'),cur.int,'Yes','No');
+      document.querySelectorAll('[data-scale]').forEach(function(g){var k=g.getAttribute('data-scale'),h='';for(var i=1;i<=5;i++)h+='<button type="button" data-n="'+i+'" aria-pressed="'+(cur[k]===i)+'" aria-label="'+i+' out of 5">'+i+'</button>';g.innerHTML=h;});
+      $('ap-notes').value=cur.note||'';
+      var st=0;for(var i=(d[ago(0)]&&d[ago(0)].me)?0:1;i<400;i++){if(d[ago(i)]&&d[ago(i)].me)st++;else break;}
+      $('ap-streak').textContent=st?st+(st===1?' day streak':' day streak'):'';
+      var h='';for(var j=13;j>=0;j--){var e=d[ago(j)]||{};h+='<i class="'+(e.me?'on':'')+(e.int?' heart':'')+'"></i>';}$('ap-dots').innerHTML=h;
+    }
+    function commit(msg){var d=load();cur.note=$('ap-notes').value.slice(0,500);d[ago(0)]=cur;var ok=save(d);drawToday();$('ap-saved').textContent=msg?(ok?'Saved.':'Could not save on this device.'):'';}
+    $('ap-me').addEventListener('click',function(){cur.me=!cur.me;commit();});
+    $('ap-partner').addEventListener('click',function(){cur.partner=!cur.partner;commit();});
+    $('ap-int').addEventListener('click',function(){cur.int=!cur.int;commit();});
+    $('ap-save').addEventListener('click',function(){commit(true);});
+    document.querySelectorAll('[data-scale]').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var k=g.getAttribute('data-scale'),n=+b.getAttribute('data-n');cur[k]=cur[k]===n?0:n;commit();});});
+    function stat(v,l){return '<div><i>'+v+'</i><span>'+l+'</span></div>';}
+    function drawInsights(){
+      var d=load(),n=0,me=0,it=0,s={mood:[0,0],desire:[0,0],close:[0,0]},bars='',first=[0,0],last=[0,0];
+      for(var i=29;i>=0;i--){var e=d[ago(i)];if(e){n++;if(e.me)me++;if(e.int)it++;['mood','desire','close'].forEach(function(k){if(e[k]){s[k][0]+=e[k];s[k][1]++;}});}
+        var c=e&&e.close||0;bars+='<i class="'+(c?'':'none')+'" style="height:'+(c?c*20:3)+'%"></i>'; if(c){var t=i>=15?first:last;t[0]+=c;t[1]++;}}
+      function av(k){return s[k][1]?(s[k][0]/s[k][1]).toFixed(1):'-';}
+      $('ap-stats').innerHTML=stat(n,'days logged')+stat(Math.round(me/30*100)+'%','gummy days')+stat(it,'intimate days');
+      $('ap-avgs').innerHTML=stat(av('mood'),'mood')+stat(av('desire'),'desire')+stat(av('close'),'closeness');
+      $('ap-bars').innerHTML=bars;
+      var tr='Log closeness for a couple of weeks to see your trend.';
+      if(first[1]>=3&&last[1]>=3){var a=first[0]/first[1],b=last[0]/last[1];tr=b>a+.2?'Closeness is up over the last two weeks.':b<a-.2?'Closeness is down a little over the last two weeks. Try an idea tonight.':'Closeness has been steady over the last month.';}
+      $('ap-trend').textContent=tr;
+    }
+    var ti=0,score=0,order=[];
+    function shuffle(){order=TV.map(function(_,i){return i;});for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=order[i];order[i]=order[j];order[j]=t;}ti=0;score=0;}
+    function drawTrivia(){
+      if(ti>=order.length){$('tv-n').textContent='Finished';$('tv-score').textContent='';$('tv-q').textContent='You scored '+score+' out of '+order.length+'.';$('tv-opts').innerHTML='';$('tv-why').textContent=score>=10?'You two could teach this.':score>=6?'Solid. Play again to beat it.':'Now you know. Try again together.';$('tv-next').hidden=false;$('tv-next').textContent='Play again';return;}
+      var q=TV[order[ti]];$('tv-n').textContent='Question '+(ti+1)+' of '+order.length;$('tv-score').textContent='Score '+score;$('tv-q').textContent=q[0];$('tv-why').textContent='';$('tv-next').hidden=true;$('tv-next').textContent='Next question';
+      $('tv-opts').innerHTML=q[1].map(function(o,i){return '<button type="button" data-i="'+i+'">'+o+'</button>';}).join('');
+    }
+    $('tv-opts').addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;var q=TV[order[ti]],i=+b.getAttribute('data-i');
+      this.querySelectorAll('button').forEach(function(x,k){x.disabled=true;if(k===q[2])x.classList.add('right');});
+      if(i===q[2])score++;else b.classList.add('wrong');$('tv-why').textContent=(i===q[2]?'Correct. ':'Not quite. ')+q[3];$('tv-score').textContent='Score '+score;$('tv-next').hidden=false;$('tv-next').focus();});
+    $('tv-next').addEventListener('click',function(){if(ti>=order.length)shuffle();else ti++;drawTrivia();});
+    var pick={time:'short',mood:'tender'},lastIdea='';
+    function idea(){var l=IDEAS[pick.time][pick.mood],t;do{t=l[Math.floor(Math.random()*l.length)];}while(t===lastIdea&&l.length>1);lastIdea=t;$('idea').textContent=t;}
+    document.querySelectorAll('[data-pick]').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pick[g.getAttribute('data-pick')]=b.getAttribute('data-v');g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});idea();});});
+    $('idea-next').addEventListener('click',idea);
+    function tab(t){['today','insights','trivia','ideas','more'].forEach(function(k){$('ap-'+k).hidden=k!==t;});document.querySelectorAll('[data-ap]').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-ap')===t);});if(t==='insights')drawInsights();if(t==='today')drawToday();}
+    document.querySelectorAll('[data-ap]').forEach(function(b){b.addEventListener('click',function(){tab(b.getAttribute('data-ap'));});});
+    $('ap-export').addEventListener('click',function(){var a=document.createElement('a');a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(load(),null,1));a.download='saffra-together.json';document.body.appendChild(a);a.click();a.remove();});
+    var armed=false;
+    $('ap-wipe').addEventListener('click',function(){if(!armed){armed=true;this.textContent='Tap again to delete everything';return;}armed=false;this.textContent='Delete everything';try{localStorage.removeItem(KEY);}catch(e){}$('ap-wiped').textContent='Deleted.';drawToday();});
+    shuffle();drawTrivia();idea();drawToday();
+    window.addEventListener('hashchange',function(){if(location.hash==='#app')drawToday();});
+  })();
+  if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js').catch(function(){});}
   /* reel */
   var reel=document.getElementById('reel');
   function nudge(d){reel.scrollBy({left:d*320,behavior:'smooth'});}
