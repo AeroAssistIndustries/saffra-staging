@@ -938,6 +938,81 @@ body.searching .srch{display:block}body.searching{overflow:hidden}
   </div>
 </header>
 
+<main id="v-app">
+  <section class="pdp">
+    <div class="wrap"><div class="ap">
+      <div class="head"><p class="eyebrow">Saffra Together</p><h1 style="font-size:clamp(34px,6vw,56px)">Your ritual, <i style="font-style:italic;color:var(--saffron)">together.</i></h1><p class="muted">A private space for the two of you. Everything you log stays on this device.</p></div>
+      <div class="ap-card ap-lockpad" id="ap-lock" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><h3>Locked</h3><p class="muted" style="margin:0">Enter your four-digit code.</p><label class="sr" for="ap-pin">Code</label><input class="ap-pin" id="ap-pin" type="password" inputmode="numeric" maxlength="4" autocomplete="off"><span class="muted" id="ap-pinmsg" role="status" style="min-height:22px"></span><button type="button" class="ap-small" id="ap-forgot">Forgot it? Reset the app</button></div>
+      <div id="ap-body">
+      <div class="ap-tabs" role="tablist" aria-label="App sections">
+        <button role="tab" type="button" data-ap="today" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.600 5.600l1.400 1.400M17 17l1.400 1.400M5.600 18.400L7 17M17 7l1.400-1.400"/></svg>Today</button><button role="tab" type="button" data-ap="history" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.500"/><path d="M4 10h16M8.500 3v4M15.500 3v4"/></svg>History</button><button role="tab" type="button" data-ap="play" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/><circle cx="9" cy="15" r="1" fill="currentColor"/></svg>Play</button><button role="tab" type="button" data-ap="ideas" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.500 10.900c.500.400.800 1 .800 1.600h5.400c0-.600.300-1.200.800-1.600A6 6 0 0 0 12 3z"/></svg>Ideas</button><button role="tab" type="button" data-ap="me" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.500" r="3.500"/><path d="M5 20c.600-3.600 3.400-5.500 7-5.500s6.400 1.900 7 5.500"/></svg>Me</button>
+      </div>
+      <div id="ap-today">
+        <div class="ap-card ap-welcome" id="ap-welcome" hidden><h3>Welcome to Saffra Together</h3><p class="muted" style="margin:0">Add your first names and the day you started, and the app will count your days and greet you both.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="ap-setup">Set it up</button><button type="button" class="ap-small" id="ap-skip">Not now</button></div></div>
+        <div class="ap-card">
+          <p class="ap-hello" id="ap-hello"></p>
+          <div class="ap-nav"><button type="button" id="ap-prev" aria-label="Previous day">&lsaquo;</button><div style="text-align:center"><b id="ap-date"></b><br><span class="muted" id="ap-streak" style="font-size:13.5px"></span></div><button type="button" id="ap-nextd" aria-label="Next day">&rsaquo;</button></div>
+        </div>
+        <div class="ap-card" id="ap-datecard" hidden><div class="ap-date"><i id="ap-datein"></i><div><b id="ap-datehead"></b><br><span class="muted" id="ap-datewhat"></span></div></div></div>
+        <div class="ap-card ap-welcome" id="ap-nudge" hidden><h3>A small start tonight?</h3><p class="muted" style="margin:0">Closeness has been on the low side this week. That happens. Ten minutes together can shift it.</p><div><button type="button" class="btn" id="ap-nudgego">Show me an idea</button></div></div>
+        <div class="ap-card"><h3>Tonight's question</h3><p class="ap-qd" id="ap-qd"></p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-qshare">Send to my partner</button><span class="muted" id="ap-qmsg" role="status"></span></div></div>
+        <div class="ap-card"><h3>This week</h3><div class="ap-week" id="ap-week"></div><p class="ap-note" id="ap-weeknote"></p></div>
+        <div class="ap-card">
+          <h3>Gummies</h3>
+          <div class="ap-row"><span>My morning gummy</span><button type="button" class="chip" data-flag="am" aria-pressed="false">Not yet</button></div>
+          <div class="ap-row"><span>My evening gummy</span><button type="button" class="chip" data-flag="pm" aria-pressed="false">Not yet</button></div>
+          <div class="ap-row"><span id="ap-plabel">My partner took theirs</span><button type="button" class="chip" data-flag="partner" aria-pressed="false">Not yet</button></div>
+          <div id="ap-jarbox"></div>
+        </div>
+        <div class="ap-card">
+          <h3>How was the day?</h3>
+          <div class="ap-row"><span id="l-mood">Mood</span><div class="ap-scale" role="group" aria-labelledby="l-mood" data-scale="mood"></div></div><div class="ap-row"><span id="l-energy">Energy</span><div class="ap-scale" role="group" aria-labelledby="l-energy" data-scale="energy"></div></div><div class="ap-row"><span id="l-desire">Desire</span><div class="ap-scale" role="group" aria-labelledby="l-desire" data-scale="desire"></div></div><div class="ap-row"><span id="l-close">Closeness</span><div class="ap-scale" role="group" aria-labelledby="l-close" data-scale="close"></div></div>
+          <div class="ap-row"><span>We were intimate</span><button type="button" class="chip" data-flag="int" data-y="Yes" data-n="No" aria-pressed="false">No</button></div>
+          <label class="sr" for="ap-notes">A private note</label><textarea id="ap-notes" placeholder="A private note about the day (optional)" maxlength="500"></textarea>
+          <div class="ap-row"><button type="button" class="btn" id="ap-save">Save</button><span class="muted" id="ap-saved" role="status"></span></div>
+        </div>
+      </div>
+      <div id="ap-history" hidden>
+        <div class="ap-card"><div class="ap-nav"><button type="button" id="cal-prev" aria-label="Previous month">&lsaquo;</button><h3 id="cal-title"></h3><button type="button" id="cal-next" aria-label="Next month">&rsaquo;</button></div><div class="ap-cal" id="ap-cal"></div><p class="ap-note">Tap a day to open it. Filled: gummies taken. Gold dot: an intimate day.</p></div>
+        <div class="ap-card" id="ap-notescard" hidden><h3>Your notes</h3><ul class="ap-notes" id="ap-noteslist"></ul></div>
+        <div class="ap-card"><h3>Last 30 days</h3><div class="ap-stats" id="ap-stats"></div></div>
+        <div class="ap-card"><h3>Closeness, day by day</h3><div class="ap-bars" id="ap-bars" aria-hidden="true"></div><p class="ap-note" id="ap-trend"></p></div>
+        <div class="ap-card"><h3>Averages</h3><div class="ap-stats" id="ap-avgs" style="grid-template-columns:repeat(4,1fr)"></div><p class="ap-note">Out of 5. Most studies of these ingredients ran four to eight weeks, so give it time.<sup>*</sup></p></div>
+      </div>
+      <div id="ap-play" hidden>
+        <div class="ap-card"><div class="ap-row"><h3>Trivia</h3><span class="muted" id="tv-best"></span></div><div class="ap-row"><span class="muted" id="tv-n"></span><span class="muted" id="tv-score"></span></div><p class="ap-q" id="tv-q"></p><div class="ap-opts" id="tv-opts"></div><p class="muted" id="tv-why" role="status" style="margin:0;min-height:44px"></p><div><button type="button" class="btn" id="tv-next" hidden>Next question</button></div></div>
+        <div class="ap-card"><h3>Truth or dare, for two</h3><p class="ap-td" id="td-text" role="status">Take turns. Pick one.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="td-truth">Truth</button><button type="button" class="btn ghost" id="td-dare">Dare</button></div></div>
+        <div class="ap-card"><h3>More games</h3><p class="muted" style="margin:0">The question deck, date night spinner, Know me and This or that.</p><div><a class="btn ghost" href="../play/">Open the games</a></div></div>
+      </div>
+      <div id="ap-ideas" hidden>
+        <div class="ap-card">
+          <h3>Something for tonight</h3>
+          <div><p class="ap-note" style="margin-bottom:8px">How much time?</p><div class="chips" data-pick="time"><button type="button" class="chip" data-v="short" aria-pressed="true">10 minutes</button><button type="button" class="chip" data-v="hour" aria-pressed="false">An hour</button><button type="button" class="chip" data-v="night" aria-pressed="false">The evening</button></div></div>
+          <div><p class="ap-note" style="margin-bottom:8px">What mood?</p><div class="chips" data-pick="mood"><button type="button" class="chip" data-v="tender" aria-pressed="true">Tender</button><button type="button" class="chip" data-v="playful" aria-pressed="false">Playful</button><button type="button" class="chip" data-v="bold" aria-pressed="false">Bold</button></div></div>
+          <p class="ap-idea" id="idea" role="status"></p>
+          <div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="idea-next">Another idea</button><button type="button" class="btn ghost" id="idea-save">Save it</button></div>
+        </div>
+        <div class="ap-card"><h3>Plan a date night</h3><div class="ap-two"><label class="ap-field">When<input id="dn-when" type="date"></label><label class="ap-field">What<input id="dn-what" maxlength="120" placeholder="Pick an idea or write your own" autocomplete="off"></label></div><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="dn-save">Save the date</button><button type="button" class="ap-small" id="dn-use">Use the idea above</button><button type="button" class="ap-small" id="dn-clear">Clear</button></div><span class="muted" id="dn-msg" role="status"></span></div>
+        <div class="ap-card"><h3>Saved ideas</h3><ul class="ap-favs" id="ap-favs"></ul></div>
+      </div>
+      <div id="ap-me" hidden>
+        <div class="ap-card"><h3>The two of you</h3>
+          <div class="ap-two"><label class="ap-field">Your first name<input id="pf-me" maxlength="24" autocomplete="off"></label><label class="ap-field">Your partner's first name<input id="pf-partner" maxlength="24" autocomplete="off"></label></div>
+          <div class="ap-two"><label class="ap-field">Your formula<select id="pf-form"><option value="">Choose</option><option value="her">Saffra for her</option><option value="him">Saffra for him</option></select></label><label class="ap-field">Day you started<input id="pf-start" type="date"></label></div>
+          <div class="ap-row"><button type="button" class="btn" id="pf-save">Save</button><span class="muted" id="pf-saved" role="status"></span></div>
+        </div>
+        <div class="ap-card"><h3>Daily reminder</h3><p class="muted" style="margin:0">Add a repeating reminder to your phone's calendar. It is titled "Daily ritual", so it stays discreet.</p><div class="ap-two"><label class="ap-field">Morning<input id="rm-am" type="time" value="08:00"></label><label class="ap-field">Evening<input id="rm-pm" type="time" value="20:00"></label></div><div><button type="button" class="btn" id="rm-add">Add to my calendar</button></div></div>
+        <div class="ap-card"><h3>Invite your partner</h3><p class="muted" style="margin:0">Send them the app so you can both keep your ritual.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-invite">Send the link</button><span class="muted" id="ap-invmsg" role="status"></span></div></div>
+        <div class="ap-card"><h3>Privacy lock</h3><p class="muted" style="margin:0" id="lk-state"></p><div class="ap-row" style="justify-content:flex-start"><label class="sr" for="lk-new">New four-digit code</label><input class="ap-pin" id="lk-new" type="password" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="0000" style="font-size:20px;width:130px"><button type="button" class="btn ghost small" id="lk-set">Set code</button><button type="button" class="ap-small" id="lk-off" hidden>Turn off</button></div><span class="muted" id="lk-msg" role="status"></span></div>
+        <div class="ap-card"><h3>Milestones</h3><div class="ap-badges" id="ap-badges"></div></div>
+        <div class="ap-card"><h3>Members only</h3><p class="muted" style="margin:0">The After Dark deck, monthly date nights, guided evenings and couple sync.</p><div class="ap-row" style="justify-content:flex-start"><a class="btn ghost small" href="../members/">See what is inside</a><a class="btn ghost small" href="../rewards/">Rewards</a></div></div>
+        <div class="ap-card"><h3>Put it on your phone</h3><p class="muted" style="margin:0">Install Saffra Together on iPhone or Android and open it like any other app.</p><div><a class="btn" href="../download/">Get the app</a></div></div>
+        <div class="ap-card"><h3>Your data</h3><p class="muted" style="margin:0">Everything here is stored only in this browser, on this device. We cannot see it.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-export">Download my data</button><button type="button" class="ap-small" id="ap-wipe">Delete everything</button></div><span class="muted" id="ap-wiped" role="status"></span></div>
+      </div>
+      </div>
+    </div></div>
+  </section>
+</main>
 <main id="site">
 <span id="top"></span>
 <div class="hero">
@@ -2205,81 +2280,7 @@ body.searching .srch{display:block}body.searching{overflow:hidden}
   </section>
 </main>
 
-<main id="v-app">
-  <section class="pdp">
-    <div class="wrap"><div class="ap">
-      <div class="head"><p class="eyebrow">Saffra Together</p><h1 style="font-size:clamp(34px,6vw,56px)">Your ritual, <i style="font-style:italic;color:var(--saffron)">together.</i></h1><p class="muted">A private space for the two of you. Everything you log stays on this device.</p></div>
-      <div class="ap-card ap-lockpad" id="ap-lock" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500"/></svg><h3>Locked</h3><p class="muted" style="margin:0">Enter your four-digit code.</p><label class="sr" for="ap-pin">Code</label><input class="ap-pin" id="ap-pin" type="password" inputmode="numeric" maxlength="4" autocomplete="off"><span class="muted" id="ap-pinmsg" role="status" style="min-height:22px"></span><button type="button" class="ap-small" id="ap-forgot">Forgot it? Reset the app</button></div>
-      <div id="ap-body">
-      <div class="ap-tabs" role="tablist" aria-label="App sections">
-        <button role="tab" type="button" data-ap="today" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.600 5.600l1.400 1.400M17 17l1.400 1.400M5.600 18.400L7 17M17 7l1.400-1.400"/></svg>Today</button><button role="tab" type="button" data-ap="history" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.500"/><path d="M4 10h16M8.500 3v4M15.500 3v4"/></svg>History</button><button role="tab" type="button" data-ap="play" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/><circle cx="9" cy="15" r="1" fill="currentColor"/></svg>Play</button><button role="tab" type="button" data-ap="ideas" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.500 10.900c.500.400.800 1 .800 1.600h5.400c0-.600.300-1.200.800-1.600A6 6 0 0 0 12 3z"/></svg>Ideas</button><button role="tab" type="button" data-ap="me" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.500" r="3.500"/><path d="M5 20c.600-3.600 3.400-5.500 7-5.500s6.400 1.900 7 5.500"/></svg>Me</button>
-      </div>
-      <div id="ap-today">
-        <div class="ap-card ap-welcome" id="ap-welcome" hidden><h3>Welcome to Saffra Together</h3><p class="muted" style="margin:0">Add your first names and the day you started, and the app will count your days and greet you both.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="ap-setup">Set it up</button><button type="button" class="ap-small" id="ap-skip">Not now</button></div></div>
-        <div class="ap-card">
-          <p class="ap-hello" id="ap-hello"></p>
-          <div class="ap-nav"><button type="button" id="ap-prev" aria-label="Previous day">&lsaquo;</button><div style="text-align:center"><b id="ap-date"></b><br><span class="muted" id="ap-streak" style="font-size:13.5px"></span></div><button type="button" id="ap-nextd" aria-label="Next day">&rsaquo;</button></div>
-        </div>
-        <div class="ap-card" id="ap-datecard" hidden><div class="ap-date"><i id="ap-datein"></i><div><b id="ap-datehead"></b><br><span class="muted" id="ap-datewhat"></span></div></div></div>
-        <div class="ap-card ap-welcome" id="ap-nudge" hidden><h3>A small start tonight?</h3><p class="muted" style="margin:0">Closeness has been on the low side this week. That happens. Ten minutes together can shift it.</p><div><button type="button" class="btn" id="ap-nudgego">Show me an idea</button></div></div>
-        <div class="ap-card"><h3>Tonight's question</h3><p class="ap-qd" id="ap-qd"></p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-qshare">Send to my partner</button><span class="muted" id="ap-qmsg" role="status"></span></div></div>
-        <div class="ap-card"><h3>This week</h3><div class="ap-week" id="ap-week"></div><p class="ap-note" id="ap-weeknote"></p></div>
-        <div class="ap-card">
-          <h3>Gummies</h3>
-          <div class="ap-row"><span>My morning gummy</span><button type="button" class="chip" data-flag="am" aria-pressed="false">Not yet</button></div>
-          <div class="ap-row"><span>My evening gummy</span><button type="button" class="chip" data-flag="pm" aria-pressed="false">Not yet</button></div>
-          <div class="ap-row"><span id="ap-plabel">My partner took theirs</span><button type="button" class="chip" data-flag="partner" aria-pressed="false">Not yet</button></div>
-          <div id="ap-jarbox"></div>
-        </div>
-        <div class="ap-card">
-          <h3>How was the day?</h3>
-          <div class="ap-row"><span id="l-mood">Mood</span><div class="ap-scale" role="group" aria-labelledby="l-mood" data-scale="mood"></div></div><div class="ap-row"><span id="l-energy">Energy</span><div class="ap-scale" role="group" aria-labelledby="l-energy" data-scale="energy"></div></div><div class="ap-row"><span id="l-desire">Desire</span><div class="ap-scale" role="group" aria-labelledby="l-desire" data-scale="desire"></div></div><div class="ap-row"><span id="l-close">Closeness</span><div class="ap-scale" role="group" aria-labelledby="l-close" data-scale="close"></div></div>
-          <div class="ap-row"><span>We were intimate</span><button type="button" class="chip" data-flag="int" data-y="Yes" data-n="No" aria-pressed="false">No</button></div>
-          <label class="sr" for="ap-notes">A private note</label><textarea id="ap-notes" placeholder="A private note about the day (optional)" maxlength="500"></textarea>
-          <div class="ap-row"><button type="button" class="btn" id="ap-save">Save</button><span class="muted" id="ap-saved" role="status"></span></div>
-        </div>
-      </div>
-      <div id="ap-history" hidden>
-        <div class="ap-card"><div class="ap-nav"><button type="button" id="cal-prev" aria-label="Previous month">&lsaquo;</button><h3 id="cal-title"></h3><button type="button" id="cal-next" aria-label="Next month">&rsaquo;</button></div><div class="ap-cal" id="ap-cal"></div><p class="ap-note">Tap a day to open it. Filled: gummies taken. Gold dot: an intimate day.</p></div>
-        <div class="ap-card" id="ap-notescard" hidden><h3>Your notes</h3><ul class="ap-notes" id="ap-noteslist"></ul></div>
-        <div class="ap-card"><h3>Last 30 days</h3><div class="ap-stats" id="ap-stats"></div></div>
-        <div class="ap-card"><h3>Closeness, day by day</h3><div class="ap-bars" id="ap-bars" aria-hidden="true"></div><p class="ap-note" id="ap-trend"></p></div>
-        <div class="ap-card"><h3>Averages</h3><div class="ap-stats" id="ap-avgs" style="grid-template-columns:repeat(4,1fr)"></div><p class="ap-note">Out of 5. Most studies of these ingredients ran four to eight weeks, so give it time.<sup>*</sup></p></div>
-      </div>
-      <div id="ap-play" hidden>
-        <div class="ap-card"><div class="ap-row"><h3>Trivia</h3><span class="muted" id="tv-best"></span></div><div class="ap-row"><span class="muted" id="tv-n"></span><span class="muted" id="tv-score"></span></div><p class="ap-q" id="tv-q"></p><div class="ap-opts" id="tv-opts"></div><p class="muted" id="tv-why" role="status" style="margin:0;min-height:44px"></p><div><button type="button" class="btn" id="tv-next" hidden>Next question</button></div></div>
-        <div class="ap-card"><h3>Truth or dare, for two</h3><p class="ap-td" id="td-text" role="status">Take turns. Pick one.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="td-truth">Truth</button><button type="button" class="btn ghost" id="td-dare">Dare</button></div></div>
-        <div class="ap-card"><h3>More games</h3><p class="muted" style="margin:0">The question deck, date night spinner, Know me and This or that.</p><div><a class="btn ghost" href="../play/">Open the games</a></div></div>
-      </div>
-      <div id="ap-ideas" hidden>
-        <div class="ap-card">
-          <h3>Something for tonight</h3>
-          <div><p class="ap-note" style="margin-bottom:8px">How much time?</p><div class="chips" data-pick="time"><button type="button" class="chip" data-v="short" aria-pressed="true">10 minutes</button><button type="button" class="chip" data-v="hour" aria-pressed="false">An hour</button><button type="button" class="chip" data-v="night" aria-pressed="false">The evening</button></div></div>
-          <div><p class="ap-note" style="margin-bottom:8px">What mood?</p><div class="chips" data-pick="mood"><button type="button" class="chip" data-v="tender" aria-pressed="true">Tender</button><button type="button" class="chip" data-v="playful" aria-pressed="false">Playful</button><button type="button" class="chip" data-v="bold" aria-pressed="false">Bold</button></div></div>
-          <p class="ap-idea" id="idea" role="status"></p>
-          <div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="idea-next">Another idea</button><button type="button" class="btn ghost" id="idea-save">Save it</button></div>
-        </div>
-        <div class="ap-card"><h3>Plan a date night</h3><div class="ap-two"><label class="ap-field">When<input id="dn-when" type="date"></label><label class="ap-field">What<input id="dn-what" maxlength="120" placeholder="Pick an idea or write your own" autocomplete="off"></label></div><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn" id="dn-save">Save the date</button><button type="button" class="ap-small" id="dn-use">Use the idea above</button><button type="button" class="ap-small" id="dn-clear">Clear</button></div><span class="muted" id="dn-msg" role="status"></span></div>
-        <div class="ap-card"><h3>Saved ideas</h3><ul class="ap-favs" id="ap-favs"></ul></div>
-      </div>
-      <div id="ap-me" hidden>
-        <div class="ap-card"><h3>The two of you</h3>
-          <div class="ap-two"><label class="ap-field">Your first name<input id="pf-me" maxlength="24" autocomplete="off"></label><label class="ap-field">Your partner's first name<input id="pf-partner" maxlength="24" autocomplete="off"></label></div>
-          <div class="ap-two"><label class="ap-field">Your formula<select id="pf-form"><option value="">Choose</option><option value="her">Saffra for her</option><option value="him">Saffra for him</option></select></label><label class="ap-field">Day you started<input id="pf-start" type="date"></label></div>
-          <div class="ap-row"><button type="button" class="btn" id="pf-save">Save</button><span class="muted" id="pf-saved" role="status"></span></div>
-        </div>
-        <div class="ap-card"><h3>Daily reminder</h3><p class="muted" style="margin:0">Add a repeating reminder to your phone's calendar. It is titled "Daily ritual", so it stays discreet.</p><div class="ap-two"><label class="ap-field">Morning<input id="rm-am" type="time" value="08:00"></label><label class="ap-field">Evening<input id="rm-pm" type="time" value="20:00"></label></div><div><button type="button" class="btn" id="rm-add">Add to my calendar</button></div></div>
-        <div class="ap-card"><h3>Invite your partner</h3><p class="muted" style="margin:0">Send them the app so you can both keep your ritual.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-invite">Send the link</button><span class="muted" id="ap-invmsg" role="status"></span></div></div>
-        <div class="ap-card"><h3>Privacy lock</h3><p class="muted" style="margin:0" id="lk-state"></p><div class="ap-row" style="justify-content:flex-start"><label class="sr" for="lk-new">New four-digit code</label><input class="ap-pin" id="lk-new" type="password" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="0000" style="font-size:20px;width:130px"><button type="button" class="btn ghost small" id="lk-set">Set code</button><button type="button" class="ap-small" id="lk-off" hidden>Turn off</button></div><span class="muted" id="lk-msg" role="status"></span></div>
-        <div class="ap-card"><h3>Milestones</h3><div class="ap-badges" id="ap-badges"></div></div>
-        <div class="ap-card"><h3>Members only</h3><p class="muted" style="margin:0">The After Dark deck, monthly date nights, guided evenings and couple sync.</p><div class="ap-row" style="justify-content:flex-start"><a class="btn ghost small" href="../members/">See what is inside</a><a class="btn ghost small" href="../rewards/">Rewards</a></div></div>
-        <div class="ap-card"><h3>Put it on your phone</h3><p class="muted" style="margin:0">Install Saffra Together on iPhone or Android and open it like any other app.</p><div><a class="btn" href="../download/">Get the app</a></div></div>
-        <div class="ap-card"><h3>Your data</h3><p class="muted" style="margin:0">Everything here is stored only in this browser, on this device. We cannot see it.</p><div class="ap-row" style="justify-content:flex-start"><button type="button" class="btn ghost small" id="ap-export">Download my data</button><button type="button" class="ap-small" id="ap-wipe">Delete everything</button></div><span class="muted" id="ap-wiped" role="status"></span></div>
-      </div>
-      </div>
-    </div></div>
-  </section>
-</main>
+
 
 <main id="v-download">
   <section class="pdp">

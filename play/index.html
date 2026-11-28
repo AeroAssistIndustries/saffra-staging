@@ -938,6 +938,65 @@ body.searching .srch{display:block}body.searching{overflow:hidden}
   </div>
 </header>
 
+<main id="v-play">
+  <section class="pdp">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Play</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Games <i style="font-style:italic;color:var(--saffron)">for two.</i></h1><p class="lead muted">Free, no sign-up, nothing saved. Best played side by side with one phone between you.</p></div>
+      <div class="gtabs" role="tablist" aria-label="Games">
+        <button type="button" role="tab" id="g-deck" aria-selected="true">Question deck</button>
+        <button type="button" role="tab" id="g-spin" aria-selected="false">Date night spinner</button>
+        <button type="button" role="tab" id="g-know" aria-selected="false">Know me</button>
+        <button type="button" role="tab" id="g-tot" aria-selected="false">This or that</button>
+        <button type="button" role="tab" id="g-days" aria-selected="false">30-day ritual</button>
+      </div>
+
+      <div class="game" id="game-deck">
+        <p class="muted">Take turns. Read the card out loud, answer it, then pass the phone.</p>
+        <div class="chips" role="group" aria-label="Level">
+          <button type="button" class="chip" data-lv="light" aria-pressed="true">Light</button>
+          <button type="button" class="chip" data-lv="deeper" aria-pressed="false">Deeper</button>
+          <button type="button" class="chip" data-lv="closer" aria-pressed="false">Closer</button>
+        </div>
+        <div class="deckcard" aria-live="polite"><small id="decklv">Light</small><p id="deckq"></p><span id="deckn"></span></div>
+        <div class="row"><button type="button" class="btn" id="decknext">Next card</button></div>
+      </div>
+
+      <div class="game" id="game-spin" hidden>
+        <p class="muted">Cannot decide what to do tonight? Pick where and how long, then spin.</p>
+        <div class="chips" role="group" aria-label="Where">
+          <button type="button" class="chip" data-where="home" aria-pressed="true">At home</button>
+          <button type="button" class="chip" data-where="out" aria-pressed="false">Going out</button>
+        </div>
+        <div class="chips" role="group" aria-label="How long">
+          <button type="button" class="chip" data-len="short" aria-pressed="true">30 minutes</button>
+          <button type="button" class="chip" data-len="long" aria-pressed="false">A whole evening</button>
+        </div>
+        <div class="deckcard" aria-live="polite"><small>Tonight</small><p id="spinq">Press spin.</p><span id="spinn"></span></div>
+        <div class="row"><button type="button" class="btn" id="spinbtn">Spin</button></div>
+      </div>
+
+      <div class="game" id="game-know" hidden>
+        <p class="muted">One of you answers about the other. The other says if it is right. Then swap. Eight rounds.</p>
+        <div class="score"><div><b id="k1">0</b>Player one</div><div><b id="k2">0</b>Player two</div></div>
+        <div class="deckcard" aria-live="polite"><small id="kturn">Player one answers</small><p id="kq"></p><span id="kn"></span></div>
+        <div class="row" id="kbtns"><button type="button" class="btn" id="kyes">They got it right</button><button type="button" class="btn ghost" id="kno">Not quite</button></div>
+      </div>
+
+      <div class="game" id="game-tot" hidden>
+        <p class="muted">Read it out, count to three, and both answer at once. Then tap whether you matched. Ten rounds.</p>
+        <div class="deckcard" aria-live="polite"><small id="totn">Round 1 of 10</small><p id="totq"></p><span id="tots">Matches: 0</span></div>
+        <div class="row" id="totbtns"><button type="button" class="btn" id="totsame">We matched</button><button type="button" class="btn ghost" id="totdiff">We did not</button></div>
+      </div>
+
+      <div class="game" id="game-days" hidden>
+        <p class="muted">Tap a day when you both stopped for a moment together. It is saved on this device only.</p>
+        <div class="score"><div><b id="dcount">0</b>Days together</div><div><b id="dstreak">0</b>Current streak</div></div>
+        <div class="days" id="days" role="group" aria-label="30 days"></div>
+        <div><button type="button" class="linkbtn" id="dreset">Start a new month</button> <span class="muted" id="dmsg" role="status" style="font-size:14.5px"></span></div>
+      </div>
+    </div>
+  </section>
+</main>
 <main id="site">
 <span id="top"></span>
 <div class="hero">
@@ -2006,65 +2065,7 @@ body.searching .srch{display:block}body.searching{overflow:hidden}
   </div></section>
 </main>
 
-<main id="v-play">
-  <section class="pdp">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">Play</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Games <i style="font-style:italic;color:var(--saffron)">for two.</i></h1><p class="lead muted">Free, no sign-up, nothing saved. Best played side by side with one phone between you.</p></div>
-      <div class="gtabs" role="tablist" aria-label="Games">
-        <button type="button" role="tab" id="g-deck" aria-selected="true">Question deck</button>
-        <button type="button" role="tab" id="g-spin" aria-selected="false">Date night spinner</button>
-        <button type="button" role="tab" id="g-know" aria-selected="false">Know me</button>
-        <button type="button" role="tab" id="g-tot" aria-selected="false">This or that</button>
-        <button type="button" role="tab" id="g-days" aria-selected="false">30-day ritual</button>
-      </div>
 
-      <div class="game" id="game-deck">
-        <p class="muted">Take turns. Read the card out loud, answer it, then pass the phone.</p>
-        <div class="chips" role="group" aria-label="Level">
-          <button type="button" class="chip" data-lv="light" aria-pressed="true">Light</button>
-          <button type="button" class="chip" data-lv="deeper" aria-pressed="false">Deeper</button>
-          <button type="button" class="chip" data-lv="closer" aria-pressed="false">Closer</button>
-        </div>
-        <div class="deckcard" aria-live="polite"><small id="decklv">Light</small><p id="deckq"></p><span id="deckn"></span></div>
-        <div class="row"><button type="button" class="btn" id="decknext">Next card</button></div>
-      </div>
-
-      <div class="game" id="game-spin" hidden>
-        <p class="muted">Cannot decide what to do tonight? Pick where and how long, then spin.</p>
-        <div class="chips" role="group" aria-label="Where">
-          <button type="button" class="chip" data-where="home" aria-pressed="true">At home</button>
-          <button type="button" class="chip" data-where="out" aria-pressed="false">Going out</button>
-        </div>
-        <div class="chips" role="group" aria-label="How long">
-          <button type="button" class="chip" data-len="short" aria-pressed="true">30 minutes</button>
-          <button type="button" class="chip" data-len="long" aria-pressed="false">A whole evening</button>
-        </div>
-        <div class="deckcard" aria-live="polite"><small>Tonight</small><p id="spinq">Press spin.</p><span id="spinn"></span></div>
-        <div class="row"><button type="button" class="btn" id="spinbtn">Spin</button></div>
-      </div>
-
-      <div class="game" id="game-know" hidden>
-        <p class="muted">One of you answers about the other. The other says if it is right. Then swap. Eight rounds.</p>
-        <div class="score"><div><b id="k1">0</b>Player one</div><div><b id="k2">0</b>Player two</div></div>
-        <div class="deckcard" aria-live="polite"><small id="kturn">Player one answers</small><p id="kq"></p><span id="kn"></span></div>
-        <div class="row" id="kbtns"><button type="button" class="btn" id="kyes">They got it right</button><button type="button" class="btn ghost" id="kno">Not quite</button></div>
-      </div>
-
-      <div class="game" id="game-tot" hidden>
-        <p class="muted">Read it out, count to three, and both answer at once. Then tap whether you matched. Ten rounds.</p>
-        <div class="deckcard" aria-live="polite"><small id="totn">Round 1 of 10</small><p id="totq"></p><span id="tots">Matches: 0</span></div>
-        <div class="row" id="totbtns"><button type="button" class="btn" id="totsame">We matched</button><button type="button" class="btn ghost" id="totdiff">We did not</button></div>
-      </div>
-
-      <div class="game" id="game-days" hidden>
-        <p class="muted">Tap a day when you both stopped for a moment together. It is saved on this device only.</p>
-        <div class="score"><div><b id="dcount">0</b>Days together</div><div><b id="dstreak">0</b>Current streak</div></div>
-        <div class="days" id="days" role="group" aria-label="30 days"></div>
-        <div><button type="button" class="linkbtn" id="dreset">Start a new month</button> <span class="muted" id="dmsg" role="status" style="font-size:14.5px"></span></div>
-      </div>
-    </div>
-  </section>
-</main>
 
 <main id="v-ask">
   <section class="pdp dark">

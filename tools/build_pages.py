@@ -61,6 +61,9 @@ def page(v):
     d=re.sub(r'<html([^>]*)>',lambda m:'<html%s data-pages>'%m.group(1),d,count=1)
     if v=='home': return links(d,'')
     d=links(d,'../')
+    mid='brand' if v=='brand' else 'v-'+v
+    i=d.index('<main id="%s"'%mid); j=d.index('</main>',i)+len('</main>'); blk=d[i:j]; d=d[:i]+d[j:]
+    k=d.index('<main id="site"'); d=d[:k]+blk+'\n'+d[k:]
     d=re.sub(r'<html([^>]*)>',lambda m:'<html%s data-page="%s">'%(m.group(1),v),d,count=1)
     d=re.sub(r'<body([^>]*)>',lambda m:'<body%s data-view="%s">'%(re.sub(r'\s*data-view="[^"]*"','',m.group(1)),v),d,count=1)
     d=re.sub(r'''(["'(])(img|fonts)/''',r'\1../\2/',d)

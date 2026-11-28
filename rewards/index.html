@@ -938,6 +938,61 @@ body.searching .srch{display:block}body.searching{overflow:hidden}
   </div>
 </header>
 
+<main id="v-rewards">
+  <section class="pdp">
+    <div class="wrap" style="max-width:960px">
+      <div class="rhero"><div class="head" style="margin:0"><p class="eyebrow">Saffra Circle</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Rewards for <i style="font-style:italic;color:var(--saffron)">staying close.</i></h1><p class="lead muted">Earn points on every order, move up as you go, and share Saffra with friends. Joining is free and automatic with your first order.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="#referral">Refer a couple</a></div></div>
+      <div class="mcard" aria-hidden="true"><div class="mt"><span>Saffra Circle</span><span>Member</span></div><div class="mn">Flame</div><div class="mb"><span><b>1,240</b>points</span><span>Give $10, get $10</span></div></div></div>
+      <div class="head" style="margin:40px 0 16px"><h2>How you earn.</h2></div>
+      <div class="earn">
+        <div><i>1 pt</i><b>Per $1 spent</b><span>On every order and renewal</span></div>
+        <div><i>100</i><b>Welcome points</b><span>With your first order</span></div>
+        <div><i>50</i><b>Birthday points</b><span>Every year, on us</span></div>
+        <div><i>25</i><b>Ritual streak</b><span>For 30 days logged in the app</span></div>
+      </div>
+      <div class="pledge" style="margin:24px 0"><i>$5</i><div><b>For every 100 points.</b><span class="muted">Use points on any order, or give them: we turn donated points into extra dollars for survivors, on top of the 10% we already give.</span></div></div>
+      <div class="head" style="margin:44px 0 16px"><h2>See what you would earn.</h2></div>
+      <div class="calc">
+        <div class="chips" id="rc-plan" role="group" aria-label="Plan"><button type="button" class="chip" data-p="36" aria-pressed="true">One jar, monthly</button><button type="button" class="chip" data-p="64" aria-pressed="false">The set for two, monthly</button></div>
+        <label style="display:grid;gap:6px"><span class="muted" style="font-size:14.5px">Months as a member: <b id="rc-mv" style="color:var(--cream)">12</b></span><input type="range" id="rc-m" min="1" max="12" value="12"></label>
+        <div class="out"><div><i id="rc-pts">0</i><span>points earned</span></div><div><i id="rc-usd">$0</i><span>in rewards</span></div><div><i id="rc-give">$0</i><span>given to survivors</span></div></div>
+        <div class="track" aria-hidden="true"><i id="rc-bar"></i><b style="left:0" id="rc-t0">Spark</b><b style="left:37.5%" id="rc-t1">Glow</b><b style="left:87.5%" id="rc-t2">Flame</b></div>
+        <p class="muted" id="rc-note" role="status" style="margin:0;font-size:15px"></p>
+      </div>
+      <div class="head" style="margin:44px 0 16px"><h2>Three levels.</h2></div>
+      <div class="tiers">
+        <div class="tier"><span class="lv" aria-hidden="true">I</span><small>From your first order</small><h3>Spark</h3><ul><li>1 point per $1</li><li>Member games and trivia in the app</li><li>Birthday points</li></ul></div>
+        <div class="tier"><span class="lv" aria-hidden="true">II</span><small>300 points in a year</small><h3>Glow</h3><ul><li>Everything in Spark</li><li>Early access to new flavors and formulas</li><li>A free gift with every third renewal</li></ul></div>
+        <div class="tier best"><span class="lv" aria-hidden="true">III</span><small>700 points in a year</small><h3>Flame</h3><ul><li>Everything in Glow</li><li>1.5 points per $1</li><li>First invites to events and the podcast</li><li>A yearly anniversary gift for two</li></ul></div>
+      </div>
+      <div class="head" style="margin:48px 0 16px"><h2>Three ways to use points.</h2></div>
+      <div class="uses">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.500h16v3a2 2 0 0 0 0 4v3H4v-3a2 2 0 0 0 0-4z"/><path d="M14 8.500v10" stroke-dasharray="2 2.500"/></svg><b>Take $5 off</b><span>Every 100 points is $5 off any order or renewal.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.500s-7.500-4.600-7.500-10.200A4.300 4.300 0 0 1 12 7.600a4.300 4.300 0 0 1 7.500 2.700c0 5.600-7.500 10.200-7.500 10.200z"/></svg><b>Give them</b><span>Donate points and we send the dollars to survivors, on top of our 10%.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="1.500"/><path d="M3 7h18v3H3zM12 7v13M12 7c-1.500-3.500-5-3.500-5-1.500S9.500 7 12 7zM12 7c1.500-3.500 5-3.500 5-1.500S14.500 7 12 7z"/></svg><b>Gift a jar</b><span>Use 700 points to send a jar to another couple.</span></div>
+      </div>
+      <div class="head" id="referral" style="margin:48px 0 16px"><h2>Refer a couple.</h2></div>
+      <div class="refer">
+        <div style="display:grid;gap:10px"><h3 style="margin:0;font-size:30px">Give $10, get $10.</h3><p class="muted">Every member gets a personal link. A friend takes $10 off a first jar, and you get $10 toward your next order when theirs ships. There is no limit on how many friends you can refer.</p></div>
+        <div class="gg"><div><i>$10</i><span>off for a friend</span></div><div><i>$10</i><span>credit for you</span></div></div>
+      </div>
+      <div class="steps" style="margin-top:26px">
+        <div><h3>Share your link</h3><p class="muted">Find it in your account and in the app. Send it by text, email or social.</p></div>
+        <div><h3>They save $10</h3><p class="muted">The discount applies at checkout on their first order.</p></div>
+        <div><h3>You get $10</h3><p class="muted">Credit lands in your account when their order ships.</p></div>
+      </div>
+      <div class="head" style="margin:48px 0 8px"><h2>Good to know.</h2></div>
+      <div class="rfaq">
+        <details><summary>Do I need to sign up?</summary><p>No. You join Saffra Circle automatically with your first order, and it is free.</p></details>
+        <details><summary>When do points arrive?</summary><p>Points land in your account when each order ships.</p></details>
+        <details><summary>Do points expire?</summary><p>Points stay active as long as you order at least once every 12 months.</p></details>
+        <details><summary>Can I use points and a referral credit together?</summary><p>Yes. Referral credit and points can be combined on the same order.</p></details>
+        <details><summary>How do levels work?</summary><p>Your level is based on points earned in the last 12 months. Once you reach a level, you keep it for a full year.</p></details>
+      </div>
+      <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="../app/">Open the app</a></div>
+    </div>
+  </section>
+</main>
 <main id="site">
 <span id="top"></span>
 <div class="hero">
@@ -2123,61 +2178,7 @@ body.searching .srch{display:block}body.searching{overflow:hidden}
   </section>
 </main>
 
-<main id="v-rewards">
-  <section class="pdp">
-    <div class="wrap" style="max-width:960px">
-      <div class="rhero"><div class="head" style="margin:0"><p class="eyebrow">Saffra Circle</p><h1 style="font-size:clamp(40px,6.4vw,72px)">Rewards for <i style="font-style:italic;color:var(--saffron)">staying close.</i></h1><p class="lead muted">Earn points on every order, move up as you go, and share Saffra with friends. Joining is free and automatic with your first order.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="#referral">Refer a couple</a></div></div>
-      <div class="mcard" aria-hidden="true"><div class="mt"><span>Saffra Circle</span><span>Member</span></div><div class="mn">Flame</div><div class="mb"><span><b>1,240</b>points</span><span>Give $10, get $10</span></div></div></div>
-      <div class="head" style="margin:40px 0 16px"><h2>How you earn.</h2></div>
-      <div class="earn">
-        <div><i>1 pt</i><b>Per $1 spent</b><span>On every order and renewal</span></div>
-        <div><i>100</i><b>Welcome points</b><span>With your first order</span></div>
-        <div><i>50</i><b>Birthday points</b><span>Every year, on us</span></div>
-        <div><i>25</i><b>Ritual streak</b><span>For 30 days logged in the app</span></div>
-      </div>
-      <div class="pledge" style="margin:24px 0"><i>$5</i><div><b>For every 100 points.</b><span class="muted">Use points on any order, or give them: we turn donated points into extra dollars for survivors, on top of the 10% we already give.</span></div></div>
-      <div class="head" style="margin:44px 0 16px"><h2>See what you would earn.</h2></div>
-      <div class="calc">
-        <div class="chips" id="rc-plan" role="group" aria-label="Plan"><button type="button" class="chip" data-p="36" aria-pressed="true">One jar, monthly</button><button type="button" class="chip" data-p="64" aria-pressed="false">The set for two, monthly</button></div>
-        <label style="display:grid;gap:6px"><span class="muted" style="font-size:14.5px">Months as a member: <b id="rc-mv" style="color:var(--cream)">12</b></span><input type="range" id="rc-m" min="1" max="12" value="12"></label>
-        <div class="out"><div><i id="rc-pts">0</i><span>points earned</span></div><div><i id="rc-usd">$0</i><span>in rewards</span></div><div><i id="rc-give">$0</i><span>given to survivors</span></div></div>
-        <div class="track" aria-hidden="true"><i id="rc-bar"></i><b style="left:0" id="rc-t0">Spark</b><b style="left:37.5%" id="rc-t1">Glow</b><b style="left:87.5%" id="rc-t2">Flame</b></div>
-        <p class="muted" id="rc-note" role="status" style="margin:0;font-size:15px"></p>
-      </div>
-      <div class="head" style="margin:44px 0 16px"><h2>Three levels.</h2></div>
-      <div class="tiers">
-        <div class="tier"><span class="lv" aria-hidden="true">I</span><small>From your first order</small><h3>Spark</h3><ul><li>1 point per $1</li><li>Member games and trivia in the app</li><li>Birthday points</li></ul></div>
-        <div class="tier"><span class="lv" aria-hidden="true">II</span><small>300 points in a year</small><h3>Glow</h3><ul><li>Everything in Spark</li><li>Early access to new flavors and formulas</li><li>A free gift with every third renewal</li></ul></div>
-        <div class="tier best"><span class="lv" aria-hidden="true">III</span><small>700 points in a year</small><h3>Flame</h3><ul><li>Everything in Glow</li><li>1.5 points per $1</li><li>First invites to events and the podcast</li><li>A yearly anniversary gift for two</li></ul></div>
-      </div>
-      <div class="head" style="margin:48px 0 16px"><h2>Three ways to use points.</h2></div>
-      <div class="uses">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.500h16v3a2 2 0 0 0 0 4v3H4v-3a2 2 0 0 0 0-4z"/><path d="M14 8.500v10" stroke-dasharray="2 2.500"/></svg><b>Take $5 off</b><span>Every 100 points is $5 off any order or renewal.</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.500s-7.500-4.600-7.500-10.200A4.300 4.300 0 0 1 12 7.600a4.300 4.300 0 0 1 7.500 2.700c0 5.600-7.500 10.200-7.500 10.200z"/></svg><b>Give them</b><span>Donate points and we send the dollars to survivors, on top of our 10%.</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="1.500"/><path d="M3 7h18v3H3zM12 7v13M12 7c-1.500-3.500-5-3.500-5-1.500S9.500 7 12 7zM12 7c1.500-3.500 5-3.500 5-1.500S14.500 7 12 7z"/></svg><b>Gift a jar</b><span>Use 700 points to send a jar to another couple.</span></div>
-      </div>
-      <div class="head" id="referral" style="margin:48px 0 16px"><h2>Refer a couple.</h2></div>
-      <div class="refer">
-        <div style="display:grid;gap:10px"><h3 style="margin:0;font-size:30px">Give $10, get $10.</h3><p class="muted">Every member gets a personal link. A friend takes $10 off a first jar, and you get $10 toward your next order when theirs ships. There is no limit on how many friends you can refer.</p></div>
-        <div class="gg"><div><i>$10</i><span>off for a friend</span></div><div><i>$10</i><span>credit for you</span></div></div>
-      </div>
-      <div class="steps" style="margin-top:26px">
-        <div><h3>Share your link</h3><p class="muted">Find it in your account and in the app. Send it by text, email or social.</p></div>
-        <div><h3>They save $10</h3><p class="muted">The discount applies at checkout on their first order.</p></div>
-        <div><h3>You get $10</h3><p class="muted">Credit lands in your account when their order ships.</p></div>
-      </div>
-      <div class="head" style="margin:48px 0 8px"><h2>Good to know.</h2></div>
-      <div class="rfaq">
-        <details><summary>Do I need to sign up?</summary><p>No. You join Saffra Circle automatically with your first order, and it is free.</p></details>
-        <details><summary>When do points arrive?</summary><p>Points land in your account when each order ships.</p></details>
-        <details><summary>Do points expire?</summary><p>Points stay active as long as you order at least once every 12 months.</p></details>
-        <details><summary>Can I use points and a referral credit together?</summary><p>Yes. Referral credit and points can be combined on the same order.</p></details>
-        <details><summary>How do levels work?</summary><p>Your level is based on points earned in the last 12 months. Once you reach a level, you keep it for a full year.</p></details>
-      </div>
-      <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="../app/">Open the app</a></div>
-    </div>
-  </section>
-</main>
+
 
 <main id="v-members">
   <section class="pdp">
