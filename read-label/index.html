@@ -1353,7 +1353,7 @@ body.searching .srch{display:block}body.searching{overflow:hidden}
     <p class="eyebrow">Launching 2027</p>
     <h2>Make time for each other.</h2>
     <p class="muted">Join the waitlist for first access and launch pricing.</p>
-    <form id="waitform" novalidate>
+    <form id="waitform" novalidate><input type="text" id="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <label for="email" class="sr">Email address</label>
       <label for="interest" class="sr">Which product</label>
       <select class="field" id="interest"><option value="">I am interested in...</option><option value="two">Saffra for Two</option><option value="her">Saffra for her</option><option value="him">Saffra for him</option><option value="unsure">Not sure yet</option></select>
@@ -2838,16 +2838,28 @@ body.searching .srch{display:block}body.searching{overflow:hidden}
   document.getElementById('dreset').addEventListener('click',function(){var m=document.getElementById('dmsg');
     if(!armed){armed=true; this.textContent='Tap again to clear all 30 days'; return;}
     armed=false; this.textContent='Start a new month'; D=[]; dsave(); daysEl.querySelectorAll('.day').forEach(function(b){b.setAttribute('aria-pressed','false');}); dstats(); m.textContent='Cleared.';});
-  document.getElementById('creatorform').addEventListener('submit',function(e){e.preventDefault();var ok=document.getElementById('cname').value.trim()&&document.getElementById('chandle').value.trim();document.getElementById('creatormsg').textContent=ok?'Staging preview: applications are not being sent yet.':'Add your name and a social handle or link.';});
+  function sendForm(kind,form,msg,okText,stagingText){
+      var api=document.documentElement.getAttribute('data-api');
+      if(!api){msg.textContent=stagingText;return;}
+      var d=new URLSearchParams();d.append('kind',kind);
+      form.querySelectorAll('input,select,textarea').forEach(function(f){if(f.id&&f.type!=='submit'&&f.type!=='button')d.append(f.id,f.type==='checkbox'?(f.checked?'yes':'no'):f.value);});
+      var btn=form.querySelector('button[type=submit],button:not([type])');if(btn)btn.disabled=true;msg.textContent='Sending...';
+      fetch((document.documentElement.getAttribute('data-page')?'../':'')+api,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:d.toString()})
+        .then(function(r){return r.json().catch(function(){return {ok:false};});})
+        .then(function(j){msg.textContent=j.ok?okText:(j.message||'Something went wrong. Please try again.');if(j.ok)form.reset();})
+        .catch(function(){msg.textContent='Could not reach the server. Check your connection and try again.';})
+        .then(function(){if(btn)btn.disabled=false;});
+    }
+    document.getElementById('creatorform').addEventListener('submit',function(e){e.preventDefault();var ok=document.getElementById('cname').value.trim()&&document.getElementById('chandle').value.trim(),m=document.getElementById('creatormsg');if(!ok){m.textContent='Add your name and a social handle or link.';return;}sendForm('creator',this,m,'Thank you. We read every application and will be in touch.','Staging preview: applications are not being sent yet.');});
   /* ask */
-  document.getElementById('askform').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('askq').value.trim();document.getElementById('askmsg').textContent=v?'Staging preview: questions are not being sent yet.':'Type a question first.';});
+  document.getElementById('askform').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('askq').value.trim(),m=document.getElementById('askmsg');if(!v){m.textContent='Type a question first.';return;}sendForm('ask',this,m,'Thank you. Your question is with the team.','Staging preview: questions are not being sent yet.');});
 
   var form = document.getElementById('waitform'), msg = document.getElementById('waitmsg');
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var v = document.getElementById('email').value.trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { msg.textContent = 'Enter a valid email address, like you@email.com.'; return; }
-    msg.textContent = 'Staging preview: the form works, but sign-ups are not saved until it is connected to an email list.';
+    sendForm('waitlist',form,msg,'You are on the list. We will email you before launch.','Staging preview: the form works, but sign-ups are not saved until it is connected to an email list.');
   });
 })();
 </script>

@@ -62,3 +62,11 @@ structured data, plus `sitemap.xml` and `robots.txt`.
     python3 tools/build_pages.py https://YOUR-DOMAIN/ OUTPUT_FOLDER public   # searchable
 
 Edit `src/index.html`, then rebuild. Do not edit the built pages by hand.
+
+### Live build with working forms
+
+Add `api` to include the form script (`api/submit.php`, needs PHP hosting). It emails each waitlist
+signup, question and creator application to the address in `SAFFRA_NOTIFY` and saves them as CSV files
+in a `saffra-data` folder one level above the public web folder.
+
+    SAFFRA_NOTIFY=you@example.com python3 tools/build_pages.py https://YOUR-DOMAIN/ OUTPUT_FOLDER api

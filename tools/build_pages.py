@@ -2,7 +2,7 @@
 """Build real pages from the single-file site.  usage: build_pages.py BASE_URL OUT_DIR [public]"""
 import sys,re,os,json,shutil,html
 SRC=os.environ.get('SAFFRA_SRC','/home/claude/saffra')
-BASE=sys.argv[1].rstrip('/')+'/'; OUT=sys.argv[2]; PUBLIC=len(sys.argv)>3 and sys.argv[3]=='public'
+BASE=sys.argv[1].rstrip('/')+'/'; OUT=sys.argv[2]; PUBLIC='public' in sys.argv[3:]; API='api/submit.php' if 'api' in sys.argv[3:] else ''
 s=open(SRC+'/index.html').read()
 views=json.loads(re.search(r"var views=(\[[^\]]*\])",s).group(1).replace("'",'"'))
 P={ # view: (title, description)
@@ -58,7 +58,7 @@ def page(v):
     if v.startswith('read-'): extra.append({"@context":"https://schema.org","@type":"Article","headline":t.replace(' | Saffra Journal',''),"description":desc,"author":{"@type":"Organization","name":"Saffra"},"publisher":{"@type":"Organization","name":"Saffra"},"mainEntityOfPage":url})
     if v!='home': extra.append({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Saffra","item":BASE},{"@type":"ListItem","position":2,"name":t.split(' | ')[0],"item":url}]})
     if extra: d=d.replace('</head>','<script type="application/ld+json">'+json.dumps(extra)+'</script>\n</head>',1)
-    d=re.sub(r'<html([^>]*)>',lambda m:'<html%s data-pages>'%m.group(1),d,count=1)
+    d=re.sub(r'<html([^>]*)>',lambda m:'<html%s data-pages%s>'%(m.group(1),' data-api="%s"'%API if API else ''),d,count=1)
     if v=='home': return links(d,'')
     d=links(d,'../')
     mid='brand' if v=='brand' else 'v-'+v
@@ -81,4 +81,9 @@ for dname in ('img','fonts'):
 urls=[BASE]+[BASE+v+'/' for v in views if v not in('brand',)]
 open(OUT+'/sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('  <url><loc>%s</loc></url>\n'%u for u in urls)+'</urlset>\n')
 open(OUT+'/robots.txt','w').write('User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n'%BASE)
+if API:
+    os.makedirs(OUT+'/api',exist_ok=True)
+    php=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'submit.php')).read() if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)),'submit.php')) else open('/home/claude/build/live-api/submit.php').read()
+    dom=re.sub(r'^https?://(www\.)?','',BASE).strip('/').split('/')[0]
+    open(OUT+'/api/submit.php','w').write(php.replace('__DOMAIN__',dom).replace('__NOTIFY_EMAIL__',os.environ.get('SAFFRA_NOTIFY','__NOTIFY_EMAIL__')))
 print('built',1+len(views),'pages ->',OUT,'public' if PUBLIC else 'hidden (noindex)')
