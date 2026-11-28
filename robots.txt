@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aeroassistindustries.github.io/saffra-staging/sitemap.xml

@@ -51,3 +51,14 @@ Flip these when the real domain and store are ready:
 4. Forms (waitlist, ask, creators, lot lookup): connect to an email service and remove the "Staging preview" messages.
 5. Add the business contact address to the privacy, terms and shipping pages.
 6. Connect checkout.
+
+## Pages and SEO build
+
+The site is written as one file, `src/index.html`. `tools/build_pages.py` turns it into real pages
+(`/her/`, `/him/`, `/journal/` and so on), each with its own title, description, canonical link,
+structured data, plus `sitemap.xml` and `robots.txt`.
+
+    python3 tools/build_pages.py https://YOUR-DOMAIN/ OUTPUT_FOLDER          # hidden from search
+    python3 tools/build_pages.py https://YOUR-DOMAIN/ OUTPUT_FOLDER public   # searchable
+
+Edit `src/index.html`, then rebuild. Do not edit the built pages by hand.
